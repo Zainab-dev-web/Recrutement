@@ -6,6 +6,7 @@
     @include('PageAccueil.carousel')
     @include('PageAccueil.services')
     @include('PageAccueil.teams')
+    @include('PageAccueil.newsletter')
     @include('components.footer')
     
 @endsection
