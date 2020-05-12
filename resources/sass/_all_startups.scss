@@ -70,7 +70,7 @@
             span{
                 margin-bottom: 22px; 
                 display: block;
-               color: #9fabbe;;
+                color: #9fabbe;;
             }
             h3{
                 font-size: 35px;
@@ -107,6 +107,7 @@
                     margin-bottom: 18px;
                     li{
                         svg{
+                            color: $theme-color3;
                             position: relative;
                             top:4px;
                         }

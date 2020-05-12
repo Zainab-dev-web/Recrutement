@@ -1,11 +1,10 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
 
 // Variables
 @import 'variables';
+@import 'variables2';
 @import './bootstrap.min.css';
 @import './owl.carousel.min.css';
 @import './slicknav.css';
@@ -18,5 +17,18 @@
 @import './nice-select.css';
 @import './style.css';
 
-// et responsive et main.css ??
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
 
+// SCSS
+
+@import './color';
+@import './footer';
+@import './elements';
+@import './headerMenu';
+@import './contact';
+@import './all_startups';
+@import './common';
+@import './h1-hero';
+@import './wantTowork';
+@import './services_section';
