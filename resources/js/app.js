@@ -26,7 +26,7 @@ require('./jquery.ajaxchimp.min');
 require('./plugins');
 require('./main');
 
-// global.$=global.jQuery=require('./jquery-1.12.4.min');
+global.$=global.jQuery=require('./vendor/jquery-1.12.4.min');
 
 window.Vue = require('vue');
 

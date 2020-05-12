@@ -41,7 +41,7 @@
                     display: inline-block;
                     margin-right: 56px;
                     font-family: $font_1;
-                    font-size: 14px;
+                    font-size: 34px;
                     &:last-child{
                         margin-right: 0px;
                     }
@@ -85,6 +85,7 @@
 
                 & a{
                     color: #fff;
+                    text-decoration: none;
                     font-weight: 500;
                     padding: 39px 19px;
                     @media #{$lg}{

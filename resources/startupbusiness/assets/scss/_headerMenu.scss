@@ -126,17 +126,10 @@
                             color:$theme-color;
                             background: none;
                         }
-                        & i{
-                            // @include transition(.4s);
-                        }
+                        
                     }
                 } 
             }
-        }
-    }
-    .logo{
-        & img{
-            
         }
     }
 }
