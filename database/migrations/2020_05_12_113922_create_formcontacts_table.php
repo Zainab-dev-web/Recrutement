@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCarouselsTable extends Migration
+class CreateFormcontactsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateCarouselsTable extends Migration
      */
     public function up()
     {
-        Schema::create('carousels', function (Blueprint $table) {
+        Schema::create('formcontacts', function (Blueprint $table) {
             $table->id();
-            $table->string('titre');
-            $table->string('slogan');
-            $table->string('photo');
+            $table->string('name');
+            $table->string('email');
+            $table->string('sujet');
+            $table->string('msg');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateCarouselsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('carousels');
+        Schema::dropIfExists('formcontacts');
     }
 }
