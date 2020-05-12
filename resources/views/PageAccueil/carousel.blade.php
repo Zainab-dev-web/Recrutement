@@ -1,12 +1,12 @@
 
         <!-- slider Area Start-->
-        <div class="slider-area  slider-height" data-background="assets/img/hero/h1_hero.jpg">
+        <div class="slider-area  slider-height" data-background="{{asset('img/hero/h1_hero.jpg')}}">
             <div class="slider-active">
                 <!-- Single Slider -->
                 <div class="single-slider">
                     <div class="slider-cap-wrapper">
                           <div class="hero__img">
-                            <img src="assets/img/hero/hero_img.jpg" alt=""  data-animation="fadeInRight" data-transition-duration="5s">
+                            <img src="{{asset('img/hero/hero_img.jpg')}}" alt=""  data-animation="fadeInRight" data-transition-duration="5s">
                           </div>
                           <div class="hero__caption">
                               <h1 data-animation="fadeInLeft" data-delay=".4s">Business Synergy via <br>Robust Strategies</h1>
@@ -29,7 +29,7 @@
                 <div class="single-slider">
                     <div class="slider-cap-wrapper">
                           <div class="hero__img">
-                            <img src="assets/img/hero/hero_img2.jpg" alt=""  data-animation="fadeInRight" data-transition-duration="5s">
+                            <img src="{{asset('img/hero/hero_img2.jpg')}}" alt=""  data-animation="fadeInRight" data-transition-duration="5s">
                           </div>
                           <div class="hero__caption">
                               <h1 data-animation="fadeInLeft" data-delay=".4s">Business Synergy via <br>Robust Strategies</h1>
