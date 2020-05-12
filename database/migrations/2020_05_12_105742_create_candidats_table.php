@@ -28,6 +28,19 @@ class CreateCandidatsTable extends Migration
             $table->string('accept'); //(souscription)
             $table->timestamps();
         });
+        Schema::create('candidat_date', function (Blueprint $table) {
+            $table->id();
+            $table->bigInteger('candidat_id')->unsigned();
+            $table->foreign('candidat_id')->on('candidats')
+            ->references('id')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
+            $table->bigInteger('date_id')->unsigned();
+            $table->foreign('date_id')->on('dates')
+            ->references('id')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
+        });
     }
 
     /**
