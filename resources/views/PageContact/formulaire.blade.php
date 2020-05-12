@@ -1,5 +1,5 @@
-<section class="contact-section">
-<div class="row container">
+<section class="contact-section container">
+<div class="row">
     <div class="col-12">
         <h2 class="contact-title">Get in Touch</h2>
     </div>
