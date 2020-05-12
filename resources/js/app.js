@@ -6,6 +6,28 @@
 
 require('./bootstrap');
 
+require('./vendor/modernizr-3.5.0.min');
+require('./vendor/jquery-1.12.4.min');
+require('./popper.min');
+require('./bootstrap.min');
+require('./jquery.slicknav.min');
+require('./owl.carousel.min');
+require('./slick.min');
+require('./wow.min');
+require('./animated.headline');
+require('./jquery.magnific-popup');
+require('./jquery.nice-select.min');
+require('./jquery.sticky');
+require('./contact');
+require('./jquery.form');
+require('./jquery.validate.min');
+require('./mail-script');
+require('./jquery.ajaxchimp.min');
+require('./plugins');
+require('./main');
+
+// global.$=global.jQuery=require('./jquery-1.12.4.min');
+
 window.Vue = require('vue');
 
 /**
