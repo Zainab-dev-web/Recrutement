@@ -12,7 +12,7 @@
         text-decoration: none;
         transition: .4s;
         &:hover, :hover{
-            background: -webkit-linear-gradient( 131deg, $theme-color 0%, $theme-color 99%);
+            background: -webkit-linear-gradient( 131deg, $theme-color3 0%, $theme-color3 99%);
             // -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-decoration: none;
@@ -568,7 +568,7 @@
         left: 10px;
         display: block;
         color: $white_color;
-        background-color: $theme-color;
+        background-color: $theme-color3;
         padding: 8px 15px;
         border-radius: 5px;
 
@@ -658,7 +658,7 @@
         .input-group {
 
             button {
-                background:$theme-color;
+                background:$theme-color3;
                 border-left: 0;
                 border: 1px solid #f0e9ff;
                 padding: 4px 15px;
@@ -803,7 +803,7 @@
                     font-size: 13px;
 
                     &:hover {
-                        background: $theme-color;
+                        background: $theme-color3;
                         color: #fff !important;
                         -webkit-text-fill-color: #fff;
                         text-decoration: none;

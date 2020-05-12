@@ -13,7 +13,6 @@
         transition: .4s;
         &:hover, :hover{
             background: -webkit-linear-gradient( 131deg, $theme-color 0%, $theme-color 99%);
-            -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-decoration: none;
             transition: .4s;
@@ -57,10 +56,6 @@
         // color: $dip;
         font-size: 20px;
         font-weight: 600;
-
-        &:hover {
-            // // color: $baseColor;
-        }
     }
 
     .date {
@@ -75,7 +70,6 @@
         // color: $baseColor;
         text-align: left;
         display: inline-block;
-        float: left;
         font-size: 13px;
         font-weight: 300;
         margin-right: 22px;
@@ -165,10 +159,6 @@
         visibility: hidden;
          @include transition(.3s);
 
-        .meta-bottom {
-            p {
-                // color: $white_color;
-            }
         }
 
         @media (min-width: 992px) {
@@ -187,9 +177,6 @@
         font-size: 20px;
         font-weight: 600;
 
-        &:hover {
-            // color: $baseColor;
-        }
     }
 
     .date {
@@ -204,7 +191,7 @@
         }
     }
 
-}
+
 
 /* End Blog Area css
 ============================================================================================ */
@@ -213,13 +200,8 @@
 
 /* Latest Blog Area css
 ============================================================================================ */
-.latest_blog_area {}
-
-.latest_blog_inner {}
 
 .l_blog_item {
-    .l_blog_img {}
-
     .l_blog_text {
         .date {
             margin-top: 24px;
@@ -239,9 +221,6 @@
             padding-bottom: 20px;
              @include transition(.3s);
 
-            &:hover {
-                // // color: $baseColor;
-            }
         }
 
         p {
@@ -257,7 +236,6 @@
 
 /* Causes Area css
 ============================================================================================ */
-.causes_area {}
 
 .causes_slider {
     .owl-dots {
@@ -275,9 +253,6 @@
                 margin-right: 0px;
             }
 
-            &.active {
-                // background: $baseColor;
-            }
         }
     }
 }
@@ -328,9 +303,6 @@
             margin-bottom: 15px;
             cursor: pointer;
 
-            &:hover {
-                // // color: $title-color;
-            }
         }
 
         p {
@@ -394,9 +366,6 @@
             padding: 10px 0px 13px;
             transition: all 0.3s linear;
 
-            &:hover {
-                // color: $pfont;
-            }
         }
     }
 
@@ -423,10 +392,6 @@
         padding: 1px 18px;
         text-align: center;
 
-        // color: $title-color;
-        &:before {
-            // background: $title-color;
-        }
 
         &+.tag_btn {
             margin-left: 2px;
@@ -516,11 +481,6 @@
 
 
 /*============ blog_left_sidebar css ==============*/
-.blog_area {
-    // background: $lightGray;
-}
-
-.blog_left_sidebar {}
 
 .blog_item {
     margin-bottom: 50px;
@@ -777,14 +737,6 @@
                 &+li {
                     padding-top: 15px;
                 }
-
-                &:hover {
-
-                    // border-// color: $title-color;
-                    a {
-                        // // color: $baseColor;
-                    }
-                }
             }
         }
     }
@@ -1010,10 +962,6 @@
         font-size: 13px;
     }
 
-    &:hover {
-        // background-color: $baseColor;
-        // color: $white_color;
-    }
 }
 
 .blog-pagination .page-item.active {
@@ -1067,9 +1015,6 @@
                 font-size: 14px;
                 transition: all 0.2s linear;
 
-                &:hover {
-                    // color: $title-color;
-                }
             }
         }
     }
@@ -1080,10 +1025,6 @@
         p {
             margin-bottom: 20px;
             font-size: 15px;
-        }
-
-        h2 {
-            // color: $title-color;
         }
     }
 
@@ -1168,14 +1109,6 @@
                 span {
                     font-size: 14px;
                     color: #999999;
-                }
-
-                &:hover {
-
-                    i,
-                    span {
-                        // // color: $baseColor;
-                    }
                 }
             }
         }
@@ -1335,10 +1268,6 @@
     h5 {
         font-size: 16px;
         margin-bottom: 0px;
-    }
-
-    a {
-        // color: $title-color;
     }
 
     .comment-list {

@@ -17,6 +17,11 @@ Route::get('/', function () {
     return view('PageAccueil.pageAccueil');
 });
 
+Route::get('/contact', function () {
+    return view('PageContact.pageContact');
+});
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
