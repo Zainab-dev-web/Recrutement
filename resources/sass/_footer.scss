@@ -52,7 +52,7 @@
                     color: #8ba4b1;
                     font-weight: 300;
                     &:hover{
-                        color: $theme-color3;
+                        color: $theme-color;
                         padding-left: 5px;
                     }
                    
@@ -77,7 +77,7 @@
                 display: inline-block;
             }
             &:hover {
-                background: $theme-color3;
+                background: $theme-color;
                 border: 1px solid transparent;
                 color: #fff;
             }
