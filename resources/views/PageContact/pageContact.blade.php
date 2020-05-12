@@ -3,8 +3,8 @@
 @section('content')
 
     @include('components.nav')
-    @include('pageContact.maps')
-    @include('pageContact.formulaire')
+    @include('PageContact.maps')
+    @include('PageContact.formulaire')
     @include('components.footer')
     
 @endsection
