@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\User;
+use App\Entreprise;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 class RegisterEntrepriseController extends Controller
 {
@@ -50,9 +51,7 @@ class RegisterEntrepriseController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+ 
         ]);
     }
 
@@ -64,10 +63,34 @@ class RegisterEntrepriseController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
+        $storage=Storage::disk('public')->put('', $data['logo']);
+
+        return Entreprise::create([
+            'nom' => $data['nom'],
+            'date' => $data['date'],
+            'tva' => $data['tva'],
+            'domaine' => $data['domaine'],
+            'numero' => $data['numero'],
+            'adresse' => $data['adresse'],
+            'logo' => $storage,
+            'pNom' => $data['pNom'],
+            'pEmail' => $data['pEmail'],
+            'pTel' => $data['pTel'],
             'email' => $data['email'],
+            'valid' => 0,
+            'role_id' => 5,
             'password' => Hash::make($data['password']),
         ]);
+
+        
+    }
+    
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
+     */
+    public function showRegistrationForm()
+    {
+
+        return view('auth.registerentreprise');
     }
 }

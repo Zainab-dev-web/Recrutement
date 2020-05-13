@@ -28,5 +28,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // register
 
-Route::get('registerEntreprise', 'RegisterEnterpriseController@register');
+Route::post('registerEntreprise', 'Auth\RegisterEntrepriseController@register');
+Route::get('/registerEntreprise', 'Auth\RegisterEntrepriseController@showRegistrationForm')->name('registerEntreprise');
 
