@@ -20,4 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('choix , ChoixController@index');
+Route::get('/choix', function () {
+    return view('register_form.choix');
+})->name('choix');
 

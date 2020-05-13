@@ -22,7 +22,7 @@
                                         <li><a href="work.html">Entreprises</a></li>
                                         <li><a href="blog.html">Login</a>
                                             <ul class="submenu">
-                                                <li><a href="blog.html">Inscription</a></li>
+                                            <li><a href="{{route('choix')}}">Inscription</a></li>
                                                 <li><a href="single-blog.html">Profile</a></li>
                                             </ul>
                                         </li>
