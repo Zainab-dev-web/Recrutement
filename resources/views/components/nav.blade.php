@@ -22,8 +22,8 @@
                                         <li><a href="">Entreprises</a></li>
                                         <li><a href="">Login</a>
                                             <ul class="submenu">
-                                                <li><a href="">Inscription</a></li>
-                                                <li><a href="">Profile</a></li>
+                                            <li><a href="{{route('choix')}}">Inscription</a></li>
+                                                <li><a href="single-blog.html">Profile</a></li>
                                             </ul>
                                         </li>
                                     </ul>
