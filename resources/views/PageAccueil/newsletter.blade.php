@@ -5,11 +5,17 @@
             <div class="col-xl-8 col-lg-8 col-md-8">
                 <div class="wantToWork-caption wantToWork-caption2">
                     <h2>Newsletter</h2>
-                    <input class="w-50" type="text" name="" id="">
+                    <div class="form-group">
+                        <input type="email" class="form-control" onfocus="this.placeholder = ''"
+                            onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
+                    </div>
                 </div>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4">
-                <a href="#" class="btn btn-black f-right">Send</a>
+                <form action="#">
+                    <button class="button rounded-0 primary-bg w-100 btn_1 boxed-btn mt-2"
+                        type="submit">Subscribe</button>
+                </form>
             </div>
         </div>
     </div>

@@ -1,3 +1,48 @@
+
+        <!-- Our Services Start -->
+        <div class="our-services all-starups-area pt-50 py-150">
+            <div class="starups2">
+            <div class="container no-gutter">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="services-ion">
+                                <span class="flaticon-experience"></span>
+                            </div>
+                            <div class="services-cap">
+                                <h5>Strategic Planning</h5>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="services-ion">
+                                {{-- <div class="starups-img"></div> --}}
+                            </div>
+                            <div class="services-cap">
+                                <h5>Trades & stocks</h5>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="services-ion">
+                                <span class="flaticon-good"></span>
+                            </div>
+                            <div class="services-cap">
+                                <h5>Audit & Assurance</h5>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- Our Services End -->
+
 <!--All startups Start -->
 <div class="all-starups-area fix">
     <!-- left Contents -->
@@ -47,46 +92,3 @@
     <div class="starups-img"></div>
 </div>
 <!--All startups End -->
-<!-- Visit Our Tailor Start -->
-<div class="visit-tailor-area fix">
-    <!--Right Contents  -->
-    <div class="tailor-offers"></div>
-    <!-- left Contents -->
-    <div class="tailor-details">
-        <span>All of our Skills In The Fild</span>
-        <h3>Differentiate Yourself And <br>Attractive Attention</h3>
-        <p>Tempor incididunt ut labore et cvhjfhore magna aliqua. Ut<br> enim ad minim veniam, quis.</p>
-         <!-- skill Start -->
-        <div class="skill-ara">
-            <div class="skill">
-                <div class="single-skill">
-                    <div class="progress-count">
-                        <p>User Interface</p><span>75%</span>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar wow slideInLeft" data-wow-duration="1s" data-wow-delay=".5s" aria-valuenow="25" role="progressbar" style="width: 75%"  aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-                <div class="single-skill">
-                    <div class="progress-count">
-                        <p>Digital Marketing</p><span>89%</span>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar wow slideInLeft" data-wow-duration="1s" data-wow-delay=".7s" role="progressbar" style="width: 89%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-                <div class="single-skill">
-                    <div class="progress-count">
-                        <p>User Interface</p><span>95%</span>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar wow slideInLeft" data-wow-duration="1s" data-wow-delay=".6s" role="progressbar" style="width: 95%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- skill End -->
-    </div>
-
-</div>
-<!-- Visit Our Tailor End -->

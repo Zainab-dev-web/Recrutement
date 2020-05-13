@@ -126,16 +126,84 @@
             }
         }
     }
-    // -Right Contents
-    .starups-img{
-        width: 50%;
+    .starups2{
+        display: flex;
+        align-items: center;
+        width: 100%;
         // BG
-        background-image: url(/img/gallery/startup_bg.jpg);
-        background-size: 100%;
+        background-image: url(/img/gallery/footer_bg.jpg);
         background-size: cover;
         background-repeat: no-repeat;
-        background-position: left top;
         height: 700px;
+        @media #{$md}{
+            width: 100%;
+        }
+        @media #{$xs}{
+            width: 100%;
+        }
+        @media #{$sm}{
+            width: 100%;
+        }
+        // content Area
+        .starups-details{
+            padding-right: 117px;
+            @media #{$laptop}{
+                padding-right: 0px;
+            }
+            @media #{$lg}{
+                padding-right: 30px;
+            }
+            @media #{$md}{
+                padding-right: 0px;
+            }
+            @media #{$sm}{
+                padding-right: 0px;
+                margin-top: 40px;
+            }
+            @media #{$xs}{
+                padding-right: 0px;
+                margin-top: 40px;
+            }
+            span{
+                margin-bottom: 22px; 
+                display: block;
+                color: #9fabbe;;
+            }
+            h3{
+                font-size: 35px;
+                display: block;
+                color:#fff;
+                font-weight: 700;
+                margin-bottom: 53px;
+                @media #{$xs}{
+                    font-size: 21px;
+                }
+                @media #{$sm}{
+                    font-size: 28px;
+                }
+                @media #{$lg}{
+                    font-size: 28px;
+                }
+                @media #{$md}{
+                    font-size: 43px;
+                }
+            }
+            p{
+                @media #{$xs}{
+                    font-size: 15px;
+                }
+                @media #{$md}{
+                    font-size: 13px;
+                }
+                color: #9fabbe;
+            }
+        }
+    }
+    // -Right Contents
+    .starups-img{
+        // BG
+        background-image: url(/img/gallery/startup_bg.jpg);
+        
          @media #{$xs}{
             width: 100%;
             height: 500px;
@@ -151,3 +219,4 @@
 
     }
 }
+    
