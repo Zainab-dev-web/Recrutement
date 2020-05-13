@@ -28,7 +28,7 @@
       color: #2a2a2a;
       a{
         &:hover{
-          color: $theme-color2;
+          color: $theme-color3;
         }
       }
     }
@@ -45,7 +45,7 @@
 .contact-title{
   font-size: 27px;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .form-contact{
@@ -144,7 +144,7 @@
     border-radius: 50px;
     margin-top: 0;
     &:hover{
-      background-color: $theme-color2;
+      background-color: $theme-color3;
       
     }
   }
