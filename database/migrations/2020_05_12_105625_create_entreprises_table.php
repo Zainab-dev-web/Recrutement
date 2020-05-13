@@ -32,6 +32,7 @@ class CreateEntreprisesTable extends Migration
             ->references('id')
             ->onDelete('cascade')
             ->onUpdate('cascade');
+            $table->string('password');
             $table->timestamps();
         });
     }

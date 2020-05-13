@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\User;
+use App\Talent;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -50,8 +50,15 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'nom' => ['required', 'string', 'max:255'],
+            'prénom' => ['required', 'string', 'max:255'],
+            'photo' => ['required'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'numéro' => ['required', 'number'],
+            'adresse' => ['required', 'string'],
+            'statut_id' => ['required'],
+            'véhicule' => ['required'],
+            'dispo' => ['required'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -64,9 +71,19 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
+        return Talent::create([
+            'nom' => $data['nom'],
+            'prénom' => $data['prénom'],
+            'photo' => $data['photo'],
             'email' => $data['email'],
+            'numéro' => $data['numéro'],
+            'adresse' => $data['adresse'],
+            'statut_id' => $data['statut_id'],
+            'véhicule' => $data['véhicule'],
+            'dispo' => $data['dispo'],
+            'cv' => $data['cv'],
+            'valid' => 0,
+            'role_id' => 4,
             'password' => Hash::make($data['password']),
         ]);
     }

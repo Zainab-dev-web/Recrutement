@@ -14835,14 +14835,152 @@ del {
   }
 }
 
-.all-starups-area .starups-img {
-  width: 50%;
-  background-image: url(/img/gallery/startup_bg.jpg);
-  background-size: 100%;
+.all-starups-area .starups2 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-image: url(/img/gallery/footer_bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: left top;
   height: 700px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .all-starups-area .starups2 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 575px) {
+  .all-starups-area .starups2 {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .all-starups-area .starups2 {
+    width: 100%;
+  }
+}
+
+.all-starups-area .starups2 .starups-details2 {
+  padding-right: 117px;
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1600px) {
+  .all-starups-area .starups2 .starups-details2 {
+    padding-right: 0px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .all-starups-area .starups2 .starups-details2 {
+    padding-right: 30px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .all-starups-area .starups2 .starups-details2 {
+    padding-right: 0px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .all-starups-area .starups2 .starups-details2 {
+    padding-right: 0px;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 575px) {
+  .all-starups-area .starups2 .starups-details2 {
+    padding-right: 0px;
+    margin-top: 40px;
+  }
+}
+
+.all-starups-area .starups2 .starups-details2 span {
+  margin-bottom: 22px;
+  display: block;
+  color: #ffffff;
+}
+
+.all-starups-area .starups2 .starups-details2 h3 {
+  font-size: 35px;
+  display: block;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 53px;
+}
+
+@media (max-width: 575px) {
+  .all-starups-area .starups2 .starups-details2 h3 {
+    font-size: 21px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .all-starups-area .starups2 .starups-details2 h3 {
+    font-size: 28px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .all-starups-area .starups2 .starups-details2 h3 {
+    font-size: 28px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .all-starups-area .starups2 .starups-details2 h3 {
+    font-size: 43px;
+  }
+}
+
+.all-starups-area .starups2 .starups-details2 p {
+  padding-left: 20px;
+  color: #ffffff;
+}
+
+@media (max-width: 575px) {
+  .all-starups-area .starups2 .starups-details2 p {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .all-starups-area .starups2 .starups-details2 p {
+    font-size: 13px;
+  }
+}
+
+.all-starups-area .starups2 .starups-details2 .services-cap2 {
+  padding: 20px 0px;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .all-starups-area .starups2 .starups-details2 .services-cap2 {
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .all-starups-area .starups2 .starups-details2 .services-cap2 {
+    padding: 0;
+  }
+}
+
+.all-starups-area .starups2 .starups-details2 .services-cap2 h5 {
+  font-weight: 600;
+  font-size: 18px;
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+.all-starups-area .starups-img {
+  width: 10vw;
+  height: 15vh;
+  margin-bottom: 10px;
 }
 
 @media (max-width: 575px) {
@@ -14861,6 +14999,70 @@ del {
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .all-starups-area .starups-img {
+    width: 100%;
+    height: 400px;
+  }
+}
+
+.all-starups-area .starups-img2 {
+  background-image: url(/img/gallery/david2.png);
+  background-size: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 20vw;
+  height: 20vh;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 575px) {
+  .all-starups-area .starups-img2 {
+    width: 100%;
+    height: 500px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .all-starups-area .starups-img2 {
+    width: 100%;
+    height: 500px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .all-starups-area .starups-img2 {
+    width: 100%;
+    height: 400px;
+  }
+}
+
+.all-starups-area .starups-img3 {
+  background-image: url(/img/gallery/david.png);
+  background-size: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  width: 10vw;
+  height: 15vh;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 575px) {
+  .all-starups-area .starups-img3 {
+    width: 100%;
+    height: 500px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .all-starups-area .starups-img3 {
+    width: 100%;
+    height: 500px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .all-starups-area .starups-img3 {
     width: 100%;
     height: 400px;
   }
@@ -17860,32 +18062,7 @@ hr {
 
 .our-services .single-services {
   border: 1px solid #dafcef;
-  padding: 79px 52px;
   transition: 0.4s;
-}
-
-@media (max-width: 575px) {
-  .our-services .single-services {
-    padding: 47px 19px;
-  }
-}
-
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-  .our-services .single-services {
-    padding: 47px 19px;
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .our-services .single-services {
-    padding: 56px 32px;
-  }
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .our-services .single-services {
-    padding: 46px 23px;
-  }
 }
 
 .our-services .single-services:hover {

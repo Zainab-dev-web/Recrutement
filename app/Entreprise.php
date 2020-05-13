@@ -14,4 +14,6 @@ class Entreprise extends Model
     public function evaluation() {
         return $this->hasMany('App\Evaluation');
         }
+
+        protected $fillable = ['nom', 'date', 'numero', 'tva','adresse','domaine','logo','pNom','pEmail','pTel','email','valid', 'role_id', 'password'];
 }

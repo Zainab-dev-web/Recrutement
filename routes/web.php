@@ -30,3 +30,8 @@ Route::get('/choix', function () {
     return view('register_form.choix');
 })->name('choix');
 
+// register
+
+Route::post('registerEntreprise', 'Auth\RegisterEntrepriseController@register');
+Route::get('/registerEntreprise', 'Auth\RegisterEntrepriseController@showRegistrationForm')->name('registerEntreprise');
+
