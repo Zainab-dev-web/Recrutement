@@ -13105,7 +13105,7 @@ a.text-dark:focus {
 }
 
 .footer-area .footer-tittle ul li a:hover {
-  color: #ff8b00;
+  color: #04dbec;
   padding-left: 5px;
 }
 
@@ -13127,7 +13127,7 @@ a.text-dark:focus {
 }
 
 .footer-area .footer-social a:hover {
-  background: #ff8b00;
+  background: #04dbec;
   border: 1px solid transparent;
   color: #fff;
 }
@@ -14495,7 +14495,7 @@ del {
 }
 
 .contact-info .media-body h3 a:hover {
-  color: #1f2b7b;
+  color: #ff8b00;
 }
 
 .contact-info .media-body p {
@@ -14509,7 +14509,7 @@ del {
 .contact-title {
   font-size: 27px;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .form-contact label {
@@ -14631,7 +14631,7 @@ del {
 }
 
 .contact-section .btn_2:hover {
-  background-color: #1f2b7b;
+  background-color: #ff8b00;
 }
 
 .all-starups-area {
