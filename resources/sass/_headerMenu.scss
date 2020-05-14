@@ -41,7 +41,7 @@
                     display: inline-block;
                     margin-right: 56px;
                     font-family: $font_1;
-                    font-size: 14px;
+                    font-size: 34px;
                     &:last-child{
                         margin-right: 0px;
                     }
@@ -60,7 +60,7 @@
                         font-size: 14px;
                         padding-left: 25px;
                         &:hover{
-                            color: $theme-color;
+                            color: $theme-color3;
                         }
                     }
                 }
@@ -85,6 +85,7 @@
 
                 & a{
                     color: #fff;
+                    text-decoration: none;
                     font-weight: 500;
                     padding: 39px 19px;
                     @media #{$lg}{
@@ -98,7 +99,7 @@
                 }
                 &:hover{
                     & > a{
-                        color:$theme-color;
+                        color:$theme-color3;
                     }
                 }
             }
@@ -112,7 +113,7 @@
                 opacity: 0;
                 box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.05);
                 padding: 17px 0;
-                border-top: 5px solid $theme-color;
+                border-top: 5px solid $theme-color3;
                 @include transition(.3s);
                 & > li{
                     margin-left: 7px;
@@ -123,7 +124,7 @@
                         color: #0b1c39;
                         text-transform: capitalize;
                         &:hover{
-                            color:$theme-color;
+                            color:$theme-color3;
                             background: none;
                         }
                     }
@@ -173,7 +174,7 @@
 }
 
 .slicknav_menu .slicknav_icon-bar {
-	background-color: $theme-color !important;
+	background-color: $theme-color3 !important;
 }
 .slicknav_nav {
 	margin-top: 0px;
@@ -186,7 +187,7 @@
     }
     .slicknav_menu .slicknav_nav a:hover {
         background: transparent;
-        color: $theme-color;
+        color: $theme-color3;
     }
     .slicknav_menu {
         background: transparent;

@@ -16,6 +16,8 @@ class CreateEntreprisesTable extends Migration
         Schema::create('entreprises', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
             $table->string('date');
             $table->string('numero');
             $table->string('tva');
@@ -23,15 +25,14 @@ class CreateEntreprisesTable extends Migration
             $table->string('domaine');
             $table->string('logo');
             $table->string('pNom');
-            $table->string('pEmail');
             $table->string('pTel');
-            $table->string('email');
             $table->string('valid');
             $table->bigInteger('role_id')->unsigned();
             $table->foreign('role_id')->on('roles')
             ->references('id')
             ->onDelete('cascade')
             ->onUpdate('cascade');
+            $table->string('password');
             $table->timestamps();
         });
     }

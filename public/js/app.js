@@ -49971,7 +49971,7 @@ jQuery(document).ready(function ($) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/**
+/* WEBPACK VAR INJECTION */(function(global) {/**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
@@ -50014,9 +50014,9 @@ __webpack_require__(/*! ./jquery.ajaxchimp.min */ "./resources/js/jquery.ajaxchi
 
 __webpack_require__(/*! ./plugins */ "./resources/js/plugins.js");
 
-__webpack_require__(/*! ./main */ "./resources/js/main.js"); // global.$=global.jQuery=require('./jquery-1.12.4.min');
+__webpack_require__(/*! ./main */ "./resources/js/main.js");
 
-
+global.$ = global.jQuery = __webpack_require__(/*! ./vendor/jquery-1.12.4.min */ "./resources/js/vendor/jquery-1.12.4.min.js");
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
  * The following block of code may be used to automatically register your
@@ -50038,6 +50038,7 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app'
 });
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 
@@ -50068,7 +50069,8 @@ try {
  */
 
 
-window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js"); // global.$=global.jQuery=require('./vendor/jquery-1.12.4.min');
+
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'; // global.$=global.jQuery=require('./jquery-1.12.4.min');
 
 /**
@@ -63444,6 +63446,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 __webpack_require__(/*! /home/zainab/Bureau/Backup/Coding-School/Laravel/Recrutement/resources/js/app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! /home/zainab/Bureau/Backup/Coding-School/Laravel/Recrutement/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/shannon/Bureau/coding-school/Recrutement/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/shannon/Bureau/coding-school/Recrutement/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -18,19 +18,6 @@
     
     .single-services{
         border: 1px solid rgb(218, 252, 239);
-        padding: 79px 52px;
-        @media #{$xs}{
-			padding: 47px 19px;
-        }
-        @media #{$sm}{
-			padding: 47px 19px;
-        }
-        @media #{$md}{
-			padding: 56px 32px;
-        }
-        @media #{$lg}{
-			padding: 46px 23px;
-        }
         
         @include transition(.4s);
         &:hover {
@@ -60,10 +47,10 @@
             }
         }
         &:hover{
-            border: 1px solid $theme-color;
+            border: 1px solid $theme-color3;
             .services-ion{
                 span{
-                    color: $theme-color;
+                    color: $theme-color3;
                 }
             }
         }
@@ -111,7 +98,4 @@
         margin-bottom: 6px;
         display: block;
     }
-}
-.blue{
-    background-color: #04dbed !important;
 }

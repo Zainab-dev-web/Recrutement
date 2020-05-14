@@ -175,6 +175,8 @@ return [
 
     'register_url' => 'register',
 
+    'entreprise_url' => 'registerEntreprise',
+
     'password_reset_url' => 'password/reset',
 
     'password_email_url' => 'password/email',

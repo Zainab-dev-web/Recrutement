@@ -17,11 +17,31 @@ Route::get('/', function () {
     return view('PageAccueil.pageAccueil');
 });
 
+Route::get('/offres', function () {
+    return view('PageOffres.pageOffres');
+});
+
+Route::get('/contact', function () {
+    return view('PageContact.pageContact');
+});
+
+Route::get('/entreprises', function () {
+    return view('PageEntreprises.pageEntreprises');
+});
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-// Route::get('choix , ChoixController@index');
-Route::get('/choix', function () {
-    return view('register_form.choix');
-})->name('choix');
+
+
+// register
+
+Route::post('registerEntreprise', 'Auth\RegisterEntrepriseController@register');
+Route::get('/registerEntreprise', 'Auth\RegisterEntrepriseController@showRegistrationForm')->name('registerEntreprise');
+// choix formulaire inscription
+Route::get('/registerform', 'ChoixController@indexform')->name('registerform');
+Route::resource('choix', 'ChoixController');
+Route::get('/formtalent', 'ChoixController@choixtalent')->name('formtalent');
+Route::get('/formentreprise', 'ChoixController@choixentreprise')->name('formentreprise');
 
