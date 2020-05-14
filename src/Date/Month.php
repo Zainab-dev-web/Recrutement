@@ -32,7 +32,7 @@ public function getStartingDay() : \DateTime{
     public function getWeeks() : int{
         $start = $this->getStartingDay();
         $end = (clone $start)->modify(modify: '+1 month -1 day');
-        $weeks = intval($end->format(format: 'W')) -intval($start->format(format:''W));
+        $weeks = intval($end->format(format: 'W')) - intval($start->format(format:'W')) +1;
         if($week < 0){
             $weeks =intval($end->format(format: 'W'));
         }

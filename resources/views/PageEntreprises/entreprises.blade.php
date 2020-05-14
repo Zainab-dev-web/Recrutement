@@ -5,6 +5,7 @@
             <div class="col-xl-12">
                 <div class="hero-cap text-center pt-50">
                     <h2>Entreprises</h2>
+                    
                 </div>
             </div>
         </div>
