@@ -14,7 +14,8 @@ class OffreController extends Controller
      */
     public function index()
     {
-        //
+        $offres = Offre::all()->paginate(3);
+        return view('PageOffres.pageOffres', compact('offres'));
     }
 
     /**
@@ -35,7 +36,15 @@ class OffreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $offre = new Offre();
+        $offre->entreprise_id = Auth::id();
+        $offre->statut_id = $request->input('statut_id');
+        $offre->poste = $request->input('poste');
+        $offre->lieu = $request->input('lieu');
+        $offre->description = $request->input('description');
+        $offre->save();
+        return  redirect()->route('#');
+     
     }
 
     /**
@@ -67,9 +76,16 @@ class OffreController extends Controller
      * @param  \App\Offre  $offre
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Offre $offre)
+    public function update(Request $request, $id)
     {
-        //
+        $offre = Offre::find($id);
+        $offre->entreprise_id = $offre->entreprise_id;
+        $offre->statut_id = $request->input('statut_id');
+        $offre->poste = $request->input('poste');
+        $offre->lieu = $request->input('lieu');
+        $offre->description = $request->input('description');
+        $offre->save();
+        return  redirect()->route('#');
     }
 
     /**
@@ -78,8 +94,11 @@ class OffreController extends Controller
      * @param  \App\Offre  $offre
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Offre $offre)
+    public function destroy($id)
     {
-        //
+        $offre = Offre::find($id);
+       
+	    $offre->delete();
+	    return redirect()->route('/');
     }
 }

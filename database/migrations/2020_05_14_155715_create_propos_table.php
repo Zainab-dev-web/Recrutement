@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOffresTable extends Migration
+class CreateProposTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,21 +13,23 @@ class CreateOffresTable extends Migration
      */
     public function up()
     {
-        Schema::create('offres', function (Blueprint $table) {
+        Schema::create('propos', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('entreprise_id')->unsigned();
             $table->foreign('entreprise_id')->on('entreprises')
             ->references('id')
             ->onDelete('cascade')
             ->onUpdate('cascade');
-            $table->bigInteger('statut_id')->unsigned();
-            $table->foreign('statut_id')->on('statuts')
+            $table->bigInteger('talent_id')->unsigned();
+            $table->foreign('talent_id')->on('talents')
             ->references('id')
             ->onDelete('cascade')
             ->onUpdate('cascade');
-            $table->string('poste');
-            $table->string('lieu');
-            $table->text('description');
+            $table->bigInteger('offre_id')->unsigned();
+            $table->foreign('offre_id')->on('offres')
+            ->references('id')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
             $table->timestamps();
         });
     }
@@ -39,6 +41,6 @@ class CreateOffresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('offres');
+        Schema::dropIfExists('propos');
     }
 }

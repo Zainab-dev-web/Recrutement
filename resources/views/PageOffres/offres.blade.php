@@ -18,57 +18,29 @@
         <div class="row">
             <div class="col-lg-8 mb-5 mb-lg-0">
                 <div class="blog_left_sidebar">
+                 @foreach ($offres as $offre)  
                     <article class="blog_item">
                         <div class="blog_item_img">
                             <img class="card-img rounded-0" src="assets/img/blog/single_blog_1.png" alt="">
                         </div>
 
+                        
+                            
+                        
                         <div class="blog_details">
                             <a class="d-inline-block" href="single-blog.html">
-                                <h2>Google inks pact for new 35-storey office</h2>
+                                <h2>{{$offre->poste}}</h2>
                             </a>
-                            <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                he earth it first without heaven in place seed it second morning saying.</p>
+                        <p>{{$offre->description}}</p>
                             <ul class="blog-info-link">
                                 <li><a href="#"><i class="fa fa-user"></i> catégories</a></li>
                                 <li><a href="#"><i class="fa fa-comments"></i> 03 Candidats</a></li>
                             </ul>
                         </div>
+                        
                     </article>
-                    <article class="blog_item">
-                        <div class="blog_item_img">
-                            <img class="card-img rounded-0" src="assets/img/blog/single_blog_1.png" alt="">
-                        </div>
-
-                        <div class="blog_details">
-                            <a class="d-inline-block" href="single-blog.html">
-                                <h2>Google inks pact for new 35-storey office</h2>
-                            </a>
-                            <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                he earth it first without heaven in place seed it second morning saying.</p>
-                            <ul class="blog-info-link">
-                                <li><a href="#"><i class="fa fa-user"></i> catégories</a></li>
-                                <li><a href="#"><i class="fa fa-comments"></i> 03 Candidats</a></li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="blog_item">
-                        <div class="blog_item_img">
-                            <img class="card-img rounded-0" src="assets/img/blog/single_blog_1.png" alt="">
-                        </div>
-
-                        <div class="blog_details">
-                            <a class="d-inline-block" href="single-blog.html">
-                                <h2>Google inks pact for new 35-storey office</h2>
-                            </a>
-                            <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                he earth it first without heaven in place seed it second morning saying.</p>
-                            <ul class="blog-info-link">
-                                <li><a href="#"><i class="fa fa-user"></i> catégories</a></li>
-                                <li><a href="#"><i class="fa fa-comments"></i> 03 Candidats</a></li>
-                            </ul>
-                        </div>
-                    </article>
+                    @endforeach
+                
 
                     <nav class="blog-pagination justify-content-center d-flex">
                         <ul class="pagination">
