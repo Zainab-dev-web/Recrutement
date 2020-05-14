@@ -14,7 +14,7 @@ class OffreController extends Controller
      */
     public function index()
     {
-        $offres = Offre::all()->paginate(3);
+        $offres = Offre::orderby('id', 'asc')->paginate(3);
         return view('PageOffres.pageOffres', compact('offres'));
     }
 

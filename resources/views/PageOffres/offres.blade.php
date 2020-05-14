@@ -24,17 +24,15 @@
                             <img class="card-img rounded-0" src="assets/img/blog/single_blog_1.png" alt="">
                         </div>
 
-                        
-                            
-                        
                         <div class="blog_details">
                             <a class="d-inline-block" href="single-blog.html">
-                                <h2>{{$offre->poste}}</h2>
+                            <h2>{{$offre->poste}} chez {{$offre->entreprise->nom}}</h2>
                             </a>
-                        <p>{{$offre->description}}</p>
+                        <p><i class="fas fa-map-marker-alt"></i> {{$offre->lieu}}</p>
+                        <p>{{\Illuminate\Support\Str::limit($offre->description, 200, $end=' ...')}} <br><a href="">Read more</a></p>
                             <ul class="blog-info-link">
-                                <li><a href="#"><i class="fa fa-user"></i> catégories</a></li>
-                                <li><a href="#"><i class="fa fa-comments"></i> 03 Candidats</a></li>
+                                <li><a href="#"><i class="fa fa-user"></i>{{$offre->entreprise->domaine}}</a></li>
+                                <li><a href="#"><i class="fas fa-phone"></i>{{$offre->entreprise->numero}}</a></li>
                             </ul>
                         </div>
                         
@@ -44,22 +42,7 @@
 
                     <nav class="blog-pagination justify-content-center d-flex">
                         <ul class="pagination">
-                            <li class="page-item">
-                                <a href="#" class="page-link" aria-label="Previous">
-                                    <i class="ti-angle-left"></i>
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a href="#" class="page-link">1</a>
-                            </li>
-                            <li class="page-item active">
-                                <a href="#" class="page-link">2</a>
-                            </li>
-                            <li class="page-item">
-                                <a href="#" class="page-link" aria-label="Next">
-                                    <i class="ti-angle-right"></i>
-                                </a>
-                            </li>
+                            {{$offres->links()}}
                         </ul>
                     </nav>
                 </div>

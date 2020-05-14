@@ -14,4 +14,8 @@ class Offre extends Model
     public function entreprise(){
         return $this->belongsTo('App\Entreprise');
     }
+
+    public function statut(){
+        return $this->belongsTo('App\Statut');
+    }
 }
