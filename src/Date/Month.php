@@ -23,5 +23,12 @@ class Month{
     }
     public function getWeeks() : int{
         
+        $start =new \DateTime(time:"{$this->year}-{$this->month}-01");
+        $end = (clone $start)->modify(modify: '+1 month -1 day');
+        $weeks = intval($end->format(format: 'W')) -intval($start->format(format:''W));
+        if($week < 0){
+            $weeks =intval($end->format(format: 'W'));
+        }
+        return $weeks;
     }
 }
