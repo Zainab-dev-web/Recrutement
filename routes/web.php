@@ -27,7 +27,9 @@ Route::get('/entreprises', function () {
     return view('PageEntreprises.pageEntreprises');
 });
 
-
+Route::get('/agenda' , function(){
+    return view ('agenda.index');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
