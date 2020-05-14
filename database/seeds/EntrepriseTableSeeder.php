@@ -23,7 +23,7 @@ class EntrepriseTableSeeder extends Seeder
             'logo' => 'LOGO',
             'pNom' => 'Jean',
             'pTel' => '4567890',
-            'valid' => 0,
+            'valid' => 1,
             'role_id' => 5,
             'password' => Hash::make('popo1234'),
         ]);
