@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="/css/calendar.css">
 </head>
 <body>
-    <nav class='navbar navabr-dark bg-primary mb-3'>
-    <a href="/index.php" class="navbar-brand">Mon calendrier</a>
+    <nav class='navbar navbar-dark bg-primary mb-3'>
+    <a href="/index" class="navbar-brand">Mon calendrier</a>
     </nav>
 
     <?php 
