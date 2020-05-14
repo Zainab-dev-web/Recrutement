@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="hero-cap text-center pt-50">
-                    <h2>Offres</h2>
+                    <h2>Entreprises</h2>
                 </div>
             </div>
         </div>
@@ -25,10 +25,8 @@
 
                         <div class="blog_details">
                             <a class="d-inline-block" href="single-blog.html">
-                                <h2>Google inks pact for new 35-storey office</h2>
+                                <h2>MolenGeek</h2>
                             </a>
-                            <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                he earth it first without heaven in place seed it second morning saying.</p>
                             <ul class="blog-info-link">
                                 <li><a href="#"><i class="fa fa-user"></i> catégories</a></li>
                                 <li><a href="#"><i class="fa fa-comments"></i> 03 Candidats</a></li>
@@ -42,10 +40,8 @@
 
                         <div class="blog_details">
                             <a class="d-inline-block" href="single-blog.html">
-                                <h2>Google inks pact for new 35-storey office</h2>
+                                <h2>Girls Who Code</h2>
                             </a>
-                            <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                he earth it first without heaven in place seed it second morning saying.</p>
                             <ul class="blog-info-link">
                                 <li><a href="#"><i class="fa fa-user"></i> catégories</a></li>
                                 <li><a href="#"><i class="fa fa-comments"></i> 03 Candidats</a></li>
@@ -59,10 +55,8 @@
 
                         <div class="blog_details">
                             <a class="d-inline-block" href="single-blog.html">
-                                <h2>Google inks pact for new 35-storey office</h2>
+                                <h2>Google</h2>
                             </a>
-                            <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                he earth it first without heaven in place seed it second morning saying.</p>
                             <ul class="blog-info-link">
                                 <li><a href="#"><i class="fa fa-user"></i> catégories</a></li>
                                 <li><a href="#"><i class="fa fa-comments"></i> 03 Candidats</a></li>
@@ -98,9 +92,9 @@
                         <form action="#">
                             <div class="form-group">
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder='Search Keyword'
+                                    <input type="text" class="form-control" placeholder='Search Entreprise'
                                         onfocus="this.placeholder = ''"
-                                        onblur="this.placeholder = 'Search Keyword'">
+                                        onblur="this.placeholder = 'Search Entreprise'">
                                     <div class="input-group-append">
                                         <button class="btns" type="button"><i class="ti-search"></i></button>
                                     </div>
