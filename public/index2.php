@@ -17,7 +17,10 @@
     $month = new App\Date\Month(month: $_GET['month'] ?? null,year: $_GET['year'] ?? null);
     ?>
     <h1><?= $month->toString();?></h1>
+    <?= $month ->getWeeks(); ?>
     <table>
+        <?php for ($i=0;$i< $month->getWeeks(); $i++): ?>
+        <?php endfor; ?>
     </table>
 </body>
 </html>
