@@ -30,7 +30,7 @@
                         <div class="services-cap">
                         
                             <h5>Un futur "Talent"</h5>
-                            
+                        
                         </div>
                     </div>
                 </a>

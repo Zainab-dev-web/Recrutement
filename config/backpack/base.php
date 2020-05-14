@@ -151,7 +151,7 @@ return [
     // append or prepent something to the string below, so that it's different.
     // 'cachebusting_string' => \PackageVersions\Versions::getVersion('backpack/crud'),
 
-    /*
+    /* jai eu peur lol ok
     |--------------------------------------------------------------------------
     | Registration Open
     |--------------------------------------------------------------------------
