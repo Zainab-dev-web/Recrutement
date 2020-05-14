@@ -61,9 +61,8 @@ class RegisterController extends Controller
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
                 'numéro' => ['required'],
                 'adresse' => ['required', 'string'],
-                'statut_id' => ['required'],
-                'véhicule' => ['required'],
                 'dispo' => ['required'],
+                'domaine' => ['required'],
                 'password' => ['required', 'string', 'min:8', 'confirmed'],
             ]);
 
@@ -82,7 +81,7 @@ class RegisterController extends Controller
                 'pTel' => ['required'],
                 'password' => ['required', 'string', 'min:8', 'confirmed'],
             ]);
-            return redirect()->route('/');
+            
         }
     }
 
@@ -98,17 +97,21 @@ class RegisterController extends Controller
 
         if ($choix->valid == 1) { //talent
 
+            $storagephoto=Storage::disk('public')->put('', $data['photo']);
+            $storagecv=Storage::disk('public')->put('', $data['cv']);
+
             return Talent::create([
             'nom' => $data['nom'],
             'prénom' => $data['prénom'],
-            'photo' => $data['photo'],
+            'photo' => $storagephoto,
             'email' => $data['email'],
             'numéro' => $data['numéro'],
             'adresse' => $data['adresse'],
             'statut_id' => $data['statut_id'],
             'véhicule' => $data['véhicule'],
             'dispo' => $data['dispo'],
-            'cv' => $data['cv'],
+            'domaine' => $data['domaine'],
+            'cv' => $storagecv,
             'valid' => 0,
             'role_id' => 4,
             'password' => Hash::make($data['password']),

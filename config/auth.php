@@ -70,7 +70,7 @@ return [
             'driver' => 'eloquent',
             'model' => App\Entreprise::class,
         ],
-        [
+        'users' => [
             'driver' => 'eloquent',
             'model' => App\Talent::class,
         ],

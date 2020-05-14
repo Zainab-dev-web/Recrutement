@@ -1,8 +1,9 @@
 <header>
     <!-- Header Start -->
+ 
    <div class="header-area header_area header-transparent">
         <div class="main-header">
-           <div class="header-bottom  header-sticky">
+           <div class="header-bottom header-sticky">
                 <div class="container-fluid">
                     <div class="row align-items-center">
                         <!-- Logo -->
@@ -20,7 +21,7 @@
                                         <li><a href="/offres">Offres</a></li>
                                         <li><a href="/talents">Talents</a></li>
                                         <li><a href="/entreprises">Entreprises</a></li>
-                                        
+
                                         @if (Auth::check())
                                         
                                    

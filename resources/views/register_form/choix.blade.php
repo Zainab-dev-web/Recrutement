@@ -17,13 +17,13 @@
 <!-- Hero Area End -->
 
 <!-- Our Services Start -->
-<div class="our-services  py-50 my-150 wantToWork-area2 wantToWork-area">
+<div class="our-services py-50 my-150 wantToWork-area2 wantToWork-area">
     <div class="container border border-rounded mx-auto m-5 p-5 bg-white">
     <div class="text-center">
         <h3 class="pb-50"><strong>Vous êtes ...</strong></h3>
     </div>
     <div class="row">
-        <div class=" col-lg-6 col-md-6 col-sm-6">
+        <div class="col-lg-6 col-md-6 col-sm-6">
             <form action="{{route('formtalent')}}" method="get">
                 @csrf
                 <button class="border-0 bg-white my-2" type="submit">
@@ -35,6 +35,7 @@
                     <h5>Un talent</h5>
                 </div>
             </div>
+        </button>
         </form>
         </div>
         <div class=" col-lg-6 col-md-6 col-sm-6">
@@ -49,6 +50,7 @@
                     <h5>Une entreprise</h5>
                 </div>
             </div>
+            </button>
         </form>
         </div>
         

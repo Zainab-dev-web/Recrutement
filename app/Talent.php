@@ -18,7 +18,7 @@ class Talent extends Authenticatable
         return $this->hasMany('App\Evaluation');
     }
 
-    protected $fillable = ['nom', 'prénom', 'photo', 'email','adresse','numero','statut_id','véhicule','dispo','domaine','cv','valid', 'role_id', 'password'];
+    protected $fillable = ['nom', 'prénom', 'photo', 'email','adresse','numéro','statut_id','véhicule','dispo','domaine','cv','valid', 'role_id', 'password'];
 
     /**
     * The attributes that should be hidden for arrays.

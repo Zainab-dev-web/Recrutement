@@ -9,7 +9,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row">
                             <label for="nom" class="col-md-4 col-form-label text-md-right">{{ __('Nom') }}</label>
@@ -46,6 +46,135 @@
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="photo" class="col-md-4 col-form-label text-md-right">Photo de profil</label>
+
+                            <div class="col-md-6">
+                                <input id="photo" type="file" class="form-control @error('photo') is-invalid @enderror" name="photo" value="{{ old('photo') }}" required autocomplete="photo">
+
+                                @error('photo')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="numéro" class="col-md-4 col-form-label text-md-right">{{ __("Numéro de téléphone") }}</label>
+      
+                            <div class="col-md-6">
+                                <input id="numéro" type="number" class="form-control @error('numéro') is-invalid @enderror" name="numéro" value="{{ old('numéro') }}" required autocomplete="numéro">
+      
+                                @error('numéro')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="adresse" class="col-md-4 col-form-label text-md-right">Adresse</label>
+
+                            <div class="col-md-6">
+                                <input id="adresse" type="text" class="form-control @error('adresse') is-invalid @enderror" name="adresse" value="{{ old('adresse') }}" required autocomplete="adresse">
+
+                                @error('adresse')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="domaine" class="col-md-4 col-form-label text-md-right">Domaine</label>
+
+                            <div class="col-md-6">
+                                <input id="domaine" type="text" class="form-control @error('domaine') is-invalid @enderror" name="domaine" value="{{ old('domaine') }}" required autocomplete="domaine">
+
+                                @error('domaine')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="statut_id" class="col-md-4 col-form-label text-md-right">Statut</label>
+                            @php
+                               
+                                $statut = App\Statut::all();
+                            @endphp
+                            <div class="col-md-6">
+                                <select name="statut_id" id="statut_id" class="form-control @error('statut_id') is-invalid @enderror" value={{ old('statut_id')}} required autocomplete="statut_id">
+                                    @foreach ($statut as $item)
+                                        <option value="{{$item->id}}">{{$item->statut}}</option>   
+                                    @endforeach   
+                                </select>
+                                @error('statut_id')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="véhicule" class="col-md-4 col-form-label text-md-right">Véhiculé</label>
+
+                            <div class="col-md-6">
+                                <div class="form-check-inline">
+                                    <input class="véhicule" type="radio" name="véhicule" id="véhicule" value="Oui" checked>
+                                    <label class="form-check-label" for="véhicule">
+                                      Oui
+                                    </label>
+                                  </div>
+                                  <div class="form-check-inline">
+                                    <input class="véhicule" type="radio" name="véhicule" id="véhicule" value="Non">
+                                    <label class="form-check-label" for="véhicule">
+                                      Non
+                                    </label>
+                                  </div>
+
+                                @error('véhicule')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="dispo" class="col-md-4 col-form-label text-md-right">Disponible à partir de</label>
+
+                            <div class="col-md-6">
+                                <input id="adresse" type="date" class="form-control @error('dispo') is-invalid @enderror" name="dispo" value="{{ old('dispo') }}" required autocomplete="dispo">
+
+                                @error('dispo')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="cv" class="col-md-4 col-form-label text-md-right">CV</label>
+
+                            <div class="col-md-6">
+                                <input id="cv" type="file" class="form-control @error('cv') is-invalid @enderror" name="cv" value="{{ old('cv') }}" required autocomplete="cv">
+
+                                @error('cv')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

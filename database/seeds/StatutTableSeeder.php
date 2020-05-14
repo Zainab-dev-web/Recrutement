@@ -18,7 +18,7 @@ class StatutTableSeeder extends Seeder
         ]);
         DB::table('statuts')->insert([
             
-            'statut' => "Stage",
+            'statut' => "Demande de stage",
             
         ]);
     }
