@@ -18151,3 +18151,9 @@ hr {
   display: block;
 }
 
+.ou {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
