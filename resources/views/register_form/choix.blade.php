@@ -35,9 +35,10 @@
                     <h5>Un talent</h5>
                 </div>
             </div>
-        </form>
+                </button>
+            </form>
         </div>
-        <div class=" col-lg-6 col-md-6 col-sm-6">
+        <div class="col-lg-6 col-md-6 col-sm-6">
             <form action="{{route('formentreprise')}}" method="get">
                 @csrf
                 <button class="border-0 bg-white my-2" type="submit">
@@ -49,6 +50,7 @@
                     <h5>Une entreprise</h5>
                 </div>
             </div>
+                </button>
         </form>
         </div>
         

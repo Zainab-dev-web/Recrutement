@@ -20,6 +20,7 @@
                                         <li><a href="/offres">Offres</a></li>
                                         <li><a href="/talents">Talents</a></li>
                                         <li><a href="/entreprises">Entreprises</a></li>
+                                        
                                         @if (Auth::check())
                                         
                                    
