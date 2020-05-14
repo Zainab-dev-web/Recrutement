@@ -17,9 +17,9 @@
                                 <nav> 
                                     <ul id="navigation">        
                                         <li><a href="/">Home</a></li>
-                                        <li><a href="">Offres</a></li>
+                                        <li><a href="/offres">Offres</a></li>
                                         <li><a href="">Talents</a></li>
-                                        <li><a href="">Entreprises</a></li>
+                                        <li><a href="/entreprises">Entreprises</a></li>
                                         <li><a href="">Login</a>
                                             <ul class="submenu">
                                             <li><a href="{{route('choix')}}">Inscription</a></li>

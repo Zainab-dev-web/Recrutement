@@ -15,42 +15,37 @@
     </div>
 </div>
 <!-- Hero Area End -->
-<div class="wantToWork-area2 wantToWork-area">
-        <div class="container border border-rounded my-5 py-5 bg-white">
-            <div class="text-center">
-                <h3 class=""><strong>Vous êtes ...</strong></h3>
-            </div>
-            <div class="row">
-                <div class=" col-lg-4 col-md-6 col-sm-6  border border-rounded mx-auto my-5">
-                    <a href="#">
-                    <div class="single-services text-center mb-30">
-                        <div class="services-ion">
-                            <span class="text-dark flaticon-experience fa-5x"></span>
-                        </div>
-                        <div class="services-cap">
-                        
-                            <h5>Un futur "Talent"</h5>
-                        
-                        </div>
+<!-- Our Services Start -->
+<div class="our-services py-50 my-150 wantToWork-area2 wantToWork-area">
+        <div class="container border border-rounded mx-auto m-5 p-5 bg-white">
+        <div class="text-center">
+            <h3 class="pb-50"><strong>Vous êtes ...</strong></h3>
+        </div>
+        <div class="row">
+            <div class=" col-lg-6 col-md-6 col-sm-6">
+                <div class="single-services text-center mb-30">
+                    <div class="services-ion">
+                        <span class="flaticon-experience"></span>
                     </div>
-                </a>
-                </div>
-                <div class=" col-lg-4 col-md-6 col-sm-6 border border-rounded mx-auto my-5">
-                    <a href="#">
-                    <div class="single-services text-center mb-30">
-                        <div class="services-ion">
-                            <span class="text-dark flaticon-pay fa-5x"></span>
-                        </div>
-                        <div class="services-cap">
-                            
-                            <h5>Une entreprise</h5>
-                        </div>
+                    <div class="services-cap">
+                        <h5>Un talent</h5>
                     </div>
-                </a>
                 </div>
             </div>
+            <div class=" col-lg-6 col-md-6 col-sm-6">
+                <div class="single-services text-center mb-30">
+                    <div class="services-ion">
+                        <span class="flaticon-pay"></span>
+                    </div>
+                    <div class="services-cap">
+                        <h5>Une entreprise</h5>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </div>
 </div>
+
 @include('components/footer')
 @endsection
