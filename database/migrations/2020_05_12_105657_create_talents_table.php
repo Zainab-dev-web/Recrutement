@@ -18,7 +18,8 @@ class CreateTalentsTable extends Migration
             $table->string('nom');
             $table->string('prénom');
             $table->string('photo');
-            $table->string('email');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
             $table->string('numero');
             $table->string('adresse');
             $table->bigInteger('statut_id')->unsigned();

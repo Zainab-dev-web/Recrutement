@@ -17,14 +17,42 @@
                                 <nav> 
                                     <ul id="navigation">        
                                         <li><a href="/">Home</a></li>
-                                        <li><a href="/offres">Offres</a></li>
-                                        <li><a href="/talents">Talents</a></li>
-                                        <li><a href="/entreprises">Entreprises</a></li>
-                                        <li><a href="">Login</a>
-                                            <ul class="submenu">
-                                            <li><a href="{{route('choix')}}">Inscription</a></li>
-                                                <li><a href="single-blog.html">Profile</a></li>
-                                            </ul>
+                                        <li><a href="">Offres</a></li>
+                                        <li><a href="">Talents</a></li>
+                                        <li><a href="">Entreprises</a></li>
+                                        @if (Auth::check())
+                                        
+                                   
+                                    <li><a href="single-blog.html">Profile</a>
+                                        <ul class="submenu">
+                                           
+                                        <li class="nav-item dropdown">
+                                            <a id="navbarDropdown" class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
+                                                {{ Auth::user()->nom }}
+                                            </a>
+            
+                                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                                   onclick="event.preventDefault();
+                                                                 document.getElementById('logout-form').submit();">
+                                                    {{ __('Logout') }}
+                                                </a>
+            
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                    @csrf
+                                                </form>
+                                            
+                                        </li>
+                                  
+                                        </ul>
+                                    </li>
+                                    
+                                        @else
+                                        <li class="nav-item"><a href="{{route('choix.index')}}">Inscription</a></li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                        </li>   
+                                        @endif
+                                        
                                         </li>
                                     </ul>
                                 </nav>
