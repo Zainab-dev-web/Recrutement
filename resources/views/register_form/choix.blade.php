@@ -23,34 +23,34 @@
         <h3 class="pb-50"><strong>Vous êtes ...</strong></h3>
     </div>
     <div class="row">
-        <div class=" col-lg-6 col-md-6 col-sm-6">
+        <div class="col-lg-6 col-md-6 col-sm-6">
             <form action="{{route('formtalent')}}" method="get">
                 @csrf
-                <button class="border-0 bg-white my-2" type="submit">
-            <div class="single-services text-center mb-30">
+                <div class="single-services text-center mb-30">
+                    <button class="border-0 bg-white" type="submit">
                 <div class="services-ion">
                     <span class="flaticon-experience"></span>
                 </div>
                 <div class="services-cap">
                     <h5>Un talent</h5>
                 </div>
+            </button>
             </div>
-                </button>
             </form>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6">
             <form action="{{route('formentreprise')}}" method="get">
                 @csrf
-                <button class="border-0 bg-white my-2" type="submit">
-            <div class="single-services text-center mb-30">
+                <div class="single-services text-center mb-30">
+                    <button class="border-0 bg-white my-2" type="submit">
                 <div class="services-ion">
                     <span class="flaticon-pay"></span>
                 </div>
                 <div class="services-cap">
                     <h5>Une entreprise</h5>
                 </div>
-            </div>
                 </button>
+            </div>
         </form>
         </div>
         
