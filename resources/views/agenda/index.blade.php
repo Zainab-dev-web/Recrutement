@@ -46,7 +46,7 @@
             
         </div>
     </div>
-    {{$month ->getWeeks()}}
+    {{-- {{$month ->getWeeks()}} --}}
     
 
     <table class="w-75 mx-auto calendar__table calendar__table--{{$month->getWeeks()}}weeks ">
