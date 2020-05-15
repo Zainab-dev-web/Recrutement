@@ -30,12 +30,18 @@
     
     <div class=" text-center">
         
-        <div class=" d-flex text-center justify-content-center mx-sm-3">
-            <a href="{{route('index')}}?month={{$month->previousMonth()->month}}&year={{$month->previousMonth()->year}}"
-            class='btnagenda mx-2'><i class="fas fa-arrow-left"></i></a>
-        <h2 class="">{{$month->toString()}}</h2>
-            <a href="{{route('index')}}?month={{$month->nextMonth()->month}}&year={{$month->nextMonth()->year}}"
-            class='btnagenda mx-2'><i class="fas fa-arrow-right"></i></a>
+        <div class=" row d-flex text-center justify-content-center mx-sm-3">
+            <div class="col-1">
+                <a href="{{route('index')}}?month={{$month->previousMonth()->month}}&year={{$month->previousMonth()->year}}"
+                class='btnagenda'><i class="fas fa-arrow-left"></i></a>
+            </div>
+            <div class="col-2">
+                <h2 class="">{{$month->toString()}}</h2>
+            </div>
+            <div class="col-1">
+                <a href="{{route('index')}}?month={{$month->nextMonth()->month}}&year={{$month->nextMonth()->year}}"
+                class='btnagenda '><i class="fas fa-arrow-right"></i></a>
+            </div>
            
             
         </div>
