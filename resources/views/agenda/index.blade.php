@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="/css/calendar.css">
 </head>
 <body>
-    <nav class='navbar navbar-dark bg-primary mb-3'>
-    <a href="/index" class="navbar-brand">Mon calendrier</a>
-    </nav>
+    <div class="text-center">
+        <h2>Calendrier</h2>
+    </div>
 
     @php 
-    // require 'src/Date/Month.php'; 
+    
     use App\Helpers\Calendar\Month;
     // use App\Helpers\Calendar\Events;
     // $events=new Event();
@@ -24,6 +24,7 @@
     $end = (clone $start)->modify('+' . (6 + 7 * ($weeks-1)) . 'days');
     // $events = $events->getEventsBetweenByDay($start , $end);
     @endphp
+
     <div class="d-flex flex-row align-items-center justify-content-center-between mx-sm-3">
         <h1>{{$month->toString()}}</h1>
         <div>
@@ -33,22 +34,38 @@
         </div>
     </div>
     <?= $month ->getWeeks(); ?>
-    <table class='calendar__table calendar__table-- <?=$month->getWeeks()?> weeks;'>
-        <?php for ($i=0;$i< $month->getWeeks(); $i++): ?>
-            <tr>
-                <?php 
-                    foreach($month->days as $k=> $day):
-                   $date = (clone $start)->modify('+' . ( $k + $i *7) .'days') 
-                ?>
-                <td class='<?= $month->withinMonth($date) ? '' : 'calendar__othermonth';?>'>
-                    <?php if($i === 0):?>
-                   <div class="calendar__weekday"><?= $day; ?></div>
-                   <?php endif: ?>
-                   <div class="calendar__day"><?= $date->format('d'); ?></div>
-                </td>
-                <?php endforeach;?>
-            </tr>
-            <?php endfor; ?>
+    
+
+    <table class="calendar__table calendar__table--{{$month->getWeeks()}}weeks ">
+        @for ($i = 0; $i < $weeks ; $i++) 
+        <tr>
+            @foreach ($month->days as $k => $day)
+            @php
+            $date = (clone $start)->modify("+" . ($k + $i * 7) . "days");
+            // $eventsForDay = $events[$date->format('Y-m-d')] ?? [];
+
+            @endphp
+            <td class="@if(!$month->withinMonth($date))calendar__othermonth @endif">
+                @if ($i===0)
+                    <div class="calendar__weekday">{{$day}}</div>
+                @endif
+                    <div class="calendar__day">{{$date->format('d')}}</div>
+                        {{-- @foreach ($eventsForDay as $event)
+                        <div class="calendar__event">
+
+                            {{(new \DateTime($event->start))->format('H:i')}}-{{(new \DateTime($event->start))->format('H:i')}}
+                            | <a href="{{route('event.show',$event)}}">{{$event->classe->name}} |
+                                {{$event->nom}} </a>
+
+                    </div>
+
+                @endforeach --}}
+
+            </td>
+            @endforeach
+        </tr>
+        @endfor
+
     </table>
 </body>
 </html>

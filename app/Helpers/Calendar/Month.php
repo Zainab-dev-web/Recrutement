@@ -1,5 +1,5 @@
 <?php 
-namespace App\Date;
+namespace App\Helpers\Calendar;
 
 class Month{
 
@@ -33,13 +33,14 @@ public function getStartingDay() : \DateTime{
         $start = $this->getStartingDay();
         $end = (clone $start)->modify('+1 month -1 day');
         $weeks = intval($end->format('W')) - intval($start->format('W')) +1;
-        if($week < 0){
+        if($weeks < 0){
             $weeks =intval($end->format('W'));
         }
         return $weeks;
     }
     public function  withinMonth (\DateTime $date): bool {
-    return $this->getStartingDay->format('Y-m') === $date->format('Y-m');
+
+        return $this->getStartingDay()->format('Y-m') === $date->format('Y-m');
     }
     public function nextMonth(): Month{
         $month= $this->month +1;  
