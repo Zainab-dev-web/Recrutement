@@ -18,51 +18,27 @@
         <div class="row">
             <div class="col-lg-8 mb-5 mb-lg-0">
                 <div class="blog_left_sidebar">
-                    <article class="blog_item">
-                        <div class="blog_item_img">
-                            <img class="card-img rounded-0" src="assets/img/blog/single_blog_1.png" alt="">
-                        </div>
 
+                    @foreach ($talents as $talent)
+  
+                    <article class="blog_item">
                         <div class="blog_details">
-                            <a class="d-inline-block" href="single-blog.html">
-                                <h2>Shannon Stoller</h2>
+                            <div class="row">
+                            <div class="blog_item_img col-2">
+                            <img class="card-img rounded-0 w-75" src="{{asset('storage/' . $talent->photo)}}" alt="">
+                        </div>
+                            <a class="d-inline-block col-6" href="single-blog.html">
+                                <h2>{{$talent->nom}} {{$talent->prénom}}</h2>
+                                <p>{{$talent->statut->statut}} dans le domaine {{$talent->domaine}}</p>
                             </a>
+                        </div>
                             <ul class="blog-info-link">
-                                <li><a href="#"><i class="fa fa-user"></i> catégories</a></li>
-                                <li><a href="#"><i class="fa fa-comments"></i> telephone</a></li>
+                                <li><a href="#">Disponible à partir du </a>{{$talent->dispo}}</li>
+                                <li><a href="#"><i class="fas fa-phone"></i>{{$talent->numero}}</a></li>
                             </ul>
                         </div>
                     </article>
-                    <article class="blog_item">
-                        <div class="blog_item_img">
-                            <img class="card-img rounded-0" src="assets/img/blog/single_blog_1.png" alt="">
-                        </div>
-
-                        <div class="blog_details">
-                            <a class="d-inline-block" href="single-blog.html">
-                                <h2>Zainab Fahem</h2>
-                            </a>
-                            <ul class="blog-info-link">
-                                <li><a href="#"><i class="fa fa-user"></i> catégories</a></li>
-                                <li><a href="#"><i class="fa fa-comments"></i>telephone</a></li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="blog_item">
-                        <div class="blog_item_img">
-                            <img class="card-img rounded-0" src="assets/img/blog/single_blog_1.png" alt="">
-                        </div>
-
-                        <div class="blog_details">
-                            <a class="d-inline-block" href="single-blog.html">
-                                <h2>Salome Yonte Montero</h2>
-                            </a>
-                            <ul class="blog-info-link">
-                                <li><a href="#"><i class="fa fa-user"></i> catégories</a></li>
-                                <li><a href="#"><i class="fa fa-comments"></i> telephone</a></li>
-                            </ul>
-                        </div>
-                    </article>
+                    @endforeach
 
                     <nav class="blog-pagination justify-content-center d-flex">
                         <ul class="pagination">

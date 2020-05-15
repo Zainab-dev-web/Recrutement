@@ -18,28 +18,31 @@
         <div class="row">
             <div class="col-lg-8 mb-5 mb-lg-0">
                 <div class="blog_left_sidebar">
-                 @foreach ($offres as $offre)  
-                    <article class="blog_item">
+                 @foreach ($offres as $offre)
+                 @if ($offre->user->role_id == 5)
+                     <article class="blog_item">
                         <div class="blog_item_img">
                             <img class="card-img rounded-0" src="assets/img/blog/single_blog_1.png" alt="">
                         </div>
 
                         <div class="blog_details">
                             <a class="d-inline-block" href="single-blog.html">
-                            <h2>{{$offre->poste}} chez {{$offre->entreprise->nom}}</h2>
+                            <h2>{{$offre->poste}} chez {{$offre->user->nom}}</h2>
                             </a>
                         <p><i class="fas fa-map-marker-alt"></i> {{$offre->lieu}}</p>
                         <p>{{\Illuminate\Support\Str::limit($offre->description, 200, $end=' ...')}} <br><a href=""><u>Read more</u></a></p>
                             <ul class="blog-info-link">
-                                <li><a href="#"><i class="fa fa-user"></i>{{$offre->entreprise->domaine}}</a></li>
-                                <li><a href="#"><i class="fas fa-phone"></i>{{$offre->entreprise->numero}}</a></li>
+                                <li><a href="#"><i class="fa fa-user"></i>{{$offre->user->domaine}}</a></li>
+                                <li><a href="#"><i class="fas fa-phone"></i>{{$offre->user->numero}}</a></li>
                             </ul>
                         </div>
                         
                     </article>
+                 @else
+                     
+                 @endif              
                     @endforeach
-                
-
+  
                     <nav class="blog-pagination justify-content-center d-flex">
                         <ul class="pagination">
                             {{$offres->links()}}
