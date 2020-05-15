@@ -13,7 +13,7 @@ class OffreTableSeeder extends Seeder
     {
         DB::table('offres')->insert([
             
-            'entreprise_id' => 1,
+            'user_id' => 1,
             'statut_id' => 1,
             'poste' => 'Web developpeur',
             'lieu' => 'Mons',
