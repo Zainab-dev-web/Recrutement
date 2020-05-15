@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="hero-cap text-center pt-50">
-                    <h2>Offres</h2>
+                    <h2>Talents</h2>
                 </div>
             </div>
         </div>
@@ -18,7 +18,6 @@
         <div class="row">
             <div class="col-lg-8 mb-5 mb-lg-0">
                 <div class="blog_left_sidebar">
-                 @foreach ($offres as $offre)  
                     <article class="blog_item">
                         <div class="blog_item_img">
                             <img class="card-img rounded-0" src="assets/img/blog/single_blog_1.png" alt="">
@@ -26,23 +25,63 @@
 
                         <div class="blog_details">
                             <a class="d-inline-block" href="single-blog.html">
-                            <h2>{{$offre->poste}} chez {{$offre->entreprise->nom}}</h2>
+                                <h2>Shannon Stoller</h2>
                             </a>
-                        <p><i class="fas fa-map-marker-alt"></i> {{$offre->lieu}}</p>
-                        <p>{{\Illuminate\Support\Str::limit($offre->description, 200, $end=' ...')}} <br><a href=""><u>Read more</u></a></p>
                             <ul class="blog-info-link">
-                                <li><a href="#"><i class="fa fa-user"></i>{{$offre->entreprise->domaine}}</a></li>
-                                <li><a href="#"><i class="fas fa-phone"></i>{{$offre->entreprise->numero}}</a></li>
+                                <li><a href="#"><i class="fa fa-user"></i> catégories</a></li>
+                                <li><a href="#"><i class="fa fa-comments"></i> telephone</a></li>
                             </ul>
                         </div>
-                        
                     </article>
-                    @endforeach
-                
+                    <article class="blog_item">
+                        <div class="blog_item_img">
+                            <img class="card-img rounded-0" src="assets/img/blog/single_blog_1.png" alt="">
+                        </div>
+
+                        <div class="blog_details">
+                            <a class="d-inline-block" href="single-blog.html">
+                                <h2>Zainab Fahem</h2>
+                            </a>
+                            <ul class="blog-info-link">
+                                <li><a href="#"><i class="fa fa-user"></i> catégories</a></li>
+                                <li><a href="#"><i class="fa fa-comments"></i>telephone</a></li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="blog_item">
+                        <div class="blog_item_img">
+                            <img class="card-img rounded-0" src="assets/img/blog/single_blog_1.png" alt="">
+                        </div>
+
+                        <div class="blog_details">
+                            <a class="d-inline-block" href="single-blog.html">
+                                <h2>Salome Yonte Montero</h2>
+                            </a>
+                            <ul class="blog-info-link">
+                                <li><a href="#"><i class="fa fa-user"></i> catégories</a></li>
+                                <li><a href="#"><i class="fa fa-comments"></i> telephone</a></li>
+                            </ul>
+                        </div>
+                    </article>
 
                     <nav class="blog-pagination justify-content-center d-flex">
                         <ul class="pagination">
-                            {{$offres->links()}}
+                            <li class="page-item">
+                                <a href="#" class="page-link" aria-label="Previous">
+                                    <i class="ti-angle-left"></i>
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a href="#" class="page-link">1</a>
+                            </li>
+                            <li class="page-item active">
+                                <a href="#" class="page-link">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a href="#" class="page-link" aria-label="Next">
+                                    <i class="ti-angle-right"></i>
+                                </a>
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -53,9 +92,9 @@
                         <form action="#">
                             <div class="form-group">
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder='Search Keyword'
+                                    <input type="text" class="form-control" placeholder='Search Entreprise'
                                         onfocus="this.placeholder = ''"
-                                        onblur="this.placeholder = 'Search Keyword'">
+                                        onblur="this.placeholder = 'Search Entreprise'">
                                     <div class="input-group-append">
                                         <button class="btns" type="button"><i class="ti-search"></i></button>
                                     </div>
@@ -67,7 +106,7 @@
                     </aside>
 
                     <aside class="single_sidebar_widget post_category_widget">
-                        <h4 class="widget_title">Domaines</h4>
+                        <h4 class="widget_title">Category</h4>
                         <ul class="list cat-list">
                             <li>
                                 <a href="#" class="d-flex">
