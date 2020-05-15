@@ -18,7 +18,9 @@
 <body>
 
     <div class="main-container profil">
-
+        <div class='text-center my-3'>
+            <button href="{{route('index')}}" class='btn' >Calendrier</button>
+        </div>
         <!-- HEADER -->
         <header class="block">
             <ul class="header-menu horizontal-list">
