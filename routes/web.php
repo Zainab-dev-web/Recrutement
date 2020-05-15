@@ -38,7 +38,7 @@ Route::get('/profil', function () {
 
 Route::get('/agenda' , function(){
     return view ('agenda.index');
-});
+})->name('index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

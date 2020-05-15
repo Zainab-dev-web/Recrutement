@@ -28,8 +28,11 @@
     <div class="d-flex flex-row align-items-center justify-content-center-between mx-sm-3">
         <h1>{{$month->toString()}}</h1>
         <div>
-            <a href="/index.blade.php?month=<? =month->previousMonth()->month;?>&year=<?= $month->previousMonth()->year; ?>"class='btn btn-primary'>&lt;</a>
-            <a href="/index.blade.php?month=<? =month->nextMonth()->month;?>&year=<?= $month->nextMonth()->year; ?>"class='btn btn-primary'>&gt;</a>
+            <a href="{{route('index')}}{{$month->previousMonth()->month}}{{$month->previousMonth()->year}}"
+            class='btn btn-primary'>&lt;</a>
+            <a href="{{route('index')}}{{$month->nextMonth()->month}}{{$month->nextMonth()->year}}"
+            class='btn btn-primary'>&gt;</a>
+           
             
         </div>
     </div>
