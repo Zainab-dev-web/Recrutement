@@ -29,6 +29,16 @@ Route::get('/entreprises', function () {
     return view('PageEntreprises.pageEntreprises');
 });
 
+Route::get('/talents', function () {
+    return view('PageTalents.pageTalents');
+});
+
+Route::get('/profil', function () {
+    return view('PageProfil.pageProfil');
+});
+
+
+
 
 Auth::routes();
 
