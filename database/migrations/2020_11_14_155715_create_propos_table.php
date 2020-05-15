@@ -15,13 +15,8 @@ class CreateProposTable extends Migration
     {
         Schema::create('propos', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('entreprise_id')->unsigned();
-            $table->foreign('entreprise_id')->on('entreprises')
-            ->references('id')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
-            $table->bigInteger('talent_id')->unsigned();
-            $table->foreign('talent_id')->on('talents')
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->on('users')
             ->references('id')
             ->onDelete('cascade')
             ->onUpdate('cascade');

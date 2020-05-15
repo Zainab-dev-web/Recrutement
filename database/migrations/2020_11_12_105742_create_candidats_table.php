@@ -20,8 +20,8 @@ class CreateCandidatsTable extends Migration
             ->references('id')
             ->onDelete('cascade')
             ->onUpdate('cascade');
-            $table->bigInteger('talent_id')->unsigned();
-            $table->foreign('talent_id')->on('talents')
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->on('users')
             ->references('id')
             ->onDelete('cascade')
             ->onUpdate('cascade');

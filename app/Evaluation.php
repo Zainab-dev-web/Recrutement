@@ -10,11 +10,8 @@ class Evaluation extends Model
 
     //One to many
     
-    public function talent(){
-        return $this->belongsTo('App\Talent');
-    }
-    public function entreprise(){
-        return $this->belongsTo('App\Entreprise');
+    public function user(){
+        return $this->belongsTo('App\User');
     }
     public function presence(){
         return $this->belongsTo('App\Presence');

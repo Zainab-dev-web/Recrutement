@@ -47,10 +47,7 @@ return [
             'hash' => false,
         ],
 
-        'entreprise' => [
-            'driver' => 'session',
-            'provider' => 'entreprises'
-        ],
+      
     ],
 
     /*
@@ -73,12 +70,9 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Talent::class,
+            'model' => App\User::class,
         ],
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => App\Entreprise::class,
-        ]
+   
 
         // 'users' => [
         //     'driver' => 'database',

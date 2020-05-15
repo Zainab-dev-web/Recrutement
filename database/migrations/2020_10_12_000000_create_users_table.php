@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEntreprisesTable extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,29 @@ class CreateEntreprisesTable extends Migration
      */
     public function up()
     {
-        Schema::create('entreprises', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
+            $table->string('prénom')->nullable();
+            $table->string('photo')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('date');
             $table->string('numero');
-            $table->string('tva');
             $table->string('adresse');
+            $table->bigInteger('statut_id')->unsigned()->nullable();
+            $table->foreign('statut_id')->on('statuts')
+            ->references('id')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
+            $table->string('véhicule')->nullable();
+            $table->string('dispo')->nullable();
             $table->string('domaine');
-            $table->string('logo');
-            $table->string('pNom');
-            $table->string('pTel');
+            $table->string('cv')->nullable();
+            $table->string('date')->nullable();
+            $table->string('tva')->nullable();
+            $table->string('logo')->nullable();
+            $table->string('pNom')->nullable();
+            $table->string('pTel')->nullable();
             $table->string('valid');
             $table->bigInteger('role_id')->unsigned();
             $table->foreign('role_id')->on('roles')
@@ -45,6 +55,6 @@ class CreateEntreprisesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('entreprises');
+        Schema::dropIfExists('users');
     }
 }
