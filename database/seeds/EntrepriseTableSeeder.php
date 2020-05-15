@@ -19,7 +19,7 @@ class EntrepriseTableSeeder extends Seeder
             'numero' => '02453576764',
             'tva' => 'BE 0123.456.789',
             'adresse' => '99, rue des Dunes 35400 SAINT-MALO',
-            'domaine' => 'Développement',
+            'domaine' => 'Web Development',
             'logo' => 'LOGO',
             'pNom' => 'Jean',
             'pTel' => '4567890',
