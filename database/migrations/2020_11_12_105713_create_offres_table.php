@@ -15,8 +15,8 @@ class CreateOffresTable extends Migration
     {
         Schema::create('offres', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('entreprise_id')->unsigned();
-            $table->foreign('entreprise_id')->on('entreprises')
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->on('users')
             ->references('id')
             ->onDelete('cascade')
             ->onUpdate('cascade');

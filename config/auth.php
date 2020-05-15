@@ -46,6 +46,8 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+
+      
     ],
 
     /*
@@ -68,18 +70,16 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Entreprise::class,
+            'model' => App\User::class,
         ],
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => App\Talent::class,
-        ],
+   
 
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
     ],
+
 
     /*
     |--------------------------------------------------------------------------
@@ -102,6 +102,11 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
+        ],
+        'entreprises' => [
+            'provider' => 'entreprises',
+            'table' => 'password_resets',
+            'expire' => 60,
         ],
     ],
 

@@ -4,9 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\Talent;
 use App\Choix;
-use App\Entreprise;
+use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -56,29 +55,21 @@ class RegisterController extends Controller
         if ($choix->valid == 1) {
             return Validator::make($data, [
                 'nom' => ['required', 'string', 'max:255'],
-                'prénom' => ['required', 'string', 'max:255'],
-                'photo' => ['required'],
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-                'numéro' => ['required'],
+                'numero' => ['required'],
                 'adresse' => ['required', 'string'],
-                'dispo' => ['required'],
                 'domaine' => ['required'],
                 'password' => ['required', 'string', 'min:8', 'confirmed'],
             ]);
 
-            return redirect()->route('/');
+            
         } elseif ($choix->valid == 2) {
             return Validator::make($data, [
                 'nom' => ['required', 'string', 'max:255'],
-                'tva' => ['required'],
                 'domaine' => ['required'],
-                'date' => ['required'],
-                'logo' => ['required'],
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
                 'numero' => ['required'],
                 'adresse' => ['required', 'string'],
-                'pNom' => ['required'],
-                'pTel' => ['required'],
                 'password' => ['required', 'string', 'min:8', 'confirmed'],
             ]);
             
@@ -100,12 +91,17 @@ class RegisterController extends Controller
             $storagephoto=Storage::disk('public')->put('', $data['photo']);
             $storagecv=Storage::disk('public')->put('', $data['cv']);
 
-            return Talent::create([
+            return User::create([
             'nom' => $data['nom'],
             'prénom' => $data['prénom'],
+            'date' => null,
+            'tva' => null,
+            'logo' => null,
+            'pNom' => null,
+            'pTel' => null,
             'photo' => $storagephoto,
             'email' => $data['email'],
-            'numéro' => $data['numéro'],
+            'numero' => $data['numero'],
             'adresse' => $data['adresse'],
             'statut_id' => $data['statut_id'],
             'véhicule' => $data['véhicule'],
@@ -120,8 +116,11 @@ class RegisterController extends Controller
 
         $storage=Storage::disk('public')->put('', $data['logo']);
 
-        return Entreprise::create([
+        return User::create([
             'nom' => $data['nom'],
+            'prénom' => null,
+            'véhicule' => null,
+            'dispo' => null,
             'date' => $data['date'],
             'tva' => $data['tva'],
             'domaine' => $data['domaine'],
@@ -133,6 +132,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'valid' => 0,
             'role_id' => 5,
+            'statut_id' => null,
             'password' => Hash::make($data['password']),
         ]);
         }

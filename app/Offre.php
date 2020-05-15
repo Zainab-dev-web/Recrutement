@@ -11,8 +11,8 @@ class Offre extends Model
     public function candidat(){
         return $this->hasMany(Candidat::class , 'candidat_id');
     }
-    public function entreprise(){
-        return $this->belongsTo('App\Entreprise');
+    public function user(){
+        return $this->belongsTo('App\User');
     }
 
     public function statut(){

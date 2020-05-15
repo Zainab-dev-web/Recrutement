@@ -68,12 +68,12 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="numéro" class="col-md-4 col-form-label text-md-right">{{ __("Numéro de téléphone") }}</label>
+                            <label for="numero" class="col-md-4 col-form-label text-md-right">{{ __("Numéro de téléphone") }}</label>
       
                             <div class="col-md-6">
-                                <input id="numéro" type="number" class="form-control @error('numéro') is-invalid @enderror" name="numéro" value="{{ old('numéro') }}" required autocomplete="numéro">
+                                <input id="numero" type="number" class="form-control @error('numero') is-invalid @enderror" name="numero" value="{{ old('numero') }}" required autocomplete="numero">
       
-                                @error('numéro')
+                                @error('numero')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -263,13 +263,9 @@
                             <label for="date" class="col-md-4 col-form-label text-md-right">{{ __("Création de l'entreprise") }}</label>
 
                             <div class="col-md-6">
-                                <input id="date" type="number" min="1900" max="2099" step="1" placeholder="2020" class="form-control @error('date') is-invalid @enderror" name="date" value="{{ old('date') }}" required autocomplete="date">
+                                <input id="date" type="number" min="1900" max="2099" step="1" placeholder="2020" class="form-control" name="date" value="{{ old('date') }}" required autocomplete="date">
 
-                                @error('date')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                
                             </div>
                         </div>
 
@@ -277,13 +273,9 @@
                           <label for="tva" class="col-md-4 col-form-label text-md-right">{{ __("Numéro TVA") }}</label>
 
                           <div class="col-md-6">
-                              <input id="tva" type="number" class="form-control @error('tva') is-invalid @enderror" name="tva" value="{{ old('tva') }}" required autocomplete="tva">
+                              <input id="tva" type="text" class="form-control" name="tva" value="{{ old('tva') }}" required autocomplete="tva">
 
-                              @error('tva')
-                                  <span class="invalid-feedback" role="alert">
-                                      <strong>{{ $message }}</strong>
-                                  </span>
-                              @enderror
+                             
                           </div>
                       </div>
 
@@ -333,13 +325,9 @@
                   <label for="logo" class="col-md-4 col-form-label text-md-right">{{ __("Logo de l'entreprise") }}</label>
 
                   <div class="col-md-6">
-                      <input id="logo" type="file" class="form-control @error('logo') is-invalid @enderror" name="logo" value="{{ old('logo') }}" required autocomplete="logo">
+                      <input id="logo" type="file" class="form-control" name="logo" value="{{ old('logo') }}" required autocomplete="logo">
 
-                      @error('logo')
-                          <span class="invalid-feedback" role="alert">
-                              <strong>{{ $message }}</strong>
-                          </span>
-                      @enderror
+                      
                   </div>
               </div>
 
@@ -350,13 +338,9 @@
                     <label for="pNom" class="col-md-4 col-form-label text-md-right">Nom</label>
 
                     <div class="col-md-6">
-                        <input id="pNom" type="text" class="form-control @error('pNom') is-invalid @enderror" name="pNom" value="{{ old('pNom') }}" required autocomplete="pNom" autofocus>
+                        <input id="pNom" type="text" class="form-control" name="pNom" value="{{ old('pNom') }}" required autocomplete="pNom" autofocus>
 
-                        @error('pNom')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
+                       
                     </div>
                 </div>
 
@@ -364,13 +348,9 @@
                   <label for="pTel" class="col-md-4 col-form-label text-md-right">Téléphone</label>
 
                   <div class="col-md-6">
-                      <input id="pTel" type="text" class="form-control @error('pTel') is-invalid @enderror" name="pTel" value="{{ old('pTel') }}" required autocomplete="pTel" autofocus>
+                      <input id="pTel" type="text" class="form-control" name="pTel" value="{{ old('pTel') }}" required autocomplete="pTel" autofocus>
 
-                      @error('pTel')
-                          <span class="invalid-feedback" role="alert">
-                              <strong>{{ $message }}</strong>
-                          </span>
-                      @enderror
+                    
                   </div>
               </div>
 
