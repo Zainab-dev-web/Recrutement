@@ -19,52 +19,27 @@
         <div class="row">
             <div class="col-lg-8 mb-5 mb-lg-0">
                 <div class="blog_left_sidebar">
-                    <article class="blog_item">
-                        <div class="blog_item_img">
-                            <img class="card-img rounded-0" src="assets/img/blog/single_blog_1.png" alt="">
-                        </div>
+                    @foreach ($entreprises as $entreprise)
 
+                    <article class="blog_item">
                         <div class="blog_details">
-                            <a class="d-inline-block" href="single-blog.html">
-                                <h2>MolenGeek</h2>
+                            <div class="row">
+                            <div class="blog_item_img col-2">
+                            <img class="card-img w-75" src="{{asset('storage/' . $entreprise->logo)}}" alt="">
+                        </div>
+                            <a class="d-inline-block col-6" href="single-blog.html">
+                                <h2>{{$entreprise->nom}}</h2>
+                                <p>Domaine {{$entreprise->domaine}}</p>
                             </a>
+                        </div>
                             <ul class="blog-info-link">
-                                <li><a href="#"><i class="fa fa-user"></i> catégories</a></li>
-                                <li><a href="#"><i class="fa fa-comments"></i> 03 Candidats</a></li>
+                                <li><a href="#"></a>{{$entreprise->email}}</li>
+                                <li><a href="#"><i class="fas fa-phone"></i>{{$entreprise->numero}}</a></li>
                             </ul>
                         </div>
                     </article>
-                    <article class="blog_item">
-                        <div class="blog_item_img">
-                            <img class="card-img rounded-0" src="assets/img/blog/single_blog_1.png" alt="">
-                        </div>
-
-                        <div class="blog_details">
-                            <a class="d-inline-block" href="single-blog.html">
-                                <h2>Girls Who Code</h2>
-                            </a>
-                            <ul class="blog-info-link">
-                                <li><a href="#"><i class="fa fa-user"></i> catégories</a></li>
-                                <li><a href="#"><i class="fa fa-comments"></i> 03 Candidats</a></li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="blog_item">
-                        <div class="blog_item_img">
-                            <img class="card-img rounded-0" src="assets/img/blog/single_blog_1.png" alt="">
-                        </div>
-
-                        <div class="blog_details">
-                            <a class="d-inline-block" href="single-blog.html">
-                                <h2>Google</h2>
-                            </a>
-                            <ul class="blog-info-link">
-                                <li><a href="#"><i class="fa fa-user"></i> catégories</a></li>
-                                <li><a href="#"><i class="fa fa-comments"></i> 03 Candidats</a></li>
-                            </ul>
-                        </div>
-                    </article>
-
+                    @endforeach
+                  
                     <nav class="blog-pagination justify-content-center d-flex">
                         <ul class="pagination">
                             <li class="page-item">

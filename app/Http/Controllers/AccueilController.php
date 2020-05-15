@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
 use Illuminate\Http\Request;
 
-class EntrepriseController extends Controller
+class AccueilController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class EntrepriseController extends Controller
      */
     public function index()
     {
-        $entreprises = User::orderby('id', 'asc')->where('role_id', 5)->paginate(3);
-        return view('PageEntreprises.pageEntreprises', compact('entreprises'));
+        return view('PageAccueil.pageAccueil');
     }
 
     /**
@@ -42,10 +40,10 @@ class EntrepriseController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Entreprise  $entreprise
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Entreprise $entreprise)
+    public function show($id)
     {
         //
     }
@@ -53,10 +51,10 @@ class EntrepriseController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Entreprise  $entreprise
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Entreprise $entreprise)
+    public function edit($id)
     {
         //
     }
@@ -65,10 +63,10 @@ class EntrepriseController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Entreprise  $entreprise
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Entreprise $entreprise)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -76,10 +74,10 @@ class EntrepriseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Entreprise  $entreprise
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Entreprise $entreprise)
+    public function destroy($id)
     {
         //
     }

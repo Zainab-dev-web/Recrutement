@@ -17,10 +17,10 @@
                             <div class="main-menu f-right d-none d-lg-block">
                                 <nav> 
                                     <ul id="navigation">        
-                                        <li><a href="/">Home</a></li>
+                                        <li><a href="{{route('accueil.index')}}">Home</a></li>
                                         <li><a href="{{route('offres.index')}}">Offres</a></li>
-                                        <li><a href="/talents">Talents</a></li>
-                                        <li><a href="/entreprises">Entreprises</a></li>
+                                        <li><a href="{{route('talents.index')}}">Talents</a></li>
+                                        <li><a href="{{route('entreprises.index')}}">Entreprises</a></li>
 
                                         @if (Auth::check())
                                         
