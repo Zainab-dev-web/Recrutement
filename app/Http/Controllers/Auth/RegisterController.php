@@ -59,8 +59,6 @@ class RegisterController extends Controller
                 'numero' => ['required'],
                 'adresse' => ['required', 'string'],
                 'domaine' => ['required'],
-                'role_id' =>  ['required'],
-                'valid' =>  ['required'],
                 'password' => ['required', 'string', 'min:8', 'confirmed'],
             ]);
 
@@ -72,8 +70,6 @@ class RegisterController extends Controller
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
                 'numero' => ['required'],
                 'adresse' => ['required', 'string'],
-                'role_id' =>  ['required'],
-                'valid' =>  ['required'],
                 'password' => ['required', 'string', 'min:8', 'confirmed'],
             ]);
             
