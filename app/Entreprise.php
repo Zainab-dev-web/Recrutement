@@ -39,4 +39,5 @@ class Entreprise extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
 }

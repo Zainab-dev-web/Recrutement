@@ -29,7 +29,7 @@
                             <h2>{{$offre->poste}} chez {{$offre->entreprise->nom}}</h2>
                             </a>
                         <p><i class="fas fa-map-marker-alt"></i> {{$offre->lieu}}</p>
-                        <p>{{\Illuminate\Support\Str::limit($offre->description, 200, $end=' ...')}} <br><a href="">Read more</a></p>
+                        <p>{{\Illuminate\Support\Str::limit($offre->description, 200, $end=' ...')}} <br><a href=""><u>Read more</u></a></p>
                             <ul class="blog-info-link">
                                 <li><a href="#"><i class="fa fa-user"></i>{{$offre->entreprise->domaine}}</a></li>
                                 <li><a href="#"><i class="fas fa-phone"></i>{{$offre->entreprise->numero}}</a></li>

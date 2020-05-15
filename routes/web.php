@@ -33,10 +33,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-// register
-
-Route::post('registerEntreprise', 'Auth\RegisterEntrepriseController@register');
-Route::get('/registerEntreprise', 'Auth\RegisterEntrepriseController@showRegistrationForm')->name('registerEntreprise');
 // choix formulaire inscription
 Route::get('/registerform', 'ChoixController@indexform')->name('registerform');
 Route::resource('choix', 'ChoixController');
