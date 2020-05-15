@@ -17,9 +17,7 @@ Route::get('/', function () {
     return view('PageAccueil.pageAccueil');
 });
 
-Route::get('/offres', function () {
-    return view('PageOffres.pageOffres');
-});
+Route::resource('/offres', 'OffreController');
 
 Route::get('/contact', function () {
     return view('PageContact.pageContact');
@@ -38,8 +36,9 @@ Route::get('/profil', function () {
 });
 
 
-
-
+Route::get('/agenda' , function(){
+    return view ('agenda.index');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

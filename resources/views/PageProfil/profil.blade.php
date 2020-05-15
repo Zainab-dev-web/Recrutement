@@ -240,14 +240,7 @@
 
         <!-- RIGHT-CONTAINER -->
         <div class="right-container containerprofil">
-            <div class="join-newsletter block"> <!-- JOIN NEWSLETTER (RIGHT-CONTAINER) -->
-                <h2 class="titular">JOIN THE NEWSLETTER</h2>
-                <div class="input-container">
-                    <input type="text" placeholder="yourname@gmail.com" class="email text-input">
-                    <div class="input-icon envelope-icon-newsletter"><span class="fontawesome-envelope scnd-font-color"></span></div>
-                </div>
-                <a class="subscribe button" href="#21">SUBSCRIBE</a>
-            </div>
+        
             <div class="account block"> <!-- ACCOUNT (RIGHT-CONTAINER) -->
                 <h2 class="titular">SIGN IN TO YOUR ACCOUNT</h2>
                 <div class="input-container">
@@ -258,7 +251,7 @@
                     <input type="text" placeholder="Password" class="password text-input">
                     <div class="input-icon password-icon"><span class="fontawesome-lock scnd-font-color"></span></div>
                 </div>
-                <a class="sign-in button" href="#22">SIGN IN</a>
+                <a class="sign-in buttonpro" href="#22">SIGN IN</a>
                 <p class="scnd-font-color">Forgot Password?</p>
                 <a class="fb-sign-in" href="58">
                     <p><span class="fb-border"><span class="icon zocial-facebook"></span></span>Sign in with Facebook</p>
@@ -279,7 +272,7 @@
                     <a class="arrow-btn right" href="#201"><span class="icon fontawesome-angle-right"></span></a>
                 </div>
                     <p class="the-day">26</p>
-                    <a class="add-event button" href="#27">ADD EVENT</a>
+                    <a class="add-event buttonpro" href="#27">ADD EVENT</a>
             </div>
             <div class="calendar-month block"> <!-- CALENDAR MONTH (RIGHT-CONTAINER) -->
                 <div class="arrow-btn-container">

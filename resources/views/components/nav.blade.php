@@ -18,7 +18,7 @@
                                 <nav> 
                                     <ul id="navigation">        
                                         <li><a href="/">Home</a></li>
-                                        <li><a href="/offres">Offres</a></li>
+                                        <li><a href="{{route('offres.index')}}">Offres</a></li>
                                         <li><a href="/talents">Talents</a></li>
                                         <li><a href="/entreprises">Entreprises</a></li>
 

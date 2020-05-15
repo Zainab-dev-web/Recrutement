@@ -28,6 +28,7 @@ class CreateCandidatsTable extends Migration
             $table->string('accept'); //(souscription)
             $table->timestamps();
         });
+
         Schema::create('candidat_date', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('candidat_id')->unsigned();
