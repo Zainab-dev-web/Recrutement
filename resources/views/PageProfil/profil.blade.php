@@ -12,6 +12,9 @@
 </div>
 <!-- Hero Area End -->
 
+@can('post-entreprise')
+
+@endcan
 <body>
 
     <div class="main-container profil">

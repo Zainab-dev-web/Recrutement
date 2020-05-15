@@ -13,23 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('PageAccueil.pageAccueil');
-});
-
-Route::resource('/offres', 'OffreController');
+Route::resource('accueil', 'AccueilController');
+Route::resource('offres', 'OffreController');
+Route::resource('talents', 'TalentController');
+Route::resource('entreprises', 'EntrepriseController');
 
 Route::get('/contact', function () {
     return view('PageContact.pageContact');
 });
 
-Route::get('/entreprises', function () {
-    return view('PageEntreprises.pageEntreprises');
-});
 
-Route::get('/talents', function () {
-    return view('PageTalents.pageTalents');
-});
 
 Route::get('/profil', function () {
     return view('PageProfil.pageProfil');

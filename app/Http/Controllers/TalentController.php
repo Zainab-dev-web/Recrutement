@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Talent;
+use App\User;
 use Illuminate\Http\Request;
 
 class TalentController extends Controller
@@ -14,7 +14,8 @@ class TalentController extends Controller
      */
     public function index()
     {
-        //
+        $talents = User::orderby('id', 'asc')->where('role_id', 4)->paginate(3);
+        return view('PageTalents.pageTalents', compact('talents'));
     }
 
     /**

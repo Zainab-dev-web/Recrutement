@@ -13,6 +13,9 @@ class User extends Authenticatable
     public function role(){
         return $this->belongsTo('App\Role');
     }
+    public function statut(){
+        return $this->belongsTo('App\Statut');
+    }
     public function evaluation() {
         return $this->hasMany('App\Evaluation');
     }
