@@ -29,7 +29,7 @@
                                         <ul class="submenu">
                                            
                                         <li class="nav-item dropdown">
-                                            <a id="navbarDropdown" class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        <a id="navbarDropdown" class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
                                                 {{ Auth::user()->nom }}
                                             </a>
             
