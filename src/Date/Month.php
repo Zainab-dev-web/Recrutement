@@ -11,10 +11,10 @@ class Month{
 
     public function __construct(?int $month = null, ?int $year = null){
         if($month === null || $month< 1 || $month > 12){
-            $month = intval(date(format:'m'));
+            $month = intval(date('m'));
         }
         if($year === null){
-            $year = intval(date(format:'Y'));
+            $year = intval(date('Y'));
         }
         
         $this ->month = $month;
@@ -22,7 +22,7 @@ class Month{
     }
 
 public function getStartingDay() : \DateTime{
-    return new \DateTime(time:"{$this->year}-{$this->month}-01");
+    return new \DateTime("{$this->year}-{$this->month}-01");
 }
 
     public function toString(): string{
@@ -31,15 +31,15 @@ public function getStartingDay() : \DateTime{
     }
     public function getWeeks() : int{
         $start = $this->getStartingDay();
-        $end = (clone $start)->modify(modify: '+1 month -1 day');
-        $weeks = intval($end->format(format: 'W')) - intval($start->format(format:'W')) +1;
+        $end = (clone $start)->modify('+1 month -1 day');
+        $weeks = intval($end->format('W')) - intval($start->format('W')) +1;
         if($week < 0){
-            $weeks =intval($end->format(format: 'W'));
+            $weeks =intval($end->format('W'));
         }
         return $weeks;
     }
     public function  withinMonth (\DateTime $date): bool {
-    return $this->getStartingDay->format(format: 'Y-m') === $date->format(format: 'Y-m');
+    return $this->getStartingDay->format('Y-m') === $date->format('Y-m');
     }
     public function nextMonth(): Month{
         $month= $this->month +1;  

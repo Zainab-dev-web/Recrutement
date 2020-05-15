@@ -12,14 +12,20 @@
     <a href="/index" class="navbar-brand">Mon calendrier</a>
     </nav>
 
-    <?php 
-    require 'src/Date/Month.php'; // verifier le chemin normalement ya pas les points
-    
-    $month = new App\Date\Month(month: $_GET['month'] ?? null, year: $_GET['year'] ?? null);
-    $start = $month->getStaringDay()->modify(modify: 'last monday');
-    ?>
+    @php 
+    // require 'src/Date/Month.php'; 
+    use App\Helpers\Calendar\Month;
+    // use App\Helpers\Calendar\Events;
+    // $events=new Event();
+    $month = new Month( $_GET['month'] ?? null, $_GET['year'] ?? null);
+    $start = $month->getStartingDay();
+    $start=$start->format('N') === '1' ? $start : $month->getStartingDay()->modify('last monday');
+    $weeks = $month->getWeeks();
+    $end = (clone $start)->modify('+' . (6 + 7 * ($weeks-1)) . 'days');
+    // $events = $events->getEventsBetweenByDay($start , $end);
+    @endphp
     <div class="d-flex flex-row align-items-center justify-content-center-between mx-sm-3">
-        <h1><?= $month->toString();?></h1>
+        <h1>{{$month->toString()}}</h1>
         <div>
             <a href="/index.blade.php?month=<? =month->previousMonth()->month;?>&year=<?= $month->previousMonth()->year; ?>"class='btn btn-primary'>&lt;</a>
             <a href="/index.blade.php?month=<? =month->nextMonth()->month;?>&year=<?= $month->nextMonth()->year; ?>"class='btn btn-primary'>&gt;</a>
@@ -32,13 +38,13 @@
             <tr>
                 <?php 
                     foreach($month->days as $k=> $day):
-                   $date = (clone $start)->modify(modify:'+' . ( $k + $i *7) .'days') 
+                   $date = (clone $start)->modify('+' . ( $k + $i *7) .'days') 
                 ?>
                 <td class='<?= $month->withinMonth($date) ? '' : 'calendar__othermonth';?>'>
                     <?php if($i === 0):?>
                    <div class="calendar__weekday"><?= $day; ?></div>
                    <?php endif: ?>
-                   <div class="calendar__day"><?= ->format(format:'d'); ?></div>
+                   <div class="calendar__day"><?= $date->format('d'); ?></div>
                 </td>
                 <?php endforeach;?>
             </tr>
