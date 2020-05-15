@@ -54,7 +54,7 @@ public function getStartingDay() : \DateTime{
     public function previousMonth(): Month{
         $month= $this->month -1;  
         $year =$this->year;
-        if($month < 12){
+        if($month < 1){ 
             $month =1;
             $year -=1;
         }

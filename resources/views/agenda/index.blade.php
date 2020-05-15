@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/calendar.css">
+  
+<link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
 <body>
-    <div class="text-center">
-        <h2>Calendrier</h2>
+    <div class="text-center my-5">
+        <h1 class="my-2"><strong>Calendrier</strong></h1>
     </div>
+    <hr class='w-25 mx-auto'>
 
     @php 
     
@@ -25,18 +27,23 @@
     // $events = $events->getEventsBetweenByDay($start , $end);
     @endphp
 
-    <div class="d-flex flex-row align-items-center justify-content-center-between mx-sm-3">
-        <h1>{{$month->toString()}}</h1>
-        <div>
-            <a href="/index.blade.php?month=<? =month->previousMonth()->month;?>&year=<?= $month->previousMonth()->year; ?>"class='btn btn-primary'>&lt;</a>
-            <a href="/index.blade.php?month=<? =month->nextMonth()->month;?>&year=<?= $month->nextMonth()->year; ?>"class='btn btn-primary'>&gt;</a>
+    
+    <div class=" text-center">
+        
+        <div class=" d-flex text-center justify-content-center mx-sm-3">
+            <a href="{{route('index')}}?month={{$month->previousMonth()->month}}&year={{$month->previousMonth()->year}}"
+            class='btnagenda mx-2'><i class="fas fa-arrow-left"></i></a>
+        <h2 class="">{{$month->toString()}}</h2>
+            <a href="{{route('index')}}?month={{$month->nextMonth()->month}}&year={{$month->nextMonth()->year}}"
+            class='btnagenda mx-2'><i class="fas fa-arrow-right"></i></a>
+           
             
         </div>
     </div>
-    <?= $month ->getWeeks(); ?>
+    {{$month ->getWeeks()}}
     
 
-    <table class="calendar__table calendar__table--{{$month->getWeeks()}}weeks ">
+    <table class="w-75 mx-auto calendar__table calendar__table--{{$month->getWeeks()}}weeks ">
         @for ($i = 0; $i < $weeks ; $i++) 
         <tr>
             @foreach ($month->days as $k => $day)
