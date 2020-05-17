@@ -16,7 +16,9 @@ class CandidatController extends Controller
      */
     public function index()
     {
-        //
+        $offres = Offre::all();
+        $candidats = Candidat::where('accept', 0)->get();
+        return view ('PageProfil.candidature.candidat', compact('offres', 'candidats'));
     }
 
     /**
@@ -71,9 +73,9 @@ class CandidatController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $id = Offre::find($id);
+        $offre = Offre::find($id);
         $candidat = new Candidat();
-        $candidat->offre_id = $id;
+        $candidat->offre_id = $offre->id;
         $candidat->user_id = Auth::id();
         $candidat->accept = 0;
         $candidat->save();

@@ -26,7 +26,7 @@
                         </div>
 
                         <div class="blog_details">
-                            <a class="d-inline-block" href="single-blog.html">
+                            <a class="d-inline-block" href="{{route('offres.show', $offre->id)}}">
                             <h2>{{$offre->poste}} chez {{$offre->user->nom}}</h2>
                             </a>
                         <p><i class="fas fa-map-marker-alt"></i> {{$offre->lieu}}</p>
@@ -36,7 +36,6 @@
                                 <li><a href="#"><i class="fas fa-phone"></i>{{$offre->user->numero}}</a></li>
                             </ul>
                         </div>
-                        
                     </article>
                  @else
                      
@@ -70,45 +69,16 @@
                     </aside>
 
                     <aside class="single_sidebar_widget post_category_widget">
-                        <h4 class="widget_title">Domaines</h4>
+                        <h4 class="widget_title">Les entreprises</h4>
                         <ul class="list cat-list">
+                            @foreach ($entreprises as $entreprise)
                             <li>
                                 <a href="#" class="d-flex">
-                                    <p>Web Development</p>
-                                    <br>
-                                    <p> (37)</p>
+                                    <p>{{$entreprise->nom}}</p>
                                 </a>
                             </li>
-                            <li>
-                                <a href="#" class="d-flex">
-                                    <p>Graphic Design</p>
-                                    <p> (10)</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="d-flex">
-                                    <p>IA Technology</p>
-                                    <p> (03)</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="d-flex">
-                                    <p>Technical Reseau</p>
-                                    <p> (11)</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="d-flex">
-                                    <p>App Development</p>
-                                    <p> (21)</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="d-flex">
-                                    <p>Game Development</p>
-                                    <p> (09)</p>
-                                </a>
-                            </li>
+                            @endforeach
+                         
                         </ul>
                     </aside>
                 </div>
