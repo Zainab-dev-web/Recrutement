@@ -18,14 +18,13 @@
     
     use App\Helpers\Calendar\Month;
     use App\Helpers\Calendar\Events;
-    $events=new Events();
+    $events=new Events(); 
     $month = new Month( $_GET['month'] ?? null, $_GET['year'] ?? null);
     $start = $month->getStartingDay();
     $start=$start->format('N') === '1' ? $start : $month->getStartingDay()->modify('last monday');
     $weeks = $month->getWeeks();
     $end = (clone $start)->modify('+' . (6 + 7 * ($weeks-1)) . 'days');
-    $events = $events->getEventsBetweenByDay($start,$end);
-
+    // $events = $events->getEventsBetweenByDay($start , $end);
     @endphp
 
     
@@ -46,7 +45,6 @@
            
             
         </div>
-    <a class="btn btn-info my-2 " href="{{route('event.create')}}">Ajouter un évenement</a>
     </div>
     {{-- {{$month ->getWeeks()}} --}}
     
@@ -68,12 +66,12 @@
                         @foreach ($eventsForDay as $event)
                         <div class="calendar__event">
 
-                            {{(new \DateTime($event->start))->format('H:i')}}-{{(new \DateTime($event->end))->format('H:i')}}
-                            | <a href="{{route('event.show',$event)}}">okok</a>
+                            {{(new \DateTime($event->start))->format('H:i')}}-{{(new \DateTime($event->start))->format('H:i')}}
+                            | <a href="{{route('event.show',$event)}}">ook</a>
 
-                        </div>
+                    </div>
 
-                        @endforeach
+                @endforeach
 
             </td>
             @endforeach

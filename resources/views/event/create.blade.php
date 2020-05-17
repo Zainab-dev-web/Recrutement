@@ -20,10 +20,10 @@
 <div class="our-services py-50 my-150 wantToWork-area2 wantToWork-area">
     <div class="container border border-rounded mx-auto m-5 p-5 bg-white">
     <div class="text-center">
-        <h3 class="pb-50"><strong>Ajouter un évenement: </strong></h3>
+        <h3 class="pb-50"><strong>Ajouter un évenement</strong></h3>
     </div>
-    <div class="row d-flex text-center">
-        <div class="col-lg-8 col-md-6 col-sm-6">
+    <div class="row d-flex">
+        <div class="col-lg-5 col-md-6 col-sm-6">
             <form action="{{route('event.store')}}" method="post">
                 @csrf
                 @method('POST')
@@ -83,12 +83,18 @@
 
 
 
-<div class="text-center">
-    <button  class='btn btn-info'type="submit">Ajouter</button>
-</div>
 
 
-                    
+
+                    <button class="border-0 bg-white" type="submit">
+                <div class="services-ion">
+                    <span class="flaticon-experience"></span> 
+                </div>
+                <div class="services-cap">
+                    <br>
+                    <h5>Un talent</h5>
+                </div>
+            </button>
             </div>
             </form>
         </div>
