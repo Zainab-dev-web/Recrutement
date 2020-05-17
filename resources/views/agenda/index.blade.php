@@ -17,30 +17,36 @@
     @php 
     
     use App\Helpers\Calendar\Month;
-    // use App\Helpers\Calendar\Events;
-    // $events=new Event();
+    use App\Helpers\Calendar\Events;
+    $events=new Event(); 
     $month = new Month( $_GET['month'] ?? null, $_GET['year'] ?? null);
     $start = $month->getStartingDay();
     $start=$start->format('N') === '1' ? $start : $month->getStartingDay()->modify('last monday');
     $weeks = $month->getWeeks();
     $end = (clone $start)->modify('+' . (6 + 7 * ($weeks-1)) . 'days');
-    // $events = $events->getEventsBetweenByDay($start , $end);
+    $events = $events->getEventsBetweenByDay($start , $end);
     @endphp
 
     
     <div class=" text-center">
         
-        <div class=" d-flex text-center justify-content-center mx-sm-3">
-            <a href="{{route('index')}}?month={{$month->previousMonth()->month}}&year={{$month->previousMonth()->year}}"
-            class='btnagenda mx-2'><i class="fas fa-arrow-left"></i></a>
-        <h2 class="">{{$month->toString()}}</h2>
-            <a href="{{route('index')}}?month={{$month->nextMonth()->month}}&year={{$month->nextMonth()->year}}"
-            class='btnagenda mx-2'><i class="fas fa-arrow-right"></i></a>
+        <div class=" row d-flex text-center justify-content-center mx-sm-3">
+            <div class="col-1">
+                <a href="{{route('index')}}?month={{$month->previousMonth()->month}}&year={{$month->previousMonth()->year}}"
+                class='btnagenda'><i class="fas fa-arrow-left"></i></a>
+            </div>
+            <div class="col-2">
+                <h2 class="">{{$month->toString()}}</h2>
+            </div>
+            <div class="col-1">
+                <a href="{{route('index')}}?month={{$month->nextMonth()->month}}&year={{$month->nextMonth()->year}}"
+                class='btnagenda '><i class="fas fa-arrow-right"></i></a>
+            </div>
            
             
         </div>
     </div>
-    {{$month ->getWeeks()}}
+    {{-- {{$month ->getWeeks()}} --}}
     
 
     <table class="w-75 mx-auto calendar__table calendar__table--{{$month->getWeeks()}}weeks ">
@@ -49,7 +55,7 @@
             @foreach ($month->days as $k => $day)
             @php
             $date = (clone $start)->modify("+" . ($k + $i * 7) . "days");
-            // $eventsForDay = $events[$date->format('Y-m-d')] ?? [];
+            $eventsForDay = $events[$date->format('Y-m-d')] ?? [];
 
             @endphp
             <td class="@if(!$month->withinMonth($date))calendar__othermonth @endif">
@@ -57,7 +63,7 @@
                     <div class="calendar__weekday">{{$day}}</div>
                 @endif
                     <div class="calendar__day">{{$date->format('d')}}</div>
-                        {{-- @foreach ($eventsForDay as $event)
+                        @foreach ($eventsForDay as $event)
                         <div class="calendar__event">
 
                             {{(new \DateTime($event->start))->format('H:i')}}-{{(new \DateTime($event->start))->format('H:i')}}
@@ -66,7 +72,7 @@
 
                     </div>
 
-                @endforeach --}}
+                @endforeach
 
             </td>
             @endforeach
