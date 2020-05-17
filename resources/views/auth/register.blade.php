@@ -112,14 +112,13 @@
                         <div class="form-group row">
                             <label for="statut_id" class="col-md-4 col-form-label text-md-right">Statut</label>
                             @php
-                               
                                 $statut = App\Statut::all();
                             @endphp
                             <div class="col-md-6">
                                 <select name="statut_id" id="statut_id" class="form-control @error('statut_id') is-invalid @enderror" value={{ old('statut_id')}} required autocomplete="statut_id">
                                     @foreach ($statut as $item)
                                         <option value="{{$item->id}}">{{$item->statut}}</option>   
-                                    @endforeach   
+                                    @endforeach
                                 </select>
                                 @error('statut_id')
                                     <span class="invalid-feedback" role="alert">

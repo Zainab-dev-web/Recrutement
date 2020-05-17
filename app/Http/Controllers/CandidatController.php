@@ -16,7 +16,9 @@ class CandidatController extends Controller
      */
     public function index()
     {
-        //
+        $offres = Offre::all();
+        $candidats = Candidat::where('accept', 0)->get();
+        return view ('PageProfil.candidature.candidat', compact('offres', 'candidats'));
     }
 
     /**

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Offre;
 use App\Statut;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,8 @@ class OffreController extends Controller
     public function index()
     {
         $offres = Offre::orderby('id', 'asc')->paginate(3);
-        return view('PageOffres.pageOffres', compact('offres'));
+        $entreprises = User::where('role_id', 5)->get();
+        return view('PageOffres.pageOffres', compact('offres', 'entreprises'));
     }
 
     /**
@@ -103,6 +105,6 @@ class OffreController extends Controller
         $offre = Offre::find($id);
        
 	    $offre->delete();
-	    return redirect()->route('/');
+	    return redirect()->route('profil.index');
     }
 }

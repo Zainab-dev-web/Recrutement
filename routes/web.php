@@ -25,7 +25,6 @@ Route::resource('contact', 'ConctatController');
 Route::resource('profil', 'ProfilController');
 Route::resource('candidat', 'CandidatController');
 
-
 Route::get('/agenda' , function(){
     return view ('agenda.index');
 })->name('index');
