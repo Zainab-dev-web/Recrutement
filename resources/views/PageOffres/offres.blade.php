@@ -30,7 +30,7 @@
                             <h2>{{$offre->poste}} chez {{$offre->user->nom}}</h2>
                             </a>
                         <p><i class="fas fa-map-marker-alt"></i> {{$offre->lieu}}</p>
-                        <p>{{\Illuminate\Support\Str::limit($offre->description, 200, $end=' ...')}} <br><a href=""><u>Read more</u></a></p>
+                        <p>{{\Illuminate\Support\Str::limit($offre->description, 200, $end=' ...')}} <br><a href="{{route('offres.show', $offre->id)}}"><u>Read more</u></a></p>
                             <ul class="blog-info-link">
                                 <li><a href="#"><i class="fa fa-user"></i>{{$offre->user->domaine}}</a></li>
                                 <li><a href="#"><i class="fas fa-phone"></i>{{$offre->user->numero}}</a></li>

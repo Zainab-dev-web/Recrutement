@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Offre;
+use App\Statut;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class OffreController extends Controller
@@ -25,7 +27,8 @@ class OffreController extends Controller
      */
     public function create()
     {
-        //
+        $statuts = Statut::all();
+        return view ('PageProfil.formOffre.formOffre', compact('statuts'));
     }
 
     /**
@@ -37,13 +40,13 @@ class OffreController extends Controller
     public function store(Request $request)
     {
         $offre = new Offre();
-        $offre->entreprise_id = Auth::id();
+        $offre->user_id = Auth::user()->id;
         $offre->statut_id = $request->input('statut_id');
         $offre->poste = $request->input('poste');
         $offre->lieu = $request->input('lieu');
         $offre->description = $request->input('description');
         $offre->save();
-        return  redirect()->route('#');
+        return redirect()->route('profil.index');
      
     }
 
@@ -53,9 +56,10 @@ class OffreController extends Controller
      * @param  \App\Offre  $offre
      * @return \Illuminate\Http\Response
      */
-    public function show(Offre $offre)
+    public function show($id)
     {
-        //
+        $offre = Offre::find($id);
+        return view ('PageOffres.showOffres', compact('offre'));
     }
 
     /**

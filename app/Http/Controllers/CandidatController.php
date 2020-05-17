@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Candidat;
+use App\Offre;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class CandidatController extends Controller
@@ -67,9 +69,15 @@ class CandidatController extends Controller
      * @param  \App\Candidat  $candidat
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Candidat $candidat)
+    public function update(Request $request, $id)
     {
-        //
+        $id = Offre::find($id);
+        $candidat = new Candidat();
+        $candidat->offre_id = $id;
+        $candidat->user_id = Auth::id();
+        $candidat->accept = 0;
+        $candidat->save();
+        return redirect()->back();
     }
 
     /**

@@ -25,7 +25,7 @@ class CreateCandidatsTable extends Migration
             ->references('id')
             ->onDelete('cascade')
             ->onUpdate('cascade');
-            $table->string('accept'); //(souscription)
+            $table->integer('accept'); //(souscription)
             $table->timestamps();
         });
 
