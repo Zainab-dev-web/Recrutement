@@ -38,6 +38,13 @@ Route::get('/registerform', 'ChoixController@indexform')->name('registerform');
 Route::resource('choix', 'ChoixController');
 Route::get('/formtalent', 'ChoixController@choixtalent')->name('formtalent');
 Route::get('/formentreprise', 'ChoixController@choixentreprise')->name('formentreprise');
+
+
+//ressource
+Route::resource('accueil', 'AccueilController');
+Route::resource('offres', 'OffreController');
+Route::resource('talents', 'TalentController');
+Route::resource('entreprises', 'EntrepriseController');
 Route::resource('event', 'EventController');
 
 

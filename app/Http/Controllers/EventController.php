@@ -35,7 +35,22 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'=> 'required',
+            'description'=> 'required',
+            'start'=>'required',
+            'end'=> 'required'
+        ]);
+            
+        $event= new Event();
+            
+           
+            $event->name=$request->name;
+            $event->description=$request->description;
+            $event->start = $request->start;
+            $event->end = $request->end;
+            $event->save();
+            return redirect()->route('index');
     }
 
     /**
