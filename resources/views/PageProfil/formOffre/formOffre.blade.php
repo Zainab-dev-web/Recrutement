@@ -20,7 +20,7 @@
     </div>
       <div class="col-sm-6">
           <div class="form-group">
-              <select class="form-control valid" name="statut_id" id="" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Statut recherché'" placeholder="Statut recherché">
+              <select class="form-control valid" name="statut_id" id="" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Statut recherché'" placeholder="Statut recherché">
                 @foreach ($statuts as $statut)
                   <option value="{{$statut->id}}">{{$statut->statut}}</option>  
                 @endforeach
