@@ -24,7 +24,7 @@
     $start=$start->format('N') === '1' ? $start : $month->getStartingDay()->modify('last monday');
     $weeks = $month->getWeeks();
     $end = (clone $start)->modify('+' . (6 + 7 * ($weeks-1)) . 'days');
-    $events = $events->getEventsBetweenByDay($start , $end);
+    // $events = $events->getEventsBetweenByDay($start , $end);
     @endphp
 
     
