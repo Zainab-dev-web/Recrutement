@@ -20,6 +20,7 @@
     <div class="main-container profil">
         <div class='text-center my-3'>
             <button href="{{route('index')}}" class='btn' >Calendrier</button>
+            <a class="btn btn-info " href="{{route('event.create')}}">Ajouter un évenement</a>
         </div>
         <!-- HEADER -->
         <header class="block">
