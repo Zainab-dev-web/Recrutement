@@ -42,4 +42,6 @@ Route::get('/registerform', 'ChoixController@indexform')->name('registerform');
 Route::resource('choix', 'ChoixController');
 Route::get('/formtalent', 'ChoixController@choixtalent')->name('formtalent');
 Route::get('/formentreprise', 'ChoixController@choixentreprise')->name('formentreprise');
+Route::resource('event', 'EventController');
+
 
