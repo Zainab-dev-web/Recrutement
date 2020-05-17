@@ -13,7 +13,7 @@
 <!-- Hero Area End -->
 
 @can('post-entreprise')
-
+<a class="btn btn-success" href="{{route('offres.create')}}" type="submit">Créer une offre</a>
 @endcan
 <body>
 
@@ -53,7 +53,7 @@
                         <a class="menu-box-tab" href="#6"><span class="icon fontawesome-envelope scnd-font-color"></span>Messages<div class="menu-box-number">24</div></a>                            
                     </li>
                     <li>
-                        <a class="menu-box-tab" href="#8"><span class="icon entypo-paper-plane scnd-font-color"></span>Invites<div class="menu-box-number">3</div></a>                            
+                        <a class="menu-box-tab" href="#8"><span class="icon entypo-paper-plane scnd-font-color"></span>Vos offres<div class="menu-box-number">3</div></a>                            
                     </li>
                     <li>
                         <a class="menu-box-tab" href="#10"><span class="icon entypo-calendar scnd-font-color"></span>Events<div class="menu-box-number">5</div></a>                            

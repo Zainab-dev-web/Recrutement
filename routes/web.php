@@ -13,20 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function() {
+    return view('PageAccueil.pageAccueil');
+});
+
 Route::resource('accueil', 'AccueilController');
 Route::resource('offres', 'OffreController');
 Route::resource('talents', 'TalentController');
 Route::resource('entreprises', 'EntrepriseController');
-
-Route::get('/contact', function () {
-    return view('PageContact.pageContact');
-});
-
-
-
-Route::get('/profil', function () {
-    return view('PageProfil.pageProfil');
-});
+Route::resource('contact', 'ConctatController');
+Route::resource('profil', 'ProfilController');
+Route::resource('candidat', 'CandidatController');
 
 
 Route::get('/agenda' , function(){
@@ -34,7 +31,7 @@ Route::get('/agenda' , function(){
 })->name('index');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
 
 // choix formulaire inscription

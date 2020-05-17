@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Conctat;
 use Illuminate\Http\Request;
 
-class ConctatController extends Controller
+class ProfilController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,7 @@ class ConctatController extends Controller
      */
     public function index()
     {
-        return view('PageContact.pageContact');
+        return view('PageProfil.pageProfil');
     }
 
     /**
@@ -41,10 +40,10 @@ class ConctatController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Conctat  $conctat
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Conctat $conctat)
+    public function show($id)
     {
         //
     }
@@ -52,10 +51,10 @@ class ConctatController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Conctat  $conctat
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Conctat $conctat)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +63,10 @@ class ConctatController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Conctat  $conctat
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Conctat $conctat)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +74,10 @@ class ConctatController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Conctat  $conctat
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Conctat $conctat)
+    public function destroy($id)
     {
         //
     }
