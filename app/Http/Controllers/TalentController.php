@@ -42,18 +42,19 @@ class TalentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Talent  $talent
+     * @param  \App\User  $talent
      * @return \Illuminate\Http\Response
      */
-    public function show(Talent $talent)
+    public function show($id)
     {
-        //
+        $talent = User::find($id);
+        return view ('PageTalents.pageperso.pageperso', compact('talent'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Talent  $talent
+     * @param  \App\User  $talent
      * @return \Illuminate\Http\Response
      */
     public function edit(Talent $talent)
@@ -65,18 +66,18 @@ class TalentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Talent  $talent
+     * @param  \App\User  $talent
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Talent $talent)
+    public function update(Request $request, $id)
     {
-        //
+       //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Talent  $talent
+     * @param  \App\User  $talent
      * @return \Illuminate\Http\Response
      */
     public function destroy(Talent $talent)

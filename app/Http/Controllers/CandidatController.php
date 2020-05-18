@@ -18,7 +18,8 @@ class CandidatController extends Controller
     {
         $offres = Offre::all();
         $candidats = Candidat::where('accept', 0)->get();
-        return view ('PageProfil.candidature.candidat', compact('offres', 'candidats'));
+        $allcandidats = Candidat::all();
+        return view ('PageProfil.candidature.candidat', compact('offres', 'candidats', 'allcandidats'));
     }
 
     /**

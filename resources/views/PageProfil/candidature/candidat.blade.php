@@ -37,6 +37,44 @@
 @endforeach
 <div class="my-5">
     <h2><b>Historique :</b></h2>
+    <table class="table" >
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Réponse</th>
+            <th scope="col">Profil</th>
+
+
+
+          </tr>
+        </thead>
+        <tbody>
+
+            @foreach ($allcandidats as $candidat)
+                <tr>
+                    <td>{{$candidat->id}}</td>
+                    <td>{{$candidat->user->nom}} {{$candidat->user->prénom}}</td>
+                    @if ($candidat->accept == 0)
+                    <td>En attente</td>
+                    @elseif ($candidat->accept == 1)
+                    <td>Accepté</td>
+                    @endif
+                    @if ($candidat->accept == 2)
+                     <td>Refusé</td>   
+                    @endif
+                    
+                    
+                 
+                    <td>
+                        <a href="" class='btn btn-white'>Voir profil</a>
+                    </td>
+                </tr>
+
+          @endforeach
+
+        </tbody>
+      </table>
 </div>
 </div>
     @include('components.footer')

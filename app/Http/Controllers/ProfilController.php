@@ -75,7 +75,30 @@ class ProfilController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'statut_id'=> 'required',
+        ]);
+        $talent = User::find($id);
+        $talent->statut_id = $request->input('statut_id');
+        $talent->nom = $talent->nom;
+        $talent->prénom = $talent->prénom;
+        $talent->date = $talent->date;
+        $talent->tva = $talent->tva;
+        $talent->logo = $talent->logo;
+        $talent->pNom = $talent->pNom;
+        $talent->pTel = $talent->pTel;
+        $talent->photo = $talent->photo;
+        $talent->email = $talent->email;
+        $talent->numero = $talent->numero;
+        $talent->adresse = $talent->adresse;
+        $talent->véhicule = $talent->véhicule;
+        $talent->dispo = $talent->dispo;
+        $talent->cv = $talent->cv;
+        $talent->valid = $talent->valid;
+        $talent->role_id = $talent->role_id;
+        $talent->password = $talent->password;
+        $talent->save();
+        return redirect()->route('profil.index');
     }
 
     /**

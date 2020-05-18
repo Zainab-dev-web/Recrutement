@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function() {
     return view('PageAccueil.pageAccueil');
-});
+})->name('accueil');
 
 Route::resource('accueil', 'AccueilController');
 Route::resource('offres', 'OffreController');

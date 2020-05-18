@@ -27,7 +27,7 @@
                             <div class="blog_item_img col-2">
                             <img class="card-img rounded-0 w-75" src="{{asset('storage/' . $talent->photo)}}" alt="">
                         </div>
-                            <a class="d-inline-block col-6" href="single-blog.html">
+                            <a class="d-inline-block col-6" href="{{route('talents.show', $talent->id)}}">
                                 <h2>{{$talent->nom}} {{$talent->prénom}}</h2>
                                 <p>{{$talent->statut->statut}} dans le domaine {{$talent->domaine}}</p>
                             </a>
@@ -42,22 +42,7 @@
 
                     <nav class="blog-pagination justify-content-center d-flex">
                         <ul class="pagination">
-                            <li class="page-item">
-                                <a href="#" class="page-link" aria-label="Previous">
-                                    <i class="ti-angle-left"></i>
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a href="#" class="page-link">1</a>
-                            </li>
-                            <li class="page-item active">
-                                <a href="#" class="page-link">2</a>
-                            </li>
-                            <li class="page-item">
-                                <a href="#" class="page-link" aria-label="Next">
-                                    <i class="ti-angle-right"></i>
-                                </a>
-                            </li>
+                            {{$talents->links()}}
                         </ul>
                     </nav>
                 </div>

@@ -27,7 +27,7 @@ class CreateOffresTable extends Migration
             ->onUpdate('cascade');
             $table->string('poste');
             $table->string('lieu');
-            $table->string('qualite');
+            $table->text('qualite');
             $table->text('description');
             $table->timestamps();
         });

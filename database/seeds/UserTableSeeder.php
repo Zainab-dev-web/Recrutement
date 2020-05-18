@@ -69,7 +69,7 @@ class UserTableSeeder extends Seeder
             'véhicule' => 'Non',
             'dispo' => '2020-05-18',
             'domaine' => 'Informatique',
-            'cv' => null,
+            'cv' => '202004sdf30_113422_0000-1.png',
             'valid' => 1,
             'role_id' => 4,
             'password' => Hash::make('popo1234'),

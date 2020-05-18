@@ -205,7 +205,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
                             </div>
@@ -377,9 +377,10 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
+                        
                             </div>
                         </div>
                     </form>
@@ -390,5 +391,27 @@
 </div>
    
 @endif
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body text-sucess" >
+            Votre compte a bien été créer ! Il est en instance de validation.
+        </div>
+        <div class="modal-footer">
+          
+        </div>
+        </div>
+    </div>
+    </div>
 
 @endsection

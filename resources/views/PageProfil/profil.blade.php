@@ -83,7 +83,7 @@
         <div class="text-center">
         <img class="my-5" width="200" alt="logo entreprise" src="{{asset('storage/'.$user->photo)}}">
         <h2>{{$user->nom}} {{$user->prénom}} - {{$user->domaine}}</h2>
-        <p>{{$user->statut->statut}} <a href=""><u>Modifier</u></a></p>
+        <p>{{$user->statut->statut}} <a data-toggle="modal" data-target="#exampleModalLong"><u>Modifier</u></a></p>
         </div>
         <div class="menu-box block"> <!-- MENU BOX (LEFT-CONTAINER) -->
             <h2 class="titular">MENU</h2>
@@ -129,5 +129,57 @@
 @else
     
 @endif
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+    
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-sucess" >
+            <form action="{{route('profil.update', Auth::id())}}" method="POST">
+                @csrf
+                @method('PUT')
+                <div class="form-group row">
+                    <label for="statut_id" class="col-md-4 col-form-label text-md-right">Votre statut</label>
+
+                    <div class="col-md-6">
+                        <div class="form-check-inline">
+                            <input class="statut_id" type="radio" name="statut_id" id="statut_id" value="1" checked>
+                            <label class="form-check-label" for="statut_id">
+                              Chercheur d'emploi
+                            </label>
+                          </div>
+                          <div class="form-check-inline">
+                            <input class="statut_id" type="radio" name="statut_id" id="statut_id" value="2">
+                            <label class="form-check-label" for="statut_id">
+                              Demande de stage
+                            </label>
+                          </div>
+
+                        @error('statut_id')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+
+                        <button class="btn btn-white" type="submit">Valider</button>
+                    </div>
+                </div>
+            </form>
+            </div>
+            <div class="modal-footer">
+                
+                <a href="{{route('profil.index')}}"><button type="button" class="btn btn-primary">Retour</button></a>
+            </div>
+            </div>
+        </div>
+        </div>
 @endforeach
 @endcan
