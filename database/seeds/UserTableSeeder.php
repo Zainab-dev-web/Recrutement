@@ -13,6 +13,8 @@ class UserTableSeeder extends Seeder
     {
 
         // entreprise
+        $filename = Str::random(10) . time() . '.jpeg';
+        Storage::disk('public')->copy('/images.jpeg', $filename);
         DB::table('users')->insert([
             'nom' => 'Tom&Co',
             'prénom' => null,
@@ -23,7 +25,8 @@ class UserTableSeeder extends Seeder
             'domaine' => 'Alimentaire',
             'numero' => '0435678909',
             'adresse' => 'Rue de la haute',
-            'logo' => '0AFDtr6UjnOCG4zx3Cqpb3udapzZ5V5DY8F8nKhp.png',
+            'logo' => null,
+            'photo' =>$filename,
             'pNom' => 'Patrick',
             'pTel' => '0454678697',
             'email' => 'patricklepont@gmail.com',
@@ -32,16 +35,17 @@ class UserTableSeeder extends Seeder
             'statut_id' => null,
             'password' => Hash::make('popo1234'),
         ]);
-
+        $filename = Str::random(10) . time() . '.jpeg';
+        Storage::disk('public')->copy('/téléchargement.jpeg', $filename);
         DB::table('users')->insert([
             'nom' => 'Stoller',
             'prénom' => 'Shannon',
             'date' => null,
             'tva' => null,
-            'logo' => null,
+            'logo' =>null,
             'pNom' => null,
             'pTel' => null,
-            'photo' => '1EN1Iy3UGGnzyPNi08CKu8NHQvySien2HhDLRBhO.png',
+            'photo' => $filename,
             'email' => 'stoshannon@gmail.com',
             'numero' => '0486573322',
             'adresse' => 'Rue des Archers, 45',
@@ -53,6 +57,30 @@ class UserTableSeeder extends Seeder
             'valid' => 1,
             'role_id' => 4,
             'password' => Hash::make('popo1234'),
+        ]);
+
+        $filename = Str::random(10) . time() . '.jpeg';
+        Storage::disk('public')->copy('/images.jpeg', $filename);
+        DB::table('users')->insert([
+            'nom' => 'Admin',
+            'prénom' => null,
+            'date' => null,
+            'tva' => null,
+            'logo' => null,
+            'pNom' => null,
+            'pTel' => null,
+            'photo' => $filename,
+            'email' => 'admin@admin',
+            'numero' => '0486573322',
+            'adresse' => 'Rue des arbres, 45',
+            'statut_id' => null,
+            'véhicule' => 'Oui',
+            'dispo' => null,
+            'domaine' => 'Gestinnaire du site',
+            'cv' => null,
+            'valid' => 1,
+            'role_id' => 1,
+            'password' => Hash::make('123456789'),
         ]);
     }
 }
