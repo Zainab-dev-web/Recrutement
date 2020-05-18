@@ -67,7 +67,7 @@
                     
                  
                     <td>
-                        <a href="" class='btn btn-white'>Voir profil</a>
+                        <a href="{{route('talents.show', $candidat->user->id)}}" class='btn btn-white'>Voir profil</a>
                     </td>
                 </tr>
 
