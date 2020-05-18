@@ -39,6 +39,13 @@ Route::resource('choix', 'ChoixController');
 Route::get('/formtalent', 'ChoixController@choixtalent')->name('formtalent');
 Route::get('/formentreprise', 'ChoixController@choixentreprise')->name('formentreprise');
 
+//fullcalendar
+
+Route::get('/fullcalendareventmaster','FullCalendarEventMasterController@index');
+Route::post('/fullcalendareventmaster/create','FullCalendarEventMasterController@create');
+Route::post('/fullcalendareventmaster/update','FullCalendarEventMasterController@update');
+Route::post('/fullcalendareventmaster/delete','FullCalendarEventMasterController@destroy');
+
 
 //ressource
 Route::resource('accueil', 'AccueilController');
