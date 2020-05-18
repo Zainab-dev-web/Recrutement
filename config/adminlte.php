@@ -238,6 +238,13 @@ return [
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
+        ['header' => 'Gestion'],
+        [
+            'text'    => 'Utilisateur',
+            'icon'    => 'fas fa-images',
+            'url'  => 'user',
+            
+        ],
         [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',

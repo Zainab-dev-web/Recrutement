@@ -24,6 +24,7 @@ Route::resource('entreprises', 'EntrepriseController');
 Route::resource('contact', 'ConctatController');
 Route::resource('profil', 'ProfilController');
 Route::resource('candidat', 'CandidatController');
+Route::resource('admin','AdminController');
 Route::get('refuser/{id}', 'CandidatController@refuser')->name('refuser');
 Route::get('accepter/{id}', 'CandidatController@accepter')->name('accepter');
 
@@ -55,5 +56,6 @@ Route::resource('offres', 'OffreController');
 Route::resource('talents', 'TalentController');
 Route::resource('entreprises', 'EntrepriseController');
 Route::resource('event', 'EventController');
+Route::resource('user', 'UserController');
 
 
