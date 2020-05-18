@@ -42,9 +42,11 @@
                 <a href="{{route('index')}}?month={{$month->nextMonth()->month}}&year={{$month->nextMonth()->year}}"
                 class='btnagenda '><i class="fas fa-arrow-right"></i></a>
             </div>
-           
-            
         </div>
+               <div class='text-center'>
+    
+                   <a  class="btn btn-info "href="{{route('event.create')}}">Ajout un evenement</a>
+               </div>
     </div>
     {{-- {{$month ->getWeeks()}} --}}
     
@@ -55,7 +57,7 @@
             @foreach ($month->days as $k => $day)
             @php
             $date = (clone $start)->modify("+" . ($k + $i * 7) . "days");
-            $eventsForDay = $events[$date->format('Y-m-d')] ?? [];
+            // $eventsForDay = $events[$date->format('Y-m-d')] ?? [];
 
             @endphp
             <td class="@if(!$month->withinMonth($date))calendar__othermonth @endif">
@@ -63,7 +65,7 @@
                     <div class="calendar__weekday">{{$day}}</div>
                 @endif
                     <div class="calendar__day">{{$date->format('d')}}</div>
-                        @foreach ($eventsForDay as $event)
+                        {{-- @foreach ($eventsForDay as $event)
                         <div class="calendar__event">
 
                             {{(new \DateTime($event->start))->format('H:i')}}-{{(new \DateTime($event->start))->format('H:i')}}
@@ -71,7 +73,7 @@
 
                     </div>
 
-                @endforeach
+                @endforeach --}}
 
             </td>
             @endforeach
