@@ -18,7 +18,8 @@ class CandidatController extends Controller
     {
         $offres = Offre::all();
         $candidats = Candidat::where('accept', 0)->get();
-        return view ('PageProfil.candidature.candidat', compact('offres', 'candidats'));
+        $allcandidats = Candidat::all();
+        return view ('PageProfil.candidature.candidat', compact('offres', 'candidats', 'allcandidats'));
     }
 
     /**
@@ -71,6 +72,8 @@ class CandidatController extends Controller
      * @param  \App\Candidat  $candidat
      * @return \Illuminate\Http\Response
      */
+
+     // POSTULER
     public function update(Request $request, $id)
     {
         $offre = Offre::find($id);
@@ -79,8 +82,31 @@ class CandidatController extends Controller
         $candidat->user_id = Auth::id();
         $candidat->accept = 0;
         $candidat->save();
-        return redirect()->back();
+        return redirect()->route('offres.index');
     }
+
+    // ACCEPTER
+    public function accepter(Request $request, $id)
+    {
+        $candidat = Candidat::find($id);
+        $candidat->offre_id = $candidat->offre_id;
+        $candidat->user_id = $candidat->user_id;
+        $candidat->accept = 1;
+        $candidat->save();
+        return redirect()->route('candidat.index');
+    }
+
+       // REFUSER
+       public function refuser(Request $request, $id)
+       {
+        $candidat = Candidat::find($id);
+        $candidat->offre_id = $candidat->offre_id;
+        $candidat->user_id = $candidat->user_id;
+        $candidat->accept = 2;
+        $candidat->save();
+        return redirect()->route('candidat.index');
+       }
+
 
     /**
      * Remove the specified resource from storage.

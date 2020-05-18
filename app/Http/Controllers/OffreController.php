@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Offre;
 use App\Statut;
+use App\Candidat;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -47,6 +48,7 @@ class OffreController extends Controller
         $offre->poste = $request->input('poste');
         $offre->lieu = $request->input('lieu');
         $offre->description = $request->input('description');
+        $offre->qualite = $request->input('qualite');
         $offre->save();
         return redirect()->route('profil.index');
      
@@ -61,7 +63,8 @@ class OffreController extends Controller
     public function show($id)
     {
         $offre = Offre::find($id);
-        return view ('PageOffres.showOffres', compact('offre'));
+        $candidats = Candidat::where('accept', 0)->get();
+        return view ('PageOffres.showOffres', compact('offre', 'candidats'));
     }
 
     /**
@@ -90,6 +93,7 @@ class OffreController extends Controller
         $offre->poste = $request->input('poste');
         $offre->lieu = $request->input('lieu');
         $offre->description = $request->input('description');
+        $offre->qualite = $request->input('qualite');
         $offre->save();
         return  redirect()->route('#');
     }

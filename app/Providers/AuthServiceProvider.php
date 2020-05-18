@@ -37,5 +37,11 @@ class AuthServiceProvider extends ServiceProvider
             return  true;
             }
         });
+
+        Gate::define('post-valid', function ($user){
+            if(Auth::check() && Auth::user()->valid == 1){
+            return  true;
+            }
+        });
     }
 }

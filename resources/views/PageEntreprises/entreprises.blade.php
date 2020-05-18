@@ -27,7 +27,7 @@
                             <div class="blog_item_img col-2">
                             <img class="card-img w-75" src="{{asset('storage/' . $entreprise->logo)}}" alt="">
                         </div>
-                            <a class="d-inline-block col-6" href="single-blog.html">
+                            <a class="d-inline-block col-6" href="{{route('entreprises.show', $entreprise->id)}}">
                                 <h2>{{$entreprise->nom}}</h2>
                                 <p>Domaine {{$entreprise->domaine}}</p>
                             </a>
