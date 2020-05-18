@@ -32,7 +32,13 @@
   <div class="col-6 mt-5">
     <h2 class="mt-3 mb-5">Présentation :</h2>
       <h4 class="text-center mx-4">Nullam sagittis. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Quisque malesuada placerat nisl. Etiam vitae tortor.</h4>
+      @can('post-entreprise')
+        
       
+      <div class="text-center my-5">
+        <a class="btn btn-white" href="">Demande d'entretien</a>
+      </div>
+      @endcan
   </div>
   
   <div class="col-3 mt-5">

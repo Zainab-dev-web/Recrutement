@@ -93,7 +93,7 @@ class CandidatController extends Controller
         $candidat->user_id = $candidat->user_id;
         $candidat->accept = 1;
         $candidat->save();
-        return redirect()->route('profil.index');
+        return redirect()->route('candidat.index');
     }
 
        // REFUSER
@@ -104,7 +104,7 @@ class CandidatController extends Controller
         $candidat->user_id = $candidat->user_id;
         $candidat->accept = 2;
         $candidat->save();
-        return redirect()->route('profil.index');
+        return redirect()->route('candidat.index');
        }
 
 
