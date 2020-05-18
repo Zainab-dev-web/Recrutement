@@ -33,6 +33,7 @@ class UserController extends Controller
             'password'=> 'required|',
             
         ]);
+        
         $image = Storage::disk('public')->put('', $request->file('photo'));
         $user=User::find($id);
         $user->nom=$request->nom;
@@ -43,7 +44,9 @@ class UserController extends Controller
         $user->valid=$request->valid;
         $user->save();
         return redirect()->route('user.index');
+
     }
+
     public function show($id){
         $user=User::find($id);
         $user->nom = $user->nom;
