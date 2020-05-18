@@ -34,6 +34,26 @@ class UserTableSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
+            'nom' => 'Amazon',
+            'prénom' => null,
+            'véhicule' => null,
+            'dispo' => null,
+            'date' => '2020-05-22',
+            'tva' => 'BE 56478967',
+            'domaine' => 'Numérique',
+            'numero' => '0435678909',
+            'adresse' => 'Rue de la haute',
+            'logo' => '7iVf4VahtChW5Ds8uM1F9iPJKyY7BffMxOoBTr9k.png',
+            'pNom' => 'Patrick',
+            'pTel' => '0454678697',
+            'email' => 'entreprise@gmail.com',
+            'valid' => 1,
+            'role_id' => 5,
+            'statut_id' => null,
+            'password' => Hash::make('popo1234'),
+        ]);
+
+        DB::table('users')->insert([
             'nom' => 'Stoller',
             'prénom' => 'Shannon',
             'date' => null,

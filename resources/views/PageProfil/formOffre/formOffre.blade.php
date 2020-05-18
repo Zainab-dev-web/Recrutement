@@ -30,14 +30,20 @@
           </div>
       </div>
      
-      <div class="col-12 mt-4">
+      <div class="col-sm-6">
           <div class="form-group">
               <input class="form-control" name="description" id="description" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Description'" placeholder="Description">
           </div>
       </div>
+
+      <div class="col-12 mt-2">
+        <div class="form-group">
+          <textarea class="form-control" col="30" rows="8" name="qualite" id="qualite" type="text"  placeholder="Qualités requises"></textarea>
+      </div>
+      </div>
   </div>
   <div class="form-group mt-3">
-      <button type="submit" class="button button-contactForm boxed-btn">ADD</button>
+      <button type="submit" class="button button-contactForm boxed-btn">Ajouter</button>
   </div>
 </form>
 </div>

@@ -45,9 +45,10 @@ class EntrepriseController extends Controller
      * @param  \App\Entreprise  $entreprise
      * @return \Illuminate\Http\Response
      */
-    public function show(Entreprise $entreprise)
+    public function show($id)
     {
-        //
+        $entreprise = User::find($id);
+        return view ('PageEntreprises.pageperso.pageperso', compact('entreprise'));
     }
 
     /**

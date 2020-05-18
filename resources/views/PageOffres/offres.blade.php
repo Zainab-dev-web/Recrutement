@@ -73,7 +73,7 @@
                         <ul class="list cat-list">
                             @foreach ($entreprises as $entreprise)
                             <li>
-                                <a href="#" class="d-flex">
+                            <a href="{{route('entreprises.show', $entreprise->id)}}" class="d-flex">
                                     <p>{{$entreprise->nom}}</p>
                                 </a>
                             </li>

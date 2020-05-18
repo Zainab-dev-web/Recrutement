@@ -7,7 +7,9 @@
 <form action="{{route('candidat.update', $offre)}}" method="post">
   @csrf
   @method('PUT')
-<button class="btn btn-white" type="submit">Postuler</button>
+
+        <button class="btn btn-white" type="submit">Postuler</button>  
+ 
 </form>
 @endcan
 

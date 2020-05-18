@@ -24,6 +24,8 @@ Route::resource('entreprises', 'EntrepriseController');
 Route::resource('contact', 'ConctatController');
 Route::resource('profil', 'ProfilController');
 Route::resource('candidat', 'CandidatController');
+Route::get('refuser/{id}', 'CandidatController@refuser')->name('refuser');
+Route::get('accepter/{id}', 'CandidatController@accepter')->name('accepter');
 
 Route::get('/agenda' , function(){
     return view ('agenda.index');

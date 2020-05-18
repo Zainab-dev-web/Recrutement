@@ -22,9 +22,9 @@
   <h2>Candidatures :</h2>
          @foreach ($candidats as $candidat)
        @if ($candidat->offre_id == $offre->id)
-           <h5><a href=""><b>{{$candidat->user->nom}} {{$candidat->user->prénom}} <a class="btn btn-white" href="">Accepter</a> <a class="btn btn-white" href="">Refuser</a></b></a></h5>
+    <h5><a href=""><b>{{$candidat->user->nom}} {{$candidat->user->prénom}} <a class="btn btn-white" href="{{route('accepter', $candidat->id)}}">Accepter</a> <a class="btn btn-white" href="{{route('refuser', $candidat->id)}}">Refuser</a></b></a></h5>
        @else
-           
+         
        @endif
    @endforeach
 
@@ -33,8 +33,11 @@
 @else
     
 @endif
-   
+ 
 @endforeach
+<div class="my-5">
+    <h2><b>Historique :</b></h2>
+</div>
 </div>
     @include('components.footer')
     
