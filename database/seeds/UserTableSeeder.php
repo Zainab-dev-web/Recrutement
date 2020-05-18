@@ -12,6 +12,30 @@ class UserTableSeeder extends Seeder
     public function run()
     {
 
+
+        $filename = Str::random(10) . time() . '.jpeg';
+        Storage::disk('public')->copy('/images.jpeg', $filename);
+        DB::table('users')->insert([
+            'nom' => 'Admin',
+            'prénom' => null,
+            'date' => null,
+            'tva' => null,
+            'logo' => null,
+            'pNom' => null,
+            'pTel' => null,
+            'photo' => $filename,
+            'email' => 'admin@admin',
+            'numero' => '0486573322',
+            'adresse' => 'Rue des arbres, 45',
+            'statut_id' => null,
+            'véhicule' => 'Oui',
+            'dispo' => null,
+            'domaine' => 'Gestinnaire du site',
+            'cv' => null,
+            'valid' => 1,
+            'role_id' => 1,
+            'password' => Hash::make('123456789'),
+        ]);
         // entreprise
         $filename = Str::random(10) . time() . '.jpeg';
         Storage::disk('public')->copy('/images.jpeg', $filename);
@@ -47,7 +71,8 @@ class UserTableSeeder extends Seeder
             'domaine' => 'Numérique',
             'numero' => '0435678909',
             'adresse' => 'Rue de la haute',
-            'logo' => '7iVf4VahtChW5Ds8uM1F9iPJKyY7BffMxOoBTr9k.png',
+            'logo' => null,
+            'photo' =>$filename,
             'pNom' => 'Patrick',
             'pTel' => '0454678697',
             'email' => 'entreprise@gmail.com',
@@ -56,7 +81,8 @@ class UserTableSeeder extends Seeder
             'statut_id' => null,
             'password' => Hash::make('popo1234'),
         ]);
-
+        $filename = Str::random(10) . time() . '.jpeg';
+        Storage::disk('public')->copy('/téléchargement (1).jpeg', $filename);
         DB::table('users')->insert([
             'nom' => 'Stoller',
             'prénom' => 'Shannon',
@@ -78,29 +104,53 @@ class UserTableSeeder extends Seeder
             'role_id' => 4,
             'password' => Hash::make('popo1234'),
         ]);
-
         $filename = Str::random(10) . time() . '.jpeg';
-        Storage::disk('public')->copy('/images.jpeg', $filename);
+        Storage::disk('public')->copy('/téléchargement (2).jpeg', $filename);
         DB::table('users')->insert([
-            'nom' => 'Admin',
-            'prénom' => null,
+            'nom' => 'Zainab',
+            'prénom' => 'Zainab',
             'date' => null,
             'tva' => null,
-            'logo' => null,
+            'logo' =>null,
             'pNom' => null,
             'pTel' => null,
             'photo' => $filename,
-            'email' => 'admin@admin',
+            'email' => 'zainab@gmail.com',
             'numero' => '0486573322',
-            'adresse' => 'Rue des arbres, 45',
-            'statut_id' => null,
-            'véhicule' => 'Oui',
-            'dispo' => null,
-            'domaine' => 'Gestinnaire du site',
-            'cv' => null,
+            'adresse' => 'Rue des tests, 45',
+            'statut_id' => 1,
+            'véhicule' => 'Non',
+            'dispo' => '2020-05-18',
+            'domaine' => 'Web-designer',
+            'cv' => '202004sdf30_113422_0000-1.png',
             'valid' => 1,
-            'role_id' => 1,
-            'password' => Hash::make('123456789'),
+            'role_id' => 4,
+            'password' => Hash::make('popo1234'),
         ]);
+        $filename = Str::random(10) . time() . '.png';
+        Storage::disk('public')->copy('/images.png', $filename);
+        DB::table('users')->insert([
+            'nom' => 'Matias',
+            'prénom' => 'Mati',
+            'date' => null,
+            'tva' => null,
+            'logo' =>null,
+            'pNom' => null,
+            'pTel' => null,
+            'photo' => $filename,
+            'email' => 'mati@gmail.com',
+            'numero' => '0486573322',
+            'adresse' => 'Rue des matins, 45',
+            'statut_id' => 1,
+            'véhicule' => 'Non',
+            'dispo' => '2020-05-18',
+            'domaine' => 'Full-Stack',
+            'cv' => '202004sdf30_113422_0000-1.png',
+            'valid' => 1,
+            'role_id' => 4,
+            'password' => Hash::make('popo1234'),
+        ]);
+
+        
     }
 }

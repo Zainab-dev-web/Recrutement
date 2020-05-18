@@ -246,6 +246,12 @@ return [
             
         ],
         [
+            'text'    => 'Match',
+            'icon'    => 'fas fa-images',
+            'url'  => 'match',
+            
+        ],
+        [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [

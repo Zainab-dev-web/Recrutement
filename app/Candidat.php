@@ -20,4 +20,5 @@ class Candidat extends Model
     public function dates(){
     return $this->belongsToMany(Date::class, 'candidat_date');
     }
+    
 }

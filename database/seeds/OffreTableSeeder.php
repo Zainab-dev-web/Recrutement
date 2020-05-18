@@ -12,7 +12,7 @@ class OffreTableSeeder extends Seeder
     public function run()
     {
         DB::table('offres')->insert([   
-            'user_id' => 1,
+            'user_id' => 2,
             'statut_id' => 1,
             'poste' => 'Web developpeur',
             'lieu' => 'Mons',
@@ -21,7 +21,7 @@ class OffreTableSeeder extends Seeder
         ]);
 
         DB::table('offres')->insert([   
-            'user_id' => 1,
+            'user_id' => 3,
             'statut_id' => 2,
             'poste' => 'Caissière',
             'lieu' => 'Bruxelles',

@@ -25,6 +25,7 @@ require('./mail-script');
 require('./jquery.ajaxchimp.min');
 require('./plugins');
 require('./main');
+require('./heart-anime');
 
 global.$=global.jQuery=require('./vendor/jquery-1.12.4.min');
 
