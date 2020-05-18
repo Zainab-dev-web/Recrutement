@@ -401,11 +401,11 @@
         <div class="modal-header">
 
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+                <i class="fas fa-times"></i>
             </button>
         </div>
         <div class="modal-body text-sucess" >
-            Votre compte a bien été créer ! Il est en instance de validation.
+            Votre compte a bien été créé ! Il est en instance de validation.
         </div>
         <div class="modal-footer">
           
