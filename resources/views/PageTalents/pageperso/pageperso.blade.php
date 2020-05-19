@@ -45,7 +45,7 @@
       <div class="single_sidebar_widget post_category_widget">
         <h2 class="mt-3">CV :</h2>
         <a data-toggle="modal" data-target="#exampleModalLong">
-        <img width="250" src="{{asset('storage/' . $talent->cv)}}" alt="cv">
+        <img class="mb-3" width="250" src="{{asset('storage/' . $talent->cv)}}" alt="cv">
         </a>
       </div>
   </div>
@@ -66,13 +66,11 @@
               </button>
           </div>
           <div class="modal-body text-sucess" >
-          <form action="{{route('profil.update', Auth::id())}}" method="POST">
-              @csrf
-              @method('PUT')
+      
               <div class="text-center">
                 <img width="450" src="{{asset('storage/' . $talent->cv)}}" alt="cv">
               </div>
-          </form>
+
           </div>
           <div class="modal-footer">
           </div>
