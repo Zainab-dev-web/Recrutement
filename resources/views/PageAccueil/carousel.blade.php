@@ -6,6 +6,7 @@
                 <div class="single-slider">
                     <div class="slider-cap-wrapper">
                           <div class="hero__img">
+                            
                             <img src="{{asset('img/hero/hero_img.jpg')}}" alt=""  data-animation="fadeInRight" data-transition-duration="5s">
                           </div>
                           <div class="hero__caption">

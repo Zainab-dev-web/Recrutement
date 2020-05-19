@@ -258,6 +258,12 @@ return [
             
         ],
         [
+            'text'    => 'Carousel',
+            'icon'    => 'fas fa-images',
+            'url'  => 'carousel',
+            
+        ],
+        [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [

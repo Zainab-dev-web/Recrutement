@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Carousel;
+use App\Service;
 use Illuminate\Http\Request;
 
-class CarouselController extends Controller
+class ServiceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class CarouselController extends Controller
      */
     public function index()
     {
-        $carousels=Carousel::all();
-        return view('carousel.index', compact('carousels'));
+        //
     }
 
     /**
@@ -42,10 +41,10 @@ class CarouselController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Carousel  $carousel
+     * @param  \App\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function show(Carousel $carousel)
+    public function show(Service $service)
     {
         //
     }
@@ -53,47 +52,33 @@ class CarouselController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Carousel  $carousel
+     * @param  \App\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function edit(Carousel $carousel)
+    public function edit(Service $service)
     {
-        return view('carousel.edit', compact('carousel'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Carousel  $carousel
+     * @param  \App\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Carousel $carousel)
+    public function update(Request $request, Service $service)
     {
-        $request->validate([
-            'slogan'=> 'required|',
-            'name'=> 'required|',
-            'titre'=> 'required|', 
-            'photo'=> 'required|',
-        ]);
-        $image = Storage::disk('public')->put('', $request->file('photo'));
-    
-        $carousel->photo=$image;
-        $carousel->titre=$request->titre;
-        $carousel->name=$request->name;
-        $carousel->slogan=$request->slogan;
-       
-        $carousel->save();
-        return redirect()->route('carousel.index');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Carousel  $carousel
+     * @param  \App\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Carousel $carousel)
+    public function destroy(Service $service)
     {
         //
     }
