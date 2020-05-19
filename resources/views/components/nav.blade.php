@@ -21,6 +21,14 @@
                                         <li><a href="{{route('offres.index')}}">Offres</a></li>
                                         <li><a href="{{route('talents.index')}}">Talents</a></li>
                                         <li><a href="{{route('entreprises.index')}}">Entreprises</a></li>
+                                        @if(Auth::check() && Auth::user()->role_id ==1)
+                                        <li><a href="{{route('admin.index')}}">ADMIN</a></li>
+                                        @elseif(Auth::check() && Auth::user()->role_id ==1)
+                                        <li><a href="{{route('admin.index')}}">HRT</a></li>
+                                        @elseif(Auth::check() && Auth::user()->role_id ==2)
+                                        <li><a href="{{route('admin.index')}}">HRE</a></li>
+                                        @elseif(Auth::check() && Auth::user()->role_id ==3)
+                                        @endif
 
                                         @if (Auth::check())
                                         

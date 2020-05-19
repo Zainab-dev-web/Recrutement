@@ -18,4 +18,8 @@ class Offre extends Model
     public function statut(){
         return $this->belongsTo('App\Statut');
     }
+     //Many to many
+     public function users(){
+        return $this->belongsToMany(User::class, 'offre_user');
+        }
 }

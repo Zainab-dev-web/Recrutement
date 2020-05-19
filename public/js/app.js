@@ -50016,6 +50016,8 @@ __webpack_require__(/*! ./plugins */ "./resources/js/plugins.js");
 
 __webpack_require__(/*! ./main */ "./resources/js/main.js");
 
+__webpack_require__(/*! ./heart-anime */ "./resources/js/heart-anime.js");
+
 global.$ = global.jQuery = __webpack_require__(/*! ./vendor/jquery-1.12.4.min */ "./resources/js/vendor/jquery-1.12.4.min.js");
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
@@ -51939,6 +51941,21 @@ $(document).ready(function () {
       });
     });
   })(jQuery);
+});
+
+/***/ }),
+
+/***/ "./resources/js/heart-anime.js":
+/*!*************************************!*\
+  !*** ./resources/js/heart-anime.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(function () {
+  $(".heart").on("click", function () {
+    $(this).toggleClass("is-active");
+  });
 });
 
 /***/ }),
@@ -63437,14 +63454,26 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 /***/ }),
 
+/***/ "./resources/sass/heart-anime.scss":
+/*!*****************************************!*\
+  !*** ./resources/sass/heart-anime.scss ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!*************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
-  \*************************************************************/
+/*!***********************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/heart-anime.scss ./resources/sass/app.scss ***!
+  \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /home/zainab/Bureau/Backup/Coding-School/Laravel/Recrutement/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /home/zainab/Bureau/Backup/Coding-School/Laravel/Recrutement/resources/sass/heart-anime.scss */"./resources/sass/heart-anime.scss");
 module.exports = __webpack_require__(/*! /home/zainab/Bureau/Backup/Coding-School/Laravel/Recrutement/resources/sass/app.scss */"./resources/sass/app.scss");
 
 

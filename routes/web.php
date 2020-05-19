@@ -25,6 +25,7 @@ Route::resource('entreprises', 'EntrepriseController');
 Route::resource('contact', 'ConctatController');
 Route::resource('profil', 'ProfilController');
 Route::resource('candidat', 'CandidatController');
+Route::resource('admin','AdminController');
 Route::get('refuser/{id}', 'CandidatController@refuser')->name('refuser');
 Route::get('accepter/{id}', 'CandidatController@accepter')->name('accepter');
 
@@ -49,12 +50,15 @@ Route::post('/fullcalendareventmaster/create','FullCalendarEventMasterController
 Route::post('/fullcalendareventmaster/update','FullCalendarEventMasterController@update');
 Route::post('/fullcalendareventmaster/delete','FullCalendarEventMasterController@destroy');
 
-
+//userSearch
+Route::get('/searchUser', 'UserController@search')->name('searchUser');
 //ressource
 Route::resource('accueil', 'AccueilController');
 Route::resource('offres', 'OffreController');
 Route::resource('talents', 'TalentController');
 Route::resource('entreprises', 'EntrepriseController');
 Route::resource('event', 'EventController');
+Route::resource('user', 'UserController');
+Route::resource('match', 'MatchController');
 
 
