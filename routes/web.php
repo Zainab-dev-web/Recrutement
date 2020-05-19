@@ -60,5 +60,6 @@ Route::resource('entreprises', 'EntrepriseController');
 Route::resource('event', 'EventController');
 Route::resource('user', 'UserController');
 Route::resource('match', 'MatchController');
+Route::resource('newsletter', 'NewsletterController');
 
 
