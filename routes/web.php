@@ -46,7 +46,7 @@ Route::get('/formentreprise', 'ChoixController@choixentreprise')->name('formentr
 //fullcalendar
 
 Route::get('/fullcalendareventmaster', 'FullCalendarEventMasterController@index')->name('agenda');
-Route::get('/fullcalendareventmaster/add', 'FullCalendarEventMasterController@add');
+Route::get('/fullcalendareventmaster/add', 'FullCalendarEventMasterController@add')->name('add');
 Route::post('/fullcalendareventmaster/store', 'FullCalendarEventMasterController@store')->name('store');
 Route::post('/fullcalendareventmaster/create', 'FullCalendarEventMasterController@create')->name('create');
 Route::post('/fullcalendareventmaster/update', 'FullCalendarEventMasterController@update');

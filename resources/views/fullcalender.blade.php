@@ -12,11 +12,18 @@
     integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.js"></script>
 
+
+<div class="text-center my-3">
+    <a class="btn btn-warning" href="{{route('add')}}">Créer un événement</a>
+</div>
+
 <body>
+
     <div class="container">
         <div class="response"></div>
         <div id='calendar'></div>
     </div>
+  
     <script>
         $(document).ready(function () {
             var SITEURL = "{{url('/')}}";
@@ -38,43 +45,7 @@
                         event.allDay = false;
                     }
                 },
-                selectable: true,
-                selectHelper: true,
-                select: function (start, end, allDay) {
-                    var title = prompt('Event Title:');
-                    if (title) {
-                        var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
-                        var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
-                        $.ajax({
-                            url: SITEURL + "/fullcalendareventmaster/create",
-                            data: 'title=' + title + '&start=' + start + '&end=' + end,
-                            type: "POST",
-                            success: function (data) {
-                                displayMessage("Added Successfully");
-                            }
-                        });
-                        calendar.fullCalendar('renderEvent', {
-                            title: title,
-                            start: start,
-                            end: end,
-                            allDay: allDay
-                        }, true);
-                    }
-                    calendar.fullCalendar('unselect');
-                },
-                eventDrop: function (event, delta) {
-                    var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
-                    var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
-                    $.ajax({
-                        url: SITEURL + '/fullcalendareventmaster/update',
-                        data: 'title=' + event.title + '&start=' + start + '&end=' + end +
-                            '&id=' + event.id,
-                        type: "POST",
-                        success: function (response) {
-                            displayMessage("Updated Successfully");
-                        }
-                    });
-                },
+             
                 eventClick: function (event) {
                     var deleteMsg = confirm("Do you really want to delete?");
                     if (deleteMsg) {
