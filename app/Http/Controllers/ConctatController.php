@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Conctat;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\Contactmailtemp;
+use Illuminate\Support\Facades\Validator;
 
 class ConctatController extends Controller
 {
@@ -35,7 +38,28 @@ class ConctatController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'nom'=> 'required',  
+            'email'=> 'required',  
+            'sujet' => 'required',
+            'msg' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->to(url()->previous() . '#contactus')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
+        $contactmail = new Conctat();
+        $contactmail->nom = $request->input('nom');
+        $contactmail->email = $request->input('email');
+        $contactmail->sujet = $request->input('sujet');
+        $contactmail->msg = $request->input('msg');
+        $contactmail->save();
+        
+        Mail::to($request->input('email'))->send(new Contactmailtemp($contactmail));
+        return redirect()->to(url()->previous() . '#contactus')->with('send', 'Votre message a bien été envoyé !');
     }
 
     /**

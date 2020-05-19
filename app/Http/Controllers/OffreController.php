@@ -54,6 +54,13 @@ class OffreController extends Controller
      
     }
 
+    public function searchoffre($id) {
+        $offres = Offre::where('user_id', $id)->orderby('id', 'asc')->paginate(3);
+        $entreprises = User::where('role_id', 5)->get();
+        return view('PageOffres.pageOffres', compact('offres', 'entreprises'));
+        //
+    }
+
     /**
      * Display the specified resource.
      *

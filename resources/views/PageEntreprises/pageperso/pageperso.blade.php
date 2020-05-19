@@ -36,7 +36,7 @@
   
   <div class="col-3 mt-5">
       <div class="single_sidebar_widget post_category_widget">
-        <a class="btn btn-white" href="#" type="submit">Voir leurs offres</a>
+        <a class="btn btn-white" href="{{route('searchoffre', $entreprise->id)}}" type="submit">Voir leurs offres</a>
       </div>
   </div>
 </div>

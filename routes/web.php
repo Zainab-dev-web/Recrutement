@@ -19,6 +19,7 @@ Route::get('/', function() {
 
 Route::resource('accueil', 'AccueilController');
 Route::resource('offres', 'OffreController');
+Route::get('/searchoffre/{id}', 'OffreController@searchoffre')->name('searchoffre');
 Route::resource('talents', 'TalentController');
 Route::resource('entreprises', 'EntrepriseController');
 Route::resource('contact', 'ConctatController');
