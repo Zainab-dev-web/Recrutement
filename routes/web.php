@@ -62,6 +62,7 @@ Route::resource('entreprises', 'EntrepriseController');
 Route::resource('event', 'EventController');
 Route::resource('user', 'UserController');
 Route::resource('match', 'MatchController');
+Route::resource('formcontact' , "FormcontactController");
 Route::resource('newsletter', 'NewsletterController');
 
 

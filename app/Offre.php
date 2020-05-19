@@ -19,7 +19,7 @@ class Offre extends Model
         return $this->belongsTo('App\Statut');
     }
      //Many to many
-     public function users(){
-        return $this->belongsToMany(User::class, 'offre_user');
+     public function matchs(){
+        return $this->belongsToMany(User::class, 'offre_match');
         }
 }

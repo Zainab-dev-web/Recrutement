@@ -19,5 +19,10 @@ class Evaluation extends Model
     public function note(){
         return $this->belongsTo('App\Note');
     }
+
+    //Many to many
+    public function users(){
+        return $this->belongsToMany(User::class, 'evaluation_user');
+        }
    
 }
