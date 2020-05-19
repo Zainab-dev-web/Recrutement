@@ -11,8 +11,6 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-
-
         $filename = Str::random(10) . time() . '.jpeg';
         Storage::disk('public')->copy('/images.jpeg', $filename);
         DB::table('users')->insert([
@@ -105,7 +103,7 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('popo1234'),
         ]);
         $filename = Str::random(10) . time() . '.jpeg';
-        Storage::disk('public')->copy('/téléchargement (2).jpeg', $filename);
+        Storage::disk('public')->copy('/téléchargement (1).jpeg', $filename);
         DB::table('users')->insert([
             'nom' => 'Zainab',
             'prénom' => 'Zainab',
