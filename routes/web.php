@@ -29,6 +29,15 @@ Route::resource('admin','AdminController');
 Route::get('refuser/{id}', 'CandidatController@refuser')->name('refuser');
 Route::get('accepter/{id}', 'CandidatController@accepter')->name('accepter');
 
+
+//fullcalendar
+
+Route::get('/fullcalendareventmaster', 'FullCalendarEventMasterController@index')->name('agenda');
+Route::get('/fullcalendareventmaster/add', 'FullCalendarEventMasterController@add');
+Route::post('/fullcalendareventmaster/store', 'FullCalendarEventMasterController@store')->name('store');
+Route::post('/fullcalendareventmaster/create', 'FullCalendarEventMasterController@create')->name('create');
+Route::post('/fullcalendareventmaster/update', 'FullCalendarEventMasterController@update');
+Route::post('/fullcalendareventmaster/delete', 'FullCalendarEventMasterController@destroy');
 Route::get('/agenda' , function(){
     return view ('agenda.index');
 })->name('index');
@@ -43,14 +52,7 @@ Route::resource('choix', 'ChoixController');
 Route::get('/formtalent', 'ChoixController@choixtalent')->name('formtalent');
 Route::get('/formentreprise', 'ChoixController@choixentreprise')->name('formentreprise');
 
-//fullcalendar
 
-Route::get('/fullcalendareventmaster', 'FullCalendarEventMasterController@index')->name('agenda');
-Route::get('/fullcalendareventmaster/add', 'FullCalendarEventMasterController@add');
-Route::post('/fullcalendareventmaster/store', 'FullCalendarEventMasterController@store')->name('store');
-Route::post('/fullcalendareventmaster/create', 'FullCalendarEventMasterController@create')->name('create');
-Route::post('/fullcalendareventmaster/update', 'FullCalendarEventMasterController@update');
-Route::post('/fullcalendareventmaster/delete', 'FullCalendarEventMasterController@destroy');
 
 //userSearch
 Route::get('/searchUser', 'UserController@search')->name('searchUser');
