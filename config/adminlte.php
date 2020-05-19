@@ -252,6 +252,12 @@ return [
             
         ],
         [
+            'text'    => 'Vos messages',
+            'icon'    => 'fas fa-images',
+            'url'  => 'formcontact',
+            
+        ],
+        [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
