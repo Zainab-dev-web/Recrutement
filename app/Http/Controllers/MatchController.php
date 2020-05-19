@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Match;
+
 use App\Offre;
 use App\User;
 use App\Statut;
@@ -17,11 +17,11 @@ class MatchController extends Controller
      */
     public function index(){
 
-        $matchs=Match::all();
+       
         $users=User::all();
         $statuts=Statut::all();
         $offres=Offre::all();
-        return view('match.index', compact('matchs' , 'users' , 'statuts' , 'offres'));
+        return view('match.index', compact( 'users' , 'statuts' , 'offres'));
     }
 
     
@@ -56,9 +56,12 @@ class MatchController extends Controller
      * @param  \App\Match  $match
      * @return \Illuminate\Http\Response
      */
-    public function show(Match $match)
+    public function show($id)
     {
-        //
+        $matchs=Offre::all()->where('id',$id);
+        $users=User::all();
+        $offres=Offre::all();
+        return view ('match.show' , compact('matchs','users' , 'offres'));
     }
 
     /**
@@ -70,11 +73,11 @@ class MatchController extends Controller
     public function edit($id)
     {
 
-            $matchs=Match::find($id);
+            $matchs=Offre::find($id);
             $users=User::all();
             $statuts=Statut::all();
-            $offres=Offre::all();
-            return view('match.edit', compact('matchs' , 'users' , 'statuts', 'offres'));
+          
+            return view('match.edit', compact('matchs' , 'users' , 'statuts'));
     
         
     }
@@ -86,9 +89,22 @@ class MatchController extends Controller
      * @param  \App\Match  $match
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Match $match)
+    public function update(Request $request , $id)
     {
-        //
+        // $request->validate([
+    
+        //     'offre_id'=> 'required|',
+        //     'match_id'=> 'required|',
+         
+            
+        // ]);
+       
+            $match=Offre::find($id);
+            $match->user_id=$match->user_id;
+            $match->save();
+            $match->matchs()->detach();
+            $match->matchs()->attach($request->match);
+            return redirect()->route('match.index');
     }
 
     /**

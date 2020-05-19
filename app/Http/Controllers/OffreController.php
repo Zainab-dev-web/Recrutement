@@ -6,6 +6,7 @@ use App\Offre;
 use App\Statut;
 use App\Candidat;
 use App\User;
+use App\Match;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
