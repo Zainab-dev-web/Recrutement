@@ -13,11 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function() {
-    return view('PageAccueil.pageAccueil');
-})->name('accueil');
+Route::get('/' , 'AccueilController@index')->name('accueil');
 
-Route::resource('accueil', 'AccueilController');
+
 Route::resource('offres', 'OffreController');
 Route::get('/searchoffre/{id}', 'OffreController@searchoffre')->name('searchoffre');
 Route::resource('talents', 'TalentController');
@@ -69,6 +67,6 @@ Route::resource('newsletter', 'NewsletterController');
 Route::resource('carousel', 'CarouselController');
 Route::resource('service', 'ServiceController');
 Route::resource('work', 'WorkController');
-Route::resource('contact', 'ContactController');
+Route::resource('contactInfo', 'ContactController');
 
 

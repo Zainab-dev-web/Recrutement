@@ -17,7 +17,8 @@
 
             
             <div class="card-body">
-                <form action="{{route('contact.update' , $contact)}}" method="post">
+               
+                <form action="{{route('contactInfo.update' , $contact->id)}}" method="post">
                     @csrf
                     @method('PUT')
                 <div class="row">

@@ -17,7 +17,7 @@ class ConctatController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   $contact=Contact::all();
+    {   $contact=Contact::find(1);
         return view('PageContact.pageContact' , compact('contact'));
     }
 

@@ -45,7 +45,7 @@
                     <td>{{$item->Edispo}}</td>
                     
                     <td>
-                            <a href='{{route('contact.edit', $item)}}' class='btn btn-white'><i class="far fa-edit text-warning"></i></a>
+                            <a href='{{route('contactInfo.edit', $item)}}' class='btn btn-white'><i class="far fa-edit text-warning"></i></a>
                           
                     </td>
                  
