@@ -17,8 +17,8 @@ class Candidat extends Model
         return $this->belongsTo('App\User', 'user_id' );
     }
 //Many to Many
-    public function dates(){
-    return $this->belongsToMany(Date::class, 'candidat_date');
+    public function date(){
+    return $this->belongsTo('App\Date', 'date_id');
     }
     
 }

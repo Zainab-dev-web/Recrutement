@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Event;
-use App\Candidat;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Date;
+use App\Candidat;
 
-class EventController extends Controller
+class DateController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +15,8 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
+        $candidats = Candidat::all();
+        return view ('PageProfil.propoDate.propoDate', compact('candidats'));
     }
 
     /**
@@ -26,7 +26,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        return view('event.create');
+        //
     }
 
     /**
@@ -43,10 +43,10 @@ class EventController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Event  $event
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Event $event)
+    public function show($id)
     {
         //
     }
@@ -54,42 +54,43 @@ class EventController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Event  $event
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Event $event)
+    public function edit($id)
     {
-        //
+        $candidat = Candidat::find($id);
+        return view ('PageProfil.propoDate.formDate', compact('candidat'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Event  $event
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         $candidat = Candidat::find($id);
-        $event = new Event();
-        $event->title = $candidat->offre->user->nom;
-        $event->start = $request->input('date');
-        $event->end = $request->input('date');
-        $event->user_id = Auth::user()->id;
-        $event->save();
-        return redirect()->route();
-
+        $date= new Date();
+        $date->date1 = $request->input('date1');
+        $date->date2 = $request->input('date2');
+        $date->date3 = $request->input('date3');
+        $date->save();
+        $candidat->date_id = $date->id;
+        $candidat->save();
+        return redirect()->route('candidat.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Event  $event
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Event $event)
+    public function destroy($id)
     {
-        
+        //
     }
 }

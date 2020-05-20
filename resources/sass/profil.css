@@ -354,7 +354,7 @@
 
 .block {
     margin-bottom: 25px;
-    background: #394264;
+    background: #020f23;
     border-radius: 5px;
 }
 
@@ -365,7 +365,7 @@
 }
 
 .menu-box .titular {
-    background: #11a8ab;
+    background: #04dbed;
 }
 
 .menu-box-menu .icon {
@@ -403,7 +403,7 @@
 }
 
 .menu-box-tab:hover {
-    background: #50597b;
+    background: #ffa638;
     border-top: 1px solid #1f253d;
     text-decoration: none;
 }

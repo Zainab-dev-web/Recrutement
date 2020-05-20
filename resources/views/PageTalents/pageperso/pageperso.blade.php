@@ -17,7 +17,7 @@
 <!-- Hero Area End -->
 
 
-<div class="row">
+<div class="row my-5 py-5">
   <div class="col-3 my-5">
     
       <div class="text-center">

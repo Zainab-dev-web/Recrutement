@@ -19,12 +19,19 @@ class User extends Authenticatable
     public function evaluation() {
         return $this->hasMany('App\Evaluation');
     }
+
+    public function event() {
+        return $this->hasMany('App\Event');
+    }
+
     public function offres(){
         return $this->belongsToMany(Offre::class, 'offre_match');
         }
     public function evaluations(){
-        return $this->belongsToMany(Evaluation::class, 'evaluation_user');
+        return $this->belongsToMany(Evaluation::class, 'user_evaluation');
         }
+
+    
     /**
      * The attributes that are mass assignable.
      *

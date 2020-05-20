@@ -51,7 +51,7 @@ class CreateUsersTable extends Migration
             ->onUpdate('cascade');
             $table->timestamps();
         });
-        Schema::create('evaluation_user', function (Blueprint $table) {
+        Schema::create('user_evaluation', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('evaluation_id')->unsigned()->nullable();
             $table->foreign('evaluation_id')->on('evaluations')
@@ -65,6 +65,7 @@ class CreateUsersTable extends Migration
             ->onUpdate('cascade');
             $table->timestamps();
         });
+
     }
 
     /**

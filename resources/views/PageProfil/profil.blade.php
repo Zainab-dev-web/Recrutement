@@ -28,7 +28,7 @@
             <h2 class="titular">MENU</h2>
             <ul class="menu-box-menu">
                 <li>
-                    <a class="menu-box-tab" href="#6"><span class="icon fontawesome-envelope scnd-font-color"></span>Vos notes</a>                            
+                    <a class="menu-box-tab" href="#6"><span class="icon scnd-font-color"><i class="fas fa-star"></i></span>Vos notes</a>                            
                 </li>
                 <li>
                 <a class="menu-box-tab" href="{{route('candidat.index')}}"><span class="icon entypo-paper-plane scnd-font-color"></span>Candidatures</span></a>              
@@ -42,7 +42,7 @@
         </div>
     </div>
     <div class="col-6 mt-5 text-center">
-        <button href="{{route('index')}}" class='btn'>Voir votre agenda</button>
+        <a href="{{route('agenda')}}" class='btn'>Voir votre agenda</a>
     </div>
     
     <div class="col-3 mt-5">
@@ -89,14 +89,18 @@
             <h2 class="titular">MENU</h2>
             <ul class="menu-box-menu">
                 <li>
-                    <a class="menu-box-tab" href="#6"><span class="icon fontawesome-envelope scnd-font-color"></span>Vos notes</a>                            
+                    <a class="menu-box-tab" href="#6"><span class="icon scnd-font-color"><i class="fas fa-star"></i></span>Vos notes</a>                            
                 </li>
                 <li>
                     <a class="menu-box-tab" href="#"><span class="icon entypo-paper-plane scnd-font-color"></span>Vos candidatures</span></a>              
                 </li>
 
                 <li>
-                    <a class="menu-box-tab" href="#"><span class="icon entypo-paper-plane scnd-font-color"></span>Vos matchs</span></a>              
+                    <a class="menu-box-tab" href="#"><span class="icon scnd-font-color"><i class="fas fa-heart"></i></span>Vos matchs</span></a>              
+                </li>
+
+                <li>
+                <a class="menu-box-tab" href="{{route('date.index')}}"><span class="icon scnd-font-color"><i class="far fa-clock"></i></span>Proposition de date</span></a>              
                 </li>
             
                 <li>
@@ -107,7 +111,7 @@
         </div>
     </div>
     <div class="col-6 mt-5 text-center">
-        <button href="{{route('index')}}" class='btn'>Voir votre agenda</button>
+        <a href="{{route('agenda')}}" class='btn'>Voir votre agenda</a>
     </div>
     
     <div class="col-3 mt-5">

@@ -56,12 +56,12 @@
                     <td>{{$candidat->user->nom}} {{$candidat->user->prénom}}</td>
                     <td>{{$candidat->offre->poste}} chez {{$candidat->offre->user->nom}}</td>
                     @if ($candidat->accept == 0)
-                    <td>En attente</td>
+                    <td><b>En attente</b></td>
                     @elseif ($candidat->accept == 1)
-                    <td>Accepté</td>
+                    <td class="text-success"><strong>Accepté</strong></td>
                     @endif
                     @if ($candidat->accept == 2)
-                     <td>Refusé</td>   
+                     <td class="text-danger"><strong>Refusé</strong></td>   
                     @endif
                     
                     
@@ -78,6 +78,7 @@
 </div>
 </div>
     @include('components.footer')
+
     
 @endsection
   

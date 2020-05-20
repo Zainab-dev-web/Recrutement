@@ -22,7 +22,7 @@ class Evaluation extends Model
 
     //Many to many
     public function users(){
-        return $this->belongsToMany(User::class, 'evaluation_user');
+        return $this->belongsToMany(User::class, 'user_evaluation');
         }
    
 }
