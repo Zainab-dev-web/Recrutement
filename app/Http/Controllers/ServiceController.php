@@ -14,7 +14,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        //
+        $services=Service::all();
+        return view('service.index', compact('services'));
     }
 
     /**
@@ -24,7 +25,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+        return view('service.create');
     }
 
     /**
@@ -35,7 +36,20 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'titre'=> 'required',
+            'icone'=> 'required',
+            'description'=> 'required',
+        ]);
+            
+        $service= new Service();
+            
+           
+            $service->titre=$request->titre;
+            $service->icone = $request->icone;
+            $service->description=$request->description;
+            $service->save();
+            return redirect()->route('service.index');
     }
 
     /**
@@ -55,9 +69,11 @@ class ServiceController extends Controller
      * @param  \App\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function edit(Service $service)
+    public function edit($id)
     {
-        //
+        $service=Service::find($id);
+         $icone=Service::all();
+        return view('service.edit', compact('service', 'icone'));
     }
 
     /**
@@ -67,9 +83,19 @@ class ServiceController extends Controller
      * @param  \App\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Service $service)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'titre'=> 'required|',
+            'description'=> 'required|',
+            'icone'=> 'required|',
+        ]);
+        $service=Service::find($id);
+        $service->titre=$request->titre;
+        $service->icone = $request->icone;
+        $service->description=$request->description;
+        $service->save();
+        return redirect()->route('service.index');
     }
 
     /**
@@ -78,8 +104,10 @@ class ServiceController extends Controller
      * @param  \App\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Service $service)
+    public function destroy($id)
     {
-        //
+        $service=Service::find($id);
+        $service->delete();
+        return redirect()->route('service.index');
     }
 }

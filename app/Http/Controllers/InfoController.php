@@ -1,12 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Carousel;
-use App\Service;
-use App\Work;
+
+use App\Info;
 use Illuminate\Http\Request;
 
-class AccueilController extends Controller
+class InfoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +14,7 @@ class AccueilController extends Controller
      */
     public function index()
     {
-        $carousel=Carousel::all();
-        $works=Work::find(1);
-        $service=Service::all();
-        return view('PageAccueil.pageAccueil' , compact('carousel', 'works' , 'service'));
+        //
     }
 
     /**
@@ -45,10 +41,10 @@ class AccueilController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Info  $info
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Info $info)
     {
         //
     }
@@ -56,10 +52,10 @@ class AccueilController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Info  $info
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Info $info)
     {
         //
     }
@@ -68,10 +64,10 @@ class AccueilController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Info  $info
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Info $info)
     {
         //
     }
@@ -79,10 +75,10 @@ class AccueilController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Info  $info
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Info $info)
     {
         //
     }
