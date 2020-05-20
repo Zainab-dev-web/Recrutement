@@ -78,7 +78,7 @@ class EventController extends Controller
         $event->end = $request->input('date');
         $event->user_id = Auth::user()->id;
         $event->save();
-        return redirect()->route('event.destroy');
+        return redirect()->route();
 
     }
 
