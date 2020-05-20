@@ -3314,6 +3314,12 @@ height: 16.66%;
 }
 .calendar__othermonth .calendar__day{
     opacity: 0.4;
+}
+.fc-day-header{
+    color: #020202!important;
+}
+.fc-past{
+    color: #020202;
 }/*-------------   Color Variable  --------------*/
 
 .white-bg {

@@ -2,7 +2,7 @@
 <div id="newsletter" class="wantToWork-area wantToWork-area2 w-padding2">
     <div class="container">
         <div class="row align-items-center justify-content-between">
-            <div class="col-xl-8 col-lg-8 col-md-8">
+            <div class="col-xl-4 col-lg-8 col-md-8">
                 <div class="wantToWork-caption wantToWork-caption2">
                     <h2>Newsletter</h2>
                     @if (session()->has('new'))
@@ -26,7 +26,7 @@
                 
                     <button class="button rounded-0 primary-bg w-100 btn_1 boxed-btn mt-2"
                         type="submit">Subscribe</button>
-                </form>
+					</form>
             </div>
         </div>
     </div>
