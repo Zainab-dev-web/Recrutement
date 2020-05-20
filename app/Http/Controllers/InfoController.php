@@ -14,7 +14,8 @@ class InfoController extends Controller
      */
     public function index()
     {
-        //
+        $infos=Info::all();
+        return view('info.index', compact('infos'));
     }
 
     /**
@@ -55,9 +56,10 @@ class InfoController extends Controller
      * @param  \App\Info  $info
      * @return \Illuminate\Http\Response
      */
-    public function edit(Info $info)
+    public function edit($id)
     {
-        //
+        $info=Info::find($id);
+        return view('info.edit', compact('info'));
     }
 
     /**
@@ -67,9 +69,20 @@ class InfoController extends Controller
      * @param  \App\Info  $info
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Info $info)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+    
+            'titre'=> 'required|',
+            'description'=> 'required|',
+            
+        ]);
+        
+        $info=Info::find($id);
+        $info->titre=$request->titre;
+        $info->description=$request->description;
+        $info->save();
+        return redirect()->route('info.index');
     }
 
     /**

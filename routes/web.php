@@ -68,5 +68,6 @@ Route::resource('carousel', 'CarouselController');
 Route::resource('service', 'ServiceController');
 Route::resource('work', 'WorkController');
 Route::resource('contactInfo', 'ContactController');
+Route::resource('info', 'InfoController');
 
 

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Team;
+use App\Footer;
 use Illuminate\Http\Request;
 
-class TeamController extends Controller
+class FooterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class TeamController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Team  $team
+     * @param  \App\Footer  $footer
      * @return \Illuminate\Http\Response
      */
-    public function show(Team $team)
+    public function show(Footer $footer)
     {
         //
     }
@@ -52,10 +52,10 @@ class TeamController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Team  $team
+     * @param  \App\Footer  $footer
      * @return \Illuminate\Http\Response
      */
-    public function edit(Team $team)
+    public function edit(Footer $footer)
     {
         //
     }
@@ -64,10 +64,10 @@ class TeamController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Team  $team
+     * @param  \App\Footer  $footer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Team $team)
+    public function update(Request $request, Footer $footer)
     {
         //
     }
@@ -75,10 +75,10 @@ class TeamController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Team  $team
+     * @param  \App\Footer  $footer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Team $team)
+    public function destroy(Footer $footer)
     {
         //
     }

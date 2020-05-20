@@ -276,6 +276,12 @@ return [
             
         ],
         [
+            'text'    => 'Info',
+            'icon'    => 'fas fa-images',
+            'url'  => 'info',
+            
+        ],
+        [
             'text'    => 'Contact',
             'icon'    => 'fas fa-images',
             'url'  => 'contact',

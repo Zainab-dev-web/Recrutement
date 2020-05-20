@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\Carousel;
 use App\Service;
 use App\Work;
+use App\Info;
+use App\User;
 use Illuminate\Http\Request;
 
 class AccueilController extends Controller
@@ -18,7 +20,10 @@ class AccueilController extends Controller
         $carousel=Carousel::all();
         $works=Work::find(1);
         $service=Service::all();
-        return view('PageAccueil.pageAccueil' , compact('carousel', 'works' , 'service'));
+        $info=Info::find(1);
+        $userPrincipal =User::where('role_id',1)->first();
+        $UserSecondaire =User::inRandomOrder()->where('role_id','!=',1)->where('role_id','!=',5)->take(3)->get();
+        return view('PageAccueil.pageAccueil' , compact('carousel', 'works' , 'service', 'info', 'userPrincipal', 'UserSecondaire'));
     }
 
     /**
