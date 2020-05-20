@@ -13,5 +13,6 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
 .sass('resources/sass/heart-anime.scss', 'public/css')
+.sass('resources/sass/flaticon.scss', 'public/css')
     .sass('resources/sass/app.scss', 'public/css');
   
