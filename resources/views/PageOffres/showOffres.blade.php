@@ -13,7 +13,7 @@
 </form>
 @endcan
 
-@if (Auth::user()->id == $offre->user->id)
+@if (Auth::check() && Auth::user()->id == $offre->user->id)
 <form action="{{route('offres.destroy', $offre)}}" method="post">
   @csrf
   @method('DELETE')

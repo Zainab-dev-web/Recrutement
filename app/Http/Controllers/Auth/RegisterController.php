@@ -135,6 +135,7 @@ class RegisterController extends Controller
             'statut_id' => null,
             'password' => Hash::make($data['password']),
         ]);
+        
         }
         
         

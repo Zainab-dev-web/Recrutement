@@ -94,6 +94,10 @@
                 <li>
                     <a class="menu-box-tab" href="#"><span class="icon entypo-paper-plane scnd-font-color"></span>Vos candidatures</span></a>              
                 </li>
+
+                <li>
+                    <a class="menu-box-tab" href="#"><span class="icon entypo-paper-plane scnd-font-color"></span>Vos matchs</span></a>              
+                </li>
             
                 <li>
                     <a class="menu-box-tab" href="#12"><span class="icon entypo-cog scnd-font-color"></span>Account Settings</a>

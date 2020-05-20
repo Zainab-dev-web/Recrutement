@@ -14,7 +14,8 @@ class CarouselController extends Controller
      */
     public function index()
     {
-        //
+        $carousels=Carousel::all();
+        return view('carousel.index', compact('carousels'));
     }
 
     /**
@@ -57,7 +58,7 @@ class CarouselController extends Controller
      */
     public function edit(Carousel $carousel)
     {
-        //
+        return view('carousel.edit', compact('carousel'));
     }
 
     /**
@@ -69,7 +70,21 @@ class CarouselController extends Controller
      */
     public function update(Request $request, Carousel $carousel)
     {
-        //
+        $request->validate([
+            'slogan'=> 'required|',
+            'name'=> 'required|',
+            'titre'=> 'required|', 
+            'photo'=> 'required|',
+        ]);
+        $image = Storage::disk('public')->put('', $request->file('photo'));
+    
+        $carousel->photo=$image;
+        $carousel->titre=$request->titre;
+        $carousel->name=$request->name;
+        $carousel->slogan=$request->slogan;
+       
+        $carousel->save();
+        return redirect()->route('carousel.index');
     }
 
     /**

@@ -167,7 +167,7 @@ return [
 
     'use_route_url' => false,
 
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'accueil',
 
     'logout_url' => 'logout',
 
@@ -237,6 +237,31 @@ return [
             'text' => 'change_password',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
+        ],
+        ['header' => 'Gestion'],
+        [
+            'text'    => 'Utilisateur',
+            'icon'    => 'fas fa-images',
+            'url'  => 'user',
+            
+        ],
+        [
+            'text'    => 'Match',
+            'icon'    => 'fas fa-images',
+            'url'  => 'match',
+            
+        ],
+        [
+            'text'    => 'Vos messages',
+            'icon'    => 'fas fa-images',
+            'url'  => 'formcontact',
+            
+        ],
+        [
+            'text'    => 'Carousel',
+            'icon'    => 'fas fa-images',
+            'url'  => 'carousel',
+            
         ],
         [
             'text'    => 'multilevel',

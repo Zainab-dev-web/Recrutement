@@ -6,6 +6,7 @@ use App\Offre;
 use App\Statut;
 use App\Candidat;
 use App\User;
+use App\Match;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -52,6 +53,13 @@ class OffreController extends Controller
         $offre->save();
         return redirect()->route('profil.index');
      
+    }
+
+    public function searchoffre($id) {
+        $offres = Offre::where('user_id', $id)->orderby('id', 'asc')->paginate(3);
+        $entreprises = User::where('role_id', 5)->get();
+        return view('PageOffres.pageOffres', compact('offres', 'entreprises'));
+        //
     }
 
     /**
