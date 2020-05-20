@@ -1,12 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Carousel;
-use App\Service;
+
 use App\Work;
 use Illuminate\Http\Request;
 
-class AccueilController extends Controller
+class WorkController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +14,8 @@ class AccueilController extends Controller
      */
     public function index()
     {
-        $carousel=Carousel::all();
-        $works=Work::find(1);
-        $service=Service::find(1);
-        return view('PageAccueil.pageAccueil' , compact('carousel', 'works' , 'service'));
+        $works=Work::all();
+        return view('work.index', compact('works'));
     }
 
     /**
@@ -39,16 +36,17 @@ class AccueilController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       //
+    
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Work  $work
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Work $work)
     {
         //
     }
@@ -56,34 +54,43 @@ class AccueilController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Work  $work
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //
+        $work=Work::find($id);
+        return view('work.edit', compact('work'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Work  $work
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'titre'=> 'required|',
+            'description'=> 'required|',
+        ]);
+        $work=Work::find($id);
+        $work->titre=$request->titre;
+        $work->description=$request->description;
+        $work->save();
+        return redirect()->route('work.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Work  $work
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Work $work)
     {
-        //
+       
     }
 }

@@ -67,5 +67,8 @@ Route::resource('match', 'MatchController');
 Route::resource('formcontact' , "FormcontactController");
 Route::resource('newsletter', 'NewsletterController');
 Route::resource('carousel', 'CarouselController');
+Route::resource('service', 'ServiceController');
+Route::resource('work', 'WorkController');
+Route::resource('contact', 'ContactController');
 
 

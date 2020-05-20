@@ -264,6 +264,24 @@ return [
             
         ],
         [
+            'text'    => 'Vos services',
+            'icon'    => 'fas fa-images',
+            'url'  => 'service',
+            
+        ],
+        [
+            'text'    => 'Work',
+            'icon'    => 'fas fa-images',
+            'url'  => 'work',
+            
+        ],
+        [
+            'text'    => 'Contact',
+            'icon'    => 'fas fa-images',
+            'url'  => 'contact',
+            
+        ],
+        [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
