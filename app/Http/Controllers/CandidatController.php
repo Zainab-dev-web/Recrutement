@@ -80,6 +80,7 @@ class CandidatController extends Controller
         $candidat = new Candidat();
         $candidat->offre_id = $offre->id;
         $candidat->user_id = Auth::id();
+        $candidat->date_id = null;
         $candidat->accept = 0;
         $candidat->save();
         return redirect()->route('offres.index');
@@ -87,13 +88,13 @@ class CandidatController extends Controller
 
     // ACCEPTER
     public function accepter(Request $request, $id)
-    {
+    {   
         $candidat = Candidat::find($id);
         $candidat->offre_id = $candidat->offre_id;
         $candidat->user_id = $candidat->user_id;
         $candidat->accept = 1;
         $candidat->save();
-        return redirect()->route('candidat.index');
+        return view ('PageProfil.candidature.formCandidat', compact('candidat'));
     }
 
        // REFUSER
@@ -106,6 +107,8 @@ class CandidatController extends Controller
         $candidat->save();
         return redirect()->route('candidat.index');
        }
+
+       
 
 
     /**

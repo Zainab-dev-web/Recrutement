@@ -28,6 +28,8 @@ Route::resource('candidat', 'CandidatController');
 Route::resource('admin','AdminController');
 Route::get('refuser/{id}', 'CandidatController@refuser')->name('refuser');
 Route::get('accepter/{id}', 'CandidatController@accepter')->name('accepter');
+Route::resource('date', 'DateController');
+Route::resource('event', 'EventController');
 
 Route::get('/agenda' , function(){
     return view ('agenda.index');
