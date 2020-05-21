@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Offre;
+use App\Role;
 use App\Candidat;
 use Illuminate\Support\Facades\Auth;
 
@@ -52,7 +53,11 @@ class ProfilController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $users=User::find($id);
+        $roles=Role::all();
+       
+    return view ('PageProfil.show' , compact('users','roles'));
     }
 
     /**

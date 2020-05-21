@@ -48,6 +48,8 @@
         <button class='btn btn-white'><i class="far fa-check-circle fa-2x text-success"></i></button>
         
         <a href='' data-toggle="modal" data-target="#exampleModalLong"class='btn btn-white'><i class="fas fa-lightbulb fa-2x text-info"></i></a>
+        <a href='{{route('profil.index')}}'class='btn btn-white'><i class="far fa-address-card fa-2x text-secondary"></i></a>
+         
     @endif
     {{-- @elseif(Auth::user()->role_id==1)
     <a href='{{route('team.edit', $item)}}' class='btn btn-white'><i class="far fa-edit fa-2x text-warning"></i></a><b></b></a>
@@ -94,6 +96,7 @@
          <button class='btn btn-white'><i class="far fa-check-circle fa-2x text-success"></i></button>
          
          <a href='' data-toggle="modal" data-target="#exampleModalLong"class='btn btn-white'><i class="fas fa-lightbulb fa-2x text-info"></i></a>
+         <a href='{{route('profil.index')}}'class='btn btn-white'><i class="far fa-address-card fa-2x text-secondary"></i></a>
      @endif
      {{-- @elseif(Auth::user()->role_id==1)
      <a href='{{route('team.edit', $item)}}' class='btn btn-white'><i class="far fa-edit fa-2x text-warning"></i></a><b></b></a>
@@ -104,10 +107,8 @@
    {{--@endforeach --}}
 {{-- </div> --}}
 @endcan
-@can('admin_edit')
-{{-- <div class="row">
-    @foreach ($users as $item) --}}
-   @if($item->role_id==4 && $item->role_id==5)
+
+  @can('admin_edit')
    <div class="box-body box-profile text-center w-25 m-3 border border-info rounded p-5">
     <img class="profile-user-img img-responsive img-circle " src="{{asset('storage/'.$item->photo)}}" alt="User profile picture">
  
@@ -140,14 +141,15 @@
          <button class='btn btn-white'><i class="far fa-check-circle fa-2x text-success"></i></button>
          
          <a href='' data-toggle="modal" data-target="#exampleModalLong"class='btn btn-white'><i class="fas fa-lightbulb fa-2x text-info"></i></a>
+         <a href='{{route('profil.show', $item)}}'class='btn btn-white'><i class="far fa-address-card fa-2x text-secondary"></i></a>
      @endif
      {{-- @elseif(Auth::user()->role_id==1)
      <a href='{{route('team.edit', $item)}}' class='btn btn-white'><i class="far fa-edit fa-2x text-warning"></i></a><b></b></a>
      @endif --}}
  </div>
    </div>
-   @endif
-   @endcan
+  
+  @endcan
    @endforeach
    
 </div>
