@@ -48,5 +48,15 @@ class AuthServiceProvider extends ServiceProvider
             return true;
             }
             });
+        Gate::define('hrt_valid', function($user){
+            if($user->role_id==2 ){
+            return true;
+            }
+            });
+        Gate::define('hre_valid', function($user){
+            if($user->role_id==3){
+            return true;
+            }
+            });
     }
 }

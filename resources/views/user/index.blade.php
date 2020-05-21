@@ -13,9 +13,9 @@
 <hr>
 
 <div class="row">
-   @foreach ($users as $item)
-       
-   
+    @foreach ($users as $item)
+    @can('hrt_valid') 
+    @if($item->role_id==4)
    <div class="box-body box-profile text-center w-25 m-3 border border-info rounded p-5">
    <img class="profile-user-img img-responsive img-circle " src="{{asset('storage/'.$item->photo)}}" alt="User profile picture">
 
@@ -35,9 +35,10 @@
       </li>
     </ul>
 <div class='text-center mt-3'>
-    @can('admin_edit') 
+    {{-- @can('admin_edit')  --}}
     {{-- @if($item->role_id !=1) --}}
-    <a href='{{route('user.edit', $item)}}' class='btn btn-white'><i class="far fa-edit fa-2x text-warning"></i></a>
+    {{-- <a href='{{route('user.edit', $item)}}' class='btn btn-white'><i class="far fa-edit fa-2x text-warning"></i></a> --}}
+    {{-- @endcan --}}
     @if($item->valid ==0)
     <a href='{{route('user.show', $item)}}' class='btn btn-white'>
         <i class="far fa-check-circle fa-2x text-danger"></i></a>
@@ -51,12 +52,105 @@
     {{-- @elseif(Auth::user()->role_id==1)
     <a href='{{route('team.edit', $item)}}' class='btn btn-white'><i class="far fa-edit fa-2x text-warning"></i></a><b></b></a>
     @endif --}}
-    @endcan
 </div>
   </div>
-  @endforeach
+   @endif
+  {{--@endforeach --}}
+{{-- </div> --}}
+@endcan
+@can('hre_valid')
+{{-- <div class="row">
+    @foreach ($users as $item) --}}
+  @if($item->role_id==5)
+  <div class="box-body box-profile text-center w-25 m-3 border border-info rounded p-5">
+    <img class="profile-user-img img-responsive img-circle " src="{{asset('storage/'.$item->photo)}}" alt="User profile picture">
+ 
+    <h3 class="profile-username text-center">{{$item->nom}}</h3>
+ 
+    <p class="text-muted text-center">{{$item->role->role}}</p>
+ 
+     <ul class="list-group list-group-unbordered">
+       <li class="list-group-item">
+       <b>Email</b> <a class="pull-right">{{$item->email}}</a>
+       </li>
+       <li class="list-group-item">
+       <b>Expérience</b> <a class="pull-right">{{$item->experience}} annnées</a>
+       </li>
+       <li class="list-group-item">
+       <b>Entreprise</b> <a class="pull-right">Laravel Officiel</a>
+       </li>
+     </ul>
+ <div class='text-center mt-3'>
+     {{-- @can('admin_edit')  --}}
+     {{-- @if($item->role_id !=1) --}}
+     {{-- <a href='{{route('user.edit', $item)}}' class='btn btn-white'><i class="far fa-edit fa-2x text-warning"></i></a> --}}
+     {{-- @endcan --}}
+     @if($item->valid ==0)
+     <a href='{{route('user.show', $item)}}' class='btn btn-white'>
+         <i class="far fa-check-circle fa-2x text-danger"></i></a>
+                       
+         @else
+         
+         <button class='btn btn-white'><i class="far fa-check-circle fa-2x text-success"></i></button>
+         
+         <a href='' data-toggle="modal" data-target="#exampleModalLong"class='btn btn-white'><i class="fas fa-lightbulb fa-2x text-info"></i></a>
+     @endif
+     {{-- @elseif(Auth::user()->role_id==1)
+     <a href='{{route('team.edit', $item)}}' class='btn btn-white'><i class="far fa-edit fa-2x text-warning"></i></a><b></b></a>
+     @endif --}}
+ </div>
+   </div>
+ @endif
+   {{--@endforeach --}}
+{{-- </div> --}}
+@endcan
+@can('admin_edit')
+{{-- <div class="row">
+    @foreach ($users as $item) --}}
+   @if($item->role_id==4 && $item->role_id==5)
+   <div class="box-body box-profile text-center w-25 m-3 border border-info rounded p-5">
+    <img class="profile-user-img img-responsive img-circle " src="{{asset('storage/'.$item->photo)}}" alt="User profile picture">
+ 
+    <h3 class="profile-username text-center">{{$item->nom}}</h3>
+ 
+    <p class="text-muted text-center">{{$item->role->role}}</p>
+ 
+     <ul class="list-group list-group-unbordered">
+       <li class="list-group-item">
+       <b>Email</b> <a class="pull-right">{{$item->email}}</a>
+       </li>
+       <li class="list-group-item">
+       <b>Expérience</b> <a class="pull-right">{{$item->experience}} annnées</a>
+       </li>
+       <li class="list-group-item">
+       <b>Entreprise</b> <a class="pull-right">Laravel Officiel</a>
+       </li>
+     </ul>
+ <div class='text-center mt-3'>
+     {{-- @can('admin_edit')  --}}
+   
+     <a href='{{route('user.edit', $item)}}' class='btn btn-white'><i class="far fa-edit fa-2x text-warning"></i></a>
+     {{-- @endcan --}}
+     @if($item->valid ==0)
+     <a href='{{route('user.show', $item)}}' class='btn btn-white'>
+         <i class="far fa-check-circle fa-2x text-danger"></i></a>
+                       
+         @else
+         
+         <button class='btn btn-white'><i class="far fa-check-circle fa-2x text-success"></i></button>
+         
+         <a href='' data-toggle="modal" data-target="#exampleModalLong"class='btn btn-white'><i class="fas fa-lightbulb fa-2x text-info"></i></a>
+     @endif
+     {{-- @elseif(Auth::user()->role_id==1)
+     <a href='{{route('team.edit', $item)}}' class='btn btn-white'><i class="far fa-edit fa-2x text-warning"></i></a><b></b></a>
+     @endif --}}
+ </div>
+   </div>
+   @endif
+   @endcan
+   @endforeach
+   
 </div>
-
 <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
