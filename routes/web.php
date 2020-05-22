@@ -19,7 +19,7 @@ Route::get('/' , 'AccueilController@index')->name('accueil');
 Route::resource('offres', 'OffreController');
 Route::get('/searchoffre/{id}', 'OffreController@searchoffre')->name('searchoffre');
 Route::resource('talents', 'TalentController');
-Route::resource('entreprises', 'EntrepriseController')->middleware('isConnect');
+Route::resource('entreprises', 'EntrepriseController');
 Route::resource('contact', 'ConctatController');
 Route::resource('profil', 'ProfilController')->middleware('isConnect');
 Route::resource('candidat', 'CandidatController')->middleware('isConnect');
