@@ -60,7 +60,7 @@ class UserTableSeeder extends Seeder
             'resultat' => null,
         ]);
         $filename = Str::random(10) . time() . '.jpeg';
-        Storage::disk('public')->copy('/telechargement.jpeg', $filename);
+        Storage::disk('public')->copy('/images.jpeg', $filename);
         DB::table('users')->insert([
             'nom' => 'Amazon',
             'prénom' => null,
@@ -83,7 +83,7 @@ class UserTableSeeder extends Seeder
             'resultat' => null,
         ]);
         $filename = Str::random(10) . time() . '.jpeg';
-        Storage::disk('public')->copy('/telechargement.jpeg', $filename);
+        Storage::disk('public')->copy('/images.jpeg', $filename);
         DB::table('users')->insert([
             'nom' => 'Stoller',
             'prénom' => 'Shannon',
@@ -107,7 +107,7 @@ class UserTableSeeder extends Seeder
             'resultat' => null,
         ]);
         $filename = Str::random(10) . time() . '.jpeg';
-        Storage::disk('public')->copy('/telechargement.jpeg', $filename);
+        Storage::disk('public')->copy('/images.jpeg', $filename);
         DB::table('users')->insert([
             'nom' => 'Zainab',
             'prénom' => 'Zainab',
