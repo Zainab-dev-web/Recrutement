@@ -148,6 +148,52 @@ class UserTableSeeder extends Seeder
             'role_id' => 4,
             'password' => Hash::make('popo1234'),
         ]);
+        $filename = Str::random(10) . time() . '.png';
+        Storage::disk('public')->copy('/images.png', $filename);
+        DB::table('users')->insert([
+            'nom' => 'Carla',
+            'prénom' => 'Bast',
+            'date' => null,
+            'tva' => null,
+            'logo' =>null,
+            'pNom' => null,
+            'pTel' => null,
+            'photo' => $filename,
+            'email' => 'hrt@gmail.com',
+            'numero' => '0486573322',
+            'adresse' => 'Rue des matins, 45',
+            'statut_id' => 1,
+            'véhicule' => 'Non',
+            'dispo' => '2020-05-18',
+            'domaine' => 'Full-Stack',
+            'cv' => '202004sdf30_113422_0000-1.png',
+            'valid' => 1,
+            'role_id' => 2,
+            'password' => Hash::make('123456789'),
+        ]);
+        $filename = Str::random(10) . time() . '.png';
+        Storage::disk('public')->copy('/images.png', $filename);
+        DB::table('users')->insert([
+            'nom' => 'Sebastien',
+            'prénom' => 'Seb',
+            'date' => null,
+            'tva' => null,
+            'logo' =>null,
+            'pNom' => null,
+            'pTel' => null,
+            'photo' => $filename,
+            'email' => 'hre@gmail.com',
+            'numero' => '0486573322',
+            'adresse' => 'Rue des matins, 45',
+            'statut_id' => 1,
+            'véhicule' => 'Non',
+            'dispo' => '2020-05-18',
+            'domaine' => 'Full-Stack',
+            'cv' => '202004sdf30_113422_0000-1.png',
+            'valid' => 1,
+            'role_id' => 3,
+            'password' => Hash::make('123456789'),
+        ]);
 
         
     }
