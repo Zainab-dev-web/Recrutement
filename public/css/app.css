@@ -2347,7 +2347,6 @@ img.mfp-img {
 }
 
 .block {
-    margin-bottom: 25px;
     background: #394264;
     border-radius: 5px;
 }
@@ -2355,7 +2354,11 @@ img.mfp-img {
 /******************************************** LEFT CONTAINER *****************************************/
 
 .menu-box {
-    height: 360px;
+    height: 50vh;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
 }
 
 .menu-box .titular {
