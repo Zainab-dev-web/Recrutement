@@ -220,124 +220,62 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
+        ['header' => 'Configuration du compte'],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
+            'text' => 'Profile',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
         ],
         ['header' => 'Gestion'],
         [
             'text'    => 'Utilisateur',
-            'icon'    => 'fas fa-images',
+            'icon'    => 'fas fa-users',
             'url'  => 'user',
-            
+            'can'  => 'WebStop',
         ],
         [
             'text'    => 'Match',
-            'icon'    => 'fas fa-images',
+            'icon'    => 'far fa-heart',
             'url'  => 'match',
-            
+            'can'  => 'hrStop',
         ],
         [
             'text'    => 'Vos messages',
-            'icon'    => 'fas fa-images',
+            'icon'    => 'fas fa-envelope-open-text',
             'url'  => 'formcontact',
-            
+            'can'  => 'hrStop',
         ],
         [
             'text'    => 'Carousel',
             'icon'    => 'fas fa-images',
             'url'  => 'carousel',
-            
+            'can'  => 'hrStop',
         ],
         [
             'text'    => 'Vos services',
-            'icon'    => 'fas fa-images',
+            'icon'    => 'fas fa-bell',
             'url'  => 'service',
-            
+            'can'  => 'hrStop',
         ],
         [
             'text'    => 'Work',
-            'icon'    => 'fas fa-images',
+            'icon'    => 'fas fa-briefcase',
             'url'  => 'work',
-            
+            'can'  => 'hrStop',
         ],
         [
             'text'    => 'Info',
-            'icon'    => 'fas fa-images',
+            'icon'    => 'fas fa-info',
             'url'  => 'info',
-            
+            'can'  => 'hrStop',
         ],
         [
             'text'    => 'Contact',
-            'icon'    => 'fas fa-images',
+            'icon'    => 'fas fa-phone-square-alt',
             'url'  => 'contactInfo',
-            
+            'can'  => 'hrStop',
         ],
-        [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-        ],
+        
     ],
 
     /*

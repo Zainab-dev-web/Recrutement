@@ -9,7 +9,7 @@
                         <!-- Logo -->
                         <div class="col-xl-2 col-lg-1 col-md-1">
                             <div class="logo">
-                              <a href=""><img src="{{asset('img/logo/logo.png')}}" alt=""></a>
+                              <a href=""><img class="w-75"src="{{asset('img/logo/logo3.png')}}" alt=""></a>
                             </div>
                         </div>
                         <div class="col-xl-8 col-lg-8 col-md-8">
