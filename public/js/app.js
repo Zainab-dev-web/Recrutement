@@ -63454,6 +63454,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 /***/ }),
 
+/***/ "./resources/sass/flaticon.scss":
+/*!**************************************!*\
+  !*** ./resources/sass/flaticon.scss ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/heart-anime.scss":
 /*!*****************************************!*\
   !*** ./resources/sass/heart-anime.scss ***!
@@ -63466,21 +63477,16 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 /***/ }),
 
 /***/ 0:
-/*!***********************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/heart-anime.scss ./resources/sass/app.scss ***!
-  \***********************************************************************************************/
+/*!******************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/heart-anime.scss ./resources/sass/flaticon.scss ./resources/sass/app.scss ***!
+  \******************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-__webpack_require__(/*! /home/shannon/Bureau/coding-school/Recrutement/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /home/shannon/Bureau/coding-school/Recrutement/resources/sass/heart-anime.scss */"./resources/sass/heart-anime.scss");
-module.exports = __webpack_require__(/*! /home/shannon/Bureau/coding-school/Recrutement/resources/sass/app.scss */"./resources/sass/app.scss");
-=======
 __webpack_require__(/*! /Users/Oxalys/Documents/Dev/coding-school/laravel/Projet Groupe/code/Recrutement/resources/js/app.js */"./resources/js/app.js");
 __webpack_require__(/*! /Users/Oxalys/Documents/Dev/coding-school/laravel/Projet Groupe/code/Recrutement/resources/sass/heart-anime.scss */"./resources/sass/heart-anime.scss");
+__webpack_require__(/*! /Users/Oxalys/Documents/Dev/coding-school/laravel/Projet Groupe/code/Recrutement/resources/sass/flaticon.scss */"./resources/sass/flaticon.scss");
 module.exports = __webpack_require__(/*! /Users/Oxalys/Documents/Dev/coding-school/laravel/Projet Groupe/code/Recrutement/resources/sass/app.scss */"./resources/sass/app.scss");
->>>>>>> salome
 
 
 /***/ })
