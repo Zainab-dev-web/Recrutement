@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class EntrepriseController extends Controller
 {
+    public function __construct(){
+        $this->middleware('GestionUser')->except('index', 'show');
+    }
     /**
      * Display a listing of the resource.
      *

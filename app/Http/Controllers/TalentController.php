@@ -12,6 +12,9 @@ class TalentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // public function __construct(){
+    //     $this->middleware('isConnect')->except('index', 'show');
+    // }
     public function index()
     {
         $talents = User::orderby('id', 'asc')->where('role_id', 4)->paginate(3);
