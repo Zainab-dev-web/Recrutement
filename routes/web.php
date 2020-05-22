@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/' , 'AccueilController@index')->name('accueil');
 
 
-Route::resource('offres', 'OffreController')->middleware('isConnect');
+Route::resource('offres', 'OffreController');
 Route::get('/searchoffre/{id}', 'OffreController@searchoffre')->name('searchoffre');
-Route::resource('talents', 'TalentController')->middleware('isConnect');
+Route::resource('talents', 'TalentController');
 Route::resource('entreprises', 'EntrepriseController')->middleware('isConnect');
 Route::resource('contact', 'ConctatController');
 Route::resource('profil', 'ProfilController')->middleware('isConnect');
