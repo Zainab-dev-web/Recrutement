@@ -22,8 +22,7 @@ Route::resource('admin','AdminController');
 Route::get('refuser/{id}', 'CandidatController@refuser')->name('refuser');
 Route::get('accepter/{id}', 'CandidatController@accepter')->name('accepter');
 Route::resource('date', 'DateController');
-Route::resource('event', 'EventController');
-Route::resource('evaluation', 'EvaluationController');
+Route::resource('evaluation', 'EvaluationController')->middleware('isConnect');
 
 
 //fullcalendar ->Agenda
@@ -54,7 +53,7 @@ Route::get('/searchUser', 'UserController@search')->name('searchUser')->middlewa
 Route::resource('accueil', 'AccueilController');
 Route::resource('offres', 'OffreController');
 Route::resource('talents', 'TalentController');
-Route::resource('entreprises', 'EntrepriseController')->middleware('isConnect');
+Route::resource('entreprises', 'EntrepriseController');
 Route::resource('event', 'EventController')->middleware('isConnect');
 Route::resource('user', 'UserController')->middleware('GestionUser');
 Route::resource('match', 'MatchController')->middleware('isConnect');
