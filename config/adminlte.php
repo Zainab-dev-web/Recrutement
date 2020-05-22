@@ -284,7 +284,7 @@ return [
         [
             'text'    => 'Contact',
             'icon'    => 'fas fa-images',
-            'url'  => 'contact',
+            'url'  => 'contactInfo',
             
         ],
         [
