@@ -28,6 +28,7 @@ Route::get('refuser/{id}', 'CandidatController@refuser')->name('refuser')->middl
 Route::get('accepter/{id}', 'CandidatController@accepter')->name('accepter')->middleware('isConnect');
 Route::resource('date', 'DateController')->middleware('isConnect');
 Route::resource('event', 'EventController')->middleware('isConnect');
+Route::resource('evaluation', 'EvaluationController');
 
 
 //fullcalendar ->Agenda
