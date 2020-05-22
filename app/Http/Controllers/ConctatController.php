@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\Validator;
 
 class ConctatController extends Controller
 {
+    public function __construct(){
+        $this->middleware('isAdmin')->except('store', 'index');
+    }
     /**
      * Display a listing of the resource.
      *
