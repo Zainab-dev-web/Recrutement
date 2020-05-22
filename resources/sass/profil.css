@@ -361,7 +361,11 @@
 /******************************************** LEFT CONTAINER *****************************************/
 
 .menu-box {
-    height: 360px;
+    height: 50vh;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
 }
 
 .menu-box .titular {

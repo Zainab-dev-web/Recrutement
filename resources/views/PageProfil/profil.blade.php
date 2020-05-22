@@ -18,12 +18,17 @@
     
 {{-- 
 <a class="btn btn-white" href="{{route('offres.create')}}" type="submit">Créer une offre</a> --}}
-<div class="row">
-    <div class="col-3">
+<div class="container no-gutters">
+<div class="row no-gutters d-flex">
+    <div class="col-3 no-gutters pb-5 px-5">
         <div class="text-center">
         <img class="my-5" width="200" alt="logo entreprise" src="{{asset('storage/'.$user->logo)}}">
         <h2>{{$user->nom}} - {{$user->domaine}}</h2>
         </div>
+        <button href="{{route('agenda')}}" class='btn'>Voir votre agenda</button>
+    </div>
+    <div class="col-6 my-5 no-gutters">
+        <div class="container d-flex justify-content-center">
         <div class="menu-box block"> <!-- MENU BOX (LEFT-CONTAINER) -->
             <h2 class="titular">MENU</h2>
             <ul class="menu-box-menu">
@@ -36,16 +41,13 @@
             
                 <li>
                     <a class="menu-box-tab" href="#12"><span class="icon entypo-cog scnd-font-color"></span>Account Settings</a>
-                </li>
-                          
+                </li>         
             </ul>
         </div>
-    </div>
-    <div class="col-6 mt-5 text-center">
-        <a href="{{route('agenda')}}" class='btn'>Voir votre agenda</a>
+        </div>
     </div>
     
-    <div class="col-3 mt-5">
+    <div class="col-3 mt-5 no-gutters px-auto">
         <div class="single_sidebar_widget post_category_widget">
             <h4 class="widget_title mb-3">Aperçu de vos offres</h4>
             <ul class="list cat-list">
@@ -67,6 +69,7 @@
         </div>
     </div>
 </div>
+</div>
 @else
     
 @endif
@@ -78,43 +81,46 @@
 @foreach ($users as $user)
 @if ($user->id == Auth::user()->id)
     
-<div class="row">
-    <div class="col-3">
+<div class="container">
+<div class="row no-gutters d-flex">
+    <div class="col-3 no-gutters pb-5 pr-5">
         <div class="text-center">
         <img class="my-5" width="200" alt="logo entreprise" src="{{asset('storage/'.$user->photo)}}">
         <h2>{{$user->nom}} {{$user->prénom}} - {{$user->domaine}}</h2>
         <p>{{$user->statut->statut}} <a data-toggle="modal" data-target="#exampleModalLong"><u>Modifier</u></a></p>
         </div>
-        <div class="menu-box block"> <!-- MENU BOX (LEFT-CONTAINER) -->
-            <h2 class="titular">MENU</h2>
-            <ul class="menu-box-menu">
-                <li>
-                    <a class="menu-box-tab" href="#6"><span class="icon scnd-font-color"><i class="fas fa-star"></i></span>Vos notes</a>                            
-                </li>
-                <li>
-                    <a class="menu-box-tab" href="#"><span class="icon entypo-paper-plane scnd-font-color"></span>Vos candidatures</span></a>              
-                </li>
-
-                <li>
-                    <a class="menu-box-tab" href="#"><span class="icon scnd-font-color"><i class="fas fa-heart"></i></span>Vos matchs</span></a>              
-                </li>
-
-                <li>
-                <a class="menu-box-tab" href="{{route('date.index')}}"><span class="icon scnd-font-color"><i class="far fa-clock"></i></span>Proposition de date</span></a>              
-                </li>
-            
-                <li>
-                    <a class="menu-box-tab" href="#12"><span class="icon entypo-cog scnd-font-color"></span>Account Settings</a>
-                </li>
-                          
-            </ul>
+    <div class="col-3 mt-5">
+        <button href="{{route('agenda')}}" class='btn'>Voir votre agenda</button>
+    </div>
+    <div class="col-6 mt-5 no-gutters">
+        <div class="container d-flex justify-content-center">
+            <div class="menu-box block"> <!-- MENU BOX (LEFT-CONTAINER) -->
+                <h2 class="titular">MENU</h2>
+                <ul class="menu-box-menu">
+                    <li>
+                        <a class="menu-box-tab" href="#6"><span class="icon scnd-font-color"><i class="fas fa-star"></i></span>Vos notes</a>                            
+                    </li>
+                    <li>
+                        <a class="menu-box-tab" href="#"><span class="icon entypo-paper-plane scnd-font-color"></span>Vos candidatures</span></a>              
+                    </li>
+    
+                    <li>
+                        <a class="menu-box-tab" href="#"><span class="icon scnd-font-color"><i class="fas fa-heart"></i></span>Vos matchs</span></a>              
+                    </li>
+    
+                    <li>
+                    <a class="menu-box-tab" href="{{route('date.index')}}"><span class="icon scnd-font-color"><i class="far fa-clock"></i></span>Proposition de date</span></a>              
+                    </li>
+                
+                    <li>
+                        <a class="menu-box-tab" href="#12"><span class="icon entypo-cog scnd-font-color"></span>Account Settings</a>
+                    </li>
+                              
+                </ul>
+            </div>
         </div>
     </div>
-    <div class="col-6 mt-5 text-center">
-        <a href="{{route('agenda')}}" class='btn'>Voir votre agenda</a>
-    </div>
-    
-    <div class="col-3 mt-5">
+    <div class="col-3 mt-5 no-gutters">
         <div class="single_sidebar_widget post_category_widget">
             <h4 class="widget_title mb-3">Candidatures en cours</h4>
             <ul class="list cat-list">
@@ -134,13 +140,12 @@
         </div>
     </div>
 </div>
+</div>
+</div>
 @else
     
 @endif
-
-
-
-    <!-- Modal -->
+<!-- Modal -->
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -186,8 +191,9 @@
                 
                 <a href="{{route('profil.index')}}"><button type="button" class="btn btn-primary">Retour</button></a>
             </div>
-            </div>
         </div>
-        </div>
+    </div>
+</div>
+
 @endforeach
 @endcan
