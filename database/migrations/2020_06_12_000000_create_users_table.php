@@ -43,7 +43,7 @@ class CreateUsersTable extends Migration
             ->onDelete('cascade')
             ->onUpdate('cascade');
             $table->string('password');
-            $table->string('resultat');
+            $table->string('resultat')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
