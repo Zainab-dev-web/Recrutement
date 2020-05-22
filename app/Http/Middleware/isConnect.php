@@ -19,7 +19,7 @@ class isConnect
         if (Auth::check()) {
             return $next($request);
         } else {
-            return redirect()->route('welcome');
+            return redirect()->route('accueil');
         }
     }
 }
