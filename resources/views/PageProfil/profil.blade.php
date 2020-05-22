@@ -25,7 +25,7 @@
         <img class="my-5" width="200" alt="logo entreprise" src="{{asset('storage/'.$user->logo)}}">
         <h2>{{$user->nom}} - {{$user->domaine}}</h2>
         </div>
-        <button href="{{route('agenda')}}" class='btn'>Voir votre agenda</button>
+        <a href="{{route('agenda')}}" class='btn'>Voir votre agenda</a>
     </div>
     <div class="col-6 my-5 no-gutters">
         <div class="container d-flex justify-content-center">
@@ -93,7 +93,7 @@
         <p>{{$user->statut->statut}} <a data-toggle="modal" data-target="#exampleModalLong"><u>Modifier</u></a></p>
         </div>
     <div class="col-3 mt-5">
-        <button href="{{route('agenda')}}" class='btn'>Voir votre agenda</button>
+        <a href="{{route('agenda')}}" class='btn'>Voir votre agenda</a>
     </div>
     <div class="col-6 mt-5 no-gutters">
         <div class="container d-flex justify-content-center">
