@@ -23,7 +23,7 @@
         </div>
         <!-- Our Services End -->
         <!-- Want To Work Start -->
-        <div class="wantToWork-area pt-5 pb-200">
+        <div class="wantToWork-area pt-50 pb-100">
             <div class="container">
                 <div class="row align-items-end">
                     <div class="col-xl-5 col-lg-7 col-md-8">

@@ -2347,15 +2347,23 @@ img.mfp-img {
 }
 
 .block {
+<<<<<<< HEAD
     margin-bottom: 25px;
     background: #020f23;
+=======
+    background: #394264;
+>>>>>>> salome
     border-radius: 5px;
 }
 
 /******************************************** LEFT CONTAINER *****************************************/
 
 .menu-box {
-    height: 360px;
+    height: 50vh;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
 }
 
 .menu-box .titular {
