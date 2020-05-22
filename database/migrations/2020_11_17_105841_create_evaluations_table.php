@@ -39,7 +39,7 @@ class CreateEvaluationsTable extends Migration
             ->references('id')
             ->onDelete('cascade')
             ->onUpdate('cascade');
-            $table->string('resultat')->nullable(); // accepté ou non
+            $table->string('resultat'); // accepté ou non
             $table->timestamps();
         });
     }
