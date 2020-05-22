@@ -82,15 +82,16 @@
 @if ($user->id == Auth::user()->id)
     
 <div class="container">
-<div class="row no-gutters d-flex">
+<div class="row no-gutters d-flex justify-content-center">
     <div class="col-3 no-gutters pb-5 pr-5">
         <div class="text-center">
         <img class="my-5" width="200" alt="logo entreprise" src="{{asset('storage/'.$user->photo)}}">
         <h2>{{$user->nom}} {{$user->prénom}} - {{$user->domaine}}</h2>
         <p>{{$user->statut->statut}} <a data-toggle="modal" data-target="#exampleModalLong"><u>Modifier</u></a></p>
         </div>
-    <div class="col-3 mt-5">
-        <button href="{{route('agenda')}}" class='btn'>Voir votre agenda</button>
+        <div class="col-3 mt-5">
+            <button href="{{route('agenda')}}" class='btn'>Voir votre agenda</button>
+        </div>
     </div>
     <div class="col-6 mt-5 no-gutters">
         <div class="container d-flex justify-content-center">
@@ -139,7 +140,6 @@
             </ul>
         </div>
     </div>
-</div>
 </div>
 </div>
 @else
