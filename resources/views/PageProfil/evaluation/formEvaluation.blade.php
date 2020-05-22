@@ -34,6 +34,8 @@
           <option value="{{$note->id}}">{{$note->note}}</option>   
         @endforeach
       </select>
+      <label for="resultat">Le candidat est accepté ou refusé</label>
+      <input type="text" name="resultat" placeholder="Résultat" class="form-control w-50" id="resultat">
     </div>
     <div class="form-group mt-3">
         <button type="submit" class="button button-contactForm boxed-btn">Envoyer</button>

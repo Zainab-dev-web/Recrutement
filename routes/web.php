@@ -14,8 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/' , 'AccueilController@index')->name('accueil');
-
-
 Route::resource('offres', 'OffreController');
 Route::get('/searchoffre/{id}', 'OffreController@searchoffre')->name('searchoffre');
 Route::resource('talents', 'TalentController');
@@ -29,6 +27,7 @@ Route::get('accepter/{id}', 'CandidatController@accepter')->name('accepter');
 Route::resource('date', 'DateController');
 Route::resource('event', 'EventController');
 Route::resource('evaluation', 'EvaluationController');
+Route::resource('match', 'MatchController');
 
 
 //fullcalendar
@@ -39,6 +38,7 @@ Route::post('/fullcalendareventmaster/store', 'FullCalendarEventMasterController
 Route::post('/fullcalendareventmaster/create', 'FullCalendarEventMasterController@create')->name('create');
 Route::post('/fullcalendareventmaster/update', 'FullCalendarEventMasterController@update');
 Route::post('/fullcalendareventmaster/delete', 'FullCalendarEventMasterController@destroy');
+
 Route::get('/agenda' , function(){
     return view ('agenda.index');
 })->name('index');

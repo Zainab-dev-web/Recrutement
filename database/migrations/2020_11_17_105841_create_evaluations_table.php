@@ -39,13 +39,7 @@ class CreateEvaluationsTable extends Migration
             ->references('id')
             ->onDelete('cascade')
             ->onUpdate('cascade');
-            
-
-// Candidat absent ou présent
-
-
-
-
+            $table->string('resultat')->nullable(); // accepté ou non
             $table->timestamps();
         });
     }

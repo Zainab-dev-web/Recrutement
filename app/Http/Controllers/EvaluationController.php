@@ -96,9 +96,13 @@ class EvaluationController extends Controller
         $eval->capacite = $request->input('capacite');
         $eval->serieux = $request->input('serieux');
         $eval->note_id = $request->input('note_id');
+        $eval->note_id = $request->input('resultat');
         $eval->event_id = $event->id;
         $eval->user_id = $event->user->id;
+        $event->user->resultat =  $request->input('note_id');
+        dd($event->user->resultat);
         $eval->save();
+        $event->user->resultat->save();
         $event->delete();
         return redirect()->route('evaluation.index');
         
