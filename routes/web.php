@@ -28,6 +28,7 @@ Route::get('refuser/{id}', 'CandidatController@refuser')->name('refuser');
 Route::get('accepter/{id}', 'CandidatController@accepter')->name('accepter');
 Route::resource('date', 'DateController');
 Route::resource('event', 'EventController');
+Route::resource('evaluation', 'EvaluationController');
 
 
 //fullcalendar

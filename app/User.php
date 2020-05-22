@@ -26,10 +26,7 @@ class User extends Authenticatable
 
     public function offres(){
         return $this->belongsToMany(Offre::class, 'offre_match');
-        }
-    public function evaluations(){
-        return $this->belongsToMany(Evaluation::class, 'user_evaluation');
-        }
+    }
 
     
     /**

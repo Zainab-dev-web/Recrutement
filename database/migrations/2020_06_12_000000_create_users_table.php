@@ -44,25 +44,6 @@ class CreateUsersTable extends Migration
             ->onUpdate('cascade');
             $table->string('password');
             $table->rememberToken();
-            $table->bigInteger('evaluation_id')->unsigned()->nullable();
-            $table->foreign('evaluation_id')->on('evaluations')
-            ->references('id')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
-            $table->timestamps();
-        });
-        Schema::create('user_evaluation', function (Blueprint $table) {
-            $table->id();
-            $table->bigInteger('evaluation_id')->unsigned()->nullable();
-            $table->foreign('evaluation_id')->on('evaluations')
-            ->references('id')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
-            $table->bigInteger('user_id')->unsigned()->nullable();
-            $table->foreign('user_id')->on('users')
-            ->references('id')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
             $table->timestamps();
         });
 

@@ -18,6 +18,11 @@ class Offre extends Model
     public function statut(){
         return $this->belongsTo('App\Statut');
     }
+
+    public function event(){
+        return $this->hasMany(Event::class, 'event_id');
+    }
+
      //Many to many
      public function matchs(){
         return $this->belongsToMany(User::class, 'offre_match');

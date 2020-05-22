@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use App\Candidat;
+use App\Date;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -72,13 +73,17 @@ class EventController extends Controller
     public function update(Request $request, $id)
     {
         $candidat = Candidat::find($id);
+        $iddate = $candidat->date->id;
+        $date = Date::find($iddate);
         $event = new Event();
         $event->title = $candidat->offre->user->nom;
         $event->start = $request->input('date');
         $event->end = $request->input('date');
         $event->user_id = Auth::user()->id;
+        $event->offre_id = $candidat->offre->id;
         $event->save();
-        return redirect()->route();
+        $date->delete();
+        return redirect()->route('date.index');
 
     }
 
@@ -90,6 +95,6 @@ class EventController extends Controller
      */
     public function destroy(Event $event)
     {
-        
+        //
     }
 }

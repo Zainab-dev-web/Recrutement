@@ -23,6 +23,11 @@ class CreateEventsTable extends Migration
             ->references('id')
             ->onDelete('cascade')
             ->onUpdate('cascade');
+            $table->bigInteger('offre_id')->unsigned();
+            $table->foreign('offre_id')->on('offres')
+            ->references('id')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
             $table->timestamps();
         });
     }

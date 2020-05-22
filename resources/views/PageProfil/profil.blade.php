@@ -33,6 +33,9 @@
                 <li>
                 <a class="menu-box-tab" href="{{route('candidat.index')}}"><span class="icon entypo-paper-plane scnd-font-color"></span>Candidatures</span></a>              
                 </li>
+                <li>
+                <a class="menu-box-tab" href="{{route('evaluation.index')}}"><span class="icon scnd-font-color"><i class="far fa-handshake"></i></span>Vos entretiens</a>                            
+                </li>
             
                 <li>
                     <a class="menu-box-tab" href="#12"><span class="icon entypo-cog scnd-font-color"></span>Account Settings</a>
@@ -183,7 +186,6 @@
             </form>
             </div>
             <div class="modal-footer">
-                
                 <a href="{{route('profil.index')}}"><button type="button" class="btn btn-primary">Retour</button></a>
             </div>
             </div>

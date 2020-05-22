@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Evaluation;
+use App\Event;
+use App\User;
+use App\Presence;
+use App\Note;
 use Illuminate\Http\Request;
 
 class EvaluationController extends Controller
@@ -14,7 +18,8 @@ class EvaluationController extends Controller
      */
     public function index()
     {
-        //
+        $events = Event::all();
+        return view ('PageProfil.evaluation.evaluation', compact('events'));
     }
 
     /**
@@ -55,9 +60,12 @@ class EvaluationController extends Controller
      * @param  \App\Evaluation  $evaluation
      * @return \Illuminate\Http\Response
      */
-    public function edit(Evaluation $evaluation)
+    public function edit($id)
     {
-        //
+        $event = Event::find($id);
+        $presences = Presence::all();
+        $notes = Note::all();
+        return view ('PageProfil.evaluation.formEvaluation', compact('event', 'presences', 'notes'));
     }
 
     /**
@@ -67,9 +75,33 @@ class EvaluationController extends Controller
      * @param  \App\Evaluation  $evaluation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Evaluation $evaluation)
-    {
-        //
+    public function update(Request $request, $id)
+     {
+    //     $request->validate([
+    //         'presence_id'=> 'required',
+    //         'event_id'=>'required',
+    //         'user_id'=> 'required',
+    //         'impression'=>'required',
+    //         'savoir' => 'required',
+    //         'capacite' => 'required',
+    //         'serieux' => 'required',
+    //         'note_id' => 'required'
+    //     ]);
+
+        $event = Event::find($id);
+        $eval = new Evaluation();
+        $eval->presence_id = $request->input('presence_id');
+        $eval->impression = $request->input('impression');
+        $eval->savoir = $request->input('savoir');
+        $eval->capacite = $request->input('capacite');
+        $eval->serieux = $request->input('serieux');
+        $eval->note_id = $request->input('note_id');
+        $eval->event_id = $event->id;
+        $eval->user_id = $event->user->id;
+        $eval->save();
+        $event->delete();
+        return redirect()->route('evaluation.index');
+        
     }
 
     /**

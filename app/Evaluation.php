@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Evaluation extends Model
 {
-    protected $table='evalutions';
+    protected $table='evaluations';
 
     //One to many
     
@@ -19,10 +19,8 @@ class Evaluation extends Model
     public function note(){
         return $this->belongsTo('App\Note');
     }
-
-    //Many to many
-    public function users(){
-        return $this->belongsToMany(User::class, 'user_evaluation');
-        }
+    public function event(){
+        return $this->belongsTo('App\Event');
+    }
    
 }
