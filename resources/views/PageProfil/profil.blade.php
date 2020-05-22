@@ -18,8 +18,8 @@
     
 {{-- 
 <a class="btn btn-white" href="{{route('offres.create')}}" type="submit">Créer une offre</a> --}}
-<div class="container no-gutters">
-<div class="row no-gutters d-flex">
+<div class="container">
+<div class="row no-gutters d-flex justify-content-center">
     <div class="col-3 no-gutters pb-5 px-5">
         <div class="text-center">
         <img class="my-5" width="200" alt="logo entreprise" src="{{asset('storage/'.$user->logo)}}">
