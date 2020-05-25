@@ -58,5 +58,15 @@ class AuthServiceProvider extends ServiceProvider
             return true;
             }
             });
+        Gate::define('WebStop', function($user){
+            if($user->role_id!=5 &&  $user->role_id!=4){
+            return true;
+            }
+            });
+            Gate::define('hrStop', function($user){
+                if($user->role_id!=5 && $user->role_id!=4 && $user->role_id!=3  && $user->role_id!=2  ){
+                return true;
+                }
+                });
     }
 }

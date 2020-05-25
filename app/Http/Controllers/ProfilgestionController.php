@@ -2,23 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\Profilgestion;
 use Illuminate\Http\Request;
 
-class TalentController extends Controller
+class ProfilgestionController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    // public function __construct(){
-    //     $this->middleware('isConnect')->except('index', 'show');
-    // }
     public function index()
     {
-        $talents = User::orderby('id', 'asc')->where('role_id', 4)->paginate(3);
-        return view('PageTalents.pageTalents', compact('talents'));
+        //
     }
 
     /**
@@ -45,22 +41,21 @@ class TalentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\User  $talent
+     * @param  \App\Profilgestion  $profilgestion
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Profilgestion $profilgestion)
     {
-        $talent = User::find($id);
-        return view ('PageTalents.pageperso.pageperso', compact('talent'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\User  $talent
+     * @param  \App\Profilgestion  $profilgestion
      * @return \Illuminate\Http\Response
      */
-    public function edit(Talent $talent)
+    public function edit(Profilgestion $profilgestion)
     {
         //
     }
@@ -69,21 +64,21 @@ class TalentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\User  $talent
+     * @param  \App\Profilgestion  $profilgestion
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Profilgestion $profilgestion)
     {
-       //
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\User  $talent
+     * @param  \App\Profilgestion  $profilgestion
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Talent $talent)
+    public function destroy(Profilgestion $profilgestion)
     {
         //
     }
