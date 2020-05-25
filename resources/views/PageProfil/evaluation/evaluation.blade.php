@@ -5,7 +5,7 @@
 @include('components.nav')
 
 <!-- Hero Area Start -->
-<div class="hero-area hero-height2 d-flex align-items-center" data-background="{{asset('img/hero/h2_hero.jpg')}}">
+<div class="hero-area hero-height2 d-flex align-items-center mb-5" data-background="{{asset('img/hero/h2_hero.jpg')}}">
   <div class="container">
       <div class="row">
           <div class="col-xl-12">
@@ -17,7 +17,6 @@
   </div>
 </div>
 <!-- Hero Area End -->
-
 @foreach ($events as $event)
 
 @if ($event->offre->user->id == Auth::user()->id)
@@ -36,9 +35,15 @@
   <h5>
     L'entretien a eu lieu avec {{$event->user->nom}} {{$event->user->prénom}}
   </h5>
-
-    <a class="btn btn-white" href="{{route('evaluation.edit', $event)}}">Évaluer</a></b></a>
-
+    @foreach ($evals as $eval)
+        @if ($eval->event->id == $event->id)
+           
+        @endif
+           
+        @if ($eval->event->id != $event->id)
+            <a class="btn btn-white" href="{{route('evaluation.edit', $event)}}">Évaluer</a></b></a>   
+        @endif
+    @endforeach
   </div>
 </article>
 
@@ -48,6 +53,15 @@
 @endif
     
 @endforeach
+
+@if (count($events) == 0)
+<div class="text-center my-5">
+  <h3><b>Vous n'avez pas d'entretiens en cours...</b></h3>
+</div>
+    
+@else
+    
+@endif
 
 
 @include('components.footer')

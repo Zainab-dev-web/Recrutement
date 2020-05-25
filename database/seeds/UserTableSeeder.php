@@ -33,7 +33,7 @@ class UserTableSeeder extends Seeder
             'valid' => 1,
             'role_id' => 1,
             'password' => Hash::make('123456789'),
-            'resultat' => null,
+            'resultat_id' => null,
         ]);
         // entreprise
         $filename = Str::random(10) . time() . '.jpeg';
@@ -57,7 +57,7 @@ class UserTableSeeder extends Seeder
             'role_id' => 5,
             'statut_id' => null,
             'password' => Hash::make('popo1234'),
-            'resultat' => null,
+            'resultat_id' => null,
         ]);
         $filename = Str::random(10) . time() . '.jpeg';
         Storage::disk('public')->copy('/images.jpeg', $filename);
@@ -80,7 +80,7 @@ class UserTableSeeder extends Seeder
             'role_id' => 5,
             'statut_id' => null,
             'password' => Hash::make('popo1234'),
-            'resultat' => null,
+            'resultat_id' => null,
         ]);
         $filename = Str::random(10) . time() . '.jpeg';
         Storage::disk('public')->copy('/images.jpeg', $filename);
@@ -104,7 +104,7 @@ class UserTableSeeder extends Seeder
             'valid' => 1,
             'role_id' => 4,
             'password' => Hash::make('popo1234'),
-            'resultat' => null,
+            'resultat_id' => null,
         ]);
         $filename = Str::random(10) . time() . '.jpeg';
         Storage::disk('public')->copy('/images.jpeg', $filename);
@@ -128,7 +128,7 @@ class UserTableSeeder extends Seeder
             'valid' => 1,
             'role_id' => 4,
             'password' => Hash::make('popo1234'),
-            'resultat' => null,
+            'resultat_id' => null,
         ]);
         $filename = Str::random(10) . time() . '.png';
         Storage::disk('public')->copy('/images.png', $filename);
@@ -152,7 +152,7 @@ class UserTableSeeder extends Seeder
             'valid' => 1,
             'role_id' => 4,
             'password' => Hash::make('popo1234'),
-            'resultat' => null,
+            'resultat_id' => null,
         ]);
         $filename = Str::random(10) . time() . '.png';
         Storage::disk('public')->copy('/images.png', $filename);
@@ -176,7 +176,7 @@ class UserTableSeeder extends Seeder
             'valid' => 1,
             'role_id' => 2,
             'password' => Hash::make('123456789'),
-            'resultat' => null,
+            'resultat_id' => null,
         ]);
         $filename = Str::random(10) . time() . '.png';
         Storage::disk('public')->copy('/images.png', $filename);
@@ -200,7 +200,7 @@ class UserTableSeeder extends Seeder
             'valid' => 1,
             'role_id' => 3,
             'password' => Hash::make('123456789'),
-            'resultat' => null,
+            'resultat_id' => null,
         ]);
 
         

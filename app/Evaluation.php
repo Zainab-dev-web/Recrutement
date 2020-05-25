@@ -22,5 +22,9 @@ class Evaluation extends Model
     public function event(){
         return $this->belongsTo('App\Event');
     }
+
+    public function resultat(){
+        return $this->belongsTo('App\Resultat');
+    }
    
 }

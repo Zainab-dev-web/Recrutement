@@ -111,7 +111,7 @@ class RegisterController extends Controller
             'valid' => 0,
             'role_id' => 4,
             'password' => Hash::make($data['password']),
-            'resultat' => null,
+            'resultat_id' => null,
         ]);
         } elseif ($choix->valid == 2) { // entreprise
 
@@ -135,7 +135,7 @@ class RegisterController extends Controller
             'role_id' => 5,
             'statut_id' => null,
             'password' => Hash::make($data['password']),
-            'resultat' => null
+            'resultat_id' => null
         ]);
         
         }
