@@ -16,22 +16,22 @@
 </div>
 <!-- Hero Area End -->
 
-
+<div class="container">
 <div class="row my-5 py-5">
   <div class="col-3 my-5">
     
       <div class="text-center">
         
-      <img class="mb-2" width="200" alt="logo talent" src="{{asset('storage/'.$talent->photo)}}">
+      <img class="pb-4" width="200" alt="logo talent" src="{{asset('storage/'.$talent->photo)}}">
       <h3>{{$talent->nom}} {{$talent->prénom}} - {{$talent->domaine}}</h3>
       <p> Tel : {{$talent->numero}}</p><p><b>Email : {{$talent->email}}</b></p>
       <p><b>{{$talent->statut->nom}}</b></p>
       </div>
    
   </div>
-  <div class="col-6 mt-5">
+  <div class="col-5 mt-5">
     <h2 class="mt-3 mb-5">Présentation :</h2>
-      <h4 class="text-center mx-4">Nullam sagittis. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Quisque malesuada placerat nisl. Etiam vitae tortor.</h4>
+      <h6 class="text-justify mx-4">Nullam sagittis. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Quisque malesuada placerat nisl. Etiam vitae tortor.</h6>
       @can('post-entreprise')
         
       
@@ -41,7 +41,7 @@
       @endcan
   </div>
   
-  <div class="col-3 mt-5">
+  <div class="col-4 mt-5">
       <div class="single_sidebar_widget post_category_widget">
         <h2 class="mt-3">CV :</h2>
         <a data-toggle="modal" data-target="#exampleModalLong">
@@ -50,7 +50,7 @@
       </div>
   </div>
 </div>
-
+</div>
 
     @include('components.footer')
 
