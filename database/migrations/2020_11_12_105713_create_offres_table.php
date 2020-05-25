@@ -38,12 +38,14 @@ class CreateOffresTable extends Migration
             ->references('id')
             ->onDelete('cascade')
             ->onUpdate('cascade');
-            $table->bigInteger('match_id')->unsigned();
-            $table->foreign('match_id')->on('users')
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->on('users')
             ->references('id')
             ->onDelete('cascade')
             ->onUpdate('cascade');
             $table->timestamps();
+           
+          
         });
     }
 
