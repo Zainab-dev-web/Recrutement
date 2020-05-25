@@ -99,7 +99,7 @@ class UserTableSeeder extends Seeder
             'statut_id' => 1,
             'véhicule' => 'Non',
             'dispo' => '2020-05-18',
-            'domaine' => 'Informatique',
+            'domaine' => 'Back-End',
             'cv' => '202004sdf30_113422_0000-1.png',
             'valid' => 1,
             'role_id' => 4,

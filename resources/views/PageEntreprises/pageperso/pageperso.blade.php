@@ -16,9 +16,9 @@
 </div>
 <!-- Hero Area End -->
 
-
+<div class="container">
 <div class="row my-5 py-5">
-  <div class="col-3 my-5">
+  <div class="col-4 my-5">
     
       <div class="text-center">
         
@@ -29,18 +29,18 @@
       </div>
    
   </div>
-  <div class="col-6 mt-5 text-center">
-    <h2 class="my-5">Our entreprise :</h2>
-      <h4 class="text-center mx-4">Nullam sagittis. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Quisque malesuada placerat nisl. Etiam vitae tortor.</h4>
+  <div class="col-4">
+    <h2 class="mt-5 mb-4">Our entreprise :</h2>
+      <h6 class="text-justify mr-4">Nullam sagittis. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Quisque malesuada placerat nisl. Etiam vitae tortor.</h6>
   </div>
   
-  <div class="col-3 mt-5">
+  <div class="col-4 mt-100">
       <div class="single_sidebar_widget post_category_widget">
         <a class="btn btn-white" href="{{route('searchoffre', $entreprise->id)}}" type="submit">Voir leurs offres</a>
       </div>
   </div>
 </div>
-
+</div>
 
     @include('components.footer')
     
