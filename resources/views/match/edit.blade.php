@@ -20,11 +20,12 @@
                             <label for="match[]">Sélectionnez les candidats au choix:</label>
                             <div class="row">
                                 @foreach ($users as $user)
-                                
+                                @if($user->role_id==4)
                                 <div class="form-check col-2">
                                     <input value="{{$user->id}}" name="match[]" type="checkbox" class="form-check-input">
                                     <label class="form-check-label">{{$user->nom}}</label>
                                 </div>
+                                @endif
                                 @endforeach
                                 
                             </div>

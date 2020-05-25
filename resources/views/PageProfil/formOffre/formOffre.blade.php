@@ -1,9 +1,21 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="text-center mt-5">
-  <h2>Ajouter une nouvelle offre</h2>
+
+@include('components.nav')
+<!-- Hero Area Start -->
+<div class="hero-area hero-height2 d-flex align-items-center" data-background="{{asset('img/hero/h2_hero.jpg')}}">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="hero-cap text-center pt-50">
+                    <h2>Ajouter une nouvelle offre</h2>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<!-- Hero Area End -->
 <div class="container my-5">
 <form class="form-contact contact_form" action="{{route('offres.store')}}" method="post" novalidate="novalidate">
   @csrf
@@ -47,4 +59,6 @@
   </div>
 </form>
 </div>
+
+@include('components.footer')
 @endsection

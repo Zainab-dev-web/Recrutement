@@ -45,7 +45,7 @@
                           </div> --}}
                           <div class="text-center">
                           <a href='{{route('match.edit' , $item->id)}}'class='btn btn-white'><i class="fas fa-heart text-danger fa-2x"></i></a>
-                          <a href='{{route('match.show' , $item->id)}}'class='btn btn-white'><i class="fas fa-paper-plane text-info"></i></a>
+                          <a href='{{route('match.show' , $item->id)}}'class='btn btn-white'><i class="fas fa-paper-plane text-info fa-2x"></i></a>
                           
                           </div>
                             
