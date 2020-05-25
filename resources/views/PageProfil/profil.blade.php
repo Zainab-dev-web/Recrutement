@@ -141,12 +141,12 @@
                    
                     @endif
                 @endforeach
-                @if(count($candid==0))
-                <div class="alert alert-info" role="alert">
-                    Vous n'avez pas encore de candidatures !
-                </div>
-                @endif
             </ul>
+            @if(count($candid)==0)
+            <div class="alert alert-info" role="alert">
+                Vous n'avez pas encore de candidatures !
+            </div>
+            @endif
         </div>
     </div>
     <div class="col-6 mt-5 tex-center">
