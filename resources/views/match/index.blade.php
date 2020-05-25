@@ -10,7 +10,7 @@
 
 @section('content')
 
-   <h2 class='text-center my-2'>Match</h2>
+   <h2 class='text-center my-2'>Matches</h2>
 
     <table class="table" >
         <thead>
