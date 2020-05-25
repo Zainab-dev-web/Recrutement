@@ -26,5 +26,6 @@ class Offre extends Model
      //Many to many
      public function matchs(){
         return $this->belongsToMany(User::class, 'offre_match');
+        
         }
 }

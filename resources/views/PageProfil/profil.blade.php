@@ -109,7 +109,8 @@
                     </li>
     
                     <li>
-                        <a class="menu-box-tab" href="#"><span class="icon scnd-font-color"><i class="fas fa-heart"></i></span>Vos matchs</span></a>              
+                        <a class="menu-box-tab" href="#"><span class="icon scnd-font-color"><i class="fas fa-heart"></i></span>Vos matchs</span></a> 
+                        
                     </li>
     
                     <li>
@@ -126,7 +127,7 @@
     </div>
     <div class="col-3 mt-5 no-gutters">
         <div class="single_sidebar_widget post_category_widget">
-            <h4 class="widget_title mb-3">Candidatures en cours</h4>
+            <h4 class="widget_title mb-3">Candidatures en cours ...</h4>
             <ul class="list cat-list">
                 @foreach ($candidats as $candidat)
                     @if ($candidat->user_id == Auth::user()->id)
@@ -141,6 +142,36 @@
                     @endif
                 @endforeach
             </ul>
+        </div>
+    </div>
+    <div class="col-6 mt-5 tex-center">
+        <div class="single_sidebar_widget post_category_widget">
+            <h4 class="widget_title mb-3  "><i class="fas fa-heart text-danger fa-1x"></i> Vos match</h4>
+            <div class="row">
+                @foreach ($offres as $item)
+                {{-- @foreach ($offres->matchs as $item) --}}
+                {{-- @if ($item->user_id == Auth::user()->id) --}}
+                
+                <div class="border border-secondary rounded p-3 m-3">
+                    
+                    <ul class="list cat-list">
+                        <li> <p><b>Poste:</b>{{$item->poste}}.</p></li>
+                        <li><p><i class="fas fa-map-marker-alt"></i> <b>Lieu:</b>{{$item->lieu}}.</p></li>
+                        <li><p><b>Il faut être: </b>{{$item->qualite}}.</p></li>
+                        <li><p><b>Description de l'offre: </b>{{$item->description}}</p></li>
+                        <li><p><b>Statut recherché:</b> {{$item->statut->statut}}</p></li>
+                        <li><b>Entreprise : </b><p class='text-uppercase'>{{$item->user->nom}}</p></li>
+                        
+                    </ul>
+                
+                </div>
+                    
+                    {{-- @else
+                        
+                    @endif --}}
+									
+					@endforeach           
+                </div>
         </div>
     </div>
 </div>
