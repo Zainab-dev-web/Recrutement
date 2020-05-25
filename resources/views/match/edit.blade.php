@@ -10,7 +10,7 @@
 
 @section('content')
 
-   <h2 class='text-center my-5'>Envoyer à des candidats une offre</h2>
+   <h2 class='text-center my-5'>Envoyer une offre à des candidats</h2>
    <hr class='text-center w-50'>
 
                     <form action="{{route('match.update' , $matchs->id)}}" method="POST">

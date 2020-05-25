@@ -114,7 +114,7 @@
                     </li>
     
                     <li>
-                        <a class="menu-box-tab" href="#"><span class="icon scnd-font-color"><i class="fas fa-heart"></i></span>Vos matchs</span></a> 
+                        <a class="menu-box-tab" href="#match"><span class="icon scnd-font-color"><i class="fas fa-heart"></i></span>Vos matchs</span></a> 
                         
                     </li>
     
@@ -154,19 +154,19 @@
             @endif
         </div>
     </div>
-    <div class="col-6 mt-5 tex-center">
+    <div class="my-5" id="match">
         <div class="single_sidebar_widget post_category_widget">
-            <h4 class="widget_title mb-3  "><i class="fas fa-heart text-danger fa-1x"></i> Vos match</h4>
+            <h4 class="widget_title mb-3 text-center"><i class="fas fa-heart text-danger fa-1x"></i> Vos matches</h4>
             <div class="row">
                 @foreach ($offres as $item)
                 {{-- @foreach ($offres->matchs as $item) --}}
                 {{-- @if ($item->user_id == Auth::user()->id) --}}
                 
-                <div class="border border-secondary rounded p-3 m-3">
+                <div class="col-4 border border-secondary rounded p-3 m-3">
                     
                     <ul class="list cat-list">
-                        <li> <p><b>Poste:</b>{{$item->poste}}.</p></li>
-                        <li><p><i class="fas fa-map-marker-alt"></i> <b>Lieu:</b>{{$item->lieu}}.</p></li>
+                        <li> <p><b>Poste: </b>{{$item->poste}}.</p></li>
+                        <li><p><i class="fas fa-map-marker-alt"></i> <b>Lieu: </b>{{$item->lieu}}.</p></li>
                         <li><p><b>Il faut être: </b>{{$item->qualite}}.</p></li>
                         <li><p><b>Description de l'offre: </b>{{$item->description}}</p></li>
                         <li><p><b>Statut recherché:</b> {{$item->statut->statut}}</p></li>
@@ -175,6 +175,7 @@
                     </ul>
                 
                 </div>
+<<<<<<< HEAD
                     
                     {{-- @else
                         
@@ -187,6 +188,11 @@
                     </div>
                     @endif          
                 </div>
+=======
+                				
+                @endforeach
+            </div>
+>>>>>>> cee01cbf14e27a459b7d1280469b8e9ea9459cee
         </div>
     </div>
 </div>

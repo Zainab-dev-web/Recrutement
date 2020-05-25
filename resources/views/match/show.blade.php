@@ -11,10 +11,10 @@
 
 @section('content')
 
-   <h2 class='text-center my-2'>Boite d'envoie</h2>
+   <h2 class='text-center my-2'>Boite d'envoi</h2>
 
    <div class="container mx-auto p-5 w-50 my-5 bg-light text-sucess border border-secondary rounded">
-    <label>L'offre à été proposer aux "Talents" suivant:</label>
+    <label>L'offre a été proposée aux "talents" suivants:</label>
     
 
     @foreach ($offres as $item)       
