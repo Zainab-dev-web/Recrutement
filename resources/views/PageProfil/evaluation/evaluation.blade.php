@@ -19,7 +19,7 @@
 <!-- Hero Area End -->
 @foreach ($events as $event)
 
-@if ($event->user->id == Auth::user()->id)
+@if ($event->offre->user->id == Auth::user()->id && $event->user->id != Auth::user()->id)
 
 <article class="blog_item container">
   <div class="blog_item_img">
@@ -35,9 +35,7 @@
   <h5>
     L'entretien a eu lieu avec {{$event->user->nom}} {{$event->user->prénom}}
   </h5>
-   
             <a class="btn btn-white" href="{{route('evaluation.edit', $event)}}">Évaluer</a></b></a>   
-
   </div>
 </article>
 

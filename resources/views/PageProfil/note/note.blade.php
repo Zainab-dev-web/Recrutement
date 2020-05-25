@@ -28,13 +28,13 @@
 
   <div class="blog_details">
       <a class="d-inline-block" href="">
-      <h2>Entretien avec {{$note->event->title}} le {{\Illuminate\Support\Str::limit($note->event->start, 10)}}</h2>
-      <p>Pour le poste de {{$note->event->offre->poste}}</p>
+      <h2>Entretien avec {{$note->offre->user->nom}}</h2>
+      <p>Pour le poste de {{$note->offre->poste}}</p>
       </a>
-  <p><i class="fas fa-map-marker-alt"></i> {{$note->event->offre->lieu}}</p>
-  <p>{{\Illuminate\Support\Str::limit($note->event->offre->description, 200, $end=' ...')}}</p>
+  <p><i class="fas fa-map-marker-alt"></i> {{$note->offre->lieu}}</p>
+  <p>{{\Illuminate\Support\Str::limit($note->offre->description, 200, $end=' ...')}}</p>
   <h5>
-    Résultat de votre évaluation : <b>{{$note->note->note}}</b>/5 <h3><b>{{$note->resultat}}</b></h3>
+    Résultat de votre évaluation : <b>{{$note->note->note}}</b>/5 <h3><b>{{$note->resultat->nom}}</b></h3>
   </h5>
   <ul class="mb-3">
     <li>Impression : {{$note->impression}}</li>
@@ -42,7 +42,7 @@
     <li>Sérieux {{$note->serieux}}</li>
     <li>Capacité : {{$note->capacite}}</li>
   </ul>
-    <a class="btn btn-white" href="{{route('note.edit')}}">Évaluer</a></b></a>
+    <a class="btn btn-white" href="{{route('note.edit', $note)}}">Évaluer</a></b></a>
 
   </div>
 </article>

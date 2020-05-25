@@ -80,17 +80,6 @@ class EvaluationController extends Controller
      */
     public function update(Request $request, $id)
      {
-    //     $request->validate([
-    //         'presence_id'=> 'required',
-    //         'event_id'=>'required',
-    //         'user_id'=> 'required',
-    //         'impression'=>'required',
-    //         'savoir' => 'required',
-    //         'capacite' => 'required',
-    //         'serieux' => 'required',
-    //         'note_id' => 'required'
-    //     ]);
-
         $event = Event::find($id);
         $eval = new Evaluation();
         $eval->presence_id = $request->input('presence_id');
@@ -100,17 +89,16 @@ class EvaluationController extends Controller
         $eval->serieux = $request->input('serieux');
         $eval->note_id = $request->input('note_id');
         $eval->resultat_id = $request->input('resultat_id');
-        $eval->event_id = $event->id;
+        $eval->offre_id = $event->offre->id;
         $eval->user_id = $event->user->id;
         $eval->save();
         //
-        $eventresult = $event->user;
-        $eventresult->resultat_id = $request->input('resultat_id');
-        $eventresult->save();
 
-        $event2 = Event::where('offre_id', $event->offre->id);
-        dd($event2);
-        $event2->delete();
+        $event2 = Event::where('offre_id', $event->offre->id)->get();
+        foreach ($event2 as $item) {
+            $item->delete();
+        }
+
         return redirect()->route('evaluation.index');
         
     }

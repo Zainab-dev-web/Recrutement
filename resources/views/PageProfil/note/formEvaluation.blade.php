@@ -8,7 +8,7 @@
       <div class="row">
           <div class="col-xl-12">
               <div class="hero-cap text-center pt-50">
-              <h2>Évaluer {{$event->user->nom}} {{$event->user->prénom}}</h2>
+              <h2>Évaluer</h2>
               </div>
           </div>
       </div>
@@ -16,7 +16,7 @@
 </div>
 <!-- Hero Area End -->
 <div class="container mt-5">
-  <form class="form-contact contact_form" action="{{route('evaluation.update', $event)}}" method="post" novalidate="novalidate">
+  <form class="form-contact contact_form" action="{{route('note.update', $eval)}}" method="post" novalidate="novalidate">
     @csrf
     @method('PUT')
     <div class="row">
@@ -34,7 +34,7 @@
           <option value="{{$note->id}}">{{$note->note}}</option>   
         @endforeach
       </select>
-      <label for="resultat">Résultat de l'entretien</label>
+      <label for="resultat">Accepter ou refuser le job</label>
       <select class="form-control w-50" name="resultat_id" id="">
         @foreach ($resultats as $resultat)
           <option value="{{$resultat->id}}">{{$resultat->resultat}}</option>   

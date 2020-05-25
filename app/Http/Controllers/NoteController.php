@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Evaluation;
 use App\Note;
 use App\Presence;
+use App\Resultat;
 
 class NoteController extends Controller
 {
@@ -60,9 +61,11 @@ class NoteController extends Controller
      */
     public function edit($id)
     {
-        $presences = Presence::all();
+        $eval = Evaluation::find($id);
         $notes = Note::all();
-        return view ('PageProfil.note.formEvaluation', compact('presences', 'notes'));
+        $presences = Presence::all();
+        $resultats = Resultat::all();
+        return view ('PageProfil.note.formEvaluation', compact('presences', 'eval', 'notes', 'resultats'));
     }
 
     /**

@@ -20,8 +20,8 @@ class CreateEvaluationsTable extends Migration
             ->references('id')
             ->onDelete('cascade')
             ->onUpdate('cascade');
-            $table->bigInteger('event_id')->unsigned();
-            $table->foreign('event_id')->on('events')
+            $table->bigInteger('offre_id')->unsigned();
+            $table->foreign('offre_id')->on('offres')
             ->references('id')
             ->onDelete('cascade')
             ->onUpdate('cascade');

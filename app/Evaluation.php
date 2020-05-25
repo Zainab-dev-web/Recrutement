@@ -19,8 +19,8 @@ class Evaluation extends Model
     public function note(){
         return $this->belongsTo('App\Note');
     }
-    public function event(){
-        return $this->belongsTo('App\Event');
+    public function offre(){
+        return $this->belongsTo('App\Offre');
     }
 
     public function resultat(){

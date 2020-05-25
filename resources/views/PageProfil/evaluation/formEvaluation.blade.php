@@ -22,23 +22,24 @@
     <div class="row">
       <select class="form-control w-50" name="presence_id" id="">
         @foreach ($presences as $presence)
-          <option value="{{$presence->id}}">{{$presence->presence}}</option>   
+          <option value={{$presence->id}}>{{$presence->presence}}</option>   
         @endforeach
       </select>
       <input type="text" name="impression" placeholder="impression" class="form-control w-50" id="">
       <input type="text" name="savoir" placeholder="savoir" class="form-control w-50" id="">
       <input type="text" name="capacite" placeholder="capacite" class="form-control w-50" id="">
       <input type="text" name="serieux" placeholder="serieux" class="form-control w-50" id="">
+      
       <select class="form-control w-50" name="note_id" id="">
         @foreach ($notes as $note)
-          <option value="{{$note->id}}">{{$note->note}}</option>   
+          <option value={{$note->id}}>{{$note->note}}</option>   
         @endforeach
       </select>
       
     </div><label for="resultat">Résultat de l'entretien</label>
       <select class="form-control w-50" name="resultat_id" id="">
         @foreach ($resultats as $resultat)
-          <option value="{{$resultat->id}}">{{$resultat->nom}}</option>   
+          <option value={{$resultat->id}}>{{$resultat->nom}}</option>   
         @endforeach
       </select>
     <div class="form-group mt-3">
