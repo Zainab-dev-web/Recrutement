@@ -138,9 +138,14 @@
                     </a>
                 </li> 
                     @else
-                        
+                   
                     @endif
                 @endforeach
+                @if(count($candid==0))
+                <div class="alert alert-info" role="alert">
+                    Vous n'avez pas encore de candidatures !
+                </div>
+                @endif
             </ul>
         </div>
     </div>

@@ -21,6 +21,7 @@ class ProfilController extends Controller
         $users = User::all();
         $offres = Offre::all();
         $candidats = Candidat::where('accept', 0)->get();
+        $candid = Candidat::where('user_id', Auth::user()->id);
         return view('PageProfil.pageProfil', compact('users', 'offres', 'candidats'));
     }
 
