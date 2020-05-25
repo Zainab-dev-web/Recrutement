@@ -224,7 +224,7 @@ class UserTableSeeder extends Seeder
             'valid' => 1,
             'role_id' => 5,
             'password' => Hash::make('123456789'),
-            'resultat' => null,
+            'resultat_id' => null,
         ]);
 
         
