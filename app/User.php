@@ -11,7 +11,11 @@ class User extends Authenticatable
     use Notifiable;
 
     public function role(){
+        
         return $this->belongsTo('App\Role');
+    }
+    public function offre(){
+        return $this->belongsTo('App\Offre');
     }
     public function statut(){
         return $this->belongsTo('App\Statut');
