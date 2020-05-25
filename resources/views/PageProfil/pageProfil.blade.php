@@ -4,6 +4,6 @@
 
     @include('components.nav')
     @include('PageProfil.profil')
-    @include('components.footer')
+    @include('components.footer') 
     
 @endsection

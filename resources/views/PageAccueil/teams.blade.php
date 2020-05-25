@@ -14,7 +14,7 @@
                         <div class="single-services text-center mb-10">
                             <div class="startup-img"><img class="w-75"src="{{asset('storage/'.$item->photo)}}" alt=""></div>
                             <div class="services-cap2">
-                            <h5>{{$item->role->role}}</h5>
+                                <h5>{{$item->role->role}}</h5>
                                 <p>{{$item->nom}}</p>
                             </div>
                         </div>
@@ -25,8 +25,8 @@
                             <div class="startup-img"><img  class="w-75"src="
                                 {{asset('storage/'.$userPrincipal->photo)}}" alt=""></div>
                             <div class="services-cap2">
-                            <h5>{{$userPrincipal->role->role}}</h5>
-                            <p>{{$userPrincipal->nom}}</p>
+                                <h5>{{$userPrincipal->role->role}}</h5>
+                                <p>{{$userPrincipal->nom}}</p>
                             </div>
                         </div>
                     </div>
