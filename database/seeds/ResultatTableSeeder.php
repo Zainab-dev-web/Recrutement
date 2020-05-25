@@ -13,13 +13,13 @@ class ResultatTableSeeder extends Seeder
     {
         DB::table('resultats')->insert([
             
-            'resultat' => "Accepté",
+            'nom' => "Accepté",
             
         ]);
 
         DB::table('resultats')->insert([
             
-            'resultat' => "Refusé",
+            'nom' => "Refusé",
             
         ]);
     }

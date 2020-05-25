@@ -102,11 +102,15 @@ class EvaluationController extends Controller
         $eval->resultat_id = $request->input('resultat_id');
         $eval->event_id = $event->id;
         $eval->user_id = $event->user->id;
+        $eval->save();
         //
         $eventresult = $event->user;
         $eventresult->resultat_id = $request->input('resultat_id');
-        $eval->save();
         $eventresult->save();
+
+        $event2 = Event::where('offre_id', $event->offre->id);
+        dd($event2);
+        $event2->delete();
         return redirect()->route('evaluation.index');
         
     }

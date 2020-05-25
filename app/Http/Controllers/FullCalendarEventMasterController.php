@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Event;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Redirect, Response;
 
 class FullCalendarEventMasterController extends Controller
@@ -14,7 +15,7 @@ class FullCalendarEventMasterController extends Controller
         if (request()->ajax()) {
             $start = (!empty($_GET["start"])) ? ($_GET["start"]) : ('');
             $end = (!empty($_GET["end"])) ? ($_GET["end"]) : ('');
-            $data = Event::whereDate('start', '>=', $start)->whereDate('end',   '<=', $end)->get(['id', 'title', 'start', 'end']);
+            $data = Event::whereDate('start', '>=', $start)->whereDate('end',   '<=', $end)->where('user_id', Auth::user()->id)->get(['id', 'title', 'start', 'end']);
             return Response::json($data);
         }
         return view('fullcalender');

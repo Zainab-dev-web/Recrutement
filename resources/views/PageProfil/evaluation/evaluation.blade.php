@@ -19,7 +19,7 @@
 <!-- Hero Area End -->
 @foreach ($events as $event)
 
-@if ($event->offre->user->id == Auth::user()->id)
+@if ($event->user->id == Auth::user()->id)
 
 <article class="blog_item container">
   <div class="blog_item_img">
@@ -28,22 +28,16 @@
 
   <div class="blog_details">
       <a class="d-inline-block" href="">
-      <h2>{{$event->offre->poste}} chez {{$event->offre->poste}}</h2>
+      <h2>{{$event->offre->poste}} chez {{$event->offre->user->nom}}</h2>
       </a>
   <p><i class="fas fa-map-marker-alt"></i> {{$event->offre->lieu}}</p>
   <p>{{\Illuminate\Support\Str::limit($event->offre->description, 200, $end=' ...')}}</p>
   <h5>
     L'entretien a eu lieu avec {{$event->user->nom}} {{$event->user->prénom}}
   </h5>
-    @foreach ($evals as $eval)
-        @if ($eval->event->id == $event->id)
-           
-        @endif
-           
-        @if ($eval->event->id != $event->id)
+   
             <a class="btn btn-white" href="{{route('evaluation.edit', $event)}}">Évaluer</a></b></a>   
-        @endif
-    @endforeach
+
   </div>
 </article>
 
