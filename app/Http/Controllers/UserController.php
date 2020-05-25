@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Role;
+use App\Offre;
 use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
@@ -13,7 +14,8 @@ class UserController extends Controller
     public function index(){
 
         $users=User::all();
-        return view('user.index', compact('users'));
+        $offres=Offre::all();
+        return view('user.index', compact('users', 'offres'));
     }
 
     public function edit($id){

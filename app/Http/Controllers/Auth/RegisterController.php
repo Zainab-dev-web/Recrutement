@@ -115,7 +115,7 @@ class RegisterController extends Controller
         ]);
         } elseif ($choix->valid == 2) { // entreprise
 
-        $storage=Storage::disk('public')->put('', $data['logo']);
+        $storage=Storage::disk('public')->put('', $data['photo']);
 
         return User::create([
             'nom' => $data['nom'],
@@ -127,7 +127,7 @@ class RegisterController extends Controller
             'domaine' => $data['domaine'],
             'numero' => $data['numero'],
             'adresse' => $data['adresse'],
-            'logo' => $storage,
+            'photo' => $storage,
             'pNom' => $data['pNom'],
             'pTel' => $data['pTel'],
             'email' => $data['email'],

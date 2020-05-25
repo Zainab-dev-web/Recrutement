@@ -22,7 +22,9 @@ class ProfilController extends Controller
         $offres = Offre::all();
         $candidats = Candidat::where('accept', 0)->get();
         $candid = Candidat::where('user_id', Auth::user()->id)->get();
-        return view('PageProfil.pageProfil', compact('users', 'offres', 'candidats' , 'candid'));
+        $match = Offre::where('user_id', Auth::user()->id)->get();
+        $offr = Offre::where('user_id', Auth::user()->id)->get();
+        return view('PageProfil.pageProfil', compact('users', 'offres', 'candidats' , 'candid', 'match', 'offr'));
     }
 
     /**
@@ -90,7 +92,6 @@ class ProfilController extends Controller
         $talent->prénom = $talent->prénom;
         $talent->date = $talent->date;
         $talent->tva = $talent->tva;
-        $talent->logo = $talent->logo;
         $talent->pNom = $talent->pNom;
         $talent->pTel = $talent->pTel;
         $talent->photo = $talent->photo;

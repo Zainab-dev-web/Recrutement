@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Profilgestion;
+use App\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class ProfilgestionController extends Controller
@@ -14,7 +17,9 @@ class ProfilgestionController extends Controller
      */
     public function index()
     {
-        //
+        $user= Auth::user();
+        return view('profilGestion.index' , compact('user'));  
+   
     }
 
     /**
@@ -55,9 +60,10 @@ class ProfilgestionController extends Controller
      * @param  \App\Profilgestion  $profilgestion
      * @return \Illuminate\Http\Response
      */
-    public function edit(Profilgestion $profilgestion)
+    public function edit($id)
     {
-        //
+        $user= Auth::user($id);
+        return view('profilGestion.edit' , compact('user'));
     }
 
     /**
@@ -67,9 +73,27 @@ class ProfilgestionController extends Controller
      * @param  \App\Profilgestion  $profilgestion
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Profilgestion $profilgestion)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nom'=> 'required|',
+            'email'=> 'required|',
+            'photo'=> 'required|',
+            // 'password'=> 'required|',
+           
+        ]);
+  
+            $image = Storage::disk('public')->put('', $request->file('photo'));
+            $user = User::find(Auth::id());
+            $user->photo =$image;
+            $user->nom =$request->input('nom');
+            $user->email =$request->input('email');
+            // $user->password =Hash::make('password');
+            
+            
+            $user->save();
+    
+            return redirect()->route('profilGestion.index');
     }
 
     /**
