@@ -321,17 +321,17 @@
                 </div>
 
                 <div class="form-group row">
-                  <label for="logo" class="col-md-4 col-form-label text-md-right">{{ __("Logo de l'entreprise") }}</label>
+                  <label for="photo" class="col-md-4 col-form-label text-md-right">{{ __("Logo de l'entreprise") }}</label>
 
                   <div class="col-md-6">
-                      <input id="logo" type="file" class="form-control" name="logo" value="{{ old('logo') }}" required autocomplete="logo">
+                      <input id="photo" type="file" class="form-control" name="photo" value="{{ old('photo') }}" required autocomplete="photo">
 
                       
                   </div>
               </div>
 
                 
-              <label for="logo" class="col-form-label">{{ __("Informations personne de contact") }}</label>
+              <label for="photo" class="col-form-label">{{ __("Informations personne de contact") }}</label>
 
                   <div class="form-group row">
                     <label for="pNom" class="col-md-4 col-form-label text-md-right">Nom</label>
