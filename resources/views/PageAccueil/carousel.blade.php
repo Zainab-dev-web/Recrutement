@@ -1,6 +1,6 @@
 
         <!-- slider Area Start-->
-        <div class="slider-area  slider-height" data-background="{{asset('img/hero/h1_hero.jpg')}}">
+        <div class="slider-area  slider-height pb-200" data-background="{{asset('img/hero/h1_hero.jpg')}}">
             <div class="slider-active">
                 <!-- Single Slider -->
                 <div class="single-slider">
