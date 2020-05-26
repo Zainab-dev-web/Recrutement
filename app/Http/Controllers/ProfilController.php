@@ -79,7 +79,11 @@ class ProfilController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user=User::find($id);
+        $roles=Role::all();
+        $statuts=Statut::all();
+
+        return view('PageProfil.edit', compact('user' , 'roles', 'statuts'));
     }
 
     /**
@@ -99,6 +103,29 @@ class ProfilController extends Controller
     
         $talent->save();
         return redirect()->route('profil.index');
+    }
+    public function updateUser(Request $request, $id){
+
+        $request->validate([
+    
+            'nom'=> 'required|',
+            'email'=> 'required|',
+            'photo'=> 'required|',
+            'role_id'=> 'required|',
+            'password'=> 'required|',
+            
+        ]);
+        
+        $image = Storage::disk('public')->put('', $request->file('photo'));
+        $user=User::find($id);
+        $user->nom=$request->nom;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->photo=$image;
+        $user->role_id= $request->role_id;
+        $user->valid=$request->valid;
+        $user->save();
+        return redirect()->route('PageProfil.show');
     }
 
     /**

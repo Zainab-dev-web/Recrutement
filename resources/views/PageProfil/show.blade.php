@@ -63,7 +63,7 @@
     <p><b>Numéro de contact : </b>{{$users->pTel}}</p>
     @else
     @endif
-    <a class="btn p-3 text-white" data-toggle="modal" data-target="#exampleModalLong">Modifier</a>
+<a class="btn p-3 text-white" href='{{route('profil.edit', $users->id)}}'>Modifier</a>
     </div>
 
 
