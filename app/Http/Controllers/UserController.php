@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Role;
+use App\Offre;
 use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
@@ -13,12 +14,14 @@ class UserController extends Controller
     public function index(){
 
         $users=User::all();
-        return view('user.index', compact('users'));
+        $offres=Offre::all();
+        return view('user.index', compact('users', 'offres'));
     }
 
     public function edit($id){
         $user=User::find($id);
         $roles=Role::all();
+
         return view('user.edit', compact('user' , 'roles'));
 
     }
@@ -45,6 +48,33 @@ class UserController extends Controller
         $user->save();
         return redirect()->route('user.index');
 
+    }
+    public function editsugges($id){
+      
+            $matchs=Offre::find($id);
+            $users=User::all();
+          
+          
+            return view('user.editsugges', compact('matchs' , 'users'));
+    }
+
+    public function updatesugges(Request $request , $id){
+
+        // $request->validate([
+    
+        //     'offre_id'=> 'required|',
+        //     'match_id'=> 'required|',
+         
+            
+        // ]);
+       
+
+        $match=Offre::find($id);
+        $match->user_id=$match->user_id;
+        $match->save();
+        $match->matchs()->detach();
+        $match->matchs()->attach($request->match);
+        return redirect()->route('user.index');
     }
 
     public function show($id){

@@ -11,7 +11,11 @@ class User extends Authenticatable
     use Notifiable;
 
     public function role(){
+        
         return $this->belongsTo('App\Role');
+    }
+    public function offre(){
+        return $this->belongsTo('App\Offre');
     }
     public function statut(){
         return $this->belongsTo('App\Statut');
@@ -34,7 +38,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = ['nom', 'prénom', 'photo', 'email','adresse','statut_id','véhicule','dispo','domaine','cv','valid', 'role_id', 'password', 'date', 'numero', 'tva','logo','pNom','pTel', 'resultat'];
+    protected $fillable = ['nom', 'prénom', 'photo', 'email','adresse','statut_id','véhicule','dispo','domaine','cv','valid', 'role_id', 'password', 'date', 'numero', 'tva','logo','pNom','pTel', 'resultat_id'];
 
     /**
      * The attributes that should be hidden for arrays.

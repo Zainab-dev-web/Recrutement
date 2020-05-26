@@ -17,9 +17,9 @@
   </div>
 </div>
 <!-- Hero Area End -->
-@foreach ($events as $event)
+@foreach ($notes as $note)
 
-@if ($event->offre->user->id == Auth::user()->id && $event->user->id != Auth::user()->id)
+@if ($note->user->id == Auth::user()->id)
 
 <article class="blog_item container">
   <div class="blog_item_img">
@@ -28,14 +28,22 @@
 
   <div class="blog_details">
       <a class="d-inline-block" href="">
-      <h2>{{$event->offre->poste}} chez {{$event->offre->user->nom}}</h2>
+      <h2>Entretien avec {{$note->offre->user->nom}}</h2>
+      <p>Pour le poste de {{$note->offre->poste}}</p>
       </a>
-  <p><i class="fas fa-map-marker-alt"></i> {{$event->offre->lieu}}</p>
-  <p>{{\Illuminate\Support\Str::limit($event->offre->description, 200, $end=' ...')}}</p>
+  <p><i class="fas fa-map-marker-alt"></i> {{$note->offre->lieu}}</p>
+  <p>{{\Illuminate\Support\Str::limit($note->offre->description, 200, $end=' ...')}}</p>
   <h5>
-    L'entretien a eu lieu avec {{$event->user->nom}} {{$event->user->prénom}}
+    Résultat de votre évaluation : <b>{{$note->note->note}}</b>/5 <h3><b>{{$note->resultat->nom}}</b></h3>
   </h5>
-        <a class="btn btn-white" href="{{route('evaluation.edit', $event)}}">Évaluer</a></b></a>   
+  <ul class="mb-3">
+    <li>Impression : {{$note->impression}}</li>
+    <li>Savoir : {{$note->savoir}}</li>
+    <li>Sérieux {{$note->serieux}}</li>
+    <li>Capacité : {{$note->capacite}}</li>
+  </ul>
+    <a class="btn btn-white" href="{{route('note.edit', $note)}}">Évaluer</a></b></a>
+
   </div>
 </article>
 
@@ -46,9 +54,9 @@
     
 @endforeach
 
-@if (count($events) == 0)
-<div class="text-center my-5">
-  <h3><b>Vous n'avez pas d'entretiens en cours...</b></h3>
+@if (count($notes) == 0)
+<div class="text-center my-5 border p-3">
+  <h3>Vous n'avez pas encore d'évaluations...</h3>
 </div>
     
 @else

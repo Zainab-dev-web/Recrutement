@@ -43,7 +43,11 @@ class CreateUsersTable extends Migration
             ->onDelete('cascade')
             ->onUpdate('cascade');
             $table->string('password');
-            $table->string('resultat')->nullable();
+            $table->bigInteger('resultat_id')->unsigned()->nullable();
+            $table->foreign('resultat_id')->on('resultats')
+            ->references('id')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
             $table->rememberToken();
             $table->timestamps();
         });

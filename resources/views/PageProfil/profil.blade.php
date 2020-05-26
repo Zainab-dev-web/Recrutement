@@ -22,7 +22,7 @@
 <div class="row no-gutters d-flex justify-content-center">
     <div class="col-3 no-gutters pb-5 px-5">
         <div class="text-center">
-        <img class="my-5" width="200" alt="logo entreprise" src="{{asset('storage/'.$user->logo)}}">
+        <img class="my-5" width="200" alt="logo entreprise" src="{{asset('storage/'.$user->photo)}}">
         <h2>{{$user->nom}} - {{$user->domaine}}</h2>
         </div>
         <a href="{{route('agenda')}}" class='btn'>Voir votre agenda</a>
@@ -67,6 +67,11 @@
                         
                     @endif
                 @endforeach
+                @if(count($offr)==0)
+                <div class="alert alert-info" role="alert">
+                    Vous n'avez pas encore d'offres !
+                </div>
+                @endif 
                 <a class="btn btn-white" href="{{route('offres.create')}}" type="submit">Créer une offre</a>
             </ul>
         </div>
@@ -102,7 +107,7 @@
                 <h2 class="titular">MENU</h2>
                 <ul class="menu-box-menu">
                     <li>
-                        <a class="menu-box-tab" href="#6"><span class="icon scnd-font-color"><i class="fas fa-star"></i></span>Vos notes</a>                            
+                    <a class="menu-box-tab" href="{{route('note.index')}}"><span class="icon scnd-font-color"><i class="fas fa-star"></i></span>Vos notes</a>                            
                     </li>
                     <li>
                         <a class="menu-box-tab" href="#"><span class="icon entypo-paper-plane scnd-font-color"></span>Vos candidatures</span></a>              

@@ -111,11 +111,11 @@ class RegisterController extends Controller
             'valid' => 0,
             'role_id' => 4,
             'password' => Hash::make($data['password']),
-            'resultat' => null,
+            'resultat_id' => null,
         ]);
         } elseif ($choix->valid == 2) { // entreprise
 
-        $storage=Storage::disk('public')->put('', $data['logo']);
+        $storage=Storage::disk('public')->put('', $data['photo']);
 
         return User::create([
             'nom' => $data['nom'],
@@ -127,7 +127,7 @@ class RegisterController extends Controller
             'domaine' => $data['domaine'],
             'numero' => $data['numero'],
             'adresse' => $data['adresse'],
-            'logo' => $storage,
+            'photo' => $storage,
             'pNom' => $data['pNom'],
             'pTel' => $data['pTel'],
             'email' => $data['email'],
@@ -135,7 +135,7 @@ class RegisterController extends Controller
             'role_id' => 5,
             'statut_id' => null,
             'password' => Hash::make($data['password']),
-            'resultat' => null
+            'resultat_id' => null
         ]);
         
         }

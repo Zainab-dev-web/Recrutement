@@ -2,6 +2,21 @@
 
 @section('content')
 
+@include('components.nav')
+
+<!-- Hero Area Start -->
+<div class="hero-area hero-height2 d-flex align-items-center mb-5" data-background="{{asset('img/hero/h2_hero.jpg')}}">
+  <div class="container">
+      <div class="row">
+          <div class="col-xl-12">
+              <div class="hero-cap text-center pt-50">
+                  <h2>Candidatures</h2>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Hero Area End -->
 
 <div class="container">
   
@@ -76,6 +91,15 @@
         </tbody>
       </table>
 </div>
+
+@if (count($offres) == 0)
+<div class="text-center my-5">
+  <h3>Vous n'avez pas d'offres...</h3>
+</div>
+    
+@else
+    
+@endif
 </div>
     @include('components.footer')
 

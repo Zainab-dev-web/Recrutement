@@ -45,9 +45,10 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-    'logo_img_class' => 'brand-image img-circle elevation-3',
+    'logo' => '<b></b>',
+    // 'logo' => '<b>Molen</b>RECRUT',
+    'logo_img' => '/img/logo/logo3.png',
+    'logo_img_class' => 'w-75',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
     'logo_img_alt' => 'AdminLTE',
@@ -223,7 +224,7 @@ return [
         ['header' => 'Configuration du compte'],
         [
             'text' => 'Profile',
-            'url'  => 'admin/settings',
+            'url'  => 'profilGestion',
             'icon' => 'fas fa-fw fa-user',
         ],
         ['header' => 'Gestion'],

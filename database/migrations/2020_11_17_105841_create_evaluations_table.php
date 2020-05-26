@@ -20,8 +20,8 @@ class CreateEvaluationsTable extends Migration
             ->references('id')
             ->onDelete('cascade')
             ->onUpdate('cascade');
-            $table->bigInteger('event_id')->unsigned();
-            $table->foreign('event_id')->on('events')
+            $table->bigInteger('offre_id')->unsigned();
+            $table->foreign('offre_id')->on('offres')
             ->references('id')
             ->onDelete('cascade')
             ->onUpdate('cascade');
@@ -30,16 +30,20 @@ class CreateEvaluationsTable extends Migration
             ->references('id')
             ->onDelete('cascade')
             ->onUpdate('cascade');
-            $table->string('impression');
-            $table->string('savoir');
-            $table->string('capacite');
-            $table->string('serieux');
+            $table->text('impression');
+            $table->text('savoir');
+            $table->text('capacite');
+            $table->text('serieux');
             $table->bigInteger('note_id')->unsigned();
             $table->foreign('note_id')->on('notes')
             ->references('id')
             ->onDelete('cascade')
             ->onUpdate('cascade');
-            $table->string('resultat'); // accepté ou non
+            $table->bigInteger('resultat_id')->unsigned();
+            $table->foreign('resultat_id')->on('resultats')
+            ->references('id')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
             $table->timestamps();
         });
     }

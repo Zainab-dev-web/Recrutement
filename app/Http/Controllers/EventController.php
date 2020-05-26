@@ -82,6 +82,14 @@ class EventController extends Controller
         $event->user_id = Auth::user()->id;
         $event->offre_id = $candidat->offre->id;
         $event->save();
+        
+        $event2 = new Event();
+        $event2->title = Auth::user()->nom . Auth::user()->prenom;
+        $event2->start = $request->input('date');
+        $event2->end = $request->input('date');
+        $event2->user_id = $candidat->offre->user->id;
+        $event2->offre_id = $candidat->offre->id;
+        $event2->save();
         $date->delete();
         return redirect()->route('date.index');
 

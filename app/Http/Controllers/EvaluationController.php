@@ -6,6 +6,7 @@ use App\Evaluation;
 use App\Event;
 use App\User;
 use App\Presence;
+use App\Resultat;
 use App\Note;
 use Illuminate\Http\Request;
 
@@ -19,7 +20,8 @@ class EvaluationController extends Controller
     public function index()
     {
         $events = Event::all();
-        return view ('PageProfil.evaluation.evaluation', compact('events'));
+        $evals = Evaluation::all();
+        return view ('PageProfil.evaluation.evaluation', compact('events', 'evals'));
     }
 
     /**
@@ -65,7 +67,8 @@ class EvaluationController extends Controller
         $event = Event::find($id);
         $presences = Presence::all();
         $notes = Note::all();
-        return view ('PageProfil.evaluation.formEvaluation', compact('event', 'presences', 'notes'));
+        $resultats = Resultat::all();
+        return view ('PageProfil.evaluation.formEvaluation', compact('event', 'presences', 'notes', 'resultats'));
     }
 
     /**
@@ -77,17 +80,6 @@ class EvaluationController extends Controller
      */
     public function update(Request $request, $id)
      {
-    //     $request->validate([
-    //         'presence_id'=> 'required',
-    //         'event_id'=>'required',
-    //         'user_id'=> 'required',
-    //         'impression'=>'required',
-    //         'savoir' => 'required',
-    //         'capacite' => 'required',
-    //         'serieux' => 'required',
-    //         'note_id' => 'required'
-    //     ]);
-
         $event = Event::find($id);
         $eval = new Evaluation();
         $eval->presence_id = $request->input('presence_id');
@@ -96,14 +88,17 @@ class EvaluationController extends Controller
         $eval->capacite = $request->input('capacite');
         $eval->serieux = $request->input('serieux');
         $eval->note_id = $request->input('note_id');
-        $eval->note_id = $request->input('resultat');
-        $eval->event_id = $event->id;
+        $eval->resultat_id = $request->input('resultat_id');
+        $eval->offre_id = $event->offre->id;
         $eval->user_id = $event->user->id;
-        $event->user->resultat =  $request->input('note_id');
-        dd($event->user->resultat);
         $eval->save();
-        $event->user->resultat->save();
-        $event->delete();
+        //
+
+        $event2 = Event::where('offre_id', $event->offre->id)->get();
+        foreach ($event2 as $item) {
+            $item->delete();
+        }
+
         return redirect()->route('evaluation.index');
         
     }

@@ -50,6 +50,14 @@
 
 @endforeach
 
+@if (count($candidats) == 0)
+    <div class="text-center my-5">
+      <h3>Vous n'avez pas de réponses à vos candidatures...</h3>
+    </div>
+@else
+    
+@endif
+
 
 @include('components.footer')
 

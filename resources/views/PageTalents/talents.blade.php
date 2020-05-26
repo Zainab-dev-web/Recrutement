@@ -15,7 +15,7 @@
  <!--================Blog Area =================-->
  <section class="blog_area section-padding">
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-lg-8 mb-5 mb-lg-0">
                 <div class="blog_left_sidebar">
 
