@@ -68,17 +68,5 @@
 </div>
 
 
-
-
-
-
-   
-
-
-
-
-
-
-
 @include('components/footer')
 @endsection
