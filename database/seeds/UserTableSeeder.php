@@ -28,7 +28,7 @@ class UserTableSeeder extends Seeder
             'statut_id' => null,
             'véhicule' => 'Oui',
             'dispo' => null,
-            'domaine' => 'Gestinnaire du site',
+            'domaine' => 'Gestionnaire du site',
             'cv' => null,
             'valid' => 1,
             'role_id' => 1,
