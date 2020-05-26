@@ -24,7 +24,7 @@
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4">
                 
-                    <button class="button rounded-0 primary-bg w-100 btn_1 boxed-btn mt-2"
+                    <button class="button rounded-0 primary-bg w-75 btn_1 boxed-btn mt-2"
                         type="submit">Subscribe</button>
 					</form>
             </div>
