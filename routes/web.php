@@ -26,6 +26,7 @@ Route::resource('evaluation', 'EvaluationController')->middleware('isConnect');
 Route::resource('note', 'NoteController')->middleware('isConnect');
 Route::get('editsugges/{id}', 'UserController@editsugges')->name('editsugges');
 Route::get('updatesugges/{id}', 'UserController@updatesugges')->name('updatesugges');
+Route::get('valid', 'Valid@index')->name('nonvalid');
 
 
 //fullcalendar ->Agenda
