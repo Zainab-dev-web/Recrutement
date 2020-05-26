@@ -8,6 +8,7 @@ use App\Offre;
 use App\Role;
 use App\Statut;
 use App\Candidat;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 
 class ProfilController extends Controller
@@ -61,7 +62,6 @@ class ProfilController extends Controller
      */
     public function show($id)
     {
-
         $users=User::find($id);
         $roles=Role::all();
         $statuts=Statut::all();
@@ -79,11 +79,11 @@ class ProfilController extends Controller
      */
     public function edit($id)
     {
-        $user=User::find($id);
+        $users=User::find($id);
         $roles=Role::all();
         $statuts=Statut::all();
 
-        return view('PageProfil.edit', compact('user' , 'roles', 'statuts'));
+        return view('PageProfil.edit', compact('users' , 'roles', 'statuts'));
     }
 
     /**
@@ -111,21 +111,18 @@ class ProfilController extends Controller
             'nom'=> 'required|',
             'email'=> 'required|',
             'photo'=> 'required|',
-            'role_id'=> 'required|',
             'password'=> 'required|',
             
         ]);
         
         $image = Storage::disk('public')->put('', $request->file('photo'));
-        $user=User::find($id);
-        $user->nom=$request->nom;
-        $user->email = $request->email;
-        $user->password = $request->password;
-        $user->photo=$image;
-        $user->role_id= $request->role_id;
-        $user->valid=$request->valid;
-        $user->save();
-        return redirect()->route('PageProfil.show');
+        $users=User::find($id);
+        $users->nom=$request->nom;
+        $users->email = $request->email;
+        $users->password = $request->password;
+        $users->photo=$image;
+        $users->save();
+        return view('PageProfil.show');
     }
 
     /**
