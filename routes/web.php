@@ -24,13 +24,6 @@ Route::get('accepter/{id}', 'CandidatController@accepter')->name('accepter');
 Route::resource('date', 'DateController');
 Route::resource('evaluation', 'EvaluationController')->middleware('isConnect');
 Route::resource('note', 'NoteController')->middleware('isConnect');
-<<<<<<< HEAD
-
-=======
-Route::get('editsugges/{id}', 'UserController@editsugges')->name('editsugges');
-Route::get('updatesugges/{id}', 'UserController@updatesugges')->name('updatesugges');
-Route::get('valid', 'Valid@index')->name('nonvalid');
->>>>>>> 5cf82cd35cac829dd1bc0e5382e9f9a6867dfae3
 
 
 //fullcalendar ->Agenda

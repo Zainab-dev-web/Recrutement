@@ -21,7 +21,7 @@
                                         <li><a href="{{route('offres.index')}}">Offres</a></li>
                                         <li><a href="{{route('talents.index')}}">Talents</a></li>
                                         <li><a href="{{route('entreprises.index')}}">Entreprises</a></li>
-                                        @if(Auth::check() && Auth::user()->role_id ==1 || Auth::user()->role_id ==2 ||Auth::user()->role_id ==3 )
+                                        @if(Auth::check() && Auth::user()->role_id ==1 || Auth::check() && Auth::user()->role_id==2 || Auth::check() && Auth::user()->role_id ==3  )
                                         <li><a href="{{route('admin.index')}}">Backoffice</a></li>
                                         
                                         @endif
