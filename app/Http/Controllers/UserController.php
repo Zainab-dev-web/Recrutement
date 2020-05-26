@@ -49,33 +49,8 @@ class UserController extends Controller
         return redirect()->route('user.index');
 
     }
-    public function editsugges($id){
-      
-            $matchs=Offre::find($id);
-            $users=User::all();
-          
-          
-            return view('user.editsugges', compact('matchs' , 'users'));
-    }
-
-    public function updatesugges(Request $request , $id){
-
-        // $request->validate([
     
-        //     'offre_id'=> 'required|',
-        //     'match_id'=> 'required|',
-         
-            
-        // ]);
-       
-
-        $match=Offre::find($id);
-        $match->user_id=$match->user_id;
-        $match->save();
-        $match->matchs()->detach();
-        $match->matchs()->attach($request->match);
-        return redirect()->route('user.index');
-    }
+    
 
     public function show($id){
         $user=User::find($id);
