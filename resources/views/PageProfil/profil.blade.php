@@ -133,7 +133,8 @@
                         <li>
                         <a href="#" class="d-flex">
                         <p>{{$candidat->offre->poste}} chez </p>
-                        <p><b>{{$candidat->offre->user->nom}}</b></p>
+                    
+                        <p><b> {{$candidat->offre->user->nom}}</b></p>
                     </a>
                 </li> 
                     @else

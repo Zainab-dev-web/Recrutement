@@ -23,7 +23,7 @@
     
       <div class="text-center">
         
-      <img class="mb-2" width="200" alt="logo entreprise" src="{{asset('storage/'.$offre->user->logo)}}">
+      <img class="mb-2" width="200" alt="logo entreprise" src="{{asset('storage/'.$offre->user->photo)}}">
       <h3>{{$offre->poste}} chez {{$offre->user->nom}}</h3>
       <p> Tel : {{$offre->user->pTel}}</p><p><b>email : {{$offre->user->email}}</b></p>
       <p><b>{{$offre->user->numero}}</b> - TVA {{$offre->user->tva}}</p>

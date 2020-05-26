@@ -8,7 +8,7 @@
       <div class="row">
           <div class="col-xl-12">
               <div class="hero-cap text-center pt-50">
-                  <h2>{{$talent->nom}} {{$talent->prénom}} profile</h2>
+                  <h2>Profil de "{{$talent->nom}} {{$talent->prénom}}" </h2>
               </div>
           </div>
       </div>
