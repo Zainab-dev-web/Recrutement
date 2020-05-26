@@ -12,7 +12,7 @@
 <h2 class='text-center my-5 py-3'>Tout les utilisateurs</h2>
 <hr>
 
-<div class="row">
+<div class="row d-flex justify-content-center">
     @foreach ($users as $item)
     @can('hrt_valid') 
     @if($item->role_id==4)
