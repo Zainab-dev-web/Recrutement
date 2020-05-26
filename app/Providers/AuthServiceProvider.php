@@ -40,7 +40,7 @@ class AuthServiceProvider extends ServiceProvider
 
         Gate::define('post-valid', function ($user){
             if(Auth::check() && Auth::user()->valid == 1){
-            return  true;
+            return true;
             }
         });
         Gate::define('admin_edit', function($user){

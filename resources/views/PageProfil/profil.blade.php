@@ -15,9 +15,7 @@
 @can('post-entreprise')
 @foreach ($users as $user)
 @if ($user->id == Auth::user()->id)
-    
-{{-- 
-<a class="btn btn-white" href="{{route('offres.create')}}" type="submit">Créer une offre</a> --}}
+
 <div class="container">
 <div class="row no-gutters d-flex justify-content-center">
     <div class="col-3 no-gutters pb-5 px-5">
@@ -113,10 +111,6 @@
                         <a class="menu-box-tab" href="#"><span class="icon entypo-paper-plane scnd-font-color"></span>Vos candidatures</span></a>              
                     </li>
     
-                    <li>
-                        <a class="menu-box-tab" href="#match"><span class="icon scnd-font-color"><i class="fas fa-heart"></i></span>Vos matchs</span></a> 
-                        
-                    </li>
     
                     <li>
                     <a class="menu-box-tab" href="{{route('date.index')}}"><span class="icon scnd-font-color"><i class="far fa-clock"></i></span>Proposition de date</span></a>              
@@ -158,9 +152,7 @@
         <div class="single_sidebar_widget post_category_widget">
             <h4 class="widget_title mb-3 text-center"><i class="fas fa-heart text-danger fa-1x"></i> Vos matches</h4>
             <div class="row">
-                @foreach ($offres as $item)
-                {{-- @foreach ($offres->matchs as $item) --}}
-                {{-- @if ($item->user_id == Auth::user()->id) --}}
+                @foreach ($offr as $item)
                 
                 <div class="col-4 border border-secondary rounded p-3 m-3">
                     

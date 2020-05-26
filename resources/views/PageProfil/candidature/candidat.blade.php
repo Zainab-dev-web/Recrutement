@@ -66,6 +66,9 @@
         <tbody>
 
             @foreach ($allcandidats as $candidat)
+            @if ($candidat->offre->user->id == Auth::user()->id)
+                
+           
                 <tr>
                     <td>{{$candidat->id}}</td>
                     <td>{{$candidat->user->nom}} {{$candidat->user->prénom}}</td>
@@ -85,6 +88,10 @@
                         <a href="{{route('talents.show', $candidat->user->id)}}" class='btn btn-white'>Voir profil</a>
                     </td>
                 </tr>
+
+                @else
+                
+                @endif
 
           @endforeach
 
