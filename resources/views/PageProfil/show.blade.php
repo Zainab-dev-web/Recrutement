@@ -23,7 +23,6 @@
     <img class="my-5" width="200" alt="logo entreprise" src="{{asset('storage/'.$users->photo)}}">
     <h2>{{$users->nom}} {{$users->prénom}} - {{$users->domaine}}</h2>
     <p><b>Email : </b>{{$users->email}}</p> 
-    <p><b>Mot de passe : </b>{{$users->password}}</p> 
     <p><b>Adresse : </b>{{$users->adresse}}</p>
     <p><b>Numéro de téléphone : </b>{{$users->numero}}</p>
 
@@ -63,9 +62,12 @@
     <p><b>Numéro de contact : </b>{{$users->pTel}}</p>
     @else
     @endif
-<a class="btn p-3 text-white" href='{{route('profil.edit', $users->id)}}'>Modifier</a>
-    </div>
+    
 </div>
+</div>
+            <div class="text-center py-5">
+           <a class="btn p-3 text-white" href='{{route('profil.edit', $users->id)}}'>Modifier</a>     
+            </div>
 
 
 @include('components/footer')
