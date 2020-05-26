@@ -18,8 +18,8 @@
 
 
 
-
-<div class="container mx-auto py-2">
+<div class="container">
+    <div class="my-5 profil">
     <img class="my-5" width="200" alt="logo entreprise" src="{{asset('storage/'.$users->photo)}}">
     <h2>{{$users->nom}} {{$users->prénom}} - {{$users->domaine}}</h2>
     <p><b>Email : </b>{{$users->email}}</p> 
@@ -65,6 +65,7 @@
     @endif
     <a class="btn p-3 text-white" data-toggle="modal" data-target="#exampleModalLong">Modifier</a>
     </div>
+</div>
 
 
 
