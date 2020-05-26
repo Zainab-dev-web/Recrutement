@@ -19501,6 +19501,57 @@ hr {
   justify-content: center;
 }
 
+.principal {
+  border-color: blue;
+}
+
+.single-services2 {
+  border: 3px solid #dafcef;
+  transition: 0.4s;
+}
+
+.single-services2:hover {
+  box-shadow: 0px 10px 30px 0px rgba(133, 66, 189, 0.1);
+}
+
+.single-services2 .services-ion span {
+  font-size: 60px;
+  margin-bottom: 13px;
+  color: #014b85;
+  transition: 0.4s;
+}
+
+.single-services2 .services-cap {
+  padding: 0 16px;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .single-services2 .services-cap {
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .single-services2 .services-cap {
+    padding: 0;
+  }
+}
+
+.single-services2 .services-cap h5 {
+  font-weight: 600;
+  font-size: 18px;
+  color: #001f38;
+  line-height: 1.4;
+}
+
+.single-services2:hover {
+  border: 2px solid #ff8b00;
+}
+
+.single-services2:hover .services-ion span {
+  color: #ff8b00;
+}
+
 .heart {
   width: 100px;
   height: 100px;

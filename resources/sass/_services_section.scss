@@ -105,3 +105,47 @@
     align-items: center;
     justify-content: center;
 }
+
+.principal{
+    border-color: blue;
+}
+
+.single-services2{
+    border: 3px solid rgb(218, 252, 239);
+    
+    @include transition(.4s);
+    &:hover {
+        box-shadow: 0px 10px 30px 0px rgba(133, 66, 189, 0.1);
+    }
+    .services-ion{
+        span{
+            font-size: 60px;
+            margin-bottom: 13px;
+            color: #014b85;
+            @include transition(.4s);
+        }
+    }
+    .services-cap{
+        padding: 0 16px;
+        @media #{$sm}{
+            padding: 0;
+        }
+        @media #{$md}{
+            padding: 0;
+        }
+        h5{
+            font-weight: 600;
+            font-size: 18px;
+            color: #001f38;
+            line-height: 1.4;
+        }
+    }
+    &:hover{
+        border: 2px solid $theme-color3;
+        .services-ion{
+            span{
+                color: $theme-color3;
+            }
+        }
+    }
+}

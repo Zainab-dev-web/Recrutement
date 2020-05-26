@@ -4,29 +4,28 @@
             <div class="starups2">
                 <div class="container no-gutter text-center">
                     <div class='text-center my-5'>
-                        <h1><b>Team</b></h1>
-                        
+                        <h3 class="text-white bold">OUR TEAM</h3> 
                     </div>
                 <div class="row starups-details2 text-center">
                     @foreach ($UserSecondaire as $position =>$item)
                 @if($position != 1) 
                     <div class="col-lg-4 col-md-6 col-sm-4">
-                        <div class="single-services text-center mb-10">
-                            <div class="startup-img"><img class="w-75"src="{{asset('storage/'.$item->photo)}}" alt=""></div>
+                        <div class="single-services2 text-center mb-10">
+                            <div class="startup-img mt-4"><img class="w-75"src="{{asset('storage/'.$item->photo)}}" alt=""></div>
                             <div class="services-cap2">
                                 <h5>{{$item->role->role}}</h5>
-                                <p>{{$item->nom}}</p>
+                                <p>{{$item->nom}} {{$item->prénom}}</p>
                             </div>
                         </div>
                     </div>
                     @else
                     <div class="col-lg-4 col-md-6 col-sm-4">
-                        <div class="single-services text-center mb-10">
-                            <div class="startup-img"><img  class="w-75"src="
+                        <div class="single-services2 text-center mb-10">
+                            <div class="startup-img mt-4"><img  class="w-75"src="
                                 {{asset('storage/'.$userPrincipal->photo)}}" alt=""></div>
                             <div class="services-cap2">
                                 <h5>{{$userPrincipal->role->role}}</h5>
-                                <p>{{$userPrincipal->nom}}</p>
+                                <p>{{$userPrincipal->nom}} {{$userPrincipal->prénom}}</p>
                             </div>
                         </div>
                     </div>
