@@ -21,12 +21,9 @@
                                         <li><a href="{{route('offres.index')}}">Offres</a></li>
                                         <li><a href="{{route('talents.index')}}">Talents</a></li>
                                         <li><a href="{{route('entreprises.index')}}">Entreprises</a></li>
-                                        @if(Auth::check() && Auth::user()->role_id ==1)
-                                        <li><a href="{{route('admin.index')}}">ADMIN</a></li>
-                                        @elseif(Auth::check() && Auth::user()->role_id ==2)
-                                        <li><a href="{{route('admin.index')}}">HRT</a></li>
-                                        @elseif(Auth::check() && Auth::user()->role_id ==3)
-                                        <li><a href="{{route('admin.index')}}">HRE</a></li>
+                                        @if(Auth::check() && Auth::user()->role_id ==1 || Auth::user()->role_id ==2 ||Auth::user()->role_id ==3 )
+                                        <li><a href="{{route('admin.index')}}">Backoffice</a></li>
+                                        
                                         @endif
 
                                         @if (Auth::check())
@@ -36,9 +33,16 @@
                                         <ul class="submenu">
                                            
                                         <li class="nav-item dropdown">
+                                            @if(Auth::check() && Auth::user()->role_id ==4 || Auth::user()->role_id ==5)
                                             <a id="navbarDropdown" class="nav-link" href="{{route('profil.index')}}" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
                                                 {{ Auth::user()->nom }}
                                             </a>
+                                            @else
+                                            <a id="navbarDropdown" class="nav-link" href="{{route('profilGestion.index')}}" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
+                                                {{ Auth::user()->nom }}
+                                            </a>
+                                            
+                                            @endif
             
                                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                                    onclick="event.preventDefault();
