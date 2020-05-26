@@ -24,6 +24,8 @@ Route::get('accepter/{id}', 'CandidatController@accepter')->name('accepter');
 Route::resource('date', 'DateController');
 Route::resource('evaluation', 'EvaluationController')->middleware('isConnect');
 Route::resource('note', 'NoteController')->middleware('isConnect');
+Route::get('editsugges/{id}', 'UserController@editsugges')->name('editsugges');
+Route::get('updatesugges/{id}', 'UserController@updatesugges')->name('updatesugges');
 
 
 //fullcalendar ->Agenda
@@ -51,6 +53,7 @@ Route::get('/searchUser', 'UserController@search')->name('searchUser')->middlewa
 
 
 //Resource Global
+
 Route::resource('accueil', 'AccueilController');
 Route::resource('offres', 'OffreController');
 Route::resource('talents', 'TalentController');
