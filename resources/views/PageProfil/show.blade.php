@@ -32,7 +32,7 @@
     @endif
 
     @if($users->dispo!= null)
-    <p><b>Disponibilité: </b>{{$users->dispo}}</p>
+    <p><b>Disponibilité : </b>{{$users->dispo}}</p>
     @else
     @endif
 
