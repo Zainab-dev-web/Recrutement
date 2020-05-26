@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="hero-cap text-center pt-50">
-                    <h2>Profile</h2>
+                    <h2>Profil</h2>
                 </div>
             </div>
         </div>
@@ -93,7 +93,7 @@
         <div class="text-center">
         <img class="my-5" width="200" alt="logo entreprise" src="{{asset('storage/'.$user->photo)}}">
         <h2>{{$user->nom}} {{$user->prénom}} - {{$user->domaine}}</h2>
-        <p>{{$user->statut->statut}} <a class="btn text-white p-3" data-toggle="modal" data-target="#exampleModalLong">Modifier</a></p>
+        <p>{{$user->statut->statut}} <a class="btn p-3 text-white" data-toggle="modal" data-target="#exampleModalLong">Modifier</a></p>
         </div>
         <div class="col-3 mt-5">
         <a href="{{route('agenda')}}" class='btn'>Voir votre agenda</a>
@@ -133,7 +133,8 @@
                         <li>
                         <a href="#" class="d-flex">
                         <p>{{$candidat->offre->poste}} chez </p>
-                        <p><b>{{$candidat->offre->user->nom}}</b></p>
+                    
+                        <p><b> {{$candidat->offre->user->nom}}</b></p>
                     </a>
                 </li> 
                     @else

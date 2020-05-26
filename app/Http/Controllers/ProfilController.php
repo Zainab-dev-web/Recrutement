@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Offre;
 use App\Role;
+use App\Statut;
 use App\Candidat;
 use Illuminate\Support\Facades\Auth;
 
@@ -63,10 +64,13 @@ class ProfilController extends Controller
 
         $users=User::find($id);
         $roles=Role::all();
+        $statuts=Statut::all();
        
-        return view ('PageProfil.show' , compact('users','roles'));
+        return view ('PageProfil.show' , compact('users','roles', 'statuts'));
     }
 
+
+   
     /**
      * Show the form for editing the specified resource.
      *

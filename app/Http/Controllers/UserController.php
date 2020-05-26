@@ -63,6 +63,7 @@ class UserController extends Controller
         $user->save();
         return redirect()->route('user.index');
     }
+    
     public function search(Request $request){
         $searchUser = $request->input('search');
         $users = User::where('id','>',1)->where('nom','LIKE', '%'.$searchUser.'%')->get();
