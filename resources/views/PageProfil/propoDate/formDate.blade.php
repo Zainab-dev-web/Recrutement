@@ -15,10 +15,11 @@
   </div>
 </div>
 <!-- Hero Area End -->
-<div class="container w-25">
+<div class="container text-center my-5">
 <form action="{{route('event.update', $candidat)}}" method="post">
   @csrf
   @method('PUT')
+  <h4 class="mb-2">Choisissez la date qui vous convient</h4>
   <div class="form-check">
     <input class="form-check-input" type="radio" name="date" id="exampleRadios1" value="{{$candidat->date->date1}}" checked>
     <label class="form-check-label" for="exampleRadios1">
@@ -38,9 +39,13 @@
     </label>
   </div>
 
-<button type="submit" class="btn btn-primary">Submit</button>
+<button type="submit" class="btn btn-primary mt-3">Submit</button>
+
 </form>
+
 </div>
+
+<u><b><a class="text-danger mx-3" href="{{route('date.')}}">Annuler le rendez-vous</a></b></u>
 
   @include('components.footer')
 

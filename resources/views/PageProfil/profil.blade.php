@@ -141,7 +141,7 @@
                     @endif
                 @endforeach
             </ul>
-            @if(count($candid)==0)
+            @if(count($candidats)==0)
             <div class="alert alert-info" role="alert">
                 Vous n'avez pas encore de candidatures !
             </div>

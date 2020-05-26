@@ -20,8 +20,7 @@
 
  
 @foreach ($candidats as $candidat)
-@if ($candidat->user_id == Auth::id())
-  
+@if ($candidat->user_id == Auth::id() && $candidat->accept == 1)
 <article class="blog_item container">
   <div class="blog_item_img">
       <img class="card-img rounded-0" src="assets/img/blog/single_blog_1.png" alt="">
