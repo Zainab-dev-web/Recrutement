@@ -3,18 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
-use App\Offre;
-use App\Role;
-use App\Candidat;
-use Illuminate\Support\Facades\Auth;
 
-class ProfilController extends Controller
+class Valid extends Controller
 {
-
-    public  function  __construct() {
-        $this->middleware('isValid')->only('index');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -22,13 +13,7 @@ class ProfilController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        $offres = Offre::all();
-        $candidats = Candidat::where('accept', 0)->get();
-        $candid = Candidat::where('user_id', Auth::user()->id)->get();
-        $match = Offre::where('user_id', Auth::user()->id)->get();
-        $offr = Offre::where('user_id', Auth::user()->id)->get();
-        return view('PageProfil.pageProfil', compact('users', 'offres', 'candidats' , 'candid', 'match', 'offr'));
+        return view ('Nonvalide.nonvalide');
     }
 
     /**
@@ -60,11 +45,7 @@ class ProfilController extends Controller
      */
     public function show($id)
     {
-
-        $users=User::find($id);
-        $roles=Role::all();
-       
-        return view ('PageProfil.show' , compact('users','roles'));
+        //
     }
 
     /**
@@ -87,14 +68,7 @@ class ProfilController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'statut_id'=> 'required',
-        ]);
-        $talent = User::find($id);
-        $talent->statut_id = $request->input('statut_id');
-    
-        $talent->save();
-        return redirect()->route('profil.index');
+        //
     }
 
     /**

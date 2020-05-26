@@ -16,10 +16,10 @@ class isValid
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check() & Auth::user()->valid == 1) {
+        if (Auth::check() && Auth::user()->valid == 1) {
             return $next($request);
         } else {
-            # code...
+            return redirect()->route('nonvalid');
         }
         
         

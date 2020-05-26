@@ -36,8 +36,8 @@ class UserTableSeeder extends Seeder
             'resultat_id' => null,
         ]);
         // entreprise
-        $filename = Str::random(10) . time() . '.jpeg';
-        Storage::disk('public')->copy('/images.jpeg', $filename);
+        $filename = Str::random(10) . time() . '.jpg';
+        Storage::disk('public')->copy('/tom&co.jpg', $filename);
         DB::table('users')->insert([
             'nom' => 'Tom&Co',
             'prénom' => null,
@@ -59,8 +59,8 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('popo1234'),
             'resultat_id' => null,
         ]);
-        $filename = Str::random(10) . time() . '.jpeg';
-        Storage::disk('public')->copy('/images.jpeg', $filename);
+        $filename = Str::random(10) . time() . '.png';
+        Storage::disk('public')->copy('/amazon.png', $filename);
         DB::table('users')->insert([
             'nom' => 'Amazon',
             'prénom' => null,
@@ -203,10 +203,10 @@ class UserTableSeeder extends Seeder
             'resultat_id' => null,
         ]);
         $filename = Str::random(10) . time() . '.png';
-        Storage::disk('public')->copy('/images.png', $filename);
+        Storage::disk('public')->copy('/kruidvat.png', $filename);
         DB::table('users')->insert([
             'nom' => 'Kruivat',
-            'prénom' => 'Vat',
+            'prénom' => null,
             'date' => null,
             'tva' => null,
             'logo' =>null,
@@ -214,6 +214,30 @@ class UserTableSeeder extends Seeder
             'pTel' => null,
             'photo' => $filename,
             'email' => 'kruit@gmail.com',
+            'numero' => '0486653282',
+            'adresse' => 'Rue des orées, 71',
+            'statut_id' => 1,
+            'véhicule' => 'Non',
+            'dispo' => '2020-05-18',
+            'domaine' => 'Full-Stack',
+            'cv' => '202004sdf30_113422_0000-1.png',
+            'valid' => 1,
+            'role_id' => 5,
+            'password' => Hash::make('123456789'),
+            'resultat_id' => null,
+        ]);
+        $filename = Str::random(10) . time() . '.jpg';
+        Storage::disk('public')->copy('/proximus.jpg', $filename);
+        DB::table('users')->insert([
+            'nom' => 'Proximus',
+            'prénom' => null,
+            'date' => null,
+            'tva' => null,
+            'logo' =>null,
+            'pNom' => null,
+            'pTel' => null,
+            'photo' => $filename,
+            'email' => 'proxi@gmail.com',
             'numero' => '0486573322',
             'adresse' => 'Rue des matins, 45',
             'statut_id' => 1,

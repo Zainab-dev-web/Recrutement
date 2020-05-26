@@ -16,7 +16,7 @@
 </div>
 <!-- Hero Area End -->
 <div class="container w-25">
-<form action="{{route('date.update', $candidat)}}" method="post">
+<form class="my-3" action="{{route('date.update', $candidat)}}" method="post">
   @csrf
   @method('PUT')
   <div class="form-group">
@@ -32,7 +32,7 @@
     <input type="date" class="form-control" id="exampleInputPassword1" name="date3">
 </div>
 
-<button type="submit" class="btn btn-primary">Submit</button>
+<button type="submit" class="btn btn-primary my-3">Submit</button>
 </form>
 </div>
 

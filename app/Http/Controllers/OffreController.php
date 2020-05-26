@@ -12,6 +12,10 @@ use Illuminate\Http\Request;
 
 class OffreController extends Controller
 {
+
+    public  function  __construct() {
+        $this->middleware('isValid')->only('create', 'store', 'update', 'destroy');
+    }
     /**
      * Display a listing of the resource.
      *
