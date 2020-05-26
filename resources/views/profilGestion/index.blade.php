@@ -32,7 +32,7 @@
                            <b>Email</b> <a class="pull-right">{{$user->email}}</a>
                            </li>
                            <li class="list-group-item">
-                           <b>Expérience</b> <a class="pull-right">{{$user->experience}} annnées</a>
+                           <b>Expérience</b> <a class="pull-right">{{$user->experience}} années</a>
                            </li>
                            <li class="list-group-item">
                            <b>Entreprise</b> <a class="pull-right">Laravel Officiel</a>
