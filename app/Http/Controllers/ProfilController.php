@@ -10,6 +10,7 @@ use App\Statut;
 use App\Candidat;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class ProfilController extends Controller
 {
@@ -105,26 +106,42 @@ class ProfilController extends Controller
         return redirect()->route('profil.index');
     }
     public function updateUser(Request $request, $id){
-
-        // $request->validate([
+        if(Auth::check() && Auth::user()->role_id ==4){
+        $request->validate([
     
-        //     'nom' =>'required', 'string', 'max:255',
-        //     'email' => 'required', 'string', 'email', 'max:255', 'unique:users',
-        //     'numero' => 'required',
-        //     'adresse' => 'required', 'string',
-        //     'domaine' => 'required',
-        //     'password' => 'required', 'string', 'min:8', 'confirmed',
-        //     'prénom' =>'required',
-        //     'véhicule' =>'required',
-        //     'dispo' =>'required',
-        //     'cv' =>'required',
-        //     'statut_id' =>'required',
-        //     'date' =>'required',
-        //     'tva' =>'required',
-        //     'pNom' =>'required',
-        //     'pTel' =>'required',
+            'nom' =>'required', 'string', 'max:255',
+            'prénom' =>'required',
+            'email' => 'required', 'string', 'email', 'max:255', 'unique:users',
+            'numero' => 'required',
+            'adresse' => 'required', 'string',
+            'domaine' => 'required',
+            'password' => 'required', 'string', 'min:8', 'confirmed',
+            'véhicule' =>'required',
+            'dispo' =>'required',
+            'cv' =>'required',
+            'statut_id' =>'required',
             
-        // ]);
+            
+        ]);
+        }
+        elseif(Auth::check() && Auth::user()->role_id ==5){
+            $request->validate([
+        
+                'nom' =>'required', 'string', 'max:255',
+                'email' => 'required', 'string', 'email', 'max:255', 'unique:users',
+                'prénom' =>'required',
+                'numero' => 'required',
+                'adresse' => 'required', 'string',
+                'domaine' => 'required',
+                'password' => 'required', 'string', 'min:8', 'confirmed',
+                'date' =>'required',
+                'tva' =>'required',
+                'pNom' =>'required',
+                'pTel' =>'required',
+                
+            ]);
+            }
+        
         
         $image = Storage::disk('public')->put('', $request->file('photo'));
         $cv = Storage::disk('public')->put('', $request->file('cv'));
@@ -132,7 +149,7 @@ class ProfilController extends Controller
         $users->nom=$request->nom;
         $users->prénom=$request->prénom;
         $users->email = $request->email;
-        $users->password = $request->password;
+        $users->password =Hash::make($request->password);
         $users->photo=$image;
         $users->numero=$request->numero;
         $users->adresse=$request->adresse;

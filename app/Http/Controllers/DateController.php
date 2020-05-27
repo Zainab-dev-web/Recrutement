@@ -72,6 +72,11 @@ class DateController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+    
+            'date1' =>'required',
+            
+        ]);
         $candidat = Candidat::find($id);
         $date= new Date();
         $date->date1 = $request->input('date1');

@@ -27,20 +27,20 @@
                         <label for="">Adresse :</label>
                         <textarea type="text" class="form-control @error('adresse') is-invalid @enderror" name="adresse"  >{{$contact->adresse}}</textarea>
                         <div class="validation"></div>
+                        @error('adresse')  
+                        <div class="text-danger">{{ $message }}</div>  
+                        @enderror
                     </div>
-                      @error('adresse')  
-                      <div class="text-danger">{{ $message }}</div>  
-                      @enderror
                    
                  
                     <div class="form-group col-md-6">
                         <label for="">Ville :</label>
                         <input  type="text" class="form-control @error('ville') is-invalid @enderror" name="ville" value="{{$contact->ville}}" />
                         <div class="validation"></div>
+                        @error('ville')  
+                        <div class="text-danger">{{ $message }}</div>  
+                        @enderror
                     </div>
-                      @error('ville')  
-                      <div class="text-danger">{{ $message }}</div>  
-                      @enderror
                    
                   
                    
@@ -48,52 +48,52 @@
                         <label for="">Rue :</label>
                         <input type="text" class="form-control @error('rue') is-invalid @enderror" name="rue" value="{{$contact->rue}}"/>
                         <div class="validation"></div>
+                        @error('rue')  
+                        <div class="text-danger">{{ $message }}</div>  
+                        @enderror
                     </div>
-                      @error('rue')  
-                      <div class="text-danger">{{ $message }}</div>  
-                      @enderror
                       
                         <div class="form-group col-md-6">
                             <label for="">Code postal :</label>
                             <input  type="text"class="form-control @error('code') is-invalid @enderror" name="code" value="{{$contact->code}}"/>
                             <div class="validation"></div>
+                            @error('code')  
+                            <div class="text-danger">{{ $message }}</div>  
+                            @enderror
                         </div>
-                          @error('code')  
-                          <div class="text-danger">{{ $message }}</div>  
-                          @enderror
                     
                         <div class="form-group col-md-6">
                             <label for="">Numéro de téléphone :</label>
                             <input type='integer' class="form-control @error('numero') is-invalid @enderror" name="numero" value="{{$contact->numero}}"/>
                             <div class="validation"></div>
-                        </div>
                             @error('numero')  
                             <div class="text-danger">{{ $message }}</div>  
                             @enderror
+                        </div>
                             <div class="form-group col-md-6">
                                 <label for="">Disponibilité :</label>
                                 <input type='text' class="form-control @error('Ndispo') is-invalid @enderror" name="Ndispo" value="{{$contact->Ndispo}}"/>
                                 <div class="validation"></div>
-                            </div>
                                 @error('Ndispo')  
                                 <div class="text-danger">{{ $message }}</div>  
                                 @enderror
+                            </div>
                             <div class="form-group col-md-6">
                                 <label for="">Adresse email :</label>
                                 <input type='email' class="form-control @error('email') is-invalid @enderror" name="email" value="{{$contact->email}}"/>
                                 <div class="validation"></div>
-                            </div>
                                 @error('email')  
                                 <div class="text-danger">{{ $message }}</div>  
                                 @enderror
+                            </div>
                             <div class="form-group col-md-6">
                                 <label for="">Disponibilité par email :</label>
                                 <input type='text' class="form-control @error('Edispo') is-invalid @enderror" name="Edispo" value="{{$contact->Edispo}}"/>
                                 <div class="validation"></div>
-                            </div>
                                 @error('Edispo')  
                                 <div class="text-danger">{{ $message }}</div>  
                                 @enderror
+                            </div>
                    </div>
                    
                    

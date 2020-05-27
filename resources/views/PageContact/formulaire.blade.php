@@ -11,28 +11,49 @@
     
 
     <div class="col-lg-8">
-        <form class="form-contact contact_form" action="{{route('contact.store')}}" method="post" novalidate="novalidate">
+        <form class="form-contact contact_form" action="{{route('contact.store')}}" method="post" >
             @csrf
             <div class="row">
                 <div class="col-12">
                     <div class="form-group">
-                        <textarea class="form-control w-100" name="msg" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder=" Enter Message"></textarea>
+                        <textarea class="form-control w-100 @error('msg') is-invalid @enderror" name="msg" id="message" cols="30" rows="9" nfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder=" Enter Message" value="@if($errors->first('msg')) 
+                            @else{{old('msg')}}@endif">
+                            </textarea>
+                            <div class="validation"></div>
                     </div>
+                     @error('msg')  
+              <div class="text-danger">{{ $message }}</div>  
+              @enderror
                 </div>
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <input class="form-control valid" name="nom" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your name">
+                        <input class="form-control @error('nom') is-invalid @enderror"  name="nom" id="name" type="text" placeholder="Enter your name" value="@if($errors->first('nom')) 
+                        @else{{old('nom')}}@endif"/>
+                        <div class="validation"></div>
                     </div>
+                    @error('nom')  
+                    <div class="text-danger">{{ $message }}</div>  
+                    @enderror
                 </div>
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
+                        <input class="form-control @error('email') is-invalid @enderror" name="email" id="email" type="email" placeholder="Email" value="@if($errors->first('email')) 
+                        @else{{old('email')}}@endif"/>
+                        <div class="validation"></div>
                     </div>
+                @error('email')  
+                    <div class="text-danger">{{ $message }}</div>  
+                @enderror
                 </div>
                 <div class="col-12">
                     <div class="form-group">
-                        <input class="form-control" name="sujet" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Enter Subject">
+                        <input class="form-control @error('sujet') is-invalid @enderror" name="sujet" id="subject" type="text" placeholder="Enter Subject" value="@if($errors->first('sujet')) 
+                        @else{{old('sujet')}}@endif"/>
+                        <div class="validation"></div>
                     </div>
+                    @error('sujet')  
+                    <div class="text-danger">{{ $message }}</div>  
+                    @enderror
                 </div>
             </div>
             <div class="form-group mt-3">
