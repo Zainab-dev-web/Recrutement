@@ -78,6 +78,17 @@ class NoteController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+    
+            'presence_id'=> 'required|',
+            'impression'=> 'required|',
+            'savoir'=> 'required|',
+            'capacite'=> 'required|',
+            'serieux'=> 'required|',
+            'note_id'=> 'required|',
+            'resultat_id'=> 'required|',
+            
+        ]);
         $event = Evaluation::find($id);
         $eval = new Evaluation();
         $eval->presence_id = $request->input('presence_id');

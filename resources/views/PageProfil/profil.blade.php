@@ -65,7 +65,7 @@
                         
                     @endif
                 @endforeach
-                @if(count($offr)==0)
+                @if(count($match)==0)
                 <div class="alert alert-info" role="alert">
                     Vous n'avez pas encore d'offres !
                 </div>

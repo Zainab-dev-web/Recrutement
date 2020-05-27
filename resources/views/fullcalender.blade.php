@@ -30,7 +30,7 @@
     </div>
     <!-- Hero Area End -->
     <div class="text-center my-3">
-        <a class="btn btn-secondary text-white p-3"  href="{{route('add')}}">Créer un événement</a>
+        <a class="btn btn-secondary text-white p-3"  href="{{route('profil.index')}}">Retour au profil</a>
     </div>
 
     <div class="container">

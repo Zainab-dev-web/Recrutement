@@ -47,6 +47,13 @@ class OffreController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'poste'=> 'required',
+            'lieu'=> 'required',
+            'statut_id'=> 'required',
+            'description'=> 'required',
+            'qualite'=> 'required',
+        ]);
         $offre = new Offre();
         $offre->user_id = Auth::user()->id;
         $offre->statut_id = $request->input('statut_id');

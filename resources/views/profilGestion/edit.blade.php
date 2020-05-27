@@ -51,6 +51,15 @@
                           @enderror
                        </div>
                       
+                       <div class="col-12">
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control @error('password') is-invalid @enderror" name="password" value="{{$user->password}}" />
+                            <div class="validation"></div>
+                        </div>
+                          @error('password')  
+                          <div class="text-danger">{{ $message }}</div>  
+                          @enderror
+                    </div>
                 
                      <div class="col-12">
                         <button type="submit" class="btn btn-success">Modifier</button>

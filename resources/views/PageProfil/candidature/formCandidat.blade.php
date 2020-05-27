@@ -21,15 +21,20 @@
   @method('PUT')
   <div class="form-group">
     <label for="exampleInputEmail1">Première date d'entretien</label>
-    <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"name="date1">
+    <input type="date" class="form-control @error('date1') is-invalid @enderror"  id="exampleInputEmail1" aria-describedby="emailHelp"name="date1">
+    @error('date1')  
+      <div class="text-danger">{{ $message }}</div>  
+  @enderror
 </div>
 <div class="form-group">
     <label for="exampleInputEmail1">Deuxième date d'entretien</label>
-    <input type="date" class="form-control" id="exampleInputEmail1" name="date2">
+    <input type="date" class="form-control  " id="exampleInputEmail1" name="date2">
+   
 </div>
 <div class="form-group">
     <label for="exampleInputPassword1">Troisième date d'entretien</label>
-    <input type="date" class="form-control" id="exampleInputPassword1" name="date3">
+    <input type="date" class="form-control "  id="exampleInputPassword1" name="date3">
+    
 </div>
 
 <button type="submit" class="btn btn-primary my-3">Submit</button>

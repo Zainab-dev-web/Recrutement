@@ -79,7 +79,7 @@ class ProfilgestionController extends Controller
             'nom'=> 'required|',
             'email'=> 'required|',
             'photo'=> 'required|',
-            // 'password'=> 'required|',
+            'password'=> 'required|',
            
         ]);
   
@@ -88,7 +88,7 @@ class ProfilgestionController extends Controller
             $user->photo =$image;
             $user->nom =$request->input('nom');
             $user->email =$request->input('email');
-            // $user->password =Hash::make('password');
+            $user->password =Hash::make($request->password);
             
             
             $user->save();

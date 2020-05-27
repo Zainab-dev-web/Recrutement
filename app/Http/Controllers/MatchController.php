@@ -91,13 +91,13 @@ class MatchController extends Controller
      */
     public function update(Request $request , $id)
     {
-        // $request->validate([
+        $request->validate([
     
-        //     'offre_id'=> 'required|',
-        //     'match_id'=> 'required|',
+            'offre_id'=> 'required|',
+            'user_id'=> 'required|',
          
             
-        // ]);
+        ]);
        
             $match=Offre::find($id);
             $match->user_id=$match->user_id;

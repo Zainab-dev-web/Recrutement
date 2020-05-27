@@ -77,6 +77,7 @@ class CandidatController extends Controller
      // POSTULER
     public function update(Request $request, $id)
     {
+        
         $offre = Offre::find($id);
         $candidat = new Candidat();
         $candidat->offre_id = $offre->id;
