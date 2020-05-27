@@ -102,7 +102,7 @@
 
 @if (count($evals) == 0)
 <div class="text-center my-5 p-3">
-  <div class="alert alert-info" role="alert">
+<div class="alert alert-info" role="alert">
     Vous n'avez pas encore d'évaluations !
 </div>
 </div>

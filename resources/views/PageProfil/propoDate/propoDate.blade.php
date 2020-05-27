@@ -44,9 +44,11 @@
   </div>
 </article>
 @else
-<div class="alert alert-info my-3 text-center" role="alert">
-  Vous n'avez pas de propositions de dates !
-</div>
+<div class="text-center my-5 p-3">
+  <div class="alert alert-info" role="alert">
+      Vous n'avez pas de propositions de dates !
+  </div>
+  </div>
 @endif
 
 @endforeach

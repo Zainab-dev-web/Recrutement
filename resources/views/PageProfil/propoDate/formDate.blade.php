@@ -26,18 +26,28 @@
       <b>{{$candidat->date->date1}}</b>
     </label>
   </div>
-  <div class="form-check">
+  @if ($candidat->date->date2 != null)
+    <div class="form-check">
     <input class="form-check-input" type="radio" name="date" id="exampleRadios2" value="{{$candidat->date->date2}}">
     <label class="form-check-label" for="exampleRadios2">
       <b>{{$candidat->date->date2}}</b>
     </label>
-  </div>
-  <div class="form-check">
+  </div>  
+  @else
+      
+  @endif
+  
+  @if ($candidat->date->date3 != null)
+    <div class="form-check">
     <input class="form-check-input" type="radio" name="date" id="exampleRadios2" value="{{$candidat->date->date3}}">
     <label class="form-check-label" for="exampleRadios2">
       <b>{{$candidat->date->date3}}</b>
     </label>
-  </div>
+  </div>   
+  @else
+      
+  @endif
+ 
 
 <button type="submit" class="btn btn-primary mt-3">Submit</button>
 

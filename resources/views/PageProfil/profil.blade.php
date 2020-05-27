@@ -93,10 +93,11 @@
         <div class="text-center">
         <img class="my-5" width="200" alt="logo entreprise" src="{{asset('storage/'.$user->photo)}}">
         <h2>{{$user->nom}} {{$user->prénom}} - {{$user->domaine}}</h2>
-        @if ($user->resultat->id == 1)
-            <p>À trouvé un job ! <h2>☻</h2></p>
-        @elseif ($user->resultat == null)
-           <p>{{$user->statut->statut}} <a class="btn p-3 text-white" data-toggle="modal" data-target="#exampleModalLong">Modifier</a></p> 
+     
+        @if ($user->resultat == null)
+        <p>{{$user->statut->statut}} <a class="btn p-3 text-white" data-toggle="modal" data-target="#exampleModalLong">Modifier</a></p> 
+        @else
+           <p>À trouvé un job ! <h2>☻</h2></p>
         @endif
         
         </div>
@@ -131,7 +132,7 @@
     </div>
     <div class="col-3 mt-5 no-gutters">
         <div class="single_sidebar_widget post_category_widget">
-            <h4 class="widget_title mb-3">Candidatures en cours ...</h4>
+            <h4 class="widget_title mb-3">Candidatures en attente...</h4>
             <ul class="list cat-list">
                 @foreach ($candidats as $candidat)
                     @if ($candidat->user_id == Auth::user()->id)
@@ -157,7 +158,7 @@
         <div class="single_sidebar_widget post_category_widget">
             <h4 class="widget_title mb-3 text-center"><i class="fas fa-heart text-danger fa-1x"></i> Vos matches</h4>
             <div class="row">
-                @foreach ($offr as $item)
+                @foreach ($match as $item)
                 
                 <div class="col-4 border border-secondary rounded p-3 m-3">
                     
