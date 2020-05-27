@@ -1,18 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  
-<link rel="stylesheet" href="{{asset('css/app.css')}}">
-</head>
-<body>
-    <div class="text-center my-5">
-        <h1 class="my-2"><strong>Calendrier</strong></h1>
+@extends('layouts.master')
+
+@section('content')
+
+@include('components.nav')
+<!-- Hero Area Start -->
+<div class="hero-area hero-height2 d-flex align-items-center" data-background="{{asset('img/hero/h2_hero.jpg')}}">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="hero-cap text-center pt-50">
+                    <h2>Agenda</h2>
+                </div>
+            </div>
+        </div>
     </div>
-    <hr class='w-25 mx-auto'>
+</div>
+<!-- Hero Area End -->
 
     @php 
     
@@ -81,5 +84,6 @@
         @endfor
 
     </table>
-</body>
-</html>
+
+    @include('components.footer')
+    @endsection
