@@ -22,6 +22,10 @@ class NoteController extends Controller
         return view ('PageProfil.note.note', compact('evals'));
     }
 
+    public function Allnote(){
+        $evals =Evaluation::all();
+        return view('note.index', compact('evals'));
+    }
     /**
      * Show the form for creating a new resource.
      *
