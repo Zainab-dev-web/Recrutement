@@ -45,7 +45,7 @@ class AuthServiceProvider extends ServiceProvider
         });
 
         Gate::define('post-resultat', function ($user){
-            if(Auth::check() && Auth::user()->resultat->id == null){
+            if(Auth::check() && Auth::user()->resultat_id == null){
                 return true;
             }
         });

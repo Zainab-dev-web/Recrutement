@@ -178,6 +178,8 @@
                         <li><p><b>Description de l'offre : </b>{{$offre->description}}</p></li>
                         <li><b>Entreprise : </b><p class='text-uppercase'>{{$offre->user->nom}}</p></li>
                     </ul>
+
+                    {{-- button supprimer --}}
                 
                 </div>
                 @else
