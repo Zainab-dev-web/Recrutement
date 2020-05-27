@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/' , 'AccueilController@index')->name('accueil');
+Route::post('updateUser/{id}' , 'ProfilController@updateUser')->name('updateUser');
 Route::get('/searchoffre/{id}', 'OffreController@searchoffre')->name('searchoffre');
 Route::resource('contact', 'ConctatController');
 Route::resource('profil', 'ProfilController');
@@ -60,6 +61,7 @@ Route::resource('talents', 'TalentController');
 Route::resource('entreprises', 'EntrepriseController');
 Route::resource('event', 'EventController')->middleware('isConnect');
 Route::resource('user', 'UserController')->middleware('GestionUser');
+Route::get('showUser', 'Usercontroller@showUser')->name('showUser');
 Route::resource('match', 'MatchController')->middleware('isConnect');
 Route::resource('formcontact' , "FormcontactController")->middleware('isAdmin');
 Route::resource('newsletter', 'NewsletterController');
