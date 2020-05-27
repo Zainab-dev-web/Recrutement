@@ -25,6 +25,7 @@ Route::get('accepter/{id}', 'CandidatController@accepter')->name('accepter');
 Route::resource('date', 'DateController');
 Route::resource('evaluation', 'EvaluationController')->middleware('isConnect');
 Route::resource('note', 'NoteController')->middleware('isConnect');
+Route::get('errorValidateProfile', 'Valid@index')->name('nonvalid');
 
 
 //fullcalendar ->Agenda

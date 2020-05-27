@@ -123,7 +123,7 @@
          
          <button class='btn btn-white'><i class="far fa-check-circle fa-2x text-success"></i></button>
          
-         <a href='{{route('profil.show', $item)}}'class='btn btn-white'><i class="far fa-address-card fa-2x text-secondary"></i></a>
+         <a href='{{route('profil.show', $item->id)}}'class='btn btn-white'><i class="far fa-address-card fa-2x text-secondary"></i></a>
      @endif
     
  </div>
