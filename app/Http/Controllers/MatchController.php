@@ -105,8 +105,12 @@ class MatchController extends Controller
      * @param  \App\Match  $match
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Match $match)
+    public function destroy($id)
     {
-        //
+        $match=Offre::find($id);
+        // $match->matchs()->detach();
+        // $match->delete();
+        $match->find($this->id)->matchs()->detach();
+        return redirect()->route('profil.index');
     }
 }

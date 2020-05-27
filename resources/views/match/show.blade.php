@@ -28,10 +28,8 @@
 
 </div>
 
-<div class="text-center">
-    
-<button type="submit" class="btn btn-primary">Envoyer</button>
-</div>
+
+
         
         
 
