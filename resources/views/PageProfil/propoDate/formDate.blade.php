@@ -29,6 +29,7 @@
         <div class="text-danger">{{ $message }}</div>  
     @enderror
   </div>
+  @if ($candidat->date->date2 != null)
   <div class="form-check">
     <input class="form-check-input @error('date') is-invalid @enderror" type="radio" name="date" id="exampleRadios2" value="{{$candidat->date->date2}}">
     <label class="form-check-label" for="exampleRadios2">
@@ -38,6 +39,11 @@
         <div class="text-danger">{{ $message }}</div>  
     @enderror
   </div>
+  @else
+      
+  @endif
+  
+  @if ($candidat->date->date3 != null)
   <div class="form-check">
     <input class="form-check-input @error('date') is-invalid @enderror" type="radio" name="date" id="exampleRadios2" value="{{$candidat->date->date3}}">
     <label class="form-check-label" for="exampleRadios2">
@@ -47,6 +53,9 @@
         <div class="text-danger">{{ $message }}</div>  
     @enderror
   </div>
+  @else
+      
+  @endif
 
 <button type="submit" class="btn btn-primary">Envoyer</button>
 </form>

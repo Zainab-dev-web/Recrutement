@@ -56,9 +56,11 @@
 @endforeach
 
 @if (count($candidats) == 0)
-<div class="text-center my-5 border p-3">
-  <h3>Vous n'avez pas encore de candidatures...</h3>
-</div>
+<div class="text-center my-5 p-3">
+  <div class="alert alert-info" role="alert">
+      Vous n'avez pas encore de candidatures !
+  </div>
+  </div>
     
 @else
     
