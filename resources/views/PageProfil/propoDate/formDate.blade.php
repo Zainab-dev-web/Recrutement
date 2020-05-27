@@ -45,7 +45,7 @@
 
 </div>
 
-<u><b><a class="text-danger mx-3" href="{{route('date.')}}">Annuler le rendez-vous</a></b></u>
+<u><b><a class="text-danger mx-3" href="{{route('refuserdate', $candidat->id)}}">Annuler le rendez-vous</a></b></u>
 
   @include('components.footer')
 

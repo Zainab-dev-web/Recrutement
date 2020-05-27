@@ -22,8 +22,10 @@ Route::resource('admin','AdminController');
 Route::get('refuser/{id}', 'CandidatController@refuser')->name('refuser');
 Route::get('accepter/{id}', 'CandidatController@accepter')->name('accepter');
 Route::resource('date', 'DateController');
+Route::get('refus/{id}', 'DateController@refuser')->name('refuserdate');
 Route::resource('evaluation', 'EvaluationController')->middleware('isConnect');
 Route::resource('note', 'NoteController')->middleware('isConnect');
+Route::get('errorValidateProfile', 'Valid@index')->name('nonvalid');
 
 
 //fullcalendar ->Agenda

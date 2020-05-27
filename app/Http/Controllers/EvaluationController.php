@@ -91,6 +91,7 @@ class EvaluationController extends Controller
         $eval->resultat_id = $request->input('resultat_id');
         $eval->offre_id = $event->offre->id;
         $eval->user_id = $event->user->id;
+        $eval->termine = null;
         $eval->save();
         //
 

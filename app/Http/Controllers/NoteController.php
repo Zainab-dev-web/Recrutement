@@ -7,6 +7,7 @@ use App\Evaluation;
 use App\Note;
 use App\Presence;
 use App\Resultat;
+use Illuminate\Support\Facades\Auth;
 
 class NoteController extends Controller
 {
@@ -17,8 +18,8 @@ class NoteController extends Controller
      */
     public function index()
     {
-        $notes = Evaluation::all();
-        return view ('PageProfil.note.note', compact('notes'));
+        $evals = Evaluation::where('user_id', Auth::user()->id)->get();
+        return view ('PageProfil.note.note', compact('evals'));
     }
 
     /**
@@ -77,7 +78,27 @@ class NoteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $event = Evaluation::find($id);
+        $eval = new Evaluation();
+        $eval->presence_id = $request->input('presence_id');
+        $eval->impression = $request->input('impression');
+        $eval->savoir = $request->input('savoir');
+        $eval->capacite = $request->input('capacite');
+        $eval->serieux = $request->input('serieux');
+        $eval->note_id = $request->input('note_id');
+        $eval->resultat_id = $request->input('resultat_id');
+        $eval->offre_id = $event->offre->id;
+        $eval->user_id = $event->offre->user->id;
+        $eval->save();
+
+        $event->termine = 1;
+        $event->save();
+
+        $resultat = Auth::user();
+        $resultat->resultat_id = $request->input('resultat_id');
+        $resultat->save();
+
+        return redirect()->route('note.index');
     }
 
     /**

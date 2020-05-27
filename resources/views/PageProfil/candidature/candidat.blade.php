@@ -82,7 +82,6 @@
                      <td class="text-danger"><strong>Refusé</strong></td>   
                     @endif
                     
-                    
                  
                     <td>
                         <a href="{{route('talents.show', $candidat->user->id)}}" class='btn btn-white'>Voir profil</a>

@@ -29,7 +29,8 @@ class CandidatController extends Controller
      */
     public function create()
     {
-        //
+        $candidats = Candidat::where('user_id', Auth::user()->id)->get();
+        return view ('PageProfil.candidature.voscandidat', compact('candidats'));
     }
 
     /**

@@ -31,7 +31,7 @@
             <h2 class="titular">MENU</h2>
             <ul class="menu-box-menu">
                 <li>
-                    <a class="menu-box-tab" href="#6"><span class="icon scnd-font-color"><i class="fas fa-star"></i></span>Vos notes</a>                            
+                    <a class="menu-box-tab" href="{{route('note.index')}}"><span class="icon scnd-font-color"><i class="fas fa-star"></i></span>Vos notes</a>                            
                 </li>
                 <li>
                 <a class="menu-box-tab" href="{{route('candidat.index')}}"><span class="icon entypo-paper-plane scnd-font-color"></span>Candidatures</span></a>              
@@ -108,7 +108,7 @@
                     <a class="menu-box-tab" href="{{route('note.index')}}"><span class="icon scnd-font-color"><i class="fas fa-star"></i></span>Vos notes</a>                            
                     </li>
                     <li>
-                        <a class="menu-box-tab" href="#"><span class="icon entypo-paper-plane scnd-font-color"></span>Vos candidatures</span></a>              
+                    <a class="menu-box-tab" href="{{route('candidat.create')}}"><span class="icon entypo-paper-plane scnd-font-color"></span>Vos candidatures</span></a>              
                     </li>
     
     
@@ -131,8 +131,8 @@
                 @foreach ($candidats as $candidat)
                     @if ($candidat->user_id == Auth::user()->id)
                         <li>
-                        <a href="#" class="d-flex">
-                        <p>{{$candidat->offre->poste}} chez </p>
+                        <a href="{{route('candidat.create')}}" class="d-flex">
+                        <p>{{$candidat->offre->poste}} chez&nbsp;</p>
                         <p><b>{{$candidat->offre->user->nom}}</b></p>
                     </a>
                 </li> 
@@ -143,7 +143,7 @@
             </ul>
             @if(count($candidats)==0)
             <div class="alert alert-info" role="alert">
-                Vous n'avez pas encore de candidatures !
+                Vous n'avez pas de candidatures en attente !
             </div>
             @endif
         </div>
@@ -214,13 +214,13 @@
                             </span>
                         @enderror
 
-                        <button class="btn btn-white" type="submit">Valider</button>
+                        <button class="btn btn-white mt-3" type="submit">Valider</button>
                     </div>
                 </div>
             </form>
             </div>
             <div class="modal-footer">
-                <a href="{{route('profil.index')}}"><button type="button" class="btn btn-primary">Retour</button></a>
+                <a href="{{route('profil.index')}}" class="text-dark">Retour</a>
             </div>
         </div>
     </div>
