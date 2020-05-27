@@ -158,22 +158,29 @@
         <div class="single_sidebar_widget post_category_widget">
             <h4 class="widget_title mb-3 text-center"><i class="fas fa-heart text-danger fa-1x"></i> Vos matches</h4>
             <div class="row">
-                @foreach ($match as $item)
-                
+                @foreach ($offres as $offre)
+                @foreach ($offre->matchs as $item)
+                @if ($item->pivot->user_id == Auth::user()->id)
+                @if ($item->pivot->offre_id == $offre->id)
                 <div class="col-4 border border-secondary rounded p-3 m-3">
-                    
                     <ul class="list cat-list">
-                        <li> <p><b>Poste: </b>{{$item->poste}}.</p></li>
-                        <li><p><i class="fas fa-map-marker-alt"></i> <b>Lieu: </b>{{$item->lieu}}.</p></li>
-                        <li><p><b>Il faut être: </b>{{$item->qualite}}.</p></li>
-                        <li><p><b>Description de l'offre: </b>{{$item->description}}</p></li>
-                        <li><p><b>Statut recherché:</b> {{$item->statut->statut}}</p></li>
-                        <li><b>Entreprise : </b><p class='text-uppercase'>{{$item->user->nom}}</p></li>
-                        
+                    <li> <p><b>Poste : </b>{{$offre->poste}}.</p></li>
+                        <li><p><i class="fas fa-map-marker-alt"></i> <b>Lieu : </b>{{$offre->lieu}}.</p></li>
+                        <li><p><b>Il faut être : </b>{{$offre->qualite}}.</p></li>
+                        <li><p><b>Description de l'offre : </b>{{$offre->description}}</p></li>
+                        <li><b>Entreprise : </b><p class='text-uppercase'>{{$offre->user->nom}}</p></li>
                     </ul>
                 
                 </div>
-                				
+                @else
+                    
+                @endif
+                @else
+                    
+                @endif
+										
+
+                @endforeach	
                 @endforeach
             </div>
         </div>
