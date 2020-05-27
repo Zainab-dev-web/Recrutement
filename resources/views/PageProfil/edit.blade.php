@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="hero-cap text-center pt-50">
-                    <h2>Modifier vos données personelles</h2>
+                    <h2>Modifier vos données personnelles</h2>
                 </div>
             </div>
         </div>
@@ -53,7 +53,7 @@
   </div>
   <div class="col-sm-6">
       <div class="form-group">
-          <label for="">Adresse:</label>
+          <label for="">Adresse :</label>
           <input class="form-control @error('adresse') is-invalid @enderror" name="adresse" id="adresse" type="text" placeholder="Adresse" value="{{$users->adresse}}">
       </div>
       @error('adresse')  
@@ -133,7 +133,7 @@
      
     <div class="col-sm-6">
         <div class="form-group">
-            <label for="">Vous étes disponibile à partir du :</label>
+            <label for="">Vous êtes disponible à partir du :</label>
             <input class="form-control  @error('dispo') is-invalid @enderror" name="dispo" id="dispo" type="date"  placeholder="Disponibilité" value="{{$users->dispo}}">
         </div>
         @error('dispo')  
@@ -142,7 +142,7 @@
     </div>
     <div class="col-sm-6">
         <div class="form-group">
-            <label for="">Télécharger votre cv :</label>
+            <label for="">Téléchargez votre cv :</label>
             <input class="form-control  @error('cv') is-invalid @enderror" name="cv" id="cv" type="file"  placeholder=" Modifier votre cv" value="{{$users->cv}}">
         </div>
         @error('cv')  

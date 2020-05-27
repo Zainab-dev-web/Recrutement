@@ -63,11 +63,12 @@
     @else
     @endif
     
+    
+    <a class="btn ml-5 p-3 text-white" href='{{route('profil.edit', $users->id)}}'>Modifier</a>     
+   
 </div>
 </div>
-            <div class="text-center py-5">
-           <a class="btn p-3 text-white" href='{{route('profil.edit', $users->id)}}'>Modifier</a>     
-            </div>
+
 
 
 @include('components/footer')
