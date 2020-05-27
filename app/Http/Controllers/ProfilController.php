@@ -28,8 +28,9 @@ class ProfilController extends Controller
         $users = User::all();
         $offres = Offre::all();
         $candidats = Candidat::where('accept', 0)->get();
-        $match = Offre::all();
-        return view('PageProfil.pageProfil', compact('users', 'offres', 'candidats' , 'candid', 'match'));
+        $match=Offre::all();
+        // $match = Offre::where('user_id', Auth::user()->id)->get();
+        return view('PageProfil.pageProfil', compact('users', 'offres', 'candidats' , 'match'));
     }
 
     /**
