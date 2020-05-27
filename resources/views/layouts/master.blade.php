@@ -22,7 +22,7 @@
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    <img src="{{asset('img/logo/loder.jpg')}}" alt="">
+                    <img class="w-100"src="{{asset('img/logo/logo2.png')}}" alt="">
                 </div>
             </div>
         </div>
