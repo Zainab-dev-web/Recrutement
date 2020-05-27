@@ -17,7 +17,7 @@
 
 <div class="box box-primary py-5 my-5 w-50">
     <div class="text-center">
-    <h3 class="box-title text-center">Modifier les données de l'utilisateur: {{$user->name}}</h3>
+    <h3 class="box-title text-center">Modifier les données de l'utilisateur : {{$user->name}}</h3>
     </div>
     <!-- /.box-header -->
     <!-- form start -->

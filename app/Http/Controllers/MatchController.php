@@ -90,15 +90,7 @@ class MatchController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request , $id)
-    {
-        $request->validate([
-    
-            'offre_id'=> 'required|',
-            'user_id'=> 'required|',
-         
-            
-        ]);
-       
+    {  
             $match=Offre::find($id);
             $match->user_id=$match->user_id;
             $match->save();
