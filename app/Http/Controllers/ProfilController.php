@@ -103,6 +103,8 @@ class ProfilController extends Controller
         $talent->save();
         return redirect()->route('profil.index');
     }
+
+
     public function updateUser(Request $request, $id){
         if(Auth::check() && Auth::user()->role_id ==4){
         $request->validate([

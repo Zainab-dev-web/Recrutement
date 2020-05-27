@@ -27,9 +27,10 @@ Route::get('refus/{id}', 'DateController@refuser')->name('refuserdate');
 Route::resource('evaluation', 'EvaluationController')->middleware('isConnect');
 Route::resource('note', 'NoteController')->middleware('isConnect');
 Route::get('errorValidateProfile', 'Valid@index')->name('nonvalid');
+Route::resource('resultat', 'ResultatController');
 
 
-//fullcalendar ->Agenda
+//fullcalendar->Agenda
 
 Route::get('/fullcalendareventmaster', 'FullCalendarEventMasterController@index')->name('agenda')->middleware('isConnect');
 Route::get('/fullcalendareventmaster/add', 'FullCalendarEventMasterController@add')->name('add')->middleware('isConnect');

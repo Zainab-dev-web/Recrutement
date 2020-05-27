@@ -97,7 +97,7 @@
         @if ($user->resultat == null)
         <p>{{$user->statut->statut}} <a class="btn p-3 text-white" data-toggle="modal" data-target="#exampleModalLong">Modifier</a></p> 
         @else
-           <p>À trouvé un job ! <h2>☻</h2></p>
+           <p>À trouvé un job ! <h2>☻</h2><a class="btn p-3 text-white" data-toggle="modal" data-target="#ModalActualiser">Actualiser</a></p>
         @endif
         
         </div>
@@ -183,7 +183,7 @@
 @else
     
 @endif
-<!-- Modal -->
+<!-- Modal statut change -->
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -232,5 +232,53 @@
     </div>
 </div>
 
+
+<!-- Modal job change -->
+<div class="modal fade" id="ModalActualiser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body text-sucess" >
+        <form action="{{route('resultat.update', Auth::id())}}" method="POST">
+            @csrf
+            @method('PUT')
+            <div class="form-group row">
+                <h3 class="text-center">Vous ne travaillez plus et vous désirez rechercher un emploi ?</h3>
+                <div class="col-md-6">
+                    <div class="form-check-inline text-center">
+                        <input class="statut_id" type="radio" name="statut_id" id="statut_id" value="1" checked>
+                        <label class="form-check-label" for="statut_id">
+                          Chercheur d'emploi
+                        </label>
+                      </div>
+                      <div class="form-check-inline">
+                        <input class="statut_id" type="radio" name="statut_id" id="statut_id" value="2">
+                        <label class="form-check-label" for="statut_id">
+                          Demande de stage
+                        </label>
+                      </div>
+
+                    @error('statut_id')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+
+                    <button class="btn btn-white mt-3" type="submit">Valider</button>
+                </div>
+            </div>
+        </form>
+        </div>
+        <div class="modal-footer">
+            <a href="{{route('profil.index')}}" class="text-dark">Retour</a>
+        </div>
+    </div>
+</div>
+</div>
 @endforeach
 @endcan

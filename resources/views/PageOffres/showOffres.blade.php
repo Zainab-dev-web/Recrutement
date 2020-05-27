@@ -41,11 +41,13 @@
         <a class="btn btn-white mb-3" href="{{route('entreprises.show', $offre->user->id)}}">Profil de l'entreprise</a>
         @can('post-valid')
         @can('post-talent')
+        @can('post-resultat')
         <form action="{{route('candidat.update', $offre)}}" method="post">
           @csrf
           @method('PUT')
               <button class="btn btn-white" type="submit">Postuler</button>  
         </form>
+        @endcan
         @endcan
         @endcan
         @if (Auth::check() && Auth::user()->id == $offre->user->id)

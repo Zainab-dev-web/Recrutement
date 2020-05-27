@@ -21,7 +21,7 @@
     @method('PUT')
     <div class="row">
       <div class="form-group col-md-6">
-        <label for="">Le candidat s'est-il présenté à l'entretien ? :</label>
+        <label for="">L'employeur s'est-il présenté à l'entretien ? :</label>
         <select class="form-control @error('presence_id') is-invalid @enderror"  name="presence_id" id="">
           @foreach ($presences as $presence)
           <option value={{$presence->id}}>{{$presence->presence}}</option>   
@@ -38,8 +38,8 @@
         @endforeach
       </select> --}}
       <div class="form-group col-md-6">
-        <label for="">Premiére impression :</label>
-        <input type='text' class="form-control @error('impression') is-invalid @enderror" name="impression" placeholder="Mettez votre premiére impression"/>
+        <label for="">Première impression :</label>
+        <input type='text' class="form-control @error('impression') is-invalid @enderror" name="impression" placeholder="Décrivez votre première impression"/>
         <div class="validation"></div>
         @error('impression')  
         <div class="text-danger">{{ $message }}</div>  
@@ -47,8 +47,8 @@
     </div>
       {{-- <input type="text" name="impression" placeholder="impression" class="form-control w-50 @error('impression') is-invalid @enderror" id=""> --}}
       <div class="form-group col-md-6">
-        <label for="">Savoir-étre du candidat :</label>
-        <input type='text' class="form-control @error('savoir') is-invalid @enderror" name="savoir" placeholder="Mettez son savoir-étre"/>
+        <label for="">Savoir-être de l'employeur :</label>
+        <input type='text' class="form-control @error('savoir') is-invalid @enderror" name="savoir" placeholder="Décrivez son savoir-être"/>
         <div class="validation"></div>
         @error('savoir')  
         <div class="text-danger">{{ $message }}</div>  
@@ -57,8 +57,8 @@
     
       {{-- <input type="text" name="savoir" placeholder="savoir" class="form-control w-50" id=""> --}}
       <div class="form-group col-md-6">
-        <label for="">Quels sont ces compétences ? :</label>
-        <input type='text' class="form-control @error('capacite') is-invalid @enderror" name="capacite" placeholder="Mettez ces compoténences "/>
+        <label for="">Quels sont ses compétences ? :</label>
+        <input type='text' class="form-control @error('capacite') is-invalid @enderror" name="capacite" placeholder="Ses compétences"/>
         <div class="validation"></div>
         @error('capacite')  
         <div class="text-danger">{{ $message }}</div>  
@@ -67,14 +67,14 @@
       {{-- <input type="text" name="capacite" placeholder="capacite" class="form-control w-50" id=""> --}}
       <div class="form-group col-md-6">
         <label for="">A-t-il été sérieux durant cette entretien ? :</label>
-        <input type='text' class="form-control @error('serieux') is-invalid @enderror" name="serieux" placeholder="Mettez son sérieux"/>
+        <input type='text' class="form-control @error('serieux') is-invalid @enderror" name="serieux" placeholder="Décrivez son sérieux"/>
         <div class="validation"></div>
         @error('serieux')  
         <div class="text-danger">{{ $message }}</div>  
         @enderror
     </div>
     <div class="form-group col-md-6">
-      <label for="">Comment notez-vous cette entretien ? :</label>
+      <label for="">Quelle note donneriez-vous à cette entretien ? :</label>
       <select class="form-control @error('note_id') is-invalid @enderror"  name="note_id" id="">
         @foreach ($notes as $note)
           <option value={{$note->id}}>{{$note->note}}</option>   

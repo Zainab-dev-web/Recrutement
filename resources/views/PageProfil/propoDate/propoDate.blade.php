@@ -44,7 +44,14 @@
   </div>
 </article>
 @else
-
+<div class="text-center my-5 p-3">
+  <div class="alert alert-info" role="alert">
+      Vous n'avez pas de propositions de dates !
+  </div>
+  <div class="col-3 mt-5">
+    <a href="{{route('agenda')}}" class='btn'>Voir votre agenda</a>
+  </div>
+  </div>
 @endif
 
 @endforeach
@@ -54,7 +61,7 @@
   <div class="alert alert-info" role="alert">
       Vous n'avez pas de propositions de dates !
   </div>
-  <div class="col-3 mt-5 d-flex">
+  <div class="col-3 mt-5">
     <a href="{{route('agenda')}}" class='btn'>Voir votre agenda</a>
   </div>
   </div>

@@ -83,7 +83,8 @@ class OffreController extends Controller
     {
         $offre = Offre::find($id);
         $candidats = Candidat::where('accept', 0)->get();
-        return view ('PageOffres.showOffres', compact('offre', 'candidats'));
+        $candidatures = Candidat::where('user_id', Auth::user()->id)->get();
+        return view ('PageOffres.showOffres', compact('offre', 'candidats', 'candidatures'));
     }
 
     /**
