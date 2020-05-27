@@ -93,7 +93,12 @@
         <div class="text-center">
         <img class="my-5" width="200" alt="logo entreprise" src="{{asset('storage/'.$user->photo)}}">
         <h2>{{$user->nom}} {{$user->prénom}} - {{$user->domaine}}</h2>
-        <p>{{$user->statut->statut}} <a class="btn p-3 text-white" data-toggle="modal" data-target="#exampleModalLong">Modifier</a></p>
+        @if ($user->resultat->id == 1)
+            <p>À trouvé un job ! <h2>☻</h2></p>
+        @elseif ($user->resultat == null)
+           <p>{{$user->statut->statut}} <a class="btn p-3 text-white" data-toggle="modal" data-target="#exampleModalLong">Modifier</a></p> 
+        @endif
+        
         </div>
         <div class="col-3 mt-5">
         <a href="{{route('agenda')}}" class='btn'>Voir votre agenda</a>

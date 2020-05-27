@@ -205,7 +205,7 @@ class UserTableSeeder extends Seeder
         $filename = Str::random(10) . time() . '.png';
         Storage::disk('public')->copy('/kruidvat.png', $filename);
         DB::table('users')->insert([
-            'nom' => 'Kruivat',
+            'nom' => 'Kruidvat',
             'prénom' => null,
             'date' => null,
             'tva' => null,
@@ -213,7 +213,7 @@ class UserTableSeeder extends Seeder
             'pNom' => null,
             'pTel' => null,
             'photo' => $filename,
-            'email' => 'kruit@gmail.com',
+            'email' => 'kruidvat@gmail.com',
             'numero' => '0486653282',
             'adresse' => 'Rue des orées, 71',
             'statut_id' => 1,

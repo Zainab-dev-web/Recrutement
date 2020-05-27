@@ -20,7 +20,7 @@
 
  
 @foreach ($candidats as $candidat)
-@if ($candidat->user_id == Auth::id() && $candidat->accept == 1)
+@if ($candidat->user_id == Auth::id() && $candidat->accept == 1 && $candidat->date_id != null)
 <article class="blog_item container">
   <div class="blog_item_img">
       <img class="card-img rounded-0" src="assets/img/blog/single_blog_1.png" alt="">
@@ -44,7 +44,9 @@
   </div>
 </article>
 @else
-    
+<div class="alert alert-info my-3 text-center" role="alert">
+  Vous n'avez pas de propositions de dates !
+</div>
 @endif
 
 @endforeach
