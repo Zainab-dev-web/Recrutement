@@ -51,6 +51,17 @@ class DateController extends Controller
         //
     }
 
+    // REFUSER
+    public function refuser(Request $request, $id)
+    {
+     $candidat = Candidat::find($id);
+     $candidat->offre_id = $candidat->offre_id;
+     $candidat->user_id = $candidat->user_id;
+     $candidat->accept = 2;
+     $candidat->save();
+     return redirect()->route('date.index');
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

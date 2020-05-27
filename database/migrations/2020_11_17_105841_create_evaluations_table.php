@@ -44,6 +44,7 @@ class CreateEvaluationsTable extends Migration
             ->references('id')
             ->onDelete('cascade')
             ->onUpdate('cascade');
+            $table->string('termine')->nullable();
             $table->timestamps();
         });
     }

@@ -83,6 +83,9 @@ class EventController extends Controller
         $event->offre_id = $candidat->offre->id;
         $event->save();
         
+        $candidat->date_id = null;
+        $candidat->save();
+        
         $event2 = new Event();
         $event2->title = Auth::user()->nom . Auth::user()->prenom;
         $event2->start = $request->input('date');

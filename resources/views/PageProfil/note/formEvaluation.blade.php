@@ -34,12 +34,17 @@
           <option value="{{$note->id}}">{{$note->note}}</option>   
         @endforeach
       </select>
+      @if ($eval->resultat->id == 1)
       <label for="resultat">Accepter ou refuser le job</label>
       <select class="form-control w-50" name="resultat_id" id="">
         @foreach ($resultats as $resultat)
           <option value="{{$resultat->id}}">{{$resultat->resultat}}</option>   
         @endforeach
-      </select>
+      </select>  
+      @else
+         
+      @endif
+      
     </div>
     <div class="form-group mt-3">
         <button type="submit" class="button button-contactForm boxed-btn">Envoyer</button>

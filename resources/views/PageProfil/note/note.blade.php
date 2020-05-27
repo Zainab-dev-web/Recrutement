@@ -10,16 +10,18 @@
       <div class="row">
           <div class="col-xl-12">
               <div class="hero-cap text-center pt-50">
-                  <h2>Vos entretiens</h2>
+                  <h2>Vos évaluations</h2>
               </div>
           </div>
       </div>
   </div>
 </div>
 <!-- Hero Area End -->
-@foreach ($notes as $note)
+{{-- TALENT --}}
+@if (Auth::check() && Auth::user()->role_id == 4)
+@foreach ($evals as $eval)
 
-@if ($note->user->id == Auth::user()->id)
+@if ($eval->user->id == Auth::user()->id)
 
 <article class="blog_item container">
   <div class="blog_item_img">
@@ -28,21 +30,26 @@
 
   <div class="blog_details">
       <a class="d-inline-block" href="">
-      <h2>Entretien avec {{$note->offre->user->nom}}</h2>
-      <p>Pour le poste de {{$note->offre->poste}}</p>
+      <h2>Entretien avec {{$eval->offre->user->nom}}</h2>
+      <p>Pour le poste de {{$eval->offre->poste}}</p>
       </a>
-  <p><i class="fas fa-map-marker-alt"></i> {{$note->offre->lieu}}</p>
-  <p>{{\Illuminate\Support\Str::limit($note->offre->description, 200, $end=' ...')}}</p>
+  <p><i class="fas fa-map-marker-alt"></i> {{$eval->offre->lieu}}</p>
+  <p>{{\Illuminate\Support\Str::limit($eval->offre->description, 200, $end=' ...')}}</p>
   <h5>
-    Résultat de votre évaluation : <b>{{$note->note->note}}</b>/5 <h3><b>{{$note->resultat->nom}}</b></h3>
+    Résultat de votre évaluation : <b>{{$eval->note->note}}</b>/5 <h3><b>{{$eval->resultat->nom}}</b></h3>
   </h5>
   <ul class="mb-3">
-    <li>Impression : {{$note->impression}}</li>
-    <li>Savoir : {{$note->savoir}}</li>
-    <li>Sérieux {{$note->serieux}}</li>
-    <li>Capacité : {{$note->capacite}}</li>
+    <li><b>Impression :</b> {{$eval->impression}}</li>
+    <li><b>Savoir :</b> {{$eval->savoir}}</li>
+    <li><b>Sérieux :</b> {{$eval->serieux}}</li>
+    <li><b>Capacité :</b> {{$eval->capacite}}</li>
   </ul>
-    <a class="btn btn-white" href="{{route('note.edit', $note)}}">Évaluer</a></b></a>
+    @if ($eval->termine == null)
+       <a class="btn btn-white" href="{{route('note.edit', $eval)}}">Évaluer</a></b></a> 
+    @elseif ($eval->termine == 1)
+        
+    @endif
+      
 
   </div>
 </article>
@@ -54,9 +61,50 @@
     
 @endforeach
 
-@if (count($notes) == 0)
-<div class="text-center my-5 border p-3">
-  <h3>Vous n'avez pas encore d'évaluations...</h3>
+@elseif(Auth::check() && Auth::user()->role_id == 5)
+@foreach ($evals as $eval)
+
+@if ($eval->user->id == Auth::user()->id)
+
+<article class="blog_item container">
+  <div class="blog_item_img">
+      <img class="card-img rounded-0" src="assets/img/blog/single_blog_1.png" alt="">
+  </div>
+
+  <div class="blog_details">
+      <a class="d-inline-block" href="">
+      <h2>Entretien avec {{$eval->offre->user->nom}}</h2>
+      <p>Pour le poste de {{$eval->offre->poste}}</p>
+      </a>
+  <p><i class="fas fa-map-marker-alt"></i> {{$eval->offre->lieu}}</p>
+  <p>{{\Illuminate\Support\Str::limit($eval->offre->description, 200, $end=' ...')}}</p>
+  <h5>
+    Résultat de votre évaluation : <b>{{$eval->note->note}}</b>/5 <h3><b>À {{$eval->resultat->nom}} le poste</b></h3>
+  </h5>
+  <ul class="mb-3">
+    <li><b>Impression :</b> {{$eval->impression}}</li>
+    <li><b>Savoir :</b> {{$eval->savoir}}</li>
+    <li><b>Sérieux :</b> {{$eval->serieux}}</li>
+    <li><b>Capacité :</b> {{$eval->capacite}}</li>
+  </ul>
+  
+  </div>
+</article>
+
+    
+@else
+    
+@endif
+    
+@endforeach
+@endif
+
+
+@if (count($evals) == 0)
+<div class="text-center my-5 p-3">
+  <div class="alert alert-info" role="alert">
+    Vous n'avez pas encore d'évaluations !
+</div>
 </div>
     
 @else
