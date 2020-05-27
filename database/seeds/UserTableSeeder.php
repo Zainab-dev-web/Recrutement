@@ -45,7 +45,7 @@ class UserTableSeeder extends Seeder
             'dispo' => null,
             'date' => '2020-05-22',
             'tva' => 'BE 56478967',
-            'domaine' => 'Alimentaire',
+            'domaine' => 'Animalier',
             'numero' => '0435678909',
             'adresse' => 'Rue de la haute',
             'logo' => null,

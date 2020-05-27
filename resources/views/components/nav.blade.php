@@ -73,7 +73,7 @@
                         </div>             
                         <div class="col-xl-2 col-lg-3 col-md-3">
                             <div class="header-right-btn f-right d-none d-lg-block">
-                                <a href="{{route('contact.index')}}" class="btn header-btn">Contactez-nous!</a>
+                                <a href="{{route('contact.index')}}" class="btn header-btn">Contact now!</a>
                             </div>
                         </div>
                         <!-- Mobile Menu -->

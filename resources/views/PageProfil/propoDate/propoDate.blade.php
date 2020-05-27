@@ -44,19 +44,20 @@
   </div>
 </article>
 @else
-<div class="text-center my-5 p-3">
-  <div class="alert alert-info" role="alert">
-      Vous n'avez pas de propositions de dates !
-  </div>
-  </div>
+
 @endif
 
 @endforeach
 
-@if (count($candidats) == 0)
-    <div class="text-center my-5">
-      <h3>Vous n'avez pas de réponses à vos candidatures...</h3>
-    </div>
+@if (count($candidaterror) == 0)
+<div class="text-center my-5 p-3">
+  <div class="alert alert-info" role="alert">
+      Vous n'avez pas de propositions de dates !
+  </div>
+  <div class="col-3 mt-5 d-flex">
+    <a href="{{route('agenda')}}" class='btn'>Voir votre agenda</a>
+  </div>
+  </div>
 @else
     
 @endif

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Date;
+use Illuminate\Support\Facades\Auth;
 use App\Candidat;
 
 class DateController extends Controller
@@ -16,7 +17,8 @@ class DateController extends Controller
     public function index()
     {
         $candidats = Candidat::all();
-        return view ('PageProfil.propoDate.propoDate', compact('candidats'));
+        $candidaterror = Candidat::where('user_id', Auth::user()->id)->get();
+        return view ('PageProfil.propoDate.propoDate', compact('candidats', 'candidaterror'));
     }
 
     /**
@@ -84,9 +86,7 @@ class DateController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-    
             'date1' =>'required',
-            
         ]);
         $candidat = Candidat::find($id);
         $date= new Date();
