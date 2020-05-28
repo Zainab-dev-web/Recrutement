@@ -64,7 +64,7 @@ Route::resource('entreprises', 'EntrepriseController');
 Route::resource('event', 'EventController')->middleware('isConnect');
 Route::resource('user', 'UserController')->middleware('GestionUser');
 Route::get('showUser', 'Usercontroller@showUser')->name('showUser');
-Route::resource('match', 'MatchController')->middleware('isConnect');
+Route::resource('match', 'MatchController')->middleware('isAdmin');
 Route::resource('formcontact' , "FormcontactController")->middleware('isAdmin');
 Route::resource('newsletter', 'NewsletterController');
 Route::resource('carousel', 'CarouselController')->middleware('isAdmin');

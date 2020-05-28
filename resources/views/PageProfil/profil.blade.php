@@ -163,6 +163,14 @@
                 @if ($item->pivot->user_id == Auth::user()->id)
                 @if ($item->pivot->offre_id == $offre->id)
                 <div class="col-4 border border-secondary rounded p-3 m-3">
+                    <div class='text-center'>
+                        <form action="{{route('match.destroy',$item)}}" method="post">
+                            @csrf
+                            @method('DELETE')
+                          <button class=' btn-white'><i class="fas fa-trash text-danger"></i></button>
+                        </form>
+                    </div>
+
                     <ul class="list cat-list">
                     <li> <p><b>Poste : </b>{{$offre->poste}}.</p></li>
                         <li><p><i class="fas fa-map-marker-alt"></i> <b>Lieu : </b>{{$offre->lieu}}.</p></li>

@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Mail\WelcomeUserMail;
+use Illuminate\Support\Facades\Mail;
 
 class User extends Authenticatable
 {
@@ -60,4 +62,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // protected static function boot(){
+
+    //     parent::boot();
+
+    //     static::created(function ($user){
+
+    //         $data=$user;
+
+    //         Mail::to($data->user->email)->send(new WelcomeUserMail($data->user));
+    //     });
+    // }
+
+    // public function getRouteKeyName(){
+    //     // return "nom",
+    // }
 }
