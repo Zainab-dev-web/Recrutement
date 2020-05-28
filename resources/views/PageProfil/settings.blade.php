@@ -32,7 +32,7 @@
         </div>
         <div class="col-sm-6">
             <div class="">
-                <select class="form-control" name="statut_id" id="statut_id" type="text" placeholder="Statut recherché">
+                <select style="dislay" class="form-control" name="statut_id" id="statut_id" type="text" placeholder="Statut recherché">
                   <option value="">Statut recherché</option>
                   @foreach ($statuts as $statut)
                     <option value="{{$statut->id}}">{{$statut->statut}}</option>  
