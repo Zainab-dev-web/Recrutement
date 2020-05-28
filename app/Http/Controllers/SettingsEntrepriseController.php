@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\User;
 use App\Statut;
 
-class SettingsController extends Controller
+class SettingsEntrepriseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +16,7 @@ class SettingsController extends Controller
      */
     public function index()
     {
-       
+        //
     }
 
     /**
@@ -60,7 +61,7 @@ class SettingsController extends Controller
     {
         $user = User::find($id);
         $statuts = Statut::all();
-        return view('PageProfil.settings', compact('user', 'statuts'));
+        return view('PageProfil.settingsEntreprise', compact('user', 'statuts'));
     }
 
     /**
