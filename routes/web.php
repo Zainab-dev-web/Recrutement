@@ -73,5 +73,6 @@ Route::resource('work', 'WorkController')->middleware('isAdmin');
 Route::resource('contactInfo', 'ContactController')->middleware('isAdmin');
 Route::resource('info', 'InfoController')->middleware('isAdmin');
 Route::resource('profilGestion', 'ProfilgestionController')->middleware('GestionUser');
+Route::get('setitng' , 'SettingController@index')->name('setting')
 
 
