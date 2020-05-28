@@ -83,8 +83,8 @@ class OffreController extends Controller
     {
         $offre = Offre::find($id);
         $candidats = Candidat::where('accept', 0)->get();
-        $candidatures = Candidat::where('user_id', Auth::user()->id)->get();
-        return view ('PageOffres.showOffres', compact('offre', 'candidats', 'candidatures'));
+        $candidatures = Candidat::where('user_id', Auth::user()->id)->where('offre_id', $offre->id)->get();
+        return view ('PageOffres.showOffres', compact('offre', 'candidats', 'candidatures', 'offrecandidat'));
     }
 
     /**
@@ -127,7 +127,6 @@ class OffreController extends Controller
     public function destroy($id)
     {
         $offre = Offre::find($id);
-       
 	    $offre->delete();
 	    return redirect()->route('profil.index');
     }

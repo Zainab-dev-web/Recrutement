@@ -79,7 +79,7 @@
   <p><i class="fas fa-map-marker-alt"></i> {{$eval->offre->lieu}}</p>
   <p>{{\Illuminate\Support\Str::limit($eval->offre->description, 200, $end=' ...')}}</p>
   <h5>
-    Résultat de votre évaluation : <b>{{$eval->note->note}}</b>/5 <h3><b>À {{$eval->resultat->nom}} le poste</b></h3>
+    Résultat de votre évaluation : <b>{{$eval->note->note}}</b>/5 <h3><b>A {{$eval->resultat->nom}} le poste</b></h3>
   </h5>
   <ul class="mb-3">
     <li><b>Impression :</b> {{$eval->impression}}</li>

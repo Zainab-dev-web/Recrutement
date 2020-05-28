@@ -85,7 +85,7 @@ class CandidatController extends Controller
         $candidat->date_id = null;
         $candidat->accept = 0;
         $candidat->save();
-        return redirect()->route('offres.index');
+        return redirect()->back();
     }
 
     // ACCEPTER

@@ -22,7 +22,7 @@
     
       <div class="text-center">
         
-      <img class="mb-2" width="200" alt="logo entreprise" src="{{asset('storage/'.$entreprise->logo)}}">
+      <img class="mb-2" width="200" alt="logo entreprise" src="{{asset('storage/'.$entreprise->photo)}}">
       <h3>{{$entreprise->nom}} - {{$entreprise->domaine}}</h3>
       <p> Tel : {{$entreprise->pTel}}</p><p><b>email : {{$entreprise->email}}</b></p>
       <p><b>{{$entreprise->numero}}</b> - TVA {{$entreprise->tva}}</p>

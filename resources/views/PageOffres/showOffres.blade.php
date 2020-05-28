@@ -42,11 +42,20 @@
         @can('post-valid')
         @can('post-talent')
         @can('post-resultat')
+        
+        @if (Auth::check() && count($candidatures) == 0)
         <form action="{{route('candidat.update', $offre)}}" method="post">
           @csrf
           @method('PUT')
               <button class="btn btn-white" type="submit">Postuler</button>  
         </form>
+
+        @else
+        <div class="my-3">
+          <b>Vous avez déjà postulé pour cette offre.</b>
+        </div>
+        @endif
+        
         @endcan
         @endcan
         @endcan
