@@ -7,6 +7,7 @@ use App\Evaluation;
 use App\Note;
 use App\Presence;
 use App\Resultat;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 
 class NoteController extends Controller
@@ -22,10 +23,7 @@ class NoteController extends Controller
         return view ('PageProfil.note.note', compact('evals'));
     }
 
-    public function Allnote(){
-        $evals =Evaluation::all();
-        return view('note.index', compact('evals'));
-    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -55,7 +53,9 @@ class NoteController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::find($id);
+        $evals =Evaluation::all();
+        return view('note.index', compact('evals', 'user'));
     }
 
     /**

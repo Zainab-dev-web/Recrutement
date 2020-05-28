@@ -26,9 +26,11 @@ Route::resource('date', 'DateController');
 Route::get('refus/{id}', 'DateController@refuser')->name('refuserdate');
 Route::resource('evaluation', 'EvaluationController')->middleware('isConnect');
 Route::resource('note', 'NoteController')->middleware('isConnect');
-Route::get('Allnote', 'NoteController@Allnote')->name('Allnote');
 Route::get('errorValidateProfile', 'Valid@index')->name('nonvalid');
 Route::resource('resultat', 'ResultatController');
+Route::resource('entretien', 'EntretienController');
+Route::resource('settings', 'SettingsController');
+Route::resource('settingsEntreprise', 'SettingsEntrepriseController');
 
 
 //fullcalendar->Agenda

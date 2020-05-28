@@ -9,19 +9,13 @@
 @stop
 
 @section('content')
-   <h2 class='text-center my-2'>Tous les notes des candidat</h2>
+<h2 class='text-center my-2'>Note de {{$user->nom}}</h2>
 
     <table class="table" >
         <thead>
           <tr>
             <th scope="col">#</th>
-            {{-- <th scope="col">Présence</th>
-            <th scope="col">Impression</th>
-            <th scope="col">Savoir-être</th>
-            <th scope="col">Capacité</th>
-            <th scope="col">Sérieux</th> --}}
             <th scope="col">Note</th>
-            {{-- <th scope="col">Résultat</th> --}}
             <th scope="col">Action</th>
             
             
@@ -29,21 +23,22 @@
           </tr>
         </thead>
         <tbody>
-            @foreach ($evals as $item)
-            @if($item->role_id == 4)
-                {{-- le dolar se trouve dans le controller le compact --}}
+            @foreach ($evals as $eval)
+            @if($eval->user_id == $user->id)
             
                 <tr>
-                    <td>{{$item->id}}</td>
-                    {{-- <td>{{$item->presence->presence}}</td>
-                    <td>{{$item->impression}}</td>
-                    <td>{{$item->savoir}}</td>
-                    <td>{{$item->capacite}}</td>
-                    <td>{{$item->serieux}}</td> --}}
-                    <td>{{$item->note->note}}</td>
-                    {{-- <td>{{$item->resultat->nom}}</td> --}}
-                   
-                    
+                    <td>{{$eval->id}}</td>
+                    @if ($eval->note_id == 1)
+                        <td><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i><i class="far fa-star text-warning"></i><i class="far fa-star text-warning"></i><i class="far fa-star text-warning"></i></td>
+                    @elseif ($eval->note_id == 2)
+                    <td><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i><i class="far fa-star text-warning"></i><i class="far fa-star text-warning"></i></td>
+                    @elseif ($eval->note_id == 3)
+                    <td><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i><i class="far fa-star text-warning"></i></td>
+                    @elseif($eval->note_id == 4)
+                    <td><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="far fa-star text-warning"></i></td>
+                    @elseif($eval->note_id == 5)
+                    <td><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i></td>
+                    @endif
                     <td>
                             {{-- <a href='{{route('contactInfo.edit', $item)}}' class='btn btn-white'><i class="far fa-edit text-warning"></i></a>
                            --}}
@@ -52,27 +47,9 @@
                    
                 </tr>
      
-                @elseif($item->role_id == 5)
+                @else
 
-
-                <tr>
-                    <td>{{$item->id}}</td>
-                    {{-- <td>{{$item->presence->presence}}</td>
-                    <td>{{$item->impression}}</td>
-                    <td>{{$item->savoir}}</td>
-                    <td>{{$item->capacite}}</td>
-                    <td>{{$item->serieux}}</td> --}}
-                    <td>{{$item->note->note}}</td>
-                    {{-- <td>{{$item->resultat->nom}}</td> --}}
-                   
-                    
-                    <td>
-                            {{-- <a href='{{route('contactInfo.edit', $item)}}' class='btn btn-white'><i class="far fa-edit text-warning"></i></a>
-                           --}}
-                    </td>
-                 
-                   
-                </tr>
+                
                 @endif
           
           @endforeach

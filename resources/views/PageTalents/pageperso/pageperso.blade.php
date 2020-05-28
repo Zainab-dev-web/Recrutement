@@ -33,10 +33,8 @@
     <h2 class="mt-3 mb-5">Présentation :</h2>
       <h6 class="text-justify mx-4">Nullam sagittis. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Quisque malesuada placerat nisl. Etiam vitae tortor.</h6>
       @can('post-entreprise')
-        
-      
       <div class="text-center my-5">
-        <a class="btn btn-white" href="">Demande d'entretien</a>
+      <a class="btn btn-white" href="{{route('entretien.edit', $talent)}}">Demande d'entretien</a>
       </div>
       @endcan
   </div>

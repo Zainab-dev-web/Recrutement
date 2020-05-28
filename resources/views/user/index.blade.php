@@ -46,7 +46,7 @@
         <button class='btn btn-white'><i class="far fa-check-circle fa-2x text-success"></i></button>
     
         <a href='{{route('profil.index')}}'class='btn btn-white'><i class="far fa-address-card fa-2x text-secondary"></i></a>
-        <a href='{{route('Allnote')}}'class='btn btn-white'><i class="fas fa-file-alt text-dark fa-2x"></i></i></a>
+        <a href='{{route('note.show', $item)}}'class='btn btn-white'><i class="fas fa-file-alt text-dark fa-2x"></i></i></a>
          
     @endif
    
@@ -86,7 +86,7 @@
          
         
          <a href='{{route('profil.index')}}'class='btn btn-white'><i class="far fa-address-card fa-2x text-secondary"></i></a>
-         <a href='{{route('Allnote')}}'class='btn btn-white'><i class="fas fa-file-alt text-dark fa-2x"></i></i></a>
+         <a href='{{route('note.show', $item->id)}}'class='btn btn-white'><i class="fas fa-file-alt text-dark fa-2x"></i></i></a>
          
      @endif
     

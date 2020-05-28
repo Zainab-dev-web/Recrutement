@@ -8,6 +8,7 @@ use App\User;
 use App\Presence;
 use App\Resultat;
 use App\Note;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class EvaluationController extends Controller
@@ -19,7 +20,7 @@ class EvaluationController extends Controller
      */
     public function index()
     {
-        $events = Event::all();
+        $events = Event::where('user_id', Auth::user()->id)->get();
         $evals = Evaluation::all();
         return view ('PageProfil.evaluation.evaluation', compact('events', 'evals'));
     }

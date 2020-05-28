@@ -18,7 +18,7 @@
 <!-- Hero Area End -->
 
 
-<div class="row my-5 py-5">
+<div class="row my-5 py-5 no-gutters">
   <div class="col-3 my-5">
     
       <div class="text-center">
@@ -42,11 +42,20 @@
         @can('post-valid')
         @can('post-talent')
         @can('post-resultat')
+        
+        @if (Auth::check() && count($candidatures) == 0)
         <form action="{{route('candidat.update', $offre)}}" method="post">
           @csrf
           @method('PUT')
               <button class="btn btn-white" type="submit">Postuler</button>  
         </form>
+
+        @else
+        <div class="my-3">
+          <b>Vous avez déjà postulé pour cette offre.</b>
+        </div>
+        @endif
+        
         @endcan
         @endcan
         @endcan
