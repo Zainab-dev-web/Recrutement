@@ -29,6 +29,8 @@ Route::resource('note', 'NoteController')->middleware('isConnect');
 Route::get('Allnote', 'NoteController@Allnote')->name('Allnote');
 Route::get('errorValidateProfile', 'Valid@index')->name('nonvalid');
 Route::resource('resultat', 'ResultatController');
+Route::resource('settings', 'SettingsController');
+Route::resource('settingsEntreprise', 'SettingsEntrepriseController');
 
 
 //fullcalendar->Agenda

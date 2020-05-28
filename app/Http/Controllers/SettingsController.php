@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\Statut;
 
 class SettingsController extends Controller
 {
@@ -13,7 +15,7 @@ class SettingsController extends Controller
      */
     public function index()
     {
-        //
+       
     }
 
     /**
@@ -56,7 +58,9 @@ class SettingsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        $statuts = Statut::all();
+        return view('PageProfil.settings', compact('user', 'statuts'));
     }
 
     /**

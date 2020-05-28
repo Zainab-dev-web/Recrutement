@@ -57,22 +57,14 @@
             <div class="form-group">
               <input class="form-control valid" name="" id="" type="number" onfocus="this.placeholder = ''" onblur="this.placeholder ='Numéro'" placeholder="Numéro">
             </div>
-            <div class="col-sm-6">
-                <div class="">
-                    <select class="form-control" name="statut_id" id="statut_id" type="text" placeholder="Statut recherché">
-                      <option value="">Statut recherché</option>
-                      @foreach ($statuts as $statut)
-                        <option value="{{$statut->id}}">{{$statut->statut}}</option>  
-                      @endforeach
-                    </select>
-                </div>
-            </div>
         </div>
-      <div class="form-group mt-3">
-          <button type="submit" class="button button-contactForm boxed-btn">Ajouter</button>
+      <div class="form-group mt-3 ml-3">
+          <button type="submit" class="button button-contactForm boxed-btn">Edit</button>
       </div>
     </form>
-    </div>
+</div>
+</div>
+    
 
 @include('components.footer')
     
