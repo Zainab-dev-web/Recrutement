@@ -49,19 +49,22 @@
 
 @endforeach
 
+<div class=" text-center my-3">
+    <a href="{{route('agenda')}}" class='btn'>Voir votre agenda</a>
+  </div>
 @if (count($candidaterror) == 0)
 <div class="text-center my-5 p-3">
   <div class="alert alert-info" role="alert">
       Vous n'avez pas de propositions de dates !
   </div>
-  <div class="col-3 mt-5">
-    <a href="{{route('agenda')}}" class='btn'>Voir votre agenda</a>
-  </div>
+  
   </div>
 @else
     
 @endif
-
+<div class='text-center my-3'>
+  <a href="{{route('profil.index')}}" class='btnagenda btn'><i class="fas fa-long-arrow-alt-left">  Retour au profil</i></a>
+  </div>
 
 @include('components.footer')
 

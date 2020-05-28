@@ -41,8 +41,12 @@
                 </li>
             
                 <li>
-                <a class="menu-box-tab" href="{{route('settings.edit', $user)}}"><span class="icon entypo-cog scnd-font-color"></span>Account Settings</a>
-                </li>         
+                <a class="menu-box-tab" href="{{route('settings.edit', $user)}}"><span class="icon entypo-cog scnd-font-color"></span>Configuration du compte</a>
+                </li> 
+                <li>
+                <a class="menu-box-tab" href="{{route('settings.show', $user)}}"><span class="icon entypo-cog scnd-font-color"></span>Données personnelles</a>
+                  {{-- <i class="fas fa-user-lock"></i> --}}
+                </li>        
             </ul>
         </div>
         </div>
@@ -122,9 +126,14 @@
                     <a class="menu-box-tab" href="{{route('date.index')}}"><span class="icon scnd-font-color"><i class="far fa-clock"></i></span>Proposition de date</span></a>              
                     </li>
                 
-                    <li>
-                        <a class="menu-box-tab" href="{{route('settings.edit', $user)}}"><span class="icon entypo-cog scnd-font-color"></span>Account Settings</a>
-                    </li>
+                   <li>
+                <a class="menu-box-tab" href="{{route('settings.edit', $user)}}"><span class="icon entypo-cog scnd-font-color"></span>Configuration du compte</a>
+                </li> 
+                <li>
+                <a class="menu-box-tab" href="{{route('settings.show', $user)}}"><span class="icon entypo-cog scnd-font-color"></span>Données personnelles</a>
+
+                  {{-- <i class="fas fa-user-lock"></i> --}}
+                </li>  
                               
                 </ul>
             </div>

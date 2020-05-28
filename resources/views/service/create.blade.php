@@ -23,21 +23,21 @@
                 <input type="text" placeholder="Entrer le titre"class="form-control @error('titre') is-invalid @enderror" name="titre" value="@if($errors->first('titre')) 
                 @else{{old('titre')}}@endif"/>
                 <div class="validation"></div>
-            </div>
-               
                 @error('titre')  
                 <div class="text-danger">{{ $message }}</div>  
                 @enderror
+            </div>
+               
        
             <div class="form-group col-md-6 mx-auto py-4">
                 <label for="">Description</label>
-                <input type="text" class="form-control @error('description') is-invalid @enderror" name="description" placeholder="Entrer la description" value="@if($errors->first('description')) 
-                @else{{old('description')}}@endif"/>
+                <textarea type="text" class="form-control @error('description') is-invalid @enderror" name="description" placeholder="Entrer la description" value="@if($errors->first('description')) 
+                  @else">{{old('description')}}</textarea>@endif
                 <div class="validation"></div>
+                @error('description')  
+                <div class="text-danger">{{ $message }}</div>  
+                @enderror
             </div>
-              @error('description')  
-              <div class="text-danger">{{ $message }}</div>  
-              @enderror
            
               <div class="form-group col-md-6 mx-auto py-4">
               <label for="">Icone:</label>
@@ -71,10 +71,10 @@
             
         
         </div>
+        @error('icone')  
+        <div class="text-danger">{{ $message }}</div>  
+        @enderror
     </div>
-            @error('icone')  
-            <div class="text-danger">{{ $message }}</div>  
-            @enderror
     
         </div>
             

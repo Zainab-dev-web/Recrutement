@@ -16,9 +16,8 @@
             <div class="row">
                 <div class="col-12">
                     <div class="form-group">
-                        <textarea class="form-control w-100 @error('msg') is-invalid @enderror" name="msg" id="message" cols="30" rows="9" nfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder=" Enter Message" value="@if($errors->first('msg')) 
-                            @else{{old('msg')}}@endif">
-                            </textarea>
+                        <textarea class="form-control w-100 @error('msg') is-invalid @enderror" name="msg" id="message" cols="30" rows="9" type='text 'placeholder=" Enter Message" value="@if($errors->first('msg')) 
+                            @else">{{old('msg')}}</textarea>@endif
                             <div class="validation"></div>
                     </div>
                      @error('msg')  

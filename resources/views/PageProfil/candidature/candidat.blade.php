@@ -96,7 +96,8 @@
 
         </tbody>
       </table>
-</div>
+    </div>
+    <hr>
 
 @if (count($offres) == 0)
 <div class="text-center my-5">
@@ -107,6 +108,9 @@
     
 @endif
 </div>
+<div class='text-center my-3'>
+  <a href="{{route('profil.index')}}" class='btnagenda btn'><i class="fas fa-long-arrow-alt-left">  Retour au profil</i></a>
+  </div>
     @include('components.footer')
 
     
