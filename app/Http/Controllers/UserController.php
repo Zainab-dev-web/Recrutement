@@ -50,8 +50,6 @@ class UserController extends Controller
 
     }
     
-    
-
     public function show($id){
         $user=User::find($id);
         $user->nom = $user->nom;

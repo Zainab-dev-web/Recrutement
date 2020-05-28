@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="hero-cap text-center pt-50">
-                <h3 class="text-white">Pour quelle offre désirez-vous proposer un entretien à {{$user->nom}} {{$user->prénom}} ?</h3>
+                <h3 class="text-white">Quelle offre désirez-vous proposer un entretien à {{$user->nom}} {{$user->prénom}} ?</h3>
                 </div>
             </div>
         </div>
@@ -22,7 +22,7 @@
 <div class="our-services py-50 my-150 wantToWork-area2 wantToWork-area">
     <div class="container border border-rounded mx-auto m-5 p-5 bg-white">
     <div class="row d-flex">
-
+    
       @foreach ($offres as $offre)
          
         <div class="col-lg-5 col-md-6 col-sm-6 ml-5">
@@ -38,6 +38,8 @@
                 <p>{{\Illuminate\Support\Str::limit($offre->description, 100, $end=' ...')}} </p>
                 </div>
                 <input class="d-none" checked value={{$user->id}} type="radio" name="userid" id="">
+
+               
             </button>
             </div>
             </form>
