@@ -28,7 +28,7 @@
       <div class="box-body">
         <div class="form-group">
           <label for="exampleInputEmail1">Nom</label>
-          <input type="text" class="form-control @error('nom') is-invalid @enderror" name="nom" value="{{$user->nom}}" id="exampleInputEmail1" placeholder="Enter un nom">
+          <input type="text" class="form-control @error('nom') is-invalid @enderror" maxlength="15" name="nom" value="{{$user->nom}}" id="exampleInputEmail1" placeholder="Enter un nom">
           @error('nom')  
             <div class="text-danger">{{ $message }}</div>  
             @enderror
@@ -40,13 +40,7 @@
             <div class="text-danger">{{ $message }}</div>  
         @enderror
         </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Mot de passe</label>
-          <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" value="{{$user->password}}" id="exampleInputPassword1" placeholder="Password">
-          @error('password')  
-          <div class="text-danger">{{ $message }}</div>  
-            @enderror
-        </div>
+        
         
         <div class="form-group ">
             <label for="exampleInputFile">Modifier la photo de profil</label>

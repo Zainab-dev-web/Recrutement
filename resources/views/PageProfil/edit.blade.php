@@ -27,7 +27,7 @@
     <div class="col-sm-6">
         <div class="form-group">
             <label for="">Nom :</label>
-          <input class="form-control @error('nom') is-invalid @enderror" name="nom" id="nom" type="text"  placeholder="Nom" value="{{$users->nom}}">
+          <input class="form-control @error('nom') is-invalid @enderror"  maxlength="15"name="nom" id="nom" type="text"  placeholder="Nom" value="{{$users->nom}}">
         </div>
         @error('nom')  
         <div class="text-danger">{{ $message }}</div>  
@@ -70,15 +70,7 @@
         @enderror
     </div>
 
-    <div class="col-sm-6">
-      <div class="form-group">
-          <label for="">Mot de passe :</label>
-          <input class="form-control @error('password') is-invalid @enderror" name="password" id="password" type="password"  placeholder="Mot de passe" value="{{$users->password}}">
-      </div>
-      @error('password')  
-        <div class="text-danger">{{ $message }}</div>  
-    @enderror
-  </div>
+    
   <div class="col-sm-6">
     <div class="form-group">
         <label for="">Numéro :</label>
@@ -157,21 +149,13 @@
     <div class="col-sm-6">
         <div class="form-group">
             <label for="">Nom :</label>
-          <input class="form-control @error('nom') is-invalid @enderror" name="nom" id="nom" type="text"  placeholder="Nom" value="{{$users->nom}}">
+          <input class="form-control @error('nom') is-invalid @enderror"  maxlength="15"name="nom" id="nom" type="text"  placeholder="Nom" value="{{$users->nom}}">
         </div>
         @error('nom')  
         <div class="text-danger">{{ $message }}</div>  
         @enderror
     </div>
-    <div class="col-sm-6">
-      <div class="form-group">
-        <label for="">Prénom :</label>
-        <input class="form-control @error('prenom') is-invalid @enderror" name="prenom" id="premom" type="text"  placeholder="Prénom" value="{{$users->prenom}}">
-      </div>
-      @error('prenom')  
-        <div class="text-danger">{{ $message }}</div>  
-        @enderror
-  </div>
+   
   <div class="col-sm-6">
       <div class="form-group">
           <label for="">Photo :</label>
@@ -200,15 +184,7 @@
         @enderror
     </div>
 
-    <div class="col-sm-6">
-      <div class="form-group">
-          <label for="">Mot de passe :</label>
-          <input class="form-control @error('password') is-invalid @enderror" name="password" id="password" type="password"  placeholder="Mot de passe" value="{{$users->password}}">
-      </div>
-      @error('password')  
-        <div class="text-danger">{{ $message }}</div>  
-    @enderror
-  </div>
+    
   <div class="col-sm-6">
     <div class="form-group">
         <label for="">Numéro :</label>

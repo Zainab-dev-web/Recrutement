@@ -41,7 +41,7 @@
                 </li>
             
                 <li>
-                    <a class="menu-box-tab" href="#12"><span class="icon entypo-cog scnd-font-color"></span>Account Settings</a>
+                <a class="menu-box-tab" href="{{route('settings.edit', $user)}}"><span class="icon entypo-cog scnd-font-color"></span>Account Settings</a>
                 </li>         
             </ul>
         </div>
@@ -123,7 +123,7 @@
                     </li>
                 
                     <li>
-                        <a class="menu-box-tab" href="#12"><span class="icon entypo-cog scnd-font-color"></span>Account Settings</a>
+                        <a class="menu-box-tab" href="{{route('settings.edit', $user)}}"><span class="icon entypo-cog scnd-font-color"></span>Account Settings</a>
                     </li>
                               
                 </ul>
