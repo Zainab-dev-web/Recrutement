@@ -18,7 +18,7 @@
 
 <!-- Our Services Start -->
 <div class="our-services py-50 my-150 wantToWork-area2 wantToWork-area">
-    <div class="container border border-rounded mx-auto m-5 p-5 bg-white">
+    <div class="container border border-rounded mx-auto m-5 p-5 bg-white w-50">
     <div class="text-center">
         <h3 class="pb-50"><strong>Vous êtes ...</strong></h3>
     </div>
