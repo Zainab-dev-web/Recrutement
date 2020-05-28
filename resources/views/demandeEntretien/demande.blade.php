@@ -16,16 +16,15 @@
 </div>
 <!-- Hero Area End -->
 
+{{-- EntretienController --}}
+
 <!-- Our Services Start -->
 <div class="our-services py-50 my-150 wantToWork-area2 wantToWork-area">
     <div class="container border border-rounded mx-auto m-5 p-5 bg-white">
     <div class="row d-flex">
 
       @foreach ($offres as $offre)
-      @foreach ($candidat as $item)
-          
-          @if ($item->offre_id != $offre->id)
-              
+         
         <div class="col-lg-5 col-md-6 col-sm-6 ml-5">
             <form action="{{route('entretien.update', $offre)}}" method="post">
                 @csrf
@@ -43,10 +42,6 @@
             </div>
             </form>
         </div>
-        @else
-              gdfg
-        @endif
-        @endforeach
  @endforeach
         
     </div>
