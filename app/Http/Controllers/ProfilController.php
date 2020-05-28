@@ -152,7 +152,7 @@ class ProfilController extends Controller
         $users=User::find($id);
         $users->nom=$request->nom;
         $users->email = $request->email;
-        
+        $users->domaine=$request->domaine;
         $users->numero=$request->numero;
         $users->adresse=$request->adresse;
         if(Auth::check() && Auth::user()->role_id ==4){
