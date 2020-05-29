@@ -55,10 +55,11 @@
     <table class="table" >
         <thead>
           <tr>
-            <th scope="col">#</th>
+            <th scope="col">Date</th>
             <th scope="col">Nom</th>
             <th scope="col">Offre</th>
             <th scope="col">Réponse</th>
+
             <th scope="col">Profil</th>
 
           </tr>
@@ -70,7 +71,7 @@
                 
            
                 <tr>
-                    <td>{{$candidat->id}}</td>
+                    <td>{{$candidat->created_at}}</td>
                     <td>{{$candidat->user->nom}} {{$candidat->user->prénom}}</td>
                     <td>{{$candidat->offre->poste}} chez {{$candidat->offre->user->nom}}</td>
                     @if ($candidat->accept == 0)
