@@ -120,8 +120,6 @@
                     <li>
                     <a class="menu-box-tab" href="{{route('candidat.create')}}"><span class="icon entypo-paper-plane scnd-font-color"></span>Vos candidatures</span></a>              
                     </li>
-    
-    
                     <li>
                     <a class="menu-box-tab" href="{{route('date.index')}}"><span class="icon scnd-font-color"><i class="far fa-clock"></i></span>Proposition de date</span></a>              
                     </li>

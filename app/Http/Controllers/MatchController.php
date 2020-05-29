@@ -17,7 +17,6 @@ class MatchController extends Controller
      */
     public function index(){
 
-       
         $users=User::all();
         $statuts=Statut::all();
         $offres=Offre::all();
@@ -31,6 +30,7 @@ class MatchController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // affichage des matchs dans notre profil
     public function create()
     {
         //

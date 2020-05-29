@@ -16,7 +16,7 @@ class VosOffresController extends Controller
     public function index()
     {
         $offres = Offre::where('user_id', Auth::user()->id)->get();
-        return view ('PageProfil.candidature.candidat', compact('offres'));
+        return view ('PageProfil.vosOffres.vosoffres', compact('offres'));
     }
 
     /**

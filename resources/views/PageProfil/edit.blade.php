@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="hero-cap text-center pt-50">
-                    <h2>Modifier vos données personnelles</h2>
+                <h2>Modifier ces données personnelles</h2>
                 </div>
             </div>
         </div>

@@ -30,18 +30,15 @@
   <div class="blog_details">
       <a class="d-inline-block" href="{{route('offres.show', $offre->id)}}">
       <h2>{{$offre->poste}} chez {{$offre->user->nom}}</h2>
+      <p>Pour {{$offre->statut->statut}}</p>
       </a>
   <p><i class="fas fa-map-marker-alt"></i> {{$offre->lieu}}</p>
-  <p>{{\Illuminate\Support\Str::limit($offre->description, 200, $end=' ...')}}</p>
-  <h2>Candidatures :</h2>
-         @foreach ($candidats as $candidat)
-       @if ($candidat->offre_id == $offre->id)
-    <h5><a href="{{route('talents.show', $candidat->user->id)}}"><b>{{$candidat->user->nom}} {{$candidat->user->prénom}}</a> <a class="btn btn-white" href="{{route('accepter', $candidat->id)}}">Accepter</a> <a class="btn btn-white" href="{{route('refuser', $candidat->id)}}">Refuser</a></b></h5>
-       @else
-         
-       @endif
-   @endforeach
-
+  <p>{{\Illuminate\Support\Str::limit($offre->description, 200, $end=' ...')}} <a href="{{route('offres.show', $offre->id)}}"><u>Read more</u></a></p></p>
+  
+<div class="row">
+<a class="btn btn-white mr-2" href="{{route('offres.edit', $offre)}}">Modifier</a>
+  <a class="btn btn-white" href="{{route('offres.destroy', $offre)}}">Supprimer</a>
+</div>
   </div>
 </article>
 

@@ -17,9 +17,16 @@
 <!-- Hero Area End -->
 
 <div class="container">
-<div class="row my-5 py-5">
+  @if ($entreprise->id == Auth::user()->id)
+  <div class="alert alert-info text-center mt-2" role="alert">
+    Voici à quoi ressemble votre profil public.
+  </div>    
+  @else
+      
+  @endif
+  
+<div class="row mb-5 mt-3 py-5">
   <div class="col-4 my-5">
-    
       <div class="text-center">
         
       <img class="mb-2" width="200" alt="logo entreprise" src="{{asset('storage/'.$entreprise->photo)}}">
