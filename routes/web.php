@@ -28,7 +28,7 @@ Route::resource('evaluation', 'EvaluationController')->middleware('isConnect');
 Route::resource('note', 'NoteController')->middleware('isConnect');
 Route::get('errorValidateProfile', 'Valid@index')->name('nonvalid');
 Route::resource('resultat', 'ResultatController');
-Route::resource('entretien', 'EntretienController');
+Route::resource('entretien', 'EntretienController')->middleware('isEntreprise');
 Route::resource('settings', 'SettingsController');
 Route::resource('settingsEntreprise', 'SettingsEntrepriseController');
 

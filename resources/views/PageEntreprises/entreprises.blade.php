@@ -22,7 +22,7 @@
                     @foreach ($entreprises as $entreprise)
 
                     <article class="blog_item">
-                        <div class="blog_details">
+                        <div class="blog_details shadow">
                             <div class="row">
                             <div class="blog_item_img col-2">
                             <img class="card-img w-75" src="{{asset('storage/' . $entreprise->photo)}}" alt="">
