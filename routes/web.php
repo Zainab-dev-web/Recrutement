@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/' , 'AccueilController@index')->name('accueil');
 Route::post('updateUser/{id}' , 'ProfilController@updateUser')->name('updateUser');
-Route::get('/searchoffre/{id}', 'OffreController@searchoffre')->name('searchoffre');
 Route::resource('contact', 'ConctatController');
 Route::resource('profil', 'ProfilController');
 Route::resource('candidat', 'CandidatController');
@@ -43,20 +42,22 @@ Route::post('/fullcalendareventmaster/delete', 'FullCalendarEventMasterControlle
 Auth::routes();
 
 
-
 // Choix formulaire inscription
+
 Route::get('/registerform', 'ChoixController@indexform')->name('registerform');
 Route::resource('choix', 'ChoixController');
 Route::get('/formtalent', 'ChoixController@choixtalent')->name('formtalent');
 Route::get('/formentreprise', 'ChoixController@choixentreprise')->name('formentreprise');
 
 
-
 //userSearch
+
 Route::get('/searchUser', 'UserController@search')->name('searchUser')->middleware('isAdmin');
 //searchOffre
+Route::get('/searchoffre/{id}', 'OffreController@searchoffre')->name('searchoffre');
 Route::get('/searchOffre', 'OffreController@search')->name('searchOffre');
 //searchDomaine
+
 Route::get('/searchDomaine', 'EntrepriseController@search')->name('searchDomaine');
 Route::get('/searchDomaine', 'TalentController@search')->name('searchDomaine');
 

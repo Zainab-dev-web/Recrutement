@@ -18,14 +18,13 @@
 
 
 
-<div>
-    <div class="my-3 profil">
-    <div class="row">
-        <div class="col-3 mr-2">
+<div class="container text-center">
+    <div class="row mx-auto ">
+        <div class="col-12 ">
           <img class="mt-5 mb-2" width="200" alt="logo entreprise" src="{{asset('storage/'.$users->photo)}}">
           <h2>{{$users->nom}} {{$users->prénom}} - {{$users->domaine}}</h2>    
-        </div>
-     <div class="col-6">
+        
+    
       
     <p><b>Email : </b>{{$users->email}}</p> 
     <p><b>Adresse : </b>{{$users->adresse}}</p>
@@ -72,9 +71,15 @@
        
      </div>
     </div>
-    <a class="btn ml-5 p-3 text-white" href='{{route('profil.edit', $users->id)}}'>Modifier</a>  
+    <div class='text-center'>
+
+        <a class="btn my-2 text-white" href='{{route('profil.edit', $users->id)}}'>Modifier</a>  
+    </div>
+</div>
       
-   
+    <div class='text-center my-2'>
+        <a href="{{route('profil.index')}}" class='btnagenda btn btn-white'><i class="fas fa-long-arrow-alt-left">  Retour au profil</i></a>
+        </div>
 </div>
 </div>
 
