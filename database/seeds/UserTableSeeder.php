@@ -84,6 +84,8 @@ class UserTableSeeder extends Seeder
         ]);
         $filename = Str::random(10) . time() . '.jpeg';
         Storage::disk('public')->copy('/images.jpeg', $filename);
+        $cv = Str::random(10) . time() . '.jpg';
+        Storage::disk('public')->copy('/cv.jpg', $cv);
         DB::table('users')->insert([
             'nom' => 'Stoller',
             'prénom' => 'Shannon',
@@ -100,7 +102,7 @@ class UserTableSeeder extends Seeder
             'véhicule' => 'Non',
             'dispo' => '2020-07-01',
             'domaine' => 'Back-End',
-            'cv' => 'cv.jpg',
+            'cv' => $cv,
             'valid' => 1,
             'role_id' => 4,
             'password' => Hash::make('popo1234'),
@@ -108,6 +110,8 @@ class UserTableSeeder extends Seeder
         ]);
         $filename = Str::random(10) . time() . '.jpeg';
         Storage::disk('public')->copy('/images.jpeg', $filename);
+        $cv = Str::random(10) . time() . '.jpg';
+        Storage::disk('public')->copy('/cv.jpg', $cv);
         DB::table('users')->insert([
             'nom' => 'Zainab',
             'prénom' => 'Zainab',
@@ -124,7 +128,7 @@ class UserTableSeeder extends Seeder
             'véhicule' => 'Non',
             'dispo' => '2020-06-18',
             'domaine' => 'Web-designer',
-            'cv' => 'cv.jpg',
+            'cv' => $cv,
             'valid' => 1,
             'role_id' => 4,
             'password' => Hash::make('popo1234'),
@@ -132,6 +136,8 @@ class UserTableSeeder extends Seeder
         ]);
         $filename = Str::random(10) . time() . '.png';
         Storage::disk('public')->copy('/images.png', $filename);
+        $cv = Str::random(10) . time() . '.jpg';
+        Storage::disk('public')->copy('/cv.jpg', $cv);
         DB::table('users')->insert([
             'nom' => 'Yonte Montero',
             'prénom' => 'Salome',
@@ -148,7 +154,7 @@ class UserTableSeeder extends Seeder
             'véhicule' => 'Non',
             'dispo' => '2020-05-30',
             'domaine' => 'Full-Stack',
-            'cv' => 'cv.jpg',
+            'cv' => $cv,
             'valid' => 1,
             'role_id' => 4,
             'password' => Hash::make('popo1234'),
@@ -171,8 +177,8 @@ class UserTableSeeder extends Seeder
             'statut_id' => 1,
             'véhicule' => 'Non',
             'dispo' => '2020-05-18',
-            'domaine' => 'Full-Stack',
-            'cv' => 'cv.jpg',
+            'domaine' => 'Gestionnaire des talents',
+            'cv' => null,
             'valid' => 1,
             'role_id' => 2,
             'password' => Hash::make('123456789'),
@@ -195,8 +201,8 @@ class UserTableSeeder extends Seeder
             'statut_id' => 1,
             'véhicule' => 'Non',
             'dispo' => '2020-05-18',
-            'domaine' => 'Full-Stack',
-            'cv' => 'cv.jpg',
+            'domaine' => 'Gestionnaire des entreprises',
+            'cv' => null,
             'valid' => 1,
             'role_id' => 3,
             'password' => Hash::make('123456789'),
@@ -220,7 +226,7 @@ class UserTableSeeder extends Seeder
             'véhicule' => 'Non',
             'dispo' => '2020-05-18',
             'domaine' => 'Full-Stack',
-            'cv' => 'cv.jpg',
+            'cv' => null,
             'valid' => 1,
             'role_id' => 5,
             'password' => Hash::make('123456789'),
@@ -244,7 +250,7 @@ class UserTableSeeder extends Seeder
             'véhicule' => 'Non',
             'dispo' => '2020-05-18',
             'domaine' => 'Full-Stack',
-            'cv' => 'cv.jpg',
+            'cv' => null,
             'valid' => 1,
             'role_id' => 5,
             'password' => Hash::make('123456789'),
