@@ -16,7 +16,7 @@ class CandidatController extends Controller
      */
     public function index()
     {
-        $offres = Offre::all();
+        $offres = Offre::where('user_id', Auth::user()->id)->get();
         $candidats = Candidat::where('accept', 0)->get();
         $allcandidats = Candidat::all();
         return view ('PageProfil.candidature.candidat', compact('offres', 'candidats', 'allcandidats'));

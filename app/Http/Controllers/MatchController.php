@@ -106,8 +106,7 @@ class MatchController extends Controller
     public function destroy($id)
     {
         $match=Offre::find($id);
-        // $match->matchs()->detach();
-        // $match->delete();
+        $match->matchs()->detach();
         $match->find($this->id)->matchs()->detach();
         return redirect()->route('profil.index');
     }

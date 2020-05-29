@@ -31,6 +31,7 @@ Route::resource('resultat', 'ResultatController');
 Route::resource('entretien', 'EntretienController')->middleware('isEntreprise');
 Route::resource('settings', 'SettingsController');
 Route::resource('settingsEntreprise', 'SettingsEntrepriseController');
+Route::resource('vosOffres', 'VosOffresController');
 
 
 //fullcalendar->Agenda

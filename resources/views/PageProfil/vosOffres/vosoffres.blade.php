@@ -3,14 +3,14 @@
 @section('content')
 
 @include('components.nav')
-
+{{-- VosOffresController --}}
 <!-- Hero Area Start -->
 <div class="hero-area hero-height2 d-flex align-items-center mb-5" data-background="{{asset('img/hero/h2_hero.jpg')}}">
   <div class="container">
       <div class="row">
           <div class="col-xl-12">
               <div class="hero-cap text-center pt-50">
-                  <h2>Candidatures</h2>
+                  <h2>Vos Offres</h2>
               </div>
           </div>
       </div>
@@ -22,7 +22,6 @@
   
 
 @foreach ($offres as $offre)
-
 <article class="blog_item">
   <div class="blog_item_img">
       <img class="card-img rounded-0" src="assets/img/blog/single_blog_1.png" alt="">
@@ -45,55 +44,8 @@
 
   </div>
 </article>
- 
+
 @endforeach
-<div class="my-5">
-    <h2><b>Historique :</b></h2>
-    <table class="table" >
-        <thead>
-          <tr>
-            <th scope="col">Date</th>
-            <th scope="col">Nom</th>
-            <th scope="col">Offre</th>
-            <th scope="col">Réponse</th>
-
-            <th scope="col">Profil</th>
-
-          </tr>
-        </thead>
-        <tbody>
-
-            @foreach ($allcandidats as $candidat)
-            @if ($candidat->offre->user->id == Auth::user()->id)
-                <tr>
-                    <td>{{$candidat->created_at}}</td>
-                    <td>{{$candidat->user->nom}} {{$candidat->user->prénom}}</td>
-                    <td>{{$candidat->offre->poste}} chez {{$candidat->offre->user->nom}}</td>
-                    @if ($candidat->accept == 0)
-                    <td><b>En attente</b></td>
-                    @elseif ($candidat->accept == 1)
-                    <td class="text-success"><strong>Accepté</strong></td>
-                    @endif
-                    @if ($candidat->accept == 2)
-                     <td class="text-danger"><strong>Refusé</strong></td>   
-                    @endif
-                    
-                 
-                    <td>
-                        <a href="{{route('talents.show', $candidat->user->id)}}" class='btn btn-white'>Voir profil</a>
-                    </td>
-                </tr>
-
-                @else
-                
-                @endif
-
-          @endforeach
-
-        </tbody>
-      </table>
-    </div>
-    <hr>
 
 @if (count($offres) == 0)
 <div class="text-center my-5">
