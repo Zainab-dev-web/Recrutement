@@ -23,7 +23,7 @@
         <img class="my-5" width="200" alt="logo entreprise" src="{{asset('storage/'.$user->photo)}}">
         <h2>{{$user->nom}} - {{$user->domaine}}</h2>
         </div>
-        <a href="{{route('agenda')}}" class='btn'>Voir votre agenda</a>
+        <a href="{{route('agenda')}}" class='btn mt-5'>Voir votre agenda</a>
     </div>
     <div class="col-5 mt-100 soitcentre">
         <div class="single_sidebar_widget post_category_widget">
@@ -44,7 +44,7 @@
                     Vous n'avez pas encore d'offres !
                 </div>
                 @endif 
-                <a class="btn btn-white p-3" href="{{route('offres.create')}}" type="submit">Créer une offre</a>
+                <a class="btn2 p-3" href="{{route('offres.create')}}" type="submit">Créer une offre</a>
             </ul>
         </div>
     </div>

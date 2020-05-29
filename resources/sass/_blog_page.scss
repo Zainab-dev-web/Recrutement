@@ -10,13 +10,8 @@
     a{
         color: $font_1 !important;
         text-decoration: none;
-        transition: .4s;
         &:hover, :hover{
-            background: -webkit-linear-gradient( 131deg, $theme-color3 0%, $theme-color3 99%);
-            // -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             text-decoration: none;
-            transition: .4s;
         }
     }
 }
@@ -511,10 +506,6 @@
 
     a {
         color: $heading_color2;
-
-        &:hover {
-            color: $btn_bg;
-        }
     }
 
     h2 {
@@ -769,15 +760,6 @@
 
                 }
 
-                a {
-
-                    // color: $title_color;
-                    &:hover {
-                        color: $white_color;
-                    }
-
-                }
-
                 p {
                     font-size: 14px;
                     line-height: 21px;
@@ -808,7 +790,6 @@
                     font-size: 13px;
 
                     &:hover {
-                        background: $theme-color3;
                         color: #fff !important;
                         -webkit-text-fill-color: #fff;
                         text-decoration: none;
@@ -1026,7 +1007,6 @@
                 color: #cccccc;
                 padding: 7px;
                 font-size: 14px;
-                transition: all 0.2s linear;
 
             }
         }
@@ -1154,11 +1134,6 @@
 
         a {
             display: inline-block;
-
-            // color: $title-color;
-            &:hover {
-                color: $btn_bg;
-            }
         }
 
         p {

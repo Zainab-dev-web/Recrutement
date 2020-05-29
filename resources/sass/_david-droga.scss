@@ -92,16 +92,6 @@
                 padding-left: 65px;
                 position: relative;
                 text-transform: uppercase;
-                &::before {
-                    position: absolute;
-                    content: "";
-                    width: 40px;
-                    height: 2px;
-                    background: #04dbec;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    left: 0;
-                }
             }
         }
     }
