@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-@if ($choix->valid == 1)
+{{-- @if ($choix->valid == 1)
    <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -216,11 +216,11 @@
         </div>
     </div>
 </div> 
-@elseif ($choix->valid == 2)
+@elseif ($choix->valid == 2) --}}
 
  {{-- formulaire entreprise --}}
 
-<div class="container">
+{{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -413,5 +413,94 @@
         </div>
     </div>
     </div>
+
+
+
+
+
+
+
+
+ 
+
+    @if ($choix->valid == 1) --}}
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 col-xl-9 mx-auto">
+        <div class="card card-signin flex-row my-5">
+          <div class="card-img-left d-none d-md-flex">
+             <!-- Background image for card set in CSS! -->
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-center">Register</h5>
+            <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+                @csrf
+              <div class="form-label-group">
+                <label for="nom" class="col-md-4 col-form-label text-md-right">{{ __('Nom') }}</label>
+
+                <div class="col-md-6">
+                    <input id="nom" type="text" class="form-control @error('nom') is-invalid @enderror" name="nom" value="{{ old('nom') }}" required autocomplete="nom" autofocus>
+
+                    @error('nom')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+              </div>
+
+              <div class="form-label-group">
+                <label for="prénom" class="col-md-4 col-form-label text-md-right">{{ __('Prénom') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="prénom" type="text" class="form-control @error('prénom') is-invalid @enderror" name="prénom" value="{{ old('prénom') }}" required autocomplete="prénom" autofocus>
+
+                                @error('prénom')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+              </div>
+              
+              <hr>
+
+              <div class="form-label-group">
+                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+              </div>
+              
+              <div class="form-label-group">
+                <label for="photo" class="col-md-4 col-form-label text-md-right">Photo de profil</label>
+
+                            <div class="col-md-6">
+                                <input id="photo" type="file" class="form-control @error('photo') is-invalid @enderror" name="photo" value="{{ old('photo') }}" required autocomplete="photo">
+
+                                @error('photo')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+              </div>
+
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
+             
+             
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 @endsection
