@@ -148,16 +148,15 @@ class ProfilController extends Controller
         
         
         
-        
+        $image = Storage::disk('public')->put('', $request->file('photo'));
         $users=User::find($id);
-        $users->nom=$request->nom;
+        $users->photo=$image;$users->nom=$request->nom;
         $users->email = $request->email;
         $users->domaine=$request->domaine;
         $users->numero=$request->numero;
         $users->adresse=$request->adresse;
         if(Auth::check() && Auth::user()->role_id ==4){
-            $image = Storage::disk('public')->put('', $request->file('photo'));
-            $users->photo=$image;
+           
             $cv = Storage::disk('public')->put('', $request->file('cv'));
             $users->dipso=$request->dipso;
             $users->prénom=$request->prénom;
@@ -167,8 +166,6 @@ class ProfilController extends Controller
         }elseif(Auth::check() && Auth::user()->role_id ==5){
             
             $users->date=$request->date;
-            $image = Storage::disk('public')->put('', $request->file('photo'));
-            $users->photo=$image;
             $users->tva=$request->tva;
             $users->pNom=$request->pNom;
             $users->pTel=$request->pTel;

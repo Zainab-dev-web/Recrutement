@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="hero-cap text-center pt-50">
-                    <h2>Account Settings</h2>
+                    <h2>Configuration de votre compte</h2>
                 </div>
             </div>
         </div>

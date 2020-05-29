@@ -52,7 +52,11 @@ class SettingsController extends Controller
      */
     public function show($id)
     {
-        //
+        $users=User::find($id);
+        $roles=Role::all();
+        $statuts=Statut::all();
+       
+        return view ('PageProfil.settingShow' , compact('users','roles', 'statuts'));
     }
 
     /**
@@ -116,23 +120,30 @@ class SettingsController extends Controller
                 }
             
             
-            $image = Storage::disk('public')->put('', $request->file('photo'));
-            $users=User::find($id);
-            $users->nom=$request->nom;
-            $users->email = $request->email;
-            $users->password =Hash::make($request->password);
-            $users->photo=$image;
-            $users->numero=$request->numero;
-            $users->adresse=$request->adresse;
-            if(Auth::check() && Auth::user()->role_id ==4){
+                $users=User::find($id);
+                if(Auth::check() && Auth::user()->role_id ==4){
+                $image = Storage::disk('public')->put('', $request->file('photo'));
+                $users->nom=$request->nom;
+                $users->email = $request->email;
+                $users->password =Hash::make($request->password);
+                $users->photo=$image;
+                $users->numero=$request->numero;
+                $users->adresse=$request->adresse;
                 $cv = Storage::disk('public')->put('', $request->file('cv'));
                 $users->prénom=$request->prénom;
-                $users->dipso=$request->dipso;
+                $users->dispo=$request->dispo;
                 $users->cv=$cv;
                 $users->statut_id=$request->statut_id;
                 $users->véhicule=$request->véhicule;
             }elseif(Auth::check() && Auth::user()->role_id ==5){
-    
+                $image = Storage::disk('public')->put('', $request->file('photo'));
+                $users=User::find($id);
+                $users->nom=$request->nom;
+                $users->email = $request->email;
+                $users->password =Hash::make($request->password);
+                $users->photo=$image;
+                $users->numero=$request->numero;
+                $users->adresse=$request->adresse;
                 $users->date=$request->date;
                 $users->tva=$request->tva;
                 $users->pNom=$request->pNom;
