@@ -25,7 +25,30 @@
         </div>
         <a href="{{route('agenda')}}" class='btn'>Voir votre agenda</a>
     </div>
-    <div class="col-6 my-5 no-gutters">
+    <div class="col-4 mt-100 no-gutters px-auto ml-50">
+        <div class="single_sidebar_widget post_category_widget">
+            <h4 class="widget_title mb-3">Aperçu de vos offres</h4>
+            <ul class="list cat-list">
+                @foreach ($offres as $offre)
+                    @if ($offre->user_id == Auth::user()->id)
+                    <li>
+                        <a href="{{route('offres.show', $offre->id)}}" class="d-flex">
+                        <p>{{$offre->poste}} chez <b>{{$offre->user->nom}}</b> pour {{$offre->statut->statut}}</p>
+                        </a>
+                    </li>
+                    @else
+                    @endif
+                @endforeach
+                @if(count($match)==0)
+                <div class="alert alert-info" role="alert">
+                    Vous n'avez pas encore d'offres !
+                </div>
+                @endif 
+                <a class="btn btn-white p-3" href="{{route('offres.create')}}" type="submit">Créer une offre</a>
+            </ul>
+        </div>
+    </div>
+    <div class="col-4 my-5 no-gutters ml-3">
         <div class="container d-flex justify-content-center">
         <div class="menu-box block"> <!-- MENU BOX (LEFT-CONTAINER) -->
             <h2 class="titular">MENU</h2>
@@ -41,7 +64,7 @@
                 </li>
             
                 <li>
-                <a class="menu-box-tab" href="{{route('settings.edit', $user)}}"><span class="icon scnd-font-color"><i class="far fa-newspaper"></i></span>Vos offres</a>
+                <a class="menu-box-tab" href="{{route('vosOffres.index')}}"><span class="icon scnd-font-color"><i class="far fa-newspaper"></i></span>Vos offres</a>
                 </li> 
                 <li>
                 <a class="menu-box-tab" href="{{route('settings.show', $user)}}"><span class="icon scnd-font-color"><i class="fas fa-lock"></i></span>Données personnelles</a>
@@ -50,38 +73,10 @@
             </ul>
         </div>
         </div>
-    </div>
-    
-    <div class="col-3 mt-5 no-gutters px-auto">
-        <div class="single_sidebar_widget post_category_widget">
-            <h4 class="widget_title mb-3">Aperçu de vos offres</h4>
-            <ul class="list cat-list">
-                @foreach ($offres as $offre)
-                    @if ($offre->user_id == Auth::user()->id)
-                        <li>
-                        <a href="{{route('offres.show', $offre->id)}}" class="d-flex">
-                        <p>{{$offre->poste}} chez <b>{{$offre->user->nom}}</b> pour {{$offre->statut->statut}}</p>      
-                        
-                    </a>
-                </li>
-                
-                    @else
-                        
-                    @endif
-                @endforeach
-                @if(count($match)==0)
-                <div class="alert alert-info" role="alert">
-                    Vous n'avez pas encore d'offres !
-                </div>
-                @endif 
-                <a class="btn btn-white" href="{{route('offres.create')}}" type="submit">Créer une offre</a>
-            </ul>
-        </div>
-    </div>
+    </div>  
 </div>
 </div>
-@else
-    
+@else   
 @endif
 @endforeach
 @endcan
@@ -97,7 +92,6 @@
         <div class="text-center">
         <img class="my-5" width="200" alt="logo entreprise" src="{{asset('storage/'.$user->photo)}}">
         <h2>{{$user->nom}} {{$user->prénom}} - {{$user->domaine}}</h2>
-     
         @if ($user->resultat == null)
         <p>{{$user->statut->statut}} <a class="btn p-3 text-white" data-toggle="modal" data-target="#exampleModalLong">Modifier</a></p> 
         @else
@@ -109,7 +103,30 @@
         <a href="{{route('agenda')}}" class='btn'>Voir votre agenda</a>
         </div>
     </div>
-    <div class="col-6 mt-5 no-gutters">
+    <div class="col-5 mt-100 no-gutters">
+        <div class="single_sidebar_widget post_category_widget">
+            <h4 class="widget_title mb-3">Candidatures en attente...</h4>
+            <ul class="list cat-list">
+                @foreach ($candidats as $candidat)
+                @if ($candidat->user_id == Auth::user()->id)
+                <li>
+                    <a href="{{route('candidat.create')}}" class="d-flex">
+                        <p>{{$candidat->offre->poste}} chez&nbsp;</p>
+                        <p><b>{{$candidat->offre->user->nom}}</b></p>
+                    </a>
+                </li> 
+                @else
+                @endif
+                @endforeach
+            </ul>
+            @if(count($candidats)==0)
+            <div class="alert alert-info mr-3" role="alert">
+                Vous n'avez pas de candidatures en attente !
+            </div>
+            @endif
+        </div>
+    </div>
+    <div class="col-4 mt-5 no-gutters">
         <div class="container d-flex justify-content-center">
             <div class="menu-box block"> <!-- MENU BOX (LEFT-CONTAINER) -->
                 <h2 class="titular">MENU</h2>
@@ -120,83 +137,16 @@
                     <li>
                     <a class="menu-box-tab" href="{{route('candidat.create')}}"><span class="icon entypo-paper-plane scnd-font-color"></span>Vos candidatures</span></a>              
                     </li>
-    
-    
+                    <li>
+                    <a class="menu-box-tab" href="{{route('match.create')}}"><span class="icon entypo-paper-plane scnd-font-color"></span>Vos matches</span></a>              
+                    </li>
                     <li>
                     <a class="menu-box-tab" href="{{route('date.index')}}"><span class="icon scnd-font-color"><i class="far fa-clock"></i></span>Proposition de date</span></a>              
-                    </li>
-                
-                  
-                <li>
-                <a class="menu-box-tab" href="{{route('settings.show', $user)}}"><span class="icon scnd-font-color"><i class="fas fa-lock"></i></span>Données personnelles</a>
-                </li>  
-                              
+                    </li>  
+                    <li>
+                    <a class="menu-box-tab" href="{{route('settings.show', $user)}}"><span class="icon scnd-font-color"><i class="fas fa-lock"></i></span>Données personnelles</a>
+                    </li>            
                 </ul>
-            </div>
-        </div>
-    </div>
-    <div class="col-3 mt-5 no-gutters">
-        <div class="single_sidebar_widget post_category_widget">
-            <h4 class="widget_title mb-3">Candidatures en attente...</h4>
-            <ul class="list cat-list">
-                @foreach ($candidats as $candidat)
-                    @if ($candidat->user_id == Auth::user()->id)
-                        <li>
-                        <a href="{{route('candidat.create')}}" class="d-flex">
-                        <p>{{$candidat->offre->poste}} chez&nbsp;</p>
-                        <p><b>{{$candidat->offre->user->nom}}</b></p>
-                    </a>
-                </li> 
-                    @else
-                   
-                    @endif
-                @endforeach
-            </ul>
-            @if(count($candidats)==0)
-            <div class="alert alert-info" role="alert">
-                Vous n'avez pas de candidatures en attente !
-            </div>
-            @endif
-        </div>
-    </div>
-    <div class="my-5" id="match">
-        <div class="single_sidebar_widget post_category_widget">
-            <h4 class="widget_title mb-3 text-center"><i class="fas fa-heart text-danger fa-1x"></i> Vos matches</h4>
-            <div class="row">
-                @foreach ($offres as $offre)
-                @foreach ($offre->matchs as $item)
-                @if ($item->pivot->user_id == Auth::user()->id)
-                @if ($item->pivot->offre_id == $offre->id)
-                <div class="col-4 border border-secondary rounded p-3 m-3">
-                    <div class='text-center'>
-                        <form action="{{route('match.destroy',$item)}}" method="post">
-                            @csrf
-                            @method('DELETE')
-                          <button class=' btn-white'><i class="fas fa-trash text-danger"></i></button>
-                        </form>
-                    </div>
-
-                    <ul class="list cat-list">
-                    <li> <p><b>Poste : </b>{{$offre->poste}}.</p></li>
-                        <li><p><i class="fas fa-map-marker-alt"></i> <b>Lieu : </b>{{$offre->lieu}}.</p></li>
-                        <li><p><b>Il faut être : </b>{{$offre->qualite}}.</p></li>
-                        <li><p><b>Description de l'offre : </b>{{$offre->description}}</p></li>
-                        <li><b>Entreprise : </b><p class='text-uppercase'>{{$offre->user->nom}}</p></li>
-                    </ul>
-
-                    {{-- button supprimer --}}
-                
-                </div>
-                @else
-                    
-                @endif
-                @else
-                    
-                @endif
-										
-
-                @endforeach	
-                @endforeach
             </div>
         </div>
     </div>

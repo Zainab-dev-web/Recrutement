@@ -29,7 +29,7 @@ Route::resource('note', 'NoteController')->middleware('isConnect');
 Route::get('errorValidateProfile', 'Valid@index')->name('nonvalid');
 Route::resource('resultat', 'ResultatController');
 Route::resource('entretien', 'EntretienController')->middleware('isEntreprise');
-
+Route::resource('vosOffres', 'VosOffresController');
 
 
 //fullcalendar->Agenda
@@ -79,7 +79,6 @@ Route::resource('work', 'WorkController')->middleware('isAdmin');
 Route::resource('contactInfo', 'ContactController')->middleware('isAdmin');
 Route::resource('info', 'InfoController')->middleware('isAdmin');
 Route::resource('profilGestion', 'ProfilgestionController')->middleware('GestionUser');
-
-Route::resource('settings', 'SettingsController');
+Route::resource('settings', 'SettingsController')->middleware('isConnect');
 
 

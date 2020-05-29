@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="hero-cap text-center pt-50">
-                    <h2>Profil de " {{$users->nom}}  {{$users->prénom}}"</h2>
+                    <h2>Profil de "{{$users->nom}}  {{$users->prénom}}"</h2>
                 </div>
             </div>
         </div>
@@ -18,10 +18,15 @@
 
 
 
-<div class="container">
-    <div class="my-5 profil">
-    <img class="my-5" width="200" alt="logo entreprise" src="{{asset('storage/'.$users->photo)}}">
-    <h2>{{$users->nom}} {{$users->prénom}} - {{$users->domaine}}</h2>
+<div>
+    <div class="my-3 profil">
+    <div class="row">
+        <div class="col-3 mr-2">
+          <img class="mt-5 mb-2" width="200" alt="logo entreprise" src="{{asset('storage/'.$users->photo)}}">
+          <h2>{{$users->nom}} {{$users->prénom}} - {{$users->domaine}}</h2>    
+        </div>
+     <div class="col-6">
+      
     <p><b>Email : </b>{{$users->email}}</p> 
     <p><b>Adresse : </b>{{$users->adresse}}</p>
     <p><b>Numéro de téléphone : </b>{{$users->numero}}</p>
@@ -64,7 +69,11 @@
     @endif
     
     
-    <a class="btn ml-5 p-3 text-white" href='{{route('profil.edit', $users->id)}}'>Modifier</a>     
+       
+     </div>
+    </div>
+    <a class="btn ml-5 p-3 text-white" href='{{route('profil.edit', $users->id)}}'>Modifier</a>  
+      
    
 </div>
 </div>

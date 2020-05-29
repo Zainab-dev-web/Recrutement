@@ -22,7 +22,7 @@
   
 
 @foreach ($offres as $offre)
-@if ($offre->user_id == Auth::id())
+
 <article class="blog_item">
   <div class="blog_item_img">
       <img class="card-img rounded-0" src="assets/img/blog/single_blog_1.png" alt="">
@@ -45,9 +45,6 @@
 
   </div>
 </article>
-@else
-    
-@endif
  
 @endforeach
 <div class="my-5">
@@ -68,8 +65,6 @@
 
             @foreach ($allcandidats as $candidat)
             @if ($candidat->offre->user->id == Auth::user()->id)
-                
-           
                 <tr>
                     <td>{{$candidat->created_at}}</td>
                     <td>{{$candidat->user->nom}} {{$candidat->user->prénom}}</td>

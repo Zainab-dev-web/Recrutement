@@ -59,15 +59,7 @@
         @endcan
         @endcan
         @endcan
-        @if (Auth::check() && Auth::user()->id == $offre->user->id)
-        <form action="{{route('offres.destroy', $offre)}}" method="post">
-          @csrf
-          @method('DELETE')
-        <button class="btn btn-white" type="submit">Supprimer mon offre</button>
-</form>
-@else
-    
-@endif
+       
       </div>
   </div>
 </div>
