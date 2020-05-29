@@ -25,7 +25,7 @@
         </div>
         <a href="{{route('agenda')}}" class='btn'>Voir votre agenda</a>
     </div>
-    <div class="col-5 mt-100 pl-5">
+    <div class="col-5 mt-100 soitcentre">
         <div class="single_sidebar_widget post_category_widget">
             <h4 class="widget_title mb-3">Aperçu de vos offres</h4>
             <ul class="list cat-list">
@@ -48,7 +48,7 @@
             </ul>
         </div>
     </div>
-    <div class="col-lg-4" id='bg-offre' >
+    <div class="col-4" id='bg-offre' >
         <div class="blog_right_sidebar">
             <aside class="single_sidebar_widget post_category_widget bg-transparent">
                 <div class="bg-white p-3">
