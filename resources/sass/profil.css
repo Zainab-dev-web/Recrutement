@@ -1338,3 +1338,7 @@ p.center-date {
     background-image: url('/img/entreprises/entreprise2.jpg');
     background-size: cover;
 }
+#bg-offre{
+    background-image: url('/img/entreprises/entreprise3.jpg');
+    background-size: cover;
+}
