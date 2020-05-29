@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="hero-cap text-center pt-50">
-                <h3 class="text-white">Quelle offre désirez-vous proposer un entretien à {{$user->nom}} {{$user->prénom}} ?</h3>
+                <h3 class="text-white">Quelle offre désirez-vous proposer à {{$user->nom}} {{$user->prénom}} ?</h3>
                 </div>
             </div>
         </div>

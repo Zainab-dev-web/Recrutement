@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class OffreTableSeeder extends Seeder
 {
@@ -17,7 +18,8 @@ class OffreTableSeeder extends Seeder
             'poste' => 'Web developpeur',
             'lieu' => 'Mons',
             'description' => 'Quisque libero metus, condimentum nec, tempor a, commodo mollis, magna. Suspendisse non nisl sit amet velit hendrerit rutrum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci. Curabitur nisi. Etiam iaculis nunc ac metus.',
-            'qualite' => 'consectetuer hendrerit lacus. Phasellus dolor. Phasellus ullamcorper ipsum rutrum nunc. Curabitur turpis. Phasellus blandit leo ut odio'
+            'qualite' => 'consectetuer hendrerit lacus. Phasellus dolor. Phasellus ullamcorper ipsum rutrum nunc. Curabitur turpis. Phasellus blandit leo ut odio',
+            'created_at' => Carbon::now()->format('Y-m-d'),
         ]);
 
         DB::table('offres')->insert([   
@@ -26,7 +28,8 @@ class OffreTableSeeder extends Seeder
             'poste' => 'Caissière',
             'lieu' => 'Bruxelles',
             'description' => 'Phasellus dolor. Phasellus ullamcorper ipsum rutrum nunc. Curabitur turpis. Phasellus blandit leo ut odio. Vivamus consectetuer hendrerit lacus. Phasellus dolor. Phasellus ullamcorper ipsum rutrum nunc. Curabitur turpis. Phasellus blandit leo ut odio. Vivamus consectetuer hendrerit lacus.',
-            'qualite' => 'consectetuer hendrerit lacus. Phasellus dolor. Phasellus ullamcorper ipsum rutrum nunc. Curabitur turpis. Phasellus blandit leo ut odio'
+            'qualite' => 'consectetuer hendrerit lacus. Phasellus dolor. Phasellus ullamcorper ipsum rutrum nunc. Curabitur turpis. Phasellus blandit leo ut odio',
+            'created_at' => Carbon::now()->format('Y-m-d'),
         ]);
     }
 }

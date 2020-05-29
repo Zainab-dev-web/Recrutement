@@ -17,7 +17,7 @@ class EntrepriseController extends Controller
      */
     public function index()
     {
-        $entreprises = User::orderby('id', 'asc')->where('role_id', 5)->paginate(3);
+        $entreprises = User::inRandomOrder()->where('role_id', 5)->paginate(3);
         return view('PageEntreprises.pageEntreprises', compact('entreprises'));
     }
 

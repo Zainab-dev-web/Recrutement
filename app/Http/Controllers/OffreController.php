@@ -23,7 +23,7 @@ class OffreController extends Controller
      */
     public function index()
     {
-        $offres = Offre::orderby('id', 'asc')->paginate(3);
+        $offres = Offre::orderby('id', 'desc')->paginate(3);
         $entreprises = User::where('role_id', 5)->get();
         return view('PageOffres.pageOffres', compact('offres', 'entreprises'));
     }
