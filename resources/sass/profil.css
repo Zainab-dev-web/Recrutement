@@ -1330,3 +1330,15 @@ p.center-date {
     background: #e64c65;
     border-radius: 100%;
 }
+#bg-entreprise{
+    background-image: url('/img/entreprises/entreprise.jpg');
+    background-size: cover;
+}
+#bg-talent{
+    background-image: url('/img/entreprises/entreprise2.jpg');
+    background-size: cover;
+}
+#bg-offre{
+    background-image: url('/img/entreprises/entreprise3.jpg');
+    background-size: cover;
+}

@@ -50,17 +50,18 @@
                     </nav>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4" id='bg-offre' >
                 <div class="blog_right_sidebar">
-                    <aside class="single_sidebar_widget search_widget">
-                        <form action="#">
+                    <aside class="single_sidebar_widget search_widget bg-transparent">
+                        <form action="{{route('searchDomaine')}}">
                             <div class="form-group">
+                           
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder='Search Keyword'
+                                    <input type="text" class="form-control" placeholder='Quel poste recherchez-vous ?'
                                         onfocus="this.placeholder = ''"
-                                        onblur="this.placeholder = 'Search Keyword'">
+                                        onblur="this.placeholder = 'Search Keyword'" name='search'>
                                     <div class="input-group-append">
-                                        <button class="btns" type="button"><i class="ti-search"></i></button>
+                                        <button class="btns" type="submit"><i class="ti-search"></i></button>
                                     </div>
                                 </div>
                             </div>

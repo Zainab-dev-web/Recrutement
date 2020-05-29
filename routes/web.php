@@ -56,6 +56,11 @@ Route::get('/formentreprise', 'ChoixController@choixentreprise')->name('formentr
 
 //userSearch
 Route::get('/searchUser', 'UserController@search')->name('searchUser')->middleware('isAdmin');
+//searchOffre
+Route::get('/searchOffre', 'OffreController@search')->name('searchOffre');
+//searchDomaine
+Route::get('/searchDomaine', 'EntrepriseController@search')->name('searchDomaine');
+Route::get('/searchDomaine', 'TalentController@search')->name('searchDomaine');
 
 
 //Resource Global
