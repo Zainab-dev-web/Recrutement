@@ -6,7 +6,9 @@ use App\Offre;
 use App\Statut;
 use App\Candidat;
 use App\User;
+use App\Role;
 use App\Match;
+use App\Entreprise;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -129,5 +131,12 @@ class OffreController extends Controller
         $offre = Offre::find($id);
 	    $offre->delete();
 	    return redirect()->route('profil.index');
+    }
+    public function search(Request $request){
+        $searchOffre = $request->input('search');
+        $offres = Offre::where('poste','LIKE', '%'.$searchOffre.'%')->paginate(3);
+        $entreprises = User::where('role_id', 5)->get();
+    
+        return view('PageOffres.pageOffres',compact('offre','searchOffre', 'offres', 'entreprises'));
     }
 }

@@ -87,4 +87,11 @@ class EntrepriseController extends Controller
     {
         //
     }
+    public function search(Request $request){
+        $searchDomaine = $request->input('search');
+        $entreprises = User::where('domaine','LIKE', '%'.$searchDomaine.'%')->where('role_id', 5)->paginate(3);
+       
+    
+        return view('PageEntreprises.pageEntreprises',compact('searchDomaine', 'entreprises'));
+    }
 }

@@ -47,7 +47,29 @@
                     </nav>
                 </div>
             </div>
-            
+            <div class="col-lg-4" id='bg-talent'>
+                <div class="blog_right_sidebar">
+                    <aside class="single_sidebar_widget search_widget bg-transparent">
+                        <form action="{{route('searchDomaine')}}">
+                            <div class="form-group">
+                              
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder='Quel domaine recherchez-vous ?'
+                                        onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Search Keyword'" name='search'>
+                                    <div class="input-group-append">
+                                        <button class="btns" type="submit"><i class="ti-search"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="button rounded-0 w-100 btn_1 boxed-btn"
+                                type="submit">Search</button>
+                        </form>
+                    </aside>
+
+                   
+                </div>
+            </div>
         </div>
     </div>
 </section>

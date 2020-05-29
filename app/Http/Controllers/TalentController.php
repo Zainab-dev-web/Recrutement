@@ -87,4 +87,11 @@ class TalentController extends Controller
     {
         //
     }
+    public function search(Request $request){
+        $searchDomaine = $request->input('search');
+        $talents = User::where('domaine','LIKE', '%'.$searchDomaine.'%')->where('role_id', 4)->paginate(3);
+       
+    
+        return view('PageTalents.pageTalents',compact('searchDomaine', 'talents'));
+    }
 }
