@@ -37,7 +37,7 @@
   <h2>Candidatures :</h2>
          @foreach ($candidats as $candidat)
        @if ($candidat->offre_id == $offre->id)
-    <h5><a href=""><b>{{$candidat->user->nom}} {{$candidat->user->prénom}} <a class="btn btn-white" href="{{route('accepter', $candidat->id)}}">Accepter</a> <a class="btn btn-white" href="{{route('refuser', $candidat->id)}}">Refuser</a></b></a></h5>
+    <h5><a href="{{route('talents.show', $candidat->user->id)}}"><b>{{$candidat->user->nom}} {{$candidat->user->prénom}}</a> <a class="btn btn-white" href="{{route('accepter', $candidat->id)}}">Accepter</a> <a class="btn btn-white" href="{{route('refuser', $candidat->id)}}">Refuser</a></b></h5>
        @else
          
        @endif

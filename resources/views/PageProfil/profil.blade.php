@@ -41,11 +41,11 @@
                 </li>
             
                 <li>
-                <a class="menu-box-tab" href="{{route('settings.edit', $user)}}"><span class="icon entypo-cog scnd-font-color"></span>Configuration du compte</a>
+                <a class="menu-box-tab" href="{{route('settings.edit', $user)}}"><span class="icon scnd-font-color"><i class="far fa-newspaper"></i></span>Vos offres</a>
                 </li> 
                 <li>
-                <a class="menu-box-tab" href="{{route('settings.show', $user)}}"><span class="icon entypo-cog scnd-font-color"></span>Données personnelles</a>
-                  {{-- <i class="fas fa-user-lock"></i> --}}
+                <a class="menu-box-tab" href="{{route('settings.show', $user)}}"><span class="icon scnd-font-color"><i class="fas fa-lock"></i></span>Données personnelles</a>
+                  
                 </li>        
             </ul>
         </div>
@@ -126,13 +126,9 @@
                     <a class="menu-box-tab" href="{{route('date.index')}}"><span class="icon scnd-font-color"><i class="far fa-clock"></i></span>Proposition de date</span></a>              
                     </li>
                 
-                   <li>
-                <a class="menu-box-tab" href="{{route('settings.edit', $user)}}"><span class="icon entypo-cog scnd-font-color"></span>Configuration du compte</a>
-                </li> 
+                  
                 <li>
-                <a class="menu-box-tab" href="{{route('settings.show', $user)}}"><span class="icon entypo-cog scnd-font-color"></span>Données personnelles</a>
-
-                  {{-- <i class="fas fa-user-lock"></i> --}}
+                <a class="menu-box-tab" href="{{route('settings.show', $user)}}"><span class="icon scnd-font-color"><i class="fas fa-lock"></i></span>Données personnelles</a>
                 </li>  
                               
                 </ul>

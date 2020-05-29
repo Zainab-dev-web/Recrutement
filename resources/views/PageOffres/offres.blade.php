@@ -34,6 +34,7 @@
                             <ul class="blog-info-link">
                                 <li><a href="#"><i class="fa fa-user"></i>{{$offre->user->domaine}}</a></li>
                                 <li><a href="#"><i class="fas fa-phone"></i>{{$offre->user->numero}}</a></li>
+                                <li><a href="#"><i class="fas fa-calendar-plus"></i>{{$offre->created_at->format('d')}}/{{$offre->created_at->format('m')}}/{{$offre->created_at->format('Y')}}</a></li>
                             </ul>
                         </div>
                     </article>

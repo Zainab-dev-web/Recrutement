@@ -72,11 +72,10 @@ class MatchController extends Controller
      */
     public function edit($id)
     {
-
             $matchs=Offre::find($id);
             $users=User::all();
             $statuts=Statut::all();
-          
+            $test = Offre::where('offre_id', $matchs->id)->get();
             return view('match.edit', compact('matchs' , 'users' , 'statuts'));
     
         
