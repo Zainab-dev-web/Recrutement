@@ -95,9 +95,11 @@ class OffreController extends Controller
      * @param  \App\Offre  $offre
      * @return \Illuminate\Http\Response
      */
-    public function edit(Offre $offre)
+    public function edit($id)
     {
-        //
+        $offre = Offre::find($id);
+        $statuts = Statut::all();
+        return view ('PageProfil.vosOffres.edit', compact('offre', 'statuts'));
     }
 
     /**
@@ -110,14 +112,13 @@ class OffreController extends Controller
     public function update(Request $request, $id)
     {
         $offre = Offre::find($id);
-        $offre->entreprise_id = $offre->entreprise_id;
         $offre->statut_id = $request->input('statut_id');
         $offre->poste = $request->input('poste');
         $offre->lieu = $request->input('lieu');
         $offre->description = $request->input('description');
         $offre->qualite = $request->input('qualite');
         $offre->save();
-        return  redirect()->route('#');
+        return  redirect()->route('vosOffres.index');
     }
 
     /**

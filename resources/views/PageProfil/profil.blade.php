@@ -65,7 +65,7 @@
                     </li>
                 
                     <li>
-                    <a class="menu-box-tab text-dark" href="{{route('settings.edit', $user)}}"><span class="icon scnd-font-color"><i class="far fa-newspaper pr-3"></i></span>Vos offres</a>
+                    <a class="menu-box-tab text-dark" href="{{route('vosOffres.index', $user)}}"><span class="icon scnd-font-color"><i class="far fa-newspaper pr-3"></i></span>Vos offres</a>
                     </li> 
                     <li>
                     <a class="menu-box-tab text-dark" href="{{route('settings.show', $user)}}"><span class="icon scnd-font-color"><i class="fas fa-lock pr-3"></i></span>Données personnelles</a>
