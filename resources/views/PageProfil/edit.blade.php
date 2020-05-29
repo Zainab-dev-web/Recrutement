@@ -172,7 +172,7 @@
       </div>
       @error('adresse')  
         <div class="text-danger">{{ $message }}</div>  
-        @enderror
+      @enderror
   </div>
     <div class="col-sm-6">
         <div class="form-group">

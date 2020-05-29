@@ -90,7 +90,7 @@
     
 <div class="container blog_area section-padding">
 <div class="row no-gutters d-flex justify-content-center">
-    <div class="col-3 no-gutters pb-5 pr-5">
+    <div class="col-3 no-gutters pb-5 pr-1">
         <div class="text-center">
         <img class="my-5" width="200" alt="logo entreprise" src="{{asset('storage/'.$user->photo)}}">
         <h2>{{$user->nom}} {{$user->prénom}} - {{$user->domaine}}</h2>
@@ -101,7 +101,7 @@
         @endif
         
         </div>
-        <div class="col-3 mt-5">
+        <div class="col-4 mt-5">
         <a href="{{route('agenda')}}" class='btn'>Voir votre agenda</a>
         </div>
     </div>
