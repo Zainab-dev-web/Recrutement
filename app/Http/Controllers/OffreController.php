@@ -95,9 +95,10 @@ class OffreController extends Controller
      * @param  \App\Offre  $offre
      * @return \Illuminate\Http\Response
      */
-    public function edit(Offre $offre)
+    public function edit($id)
     {
-        //
+        $offre = Offre::find($id);
+        return view ('')
     }
 
     /**
