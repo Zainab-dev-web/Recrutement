@@ -16,7 +16,7 @@
 @foreach ($users as $user)
 @if ($user->id == Auth::user()->id)
 
-<div class="container">
+<div class="container blog_area section-padding">
 <div class="row no-gutters d-flex justify-content-center">
     <div class="col-3 no-gutters pb-5 px-5">
         <div class="text-center">
@@ -25,15 +25,15 @@
         </div>
         <a href="{{route('agenda')}}" class='btn'>Voir votre agenda</a>
     </div>
-    <div class="col-4 mt-100 no-gutters px-auto ml-50">
+    <div class="col-5 mt-100 pl-5">
         <div class="single_sidebar_widget post_category_widget">
             <h4 class="widget_title mb-3">Aperçu de vos offres</h4>
             <ul class="list cat-list">
                 @foreach ($offres as $offre)
                     @if ($offre->user_id == Auth::user()->id)
                     <li>
-                        <a href="{{route('offres.show', $offre->id)}}" class="d-flex">
-                        <p>{{$offre->poste}} chez <b>{{$offre->user->nom}}</b> pour {{$offre->statut->statut}}</p>
+                        <a href="{{route('offres.show', $offre->id)}}">
+                        <p>{{$offre->poste}} chez <b>{{$offre->user->nom}}</b> <br> pour {{$offre->statut->statut}}</p>
                         </a>
                     </li>
                     @else
@@ -48,32 +48,34 @@
             </ul>
         </div>
     </div>
-    <div class="col-4 my-5 no-gutters ml-3">
-        <div class="container d-flex justify-content-center">
-        <div class="menu-box block"> <!-- MENU BOX (LEFT-CONTAINER) -->
-            <h2 class="titular">MENU</h2>
-            <ul class="menu-box-menu">
-                <li>
-                    <a class="menu-box-tab" href="{{route('note.index')}}"><span class="icon scnd-font-color"><i class="fas fa-star"></i></span>Vos notes</a>                            
-                </li>
-                <li>
-                <a class="menu-box-tab" href="{{route('candidat.index')}}"><span class="icon entypo-paper-plane scnd-font-color"></span>Candidatures</span></a>              
-                </li>
-                <li>
-                <a class="menu-box-tab" href="{{route('evaluation.index')}}"><span class="icon scnd-font-color"><i class="far fa-handshake"></i></span>Vos entretiens</a>                            
-                </li>
-            
-                <li>
-                <a class="menu-box-tab" href="{{route('settings.edit', $user)}}"><span class="icon scnd-font-color"><i class="far fa-newspaper"></i></span>Vos offres</a>
-                </li> 
-                <li>
-                <a class="menu-box-tab" href="{{route('settings.show', $user)}}"><span class="icon scnd-font-color"><i class="fas fa-lock"></i></span>Données personnelles</a>
-                  
-                </li>        
-            </ul>
+    <div class="col-lg-4" id='bg-offre' >
+        <div class="blog_right_sidebar">
+            <aside class="single_sidebar_widget post_category_widget bg-transparent">
+                <div class="bg-white p-3">
+                <h4 class="widget_title">MENU</h4>
+                <ul class="list">
+                    <li>
+                    <a class="menu-box-tab text-dark" href="{{route('note.index')}}"><span class="icon scnd-font-color"><i class="fas fa-star pr-3"></i></span>Vos notes</a>                            
+                    </li>
+                    <li>
+                    <a class="menu-box-tab text-dark" href="{{route('candidat.index')}}"><span class="icon entypo-paper-plane scnd-font-color pr-3"></span>Candidatures</span></a>              
+                    </li>
+                    <li>
+                    <a class="menu-box-tab text-dark" href="{{route('evaluation.index')}}"><span class="icon scnd-font-color"><i class="far fa-handshake pr-3"></i></span>Vos entretiens</a>                            
+                    </li>
+                
+                    <li>
+                    <a class="menu-box-tab text-dark" href="{{route('settings.edit', $user)}}"><span class="icon scnd-font-color"><i class="far fa-newspaper pr-3"></i></span>Vos offres</a>
+                    </li> 
+                    <li>
+                    <a class="menu-box-tab text-dark" href="{{route('settings.show', $user)}}"><span class="icon scnd-font-color"><i class="fas fa-lock pr-3"></i></span>Données personnelles</a>
+                    </li>        
+                </ul>
+                </div>
+            </aside>
         </div>
-        </div>
-    </div>  
+    </div>
+</div>
 </div>
 </div>
 @else   
@@ -86,7 +88,7 @@
 @foreach ($users as $user)
 @if ($user->id == Auth::user()->id)
     
-<div class="container">
+<div class="container blog_area section-padding">
 <div class="row no-gutters d-flex justify-content-center">
     <div class="col-3 no-gutters pb-5 pr-5">
         <div class="text-center">
@@ -126,28 +128,30 @@
             @endif
         </div>
     </div>
-    <div class="col-4 mt-5 no-gutters">
-        <div class="container d-flex justify-content-center">
-            <div class="menu-box block"> <!-- MENU BOX (LEFT-CONTAINER) -->
-                <h2 class="titular">MENU</h2>
-                <ul class="menu-box-menu">
+    <div class="col-lg-4" id='bg-offre' >
+        <div class="blog_right_sidebar">
+            <aside class="single_sidebar_widget post_category_widget bg-transparent">
+                <div class="bg-white p-3">
+                <h4 class="widget_title">MENU</h4>
+                <ul class="list">
                     <li>
-                    <a class="menu-box-tab" href="{{route('note.index')}}"><span class="icon scnd-font-color"><i class="fas fa-star"></i></span>Vos notes</a>                            
+                    <a class="menu-box-tab text-dark" href="{{route('note.index')}}"><span class="icon scnd-font-color"><i class="fas fa-star pr-3"></i></span>Vos notes</a>                            
                     </li>
                     <li>
-                    <a class="menu-box-tab" href="{{route('candidat.create')}}"><span class="icon entypo-paper-plane scnd-font-color"></span>Vos candidatures</span></a>              
+                    <a class="menu-box-tab text-dark" href="{{route('candidat.create')}}"><span class="icon entypo-paper-plane scnd-font-color pr-3"></span>Vos candidatures</span></a>              
                     </li>
                     <li>
-                    <a class="menu-box-tab" href="{{route('match.create')}}"><span class="icon entypo-paper-plane scnd-font-color"></span>Vos matches</span></a>              
+                    <a class="menu-box-tab text-dark" href="{{route('match.create')}}"><span class="icon entypo-heart scnd-font-color pr-3"></span>Vos matches</span></a>              
                     </li>
                     <li>
-                    <a class="menu-box-tab" href="{{route('date.index')}}"><span class="icon scnd-font-color"><i class="far fa-clock"></i></span>Proposition de date</span></a>              
+                    <a class="menu-box-tab text-dark" href="{{route('date.index')}}"><span class="icon scnd-font-color"><i class="far fa-clock pr-3"></i></span>Proposition de date</span></a>              
                     </li>  
                     <li>
-                    <a class="menu-box-tab" href="{{route('settings.show', $user)}}"><span class="icon scnd-font-color"><i class="fas fa-lock"></i></span>Données personnelles</a>
-                    </li>            
+                    <a class="menu-box-tab text-dark" href="{{route('settings.show', $user)}}"><span class="icon scnd-font-color"><i class="fas fa-lock pr-3"></i></span>Données personnelles</a>
+                    </li>
                 </ul>
-            </div>
+                </div>
+            </aside>
         </div>
     </div>
 </div>
