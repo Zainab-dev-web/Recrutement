@@ -54,7 +54,9 @@
 @else
     
 @endif
-
+<div class='text-center my-3'>
+  <a href="{{route('profil.index')}}" class='btnagenda btn'><i class="fas fa-long-arrow-alt-left">  Retour au profil</i></a>
+  </div>
 
 @include('components.footer')
 

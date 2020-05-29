@@ -97,6 +97,7 @@
 @endcan
 
   @can('admin_edit')
+  @if($item->role_id!=1)
    <div class="box-body box-profile text-center w-25 m-3 border border-info rounded p-3">
     <img class="profile-user-img img-responsive img-circle " src="{{asset('storage/'.$item->photo)}}" alt="User profile picture">
  
@@ -116,7 +117,7 @@
  <div class='text-center mt-3'>
      
    
-     <a href='{{route('user.edit', $item)}}' class='btn btn-white'><i class="far fa-edit fa-2x text-warning"></i></a>
+    
     
      @if($item->valid ==0)
      <a href='{{route('user.show', $item)}}' class='btn btn-white'>
@@ -131,7 +132,7 @@
     
  </div>
    </div>
-  
+  @endif
   @endcan
    @endforeach
    

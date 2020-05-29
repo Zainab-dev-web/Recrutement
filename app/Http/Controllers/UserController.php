@@ -29,11 +29,11 @@ class UserController extends Controller
 
         $request->validate([
     
-            'nom'=> 'required|',
+            'nom'=> 'required|max:15',
             'email'=> 'required|',
             'photo'=> 'required|',
             'role_id'=> 'required|',
-            'password'=> 'required|',
+          
             
         ]);
         
@@ -41,7 +41,6 @@ class UserController extends Controller
         $user=User::find($id);
         $user->nom=$request->nom;
         $user->email = $request->email;
-        $user->password = $request->password;
         $user->photo=$image;
         $user->role_id= $request->role_id;
         $user->valid=$request->valid;

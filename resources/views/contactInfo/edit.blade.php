@@ -25,7 +25,7 @@
 
                     <div class="form-group col-md-6">
                         <label for="">Adresse :</label>
-                        <textarea type="text" class="form-control @error('adresse') is-invalid @enderror" name="adresse"  >{{$contact->adresse}}</textarea>
+                        <textarea type="text" class="form-control @error('adresse') is-invalid @enderror" name="adresse">{{$contact->adresse}}</textarea>
                         <div class="validation"></div>
                         @error('adresse')  
                         <div class="text-danger">{{ $message }}</div>  

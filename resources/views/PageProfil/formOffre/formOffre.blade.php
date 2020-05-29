@@ -78,7 +78,8 @@
       </div> --}}
       <div class="form-group col-sm-6">
         <label for="">Comment décrivez-vous ce poste ? :</label>
-        <textarea type='text' class="form-control @error('description') is-invalid @enderror" name="description" placeholder="Décrivez le poste"></textarea>
+        <textarea type='text' class="form-control @error('description') is-invalid @enderror" name="description" placeholder="Décrivez le poste" value="@if($errors->first('description')) 
+          @else">{{old('description')}}</textarea>@endif
         <div class="validation"></div>
         @error('description')  
         <div class="text-danger">{{ $message }}</div>  
