@@ -25,7 +25,7 @@
                             <img class="card-img rounded-0" src="assets/img/blog/single_blog_1.png" alt="">
                         </div>
 
-                        <div class="blog_details">
+                        <div class="blog_details shadow">
                             <a class="d-inline-block" href="{{route('offres.show', $offre->id)}}">
                             <h2>{{$offre->poste}} chez {{$offre->user->nom}}</h2>
                             </a>
