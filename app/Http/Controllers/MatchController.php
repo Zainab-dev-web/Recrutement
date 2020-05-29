@@ -94,7 +94,6 @@ class MatchController extends Controller
             $match=Offre::find($id);
             $match->user_id=$match->user_id;
             $match->save();
-            $match->matchs()->detach();
             $match->matchs()->attach($request->match);
             return redirect()->route('match.index');
     }
