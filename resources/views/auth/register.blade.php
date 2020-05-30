@@ -683,7 +683,7 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
                     $statut = App\Statut::all();
                 @endphp
             
-                    <select name="statut_id" id="statut_id" class="form-control @error('statut_id') is-invalid @enderror" >
+                    <select name="statut_id" id="statut_id" class="form-control mb-4 @error('statut_id') is-invalid @enderror" >
                         <option value="">-- Statut --</option>
                         @foreach ($statut as $item)
                             <option value="{{$item->id}}">{{$item->statut}}</option>   
@@ -698,6 +698,7 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
                
             </div>
               <div class="form-label-group my-5">
+                <p>Disponibilité</p>
                 <input type="date" id="inputdispo" name="dispo" class="form-control {{ $errors->has('dispo') ? 'is-invalid' : '' }}" value="{{ old('dispo') }}" placeholder="{{ __('adminlte::adminlte.dispo') }}" required autofocus>
                 
                 @if ($errors->has('dispo'))
@@ -708,7 +709,7 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
               </div>
               <div class="form-label-group">
                 <input type="file" id="inputcv" name="cv" class="form-control {{ $errors->has('cv') ? 'is-invalid' : '' }}" value="{{ old('cv') }}" placeholder="{{ __('adminlte::adminlte.cv') }}" required autofocus>
-                <label for="inputcv">CV:</label>
+                <label for="inputcv">CV</label>
                 @if ($errors->has('cv'))
                     <div class="invalid-feedback">
                         {{ $errors->first('cv') }}
