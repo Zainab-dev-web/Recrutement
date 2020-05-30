@@ -14499,15 +14499,11 @@ a.text-dark:focus {
 .blog_area a {
   color: "Josefin Sans", sans-serif !important;
   text-decoration: none;
-  transition: .4s;
 }
 
 .blog_area a:hover,
 .blog_area a :hover {
-  background: -webkit-linear-gradient(131deg, #ff8b00 0%, #ff8b00 99%);
-  -webkit-text-fill-color: transparent;
   text-decoration: none;
-  transition: .4s;
 }
 
 .single-blog {
@@ -14986,10 +14982,6 @@ a.text-dark:focus {
   color: #242b5e;
 }
 
-.blog_details a:hover {
-  color: #ff8b00;
-}
-
 .blog_details h2 {
   font-size: 18px;
   font-weight: 600;
@@ -15246,10 +15238,6 @@ a.text-dark:focus {
   transition: all 0.3s linear;
 }
 
-.blog_right_sidebar .popular_post_widget .post_item .media-body a:hover {
-  color: #fff;
-}
-
 .blog_right_sidebar .popular_post_widget .post_item .media-body p {
   font-size: 14px;
   line-height: 21px;
@@ -15277,7 +15265,6 @@ a.text-dark:focus {
 }
 
 .blog_right_sidebar .tag_cloud_widget ul li a:hover {
-  background: #ff8b00;
   color: #fff !important;
   -webkit-text-fill-color: #fff;
   text-decoration: none;
@@ -15360,7 +15347,6 @@ a.text-dark:focus {
   color: #cccccc;
   padding: 7px;
   font-size: 14px;
-  transition: all 0.2s linear;
 }
 
 .single-post-area .blog_details {
@@ -15486,10 +15472,6 @@ a.text-dark:focus {
 
 .single-post-area .blog-author a {
   display: inline-block;
-}
-
-.single-post-area .blog-author a:hover {
-  color: #ff8b00;
 }
 
 .single-post-area .blog-author p {
@@ -16895,6 +16877,139 @@ del {
   margin-bottom: 10px;
 }
 
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .david-droga-area {
+    padding-bottom: 70px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .david-droga-area {
+    padding-bottom: 0px;
+  }
+}
+
+@media (max-width: 575px) {
+  .david-droga-area {
+    padding-bottom: 0px;
+  }
+}
+
+.david-droga-area .single-david .david-img {
+  overflow: hidden;
+}
+
+.david-droga-area .single-david .david-img img {
+  width: 100%;
+  transform: scale(1);
+  transition: 0.7s;
+}
+
+.david-droga-area .single-david .david-captoin {
+  padding: 40px 57px 0px 0px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .david-droga-area .single-david .david-captoin {
+    padding: 36px 0px 7px 0px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .david-droga-area .single-david .david-captoin {
+    padding: 36px 0px 7px 0px;
+  }
+}
+
+@media (max-width: 575px) {
+  .david-droga-area .single-david .david-captoin {
+    padding: 36px 0px 7px 0px;
+  }
+}
+
+.david-droga-area .single-david .david-captoin .david-info li {
+  display: inline-block;
+  margin-right: 14px;
+  padding-right: 14px;
+  border-right: 1px solid #222;
+  line-height: 1;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 575px) {
+  .david-droga-area .single-david .david-captoin .david-info li {
+    margin-right: 1px;
+    padding-right: 5px;
+    padding-right: 12px;
+  }
+}
+
+.david-droga-area .single-david .david-captoin .david-info li:last-child {
+  margin-right: 0px;
+  padding-right: 0px;
+  border-right: 0;
+}
+
+.david-droga-area .single-david .david-captoin h2 a {
+  color: #282828;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 1.5;
+  padding-right: 56px;
+  margin-bottom: 17px;
+  text-decoration: none;
+  display: block;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .david-droga-area .single-david .david-captoin h2 a {
+    padding-right: 32px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .david-droga-area .single-david .david-captoin h2 a {
+    padding-right: 6px;
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 575px) {
+  .david-droga-area .single-david .david-captoin h2 a {
+    padding-right: 0px;
+    font-size: 20px;
+  }
+}
+
+.david-droga-area .single-david .david-captoin a {
+  color: #282828;
+  font-size: 16px;
+}
+
+.david-droga-area .single-david .david-captoin a:hover {
+  color: #04dbec;
+}
+
+.david-droga-area .single-david .david-captoin span {
+  color: #04dbec;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 27px;
+  display: block;
+  padding-left: 65px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.david-droga-area .single-david .david-captoin a:hover::before {
+  background: #04dbec;
+}
+
+.david-img:hover .david-img img {
+  transform: scale(1.1);
+}
+
 .header-area .header-bottom {
   padding: 0px 90px;
 }
@@ -17968,7 +18083,7 @@ hr {
 }
 
 .btn {
-  background: #ff8b00;
+  background-color: #ff8b00;
   -moz-user-select: none;
   text-transform: capitalize;
   color: #fff;
@@ -17982,7 +18097,6 @@ hr {
   padding: 27px 44px;
   margin: 10px;
   cursor: pointer;
-  transition: color 0.4s linear;
   position: relative;
   z-index: 1;
   border: 0;
@@ -17999,13 +18113,9 @@ hr {
   width: 101%;
   height: 101%;
   background: #ff8b00;
+  color: white;
   z-index: 1;
   border-radius: 5px;
-  transition: transform 0.5s;
-  transition-timing-function: ease;
-  transform-origin: 0 0;
-  transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
-  transform: scaleX(0);
   border-radius: 0;
 }
 
@@ -18051,21 +18161,20 @@ hr {
   border-radius: 0;
 }
 
-.btn:hover::before {
-  transform: scaleX(1);
-  color: #fff !important;
-  z-index: -1;
-}
-
 .btn2 {
+  background-color: #ff8b00;
+  border: 1px solid #ff8b00;
   padding: 55px 94px;
-  cursor: pointer;
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1300px) {
   .btn2 {
     padding: 55px 70px;
   }
+}
+
+.btn2 .btn2:hover {
+  color: #ff8b00;
 }
 
 .btn-black {
@@ -18081,11 +18190,9 @@ hr {
 }
 
 .border-btn {
-  border: 2px solid #ff8b00;
-  color: #ff8b00;
+  background-color: #ff8b00;
+  color: white;
   font: "Josefin Sans", sans-serif;
-  background: none;
-  border-radius: 5px;
   -moz-user-select: none;
   padding: 28px 50px;
   margin: 10px;
@@ -18096,34 +18203,7 @@ hr {
   font-weight: 500;
   letter-spacing: 1px;
   margin-bottom: 0;
-  position: relative;
-  transition: color 0.4s linear;
-  position: relative;
-  overflow: hidden;
   margin: 0;
-}
-
-.border-btn::before {
-  border: 2px solid transparent;
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: #ff8b00;
-  z-index: -1;
-  transition: transform 0.5s;
-  transition-timing-function: ease;
-  transform-origin: 0 0;
-  transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
-  transform: scaleY(0);
-  border-radius: 0;
-}
-
-.border-btn:hover::before {
-  transform: scaleY(1);
-  order: 2px solid transparent;
 }
 
 .send-btn {
@@ -20591,11 +20671,6 @@ hr {
   .slider-active button.slick-arrow i {
     line-height: 40px;
   }
-}
-
-.slider-active button.slick-next {
-  right: 0px;
-  background: #04dbec;
 }
 
 .wantToWork-area {
