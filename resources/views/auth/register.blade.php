@@ -440,7 +440,7 @@ body {
   /* background: #007bff;
   background: linear-gradient(to right, #0062E6, #33AEFF); */
   /* background-image: linear-gradient( 109.6deg,  rgba(5,85,84,1) 11.2%, rgba(64,224,208,1) 91.1% ); */
-  background-image: linear-gradient( 109.6deg,  rgba(0,0,0,1) 11.2%, rgba(11,132,145,1) 91.1% );
+  background-image: linear-gradient( 109.6deg,  rgba(0,0,0,1) 11.2%, rgb(4, 219, 237) 91.1% );
   /* background: rgb(3,33,91);
 background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(141,144,144,1) 100%); */
 }
@@ -563,7 +563,7 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
              <!-- Background image for card set in CSS! -->
           </div>
           <div class="card-body">
-            <h5 class="card-title text-center">Register</h5>
+            <h5 class="card-title text-center">Inscription</h5>
             <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                 @csrf
              
