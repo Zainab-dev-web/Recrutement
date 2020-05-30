@@ -654,7 +654,7 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
                     </div>
                 @endif
               </div>
-              <div class="form-label-group">
+              {{-- <div class="form-label-group">
                 @php
                 $statut = App\Statut::all();
              @endphp
@@ -670,7 +670,7 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
                         {{ $errors->first('statut_id') }}
                     </div>
                 @endif
-              </div>
+              </div> --}}
               <div class="form-label-group">
                 <input type="date" id="inputdispo" name="dispo" class="form-control {{ $errors->has('dispo') ? 'is-invalid' : '' }}" value="{{ old('dispo') }}" placeholder="{{ __('adminlte::adminlte.dispo') }}" required autofocus>
                 <label for="inputdispo">Disponibilité</label>
@@ -703,10 +703,12 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
                 <label for="password-confirm">Confirmation du mot de pass</label>
                
               </div>
-
-              <button type="submit" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-primary">
+<div class='text-center'>
+     <button type="submit" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-primary">
                 {{ __("S'enregistrer") }}
             </button>
+        </div>
+             
              
              
             </form>
