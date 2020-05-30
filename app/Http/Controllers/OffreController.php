@@ -118,7 +118,7 @@ class OffreController extends Controller
         $offre->description = $request->input('description');
         $offre->qualite = $request->input('qualite');
         $offre->save();
-        return  redirect()->route('vosOffres.index');
+        return redirect()->route('vosOffres.index');
     }
 
     /**

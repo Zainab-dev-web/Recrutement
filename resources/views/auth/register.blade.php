@@ -672,8 +672,9 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
                 @endif
               </div>
               <div class="form-label-group">
+                  <p for="inputdispo">Disponibilité</p>
                 <input type="date" id="inputdispo" name="dispo" class="form-control {{ $errors->has('dispo') ? 'is-invalid' : '' }}" value="{{ old('dispo') }}" placeholder="{{ __('adminlte::adminlte.dispo') }}" required autofocus>
-                <label for="inputdispo">Disponibilité</label>
+                
                 @if ($errors->has('dispo'))
                     <div class="invalid-feedback">
                         {{ $errors->first('dispo') }}
@@ -691,7 +692,7 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
               </div>
               <div class="form-label-group">
                 <input type="password" id="inputpassword" name="password" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}" value="{{ old('password') }}" placeholder="{{ __('adminlte::adminlte.password') }}" required autofocus>
-                <label for="inputpassword">Mot de pass</label>
+                <label for="inputpassword">Mot de passe</label>
                 @if ($errors->has('password'))
                     <div class="invalid-feedback">
                         {{ $errors->first('password') }}
@@ -700,7 +701,7 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
               </div>
               <div class="form-label-group">
                 <input type="password" id="password-confirm" name="password_confirmation" class="form-control "placeholder="{{ __('adminlte::adminlte.email') }}" required autofocus autocomplete="new-password">
-                <label for="password-confirm">Confirmation du mot de pass</label>
+                <label for="password-confirm">Confirmation du mot de passe</label>
                
               </div>
 
@@ -738,15 +739,7 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
                     </div>
                 @endif
               </div>
-              <div class="form-label-group">
-                <input type="text" id="inputprénom" name="prénom" class="form-control {{ $errors->has('prénom') ? 'is-invalid' : '' }}" value="{{ old('prénom') }}" placeholder="{{ __('adminlte::adminlte.prénom') }}" required autofocus>
-                <label for="inputprénom">Prénom</label>
-                @if ($errors->has('prénom'))
-                    <div class="invalid-feedback">
-                        {{ $errors->first('prénom') }}
-                    </div>
-                @endif
-              </div>
+       
               <div class="form-label-group">
                 <input type="email" id="inputemail" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" value="{{ old('email') }}" placeholder="{{ __('adminlte::adminlte.email') }}" required autofocus>
                 <label for="inputemail">Email</label>
@@ -759,7 +752,7 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
              
               <div class="form-label-group">
                   <input type="file" id="inputphoto" name="photo" class="form-control {{ $errors->has('photo') ? 'is-invalid' : '' }}" value="{{ old('photo') }}" placeholder="{{ __('adminlte::adminlte.photo') }}" required autofocus>
-                  <label for="inputphoto">Logo de l'entreprise:</label>
+                  <label for="inputphoto">Logo de l'entreprise</label>
                   @if ($errors->has('photo'))
                   <div class="invalid-feedback">
                       {{ $errors->first('photo') }}
@@ -777,7 +770,7 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
                 </div>
                 <div class="form-label-group">
                 <input type="integer" id="inputnumero" name="numero" class="form-control {{ $errors->has('numero') ? 'is-invalid' : '' }}" value="{{ old('numero') }}" placeholder="{{ __('adminlte::adminlte.numero') }}" required autofocus>
-                <label for="inputnumero">Numéro de téléphone:</label>
+                <label for="inputnumero">Numéro de téléphone</label>
                 @if ($errors->has('numero'))
                     <div class="invalid-feedback">
                         {{ $errors->first('numero') }}
@@ -798,7 +791,7 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
              
               <div class="form-label-group">
                 <input type="number" id="inputdate" name="date" class="form-control {{ $errors->has('date') ? 'is-invalid' : '' }}" value="{{ old('date') }}" placeholder="{{ __('adminlte::adminlte.date') }}"  min="1900" max="2099" step="1" placeholder="2020" required autofocus>
-                <label for="inputdate">Création de l'entreprise</label>
+                <label for="inputdate">Date de création de l'entreprise</label>
                 @if ($errors->has('date'))
                     <div class="invalid-feedback">
                         {{ $errors->first('date') }}
@@ -807,7 +800,7 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
               </div>
               <div class="form-label-group">
                 <input type="text" id="inputtva" name="tva" class="form-control {{ $errors->has('tva') ? 'is-invalid' : '' }}" value="{{ old('tva') }}" placeholder="{{ __('adminlte::adminlte.tva') }}" required autofocus>
-                <label for="inputtva">Numéro de TVA:</label>
+                <label for="inputtva">Numéro de TVA</label>
                 @if ($errors->has('tva'))
                     <div class="invalid-feedback">
                         {{ $errors->first('tva') }}
@@ -825,7 +818,7 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
               </div>
               <div class="form-label-group">
                 <input type="text" id="inputpTel" name="pTel" class="form-control {{ $errors->has('pTel') ? 'is-invalid' : '' }}" value="{{ old('pTel') }}" placeholder="{{ __('adminlte::adminlte.pTel') }}" required autofocus>
-                <label for="inputpTel">Numéro de contact:</label>
+                <label for="inputpTel">Numéro de contact</label>
                 @if ($errors->has('pTel'))
                     <div class="invalid-feedback">
                         {{ $errors->first('pTel') }}
@@ -834,7 +827,7 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
               </div>
               <div class="form-label-group">
                 <input type="password" id="inputpassword" name="password" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}" value="{{ old('password') }}" placeholder="{{ __('adminlte::adminlte.password') }}" required autofocus>
-                <label for="inputpassword">Mot de pass</label>
+                <label for="inputpassword">Mot de passe</label>
                 @if ($errors->has('password'))
                     <div class="invalid-feedback">
                         {{ $errors->first('password') }}
@@ -843,7 +836,7 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
               </div>
               <div class="form-label-group">
                 <input type="password" id="password-confirm" name="password_confirmation" class="form-control "placeholder="{{ __('adminlte::adminlte.email') }}" required autofocus autocomplete="new-password">
-                <label for="password-confirm">Confirmation du mot de pass</label>
+                <label for="password-confirm">Confirmation du mot de passe</label>
                 {{-- @if ($errors->has('email'))
                     <div class="invalid-feedback">
                         {{ $errors->first('email') }}
