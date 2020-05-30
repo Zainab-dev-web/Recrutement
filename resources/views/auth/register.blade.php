@@ -566,6 +566,7 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
             <h5 class="card-title text-center">Inscription</h5>
             <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
              
               <div class="form-label-group">
                 <input type="text" id="inputnom" name="nom" class="form-control {{ $errors->has('nom') ? 'is-invalid' : '' }}" value="{{ old('nom') }}" placeholder="{{ __('adminlte::adminlte.nom') }}" required autofocus>
@@ -654,6 +655,7 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
                     </div>
                 @endif
               </div>
+              
               {{-- <div class="form-label-group">
                 @php
                 $statut = App\Statut::all();
