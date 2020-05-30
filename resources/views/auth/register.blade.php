@@ -658,8 +658,9 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
                 @php
                 $statut = App\Statut::all();
              @endphp
+            
                 <select name="statut_id" id="statut_id" class="form-control @error('statut_id') is-invalid @enderror" >
-                    <option>-- Statut --</option>  
+                    
                     @foreach ($statut as $item)
                         <option value="{{$item->id}}">{{$item->statut}}</option>   
                     @endforeach
@@ -670,8 +671,33 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
                         {{ $errors->first('statut_id') }}
                     </div>
                 @endif
+             
               </div> --}}
+
+
+
+
               <div class="form-label-group">
+                
+                @php
+                    $statut = App\Statut::all();
+                @endphp
+            
+                    <select name="statut_id" id="statut_id" class="form-control @error('statut_id') is-invalid @enderror" >
+                        <option value="">-- Statut --</option>
+                        @foreach ($statut as $item)
+                            <option value="{{$item->id}}">{{$item->statut}}</option>   
+                        @endforeach
+                    </select>
+                    <label for="statut_id" class="col-md-6 col-form-label">Statut</label>
+                    @error('statut_id')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+               
+            </div>
+              <div class="form-label-group my-5">
                 <input type="date" id="inputdispo" name="dispo" class="form-control {{ $errors->has('dispo') ? 'is-invalid' : '' }}" value="{{ old('dispo') }}" placeholder="{{ __('adminlte::adminlte.dispo') }}" required autofocus>
                 <label for="inputdispo">Disponibilité</label>
                 @if ($errors->has('dispo'))
