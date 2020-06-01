@@ -14,7 +14,7 @@
                     @csrf
                     <div class="form-group">
                         <input type="email" name="newemail" class="form-control" onfocus="this.placeholder = ''"
-                            onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
+                            onblur="this.placeholder = 'Entrer votre adresse email'" placeholder='Entrer votre adresse email' required>
 
 					@error('newemail')
 					<div class="alert alert-danger" role="alert">{{$message}}</div>

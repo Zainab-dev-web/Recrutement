@@ -57,7 +57,7 @@
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control" placeholder='Quel domaine recherchez-vous ?'
                                         onfocus="this.placeholder = ''"
-                                        onblur="this.placeholder = 'Search Keyword'" name='search'>
+                                        onblur="this.placeholder = 'Quel domaine recherchez-vous ?'" name='search'>
                                     <div class="input-group-append">
                                         <button class="btns" type="submit"><i class="ti-search"></i></button>
                                     </div>

@@ -160,7 +160,7 @@
                         {{ csrf_field() }}
                       <div class="form-label-group">
                         <input type="email" id="inputEmail" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" value="{{ old('email') }}" placeholder="{{ __('adminlte::adminlte.email') }}" required autofocus>
-                        <label for="inputEmail">Email Address</label>
+                        <label for="inputEmail">Adresse email</label>
                         @if ($errors->has('email'))
                             <div class="invalid-feedback">
                                 {{ $errors->first('email') }}
@@ -170,7 +170,7 @@
       
                       <div class="form-label-group">
                         <input type="password" id="inputPassword" name="password" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}" placeholder="{{ __('adminlte::adminlte.password') }}" required>
-                        <label for="inputPassword">Password</label>
+                        <label for="inputPassword">Mot de passe</label>
                         @if ($errors->has('password'))
                             <div class="invalid-feedback">
                                 {{ $errors->first('password') }}
