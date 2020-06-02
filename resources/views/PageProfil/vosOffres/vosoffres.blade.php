@@ -37,7 +37,13 @@
   
 <div class="row">
 <a class="btn btn-white mr-2" href="{{route('offres.edit', $offre)}}">Modifier</a>
-  <a class="btn btn-white" href="{{route('offres.destroy', $offre)}}">Supprimer</a>
+@if (count($supprimer) == 0)
+   <a class="btn btn-white" href="{{route('offres.destroy', $offre)}}">Supprimer</a> 
+@else
+    
+@endif
+    
+
 </div>
   </div>
 </article>

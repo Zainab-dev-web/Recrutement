@@ -679,7 +679,6 @@ background: linear-gradient(to right, #3CD3AD, #4CB8C4);
              @endphp
             <div class="col-md-8">
                 <select name="statut_id" id="statut_id" class="form-control @error('statut_id') is-invalid @enderror" >
-                    <option>-- Quel statut avez-vous ? --</option> 
                     @foreach ($statut as $item)
                         <option value="{{$item->id}}">{{$item->statut}}</option>   
                     @endforeach

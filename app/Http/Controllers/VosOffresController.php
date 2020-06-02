@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Offre;
+use App\Candidat;
 use Illuminate\Support\Facades\Auth;
 
 class VosOffresController extends Controller
@@ -16,7 +17,11 @@ class VosOffresController extends Controller
     public function index()
     {
         $offres = Offre::where('user_id', Auth::user()->id)->get();
-        return view ('PageProfil.vosOffres.vosoffres', compact('offres'));
+        foreach ($offres as $item) {
+            $supprimer = Candidat::where('offre_id', $item->id)->where('accept', 0)->get();
+        }
+        
+        return view ('PageProfil.vosOffres.vosoffres', compact('offres', 'supprimer'));
     }
 
     /**
