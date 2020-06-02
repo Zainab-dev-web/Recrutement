@@ -17,7 +17,7 @@
 <!-- Hero Area End -->
 
 <div class="container">
-  @if ($entreprise->id == Auth::user()->id)
+  @if (Auth::check() && $entreprise->id == Auth::user()->id)
   <div class="alert alert-info text-center mt-2" role="alert">
     Voici à quoi ressemble votre profil public.
   </div>    

@@ -13,7 +13,7 @@ class InfoTableSeeder extends Seeder
     {
         DB::table('infos')->insert([
             
-            'titre' => "Zainab Performance Services For Multiple Industries.",
+            'titre' => "Les meilleures performances de service dans diverses entreprises.",
             'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique tempore labore est consequuntur dolor fugiat soluta iste commodi, accusantium id impedit sequi ullam quo eveniet, nobis ratione? Asperiores, error aliquam!",
             
         ]);

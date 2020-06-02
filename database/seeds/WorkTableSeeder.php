@@ -15,7 +15,7 @@ class WorkTableSeeder extends Seeder
             
         
             'titre'=> 'Once you’ve settled on a business',
-            'description'=>'Haute Performance Services For Multiple Industries.'
+            'description'=>'Des services de Haute Performance dans des entreprises de qualité '
         ]);
     }
 }
