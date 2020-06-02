@@ -9,9 +9,11 @@
 <hr>
 
 <h4>Filtrer vos recherches:</h4>
-<div class="row ">
-  <div class="col">
-    <p>Touver un utilisateur:</p>
+<div class="container">
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-3 ml-3">
+    <p>Trouver un utilisateur:</p>
     <div class="md-form active-cyan active-cyan-2 mb-3 row">
       
       <form action="{{route('searchUser')}}" class="search-form d-flex">
@@ -20,7 +22,7 @@
       </form>
     </div>
   </div>
-  <div class="col">
+  <div class="col-5 ml-5">
 
     <p>Trouver via un domaine:</p>
     <div class="md-form active-cyan active-cyan-2 mb-3 row">
@@ -30,6 +32,7 @@
       </form>
     </div>
   </div>
+</div>
 </div>
 @stop
 
@@ -55,7 +58,7 @@
     @can('hrt_valid') 
     @if($item->role_id==4)
    <div class="box-body box-profile text-center w-25 m-3 border border-info rounded p-3">
-   <img class="profile-user-img img-responsive img-circle " src="{{asset('storage/'.$item->photo)}}" alt="User profile picture">
+   <img class="profile-user-img img-responsive img-circle" src="{{asset('storage/'.$item->photo)}}" alt="User profile picture">
 
    <h3 class="profile-username text-center">{{$item->nom}}</h3>
 
@@ -137,7 +140,7 @@
   @can('admin_edit')
   @if($item->role_id!=1)
    <div class="box-body box-profile text-center w-25 m-3 border border-info rounded p-3">
-    <img class="profile-user-img img-responsive img-circle " src="{{asset('storage/'.$item->photo)}}" alt="User profile picture">
+    <img class="profile-user-img img-responsive img-circle" height="100" src="{{asset('storage/'.$item->photo)}}" alt="User profile picture">
  
     <h3 class="profile-username text-center">{{$item->nom}}</h3>
  
