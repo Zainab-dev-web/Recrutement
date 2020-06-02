@@ -9,9 +9,11 @@
 <hr>
 
 <h4>Filtrer vos recherches:</h4>
-<div class="row ">
-  <div class="col">
-    <p>Touver un utilisateur:</p>
+<div class="container">
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-3 ml-3">
+    <p>Trouver un utilisateur:</p>
     <div class="md-form active-cyan active-cyan-2 mb-3 row">
       
       <form action="{{route('searchUser')}}" class="search-form d-flex">
@@ -20,7 +22,7 @@
       </form>
     </div>
   </div>
-  <div class="col">
+  <div class="col-5 ml-5">
 
     <p>Trouver via un domaine:</p>
     <div class="md-form active-cyan active-cyan-2 mb-3 row">
@@ -30,6 +32,7 @@
       </form>
     </div>
   </div>
+</div>
 </div>
 @stop
 
