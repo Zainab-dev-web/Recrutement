@@ -19,7 +19,7 @@ class AccueilController extends Controller
     {
         $carousel=Carousel::all();
         $works=Work::find(1);
-        $service=Service::inRandomOrder()->get(3);
+        $service=Service::inRandomOrder()->take(3)->get();
         $info=Info::find(1);
         $userPrincipal =User::where('role_id',1)->first();
         $UserSecondaire =User::inRandomOrder()->where('role_id','!=',1)->where('role_id','!=',5)->take(3)->get();
