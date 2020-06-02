@@ -78,7 +78,7 @@
 </div>
       
     <div class='text-center my-2'>
-        <a href="{{route('user.index')}}" class='btnagenda btn btn-white'><i class="fas fa-long-arrow-alt-left">  Retour au profil</i></a>
+        <a href="{{route('user.index')}}" class='btnagenda btn btn-white'><i class="fas fa-long-arrow-alt-left">  Retour </i></a>
         </div>
 </div>
 </div>
