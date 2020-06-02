@@ -21,7 +21,7 @@
 
                         
                         <div class="box-body box-profile text-center  m-3 border border-info rounded p-5">
-                        <img class="profile-user-img img-responsive img-circle " src="{{asset('storage/'.$user->photo)}}" alt="User profile picture">
+                        <img class="profile-user-img img-responsive img-circle" src="{{asset('storage/'.$user->photo)}}" alt="User profile picture">
                      
                         <h3 class="profile-username text-center">{{$user->nom}}</h3>
                      

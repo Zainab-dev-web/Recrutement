@@ -55,7 +55,7 @@
     @can('hrt_valid') 
     @if($item->role_id==4)
    <div class="box-body box-profile text-center w-25 m-3 border border-info rounded p-3">
-   <img class="profile-user-img img-responsive img-circle " src="{{asset('storage/'.$item->photo)}}" alt="User profile picture">
+   <img class="profile-user-img img-responsive img-circle" src="{{asset('storage/'.$item->photo)}}" alt="User profile picture">
 
    <h3 class="profile-username text-center">{{$item->nom}}</h3>
 
@@ -137,7 +137,7 @@
   @can('admin_edit')
   @if($item->role_id!=1)
    <div class="box-body box-profile text-center w-25 m-3 border border-info rounded p-3">
-    <img class="profile-user-img img-responsive img-circle " src="{{asset('storage/'.$item->photo)}}" alt="User profile picture">
+    <img class="profile-user-img img-responsive img-circle" height="100" src="{{asset('storage/'.$item->photo)}}" alt="User profile picture">
  
     <h3 class="profile-username text-center">{{$item->nom}}</h3>
  
