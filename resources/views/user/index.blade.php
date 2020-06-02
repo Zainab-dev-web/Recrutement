@@ -28,7 +28,7 @@
 <hr>
 
 <p>Rechercher un utilisateur:</p>
-<div class="md-form active-cyan active-cyan-2 mb-3 w-50 row">
+<div class="md-form active-cyan active-cyan-2 mb-3 w-50">
   <form action="{{route('searchUser')}}" class="search-form">
   <input class="form-control" name="search" type="text" placeholder="Chercher" aria-label="Search">
   <button type="submit" class="btn btn-white"><i class="fas fa-search"></i></button>
