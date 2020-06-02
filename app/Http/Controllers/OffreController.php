@@ -88,7 +88,7 @@ class OffreController extends Controller
         if (Auth::check()) {
             $candidatures = Candidat::where('user_id', Auth::user()->id)->where('offre_id', $offre->id)->get();
         } else {
-            # code...
+            //
         }
         
         
