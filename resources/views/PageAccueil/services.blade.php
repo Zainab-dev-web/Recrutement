@@ -34,7 +34,7 @@
                     </div>
                     <div class="col-xl-7 col-lg-5 col-md-4">
                        <div class="wantToWork-btn f-right pb-5">
-                            <a href="#" class="btn btn-ans">view more</a>
+                            <a href="{{route('entreprises.index')}}" class="btn btn-ans">Voir plus</a>
                        </div>
                     </div>
                 </div>
