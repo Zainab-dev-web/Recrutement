@@ -211,11 +211,11 @@ return [
     */
 
     'menu' => [
-        [
-            'text' => 'search',
-            'search' => true,
-            'topnav' => true,
-        ],
+        // [
+        //     'text' => 'search',
+        //     'search' => false,
+        //     'topnav' => false,
+        // ],
         [
             'text' => 'blog',
             'url'  => 'admin/blog',

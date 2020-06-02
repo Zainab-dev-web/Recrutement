@@ -131,6 +131,9 @@
                 </select>
               
             </div>
+            @error('statut_id')  
+            <div class="text-danger">{{ $message }}</div>  
+            @enderror
         </div>
        
       <div class="col-sm-6">
