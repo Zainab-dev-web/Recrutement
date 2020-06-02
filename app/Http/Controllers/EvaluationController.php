@@ -20,9 +20,10 @@ class EvaluationController extends Controller
      */
     public function index()
     {
-        $events = Event::where('user_id', Auth::user()->id)->get();
+        $events = Event::all();
         $evals = Evaluation::all();
-        return view ('PageProfil.evaluation.evaluation', compact('events', 'evals'));
+        $myevents = Event::where('user_id', Auth::user()->id)->get();
+        return view ('PageProfil.evaluation.evaluation', compact('events', 'evals', 'myevents'));
     }
 
     /**

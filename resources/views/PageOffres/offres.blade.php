@@ -53,7 +53,7 @@
             <div class="col-lg-4" id='bg-offre' >
                 <div class="blog_right_sidebar">
                     <aside class="single_sidebar_widget search_widget bg-transparent">
-                        <form action="{{route('searchDomaine')}}">
+                        <form action="{{route('searchOffre')}}">
                             <div class="form-group">
                            
                                 <div class="input-group mb-3">

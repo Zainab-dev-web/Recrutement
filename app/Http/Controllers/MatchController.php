@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Offre;
 use App\User;
 use App\Statut;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class MatchController extends Controller
@@ -33,7 +34,9 @@ class MatchController extends Controller
     // affichage des matchs dans notre profil
     public function create()
     {
-        //
+        $offres = Offre::all();
+        // $offres = Offre::where('user_id', Auth::user()->id)->get();
+        return view ('match.match', compact('offres'));
     }
 
     /**
@@ -75,7 +78,6 @@ class MatchController extends Controller
             $matchs=Offre::find($id);
             $users=User::all();
             $statuts=Statut::all();
-            $test = Offre::where('offre_id', $matchs->id)->get();
             return view('match.edit', compact('matchs' , 'users' , 'statuts'));
     
         

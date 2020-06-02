@@ -246,12 +246,7 @@ return [
             'url'  => 'formcontact',
             'can'  => 'hrStop',
         ],
-        [
-            'text'    => 'Carousel',
-            'icon'    => 'fas fa-images',
-            'url'  => 'carousel',
-            'can'  => 'hrStop',
-        ],
+     
         [
             'text'    => 'Vos services',
             'icon'    => 'fas fa-bell',

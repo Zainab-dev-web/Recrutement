@@ -51,15 +51,13 @@ Route::get('/formentreprise', 'ChoixController@choixentreprise')->name('formentr
 
 
 //userSearch
-
 Route::get('/searchUser', 'UserController@search')->name('searchUser')->middleware('isAdmin');
 //searchOffre
 Route::get('/searchoffre/{id}', 'OffreController@searchoffre')->name('searchoffre');
 Route::get('/searchOffre', 'OffreController@search')->name('searchOffre');
 //searchDomaine
-
-Route::get('/searchDomaine', 'EntrepriseController@search')->name('searchDomaine');
-Route::get('/searchDomaine', 'TalentController@search')->name('searchDomaine');
+Route::get('/searchDomaine/entreprise', 'EntrepriseController@search')->name('searchEntreprise');
+Route::get('/searchDomaine/talent', 'TalentController@search')->name('searchDomaine');
 
 
 //Resource Global
@@ -71,7 +69,7 @@ Route::resource('entreprises', 'EntrepriseController');
 Route::resource('event', 'EventController')->middleware('isConnect');
 Route::resource('user', 'UserController')->middleware('GestionUser');
 Route::get('showUser', 'Usercontroller@showUser')->name('showUser');
-Route::resource('match', 'MatchController')->middleware('isAdmin');
+Route::resource('match', 'MatchController');
 Route::resource('formcontact' , "FormcontactController")->middleware('isAdmin');
 Route::resource('newsletter', 'NewsletterController');
 Route::resource('carousel', 'CarouselController')->middleware('isAdmin');

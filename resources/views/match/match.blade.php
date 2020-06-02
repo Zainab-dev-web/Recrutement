@@ -1,13 +1,24 @@
-<label for="tag[]">Tags</label>
-      <div class="row">
-        @foreach ($tags as $item)
+@extends('layouts.master')
 
-        <div class="form-check col-2">
-          <input value="{{$item->id}}" name="tag[]" type="checkbox" class="form-check-input">
-          <label class="form-check-label">{{$item->nom}}</label>
-        </div>
-        @endforeach
+@section('content')
+
+@include('components.nav')
+
+<!-- Hero Area Start -->
+<div class="hero-area hero-height2 d-flex align-items-center mb-5" data-background="{{asset('img/hero/h2_hero.jpg')}}">
+  <div class="container">
+      <div class="row">
+          <div class="col-xl-12">
+              <div class="hero-cap text-center pt-50">
+                  <h2>Vos Matchs</h2>
+              </div>
+          </div>
       </div>
+  </div>
+</div>
+<!-- Hero Area End -->
+
+<div class="container">
       <div class="my-5" id="match">
         <div class="single_sidebar_widget post_category_widget">
             <h4 class="widget_title mb-3 text-center"><i class="fas fa-heart text-danger fa-1x"></i> Vos matches</h4>
@@ -17,13 +28,6 @@
                 @if ($item->pivot->user_id == Auth::user()->id)
                 @if ($item->pivot->offre_id == $offre->id)
                 <div class="col-4 border border-secondary rounded p-3 m-3">
-                    <div class='text-center'>
-                        <form action="{{route('match.destroy',$item)}}" method="post">
-                            @csrf
-                            @method('DELETE')
-                          <button class=' btn-white'><i class="fas fa-trash text-danger"></i></button>
-                        </form>
-                    </div>
 
                     <ul class="list cat-list">
                     <li> <p><b>Poste : </b>{{$offre->poste}}.</p></li>
@@ -49,3 +53,13 @@
             </div>
         </div>
     </div>
+    <div class='text-center my-3'>
+      <a href="{{route('profil.index')}}" class='btnagenda btn'><i class="fas fa-long-arrow-alt-left">  Retour au profil</i></a>
+      </div>
+  </div>
+
+    @include('components.footer')
+
+    
+    @endsection
+      

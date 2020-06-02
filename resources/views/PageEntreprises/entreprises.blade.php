@@ -50,7 +50,7 @@
             <div class="col-lg-4" id='bg-entreprise'>
                 <div class="blog_right_sidebar">
                     <aside class="single_sidebar_widget search_widget bg-transparent">
-                        <form action="{{route('searchDomaine')}}">
+                        <form action="{{route('searchEntreprise')}}">
                             
                             <div class="form-group ">
                                 

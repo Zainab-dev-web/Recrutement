@@ -633,7 +633,7 @@ background: linear-gradient(to right, #3CD3AD, #4CB8C4);
                 </div>
                 <div class="form-label-group">
                 <input type="integer" id="inputnumero" name="numero" class="form-control {{ $errors->has('numero') ? 'is-invalid' : '' }}" value="{{ old('numero') }}" placeholder="{{ __('adminlte::adminlte.numero') }}" required autofocus>
-                <label for="inputnumero">Numéro de téléphone:</label>
+                <label for="inputnumero">Numéro de téléphone</label>
                 @if ($errors->has('numero'))
                     <div class="invalid-feedback">
                         {{ $errors->first('numero') }}
@@ -641,7 +641,7 @@ background: linear-gradient(to right, #3CD3AD, #4CB8C4);
                 @endif
               </div>
               <div class="form-group row">
-              <label for="véhicule" class="col-md-3 col-form-label text-md-right">Véhiculé: </label>
+              <label for="véhicule" class="col-md-3 col-form-label text-md-right">Véhiculé</label>
               <div class="form-label-group">
                 <div class="form-check-inline">
 
@@ -673,7 +673,7 @@ background: linear-gradient(to right, #3CD3AD, #4CB8C4);
                 @endif
               </div>
               <div class="form-group row">
-                <label for="statut_id" class='col-md-3 col-form-label text-md-right'>Statut:</label>
+                <label for="statut_id" class='col-md-3 col-form-label text-md-right'>Statut</label>
                 @php
                 $statut = App\Statut::all();
              @endphp
@@ -784,15 +784,7 @@ background: linear-gradient(to right, #3CD3AD, #4CB8C4);
                     </div>
                 @endif
               </div>
-              <div class="form-label-group">
-                <input type="text" id="inputprénom" name="prénom" class="form-control {{ $errors->has('prénom') ? 'is-invalid' : '' }}" value="{{ old('prénom') }}" placeholder="{{ __('adminlte::adminlte.prénom') }}" required autofocus>
-                <label for="inputprénom">Prénom</label>
-                @if ($errors->has('prénom'))
-                    <div class="invalid-feedback">
-                        {{ $errors->first('prénom') }}
-                    </div>
-                @endif
-              </div>
+    
               <div class="form-label-group">
                 <input type="email" id="inputemail" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" value="{{ old('email') }}" placeholder="{{ __('adminlte::adminlte.email') }}" required autofocus>
                 <label for="inputemail">Email</label>
@@ -805,7 +797,7 @@ background: linear-gradient(to right, #3CD3AD, #4CB8C4);
              
               <div class="form-label-group">
                   <input type="file" id="inputphoto" name="photo" class="form-control {{ $errors->has('photo') ? 'is-invalid' : '' }}" value="{{ old('photo') }}" placeholder="{{ __('adminlte::adminlte.photo') }}" required autofocus>
-                  <label for="inputphoto">Logo de l'entreprise:</label>
+                  <label for="inputphoto">Logo de l'entreprise</label>
                   @if ($errors->has('photo'))
                   <div class="invalid-feedback">
                       {{ $errors->first('photo') }}
@@ -823,7 +815,7 @@ background: linear-gradient(to right, #3CD3AD, #4CB8C4);
                 </div>
                 <div class="form-label-group">
                 <input type="integer" id="inputnumero" name="numero" class="form-control {{ $errors->has('numero') ? 'is-invalid' : '' }}" value="{{ old('numero') }}" placeholder="{{ __('adminlte::adminlte.numero') }}" required autofocus>
-                <label for="inputnumero">Numéro de téléphone:</label>
+                <label for="inputnumero">Numéro de téléphone</label>
                 @if ($errors->has('numero'))
                     <div class="invalid-feedback">
                         {{ $errors->first('numero') }}
@@ -853,7 +845,7 @@ background: linear-gradient(to right, #3CD3AD, #4CB8C4);
               </div>
               <div class="form-label-group">
                 <input type="text" id="inputtva" name="tva" class="form-control {{ $errors->has('tva') ? 'is-invalid' : '' }}" value="{{ old('tva') }}" placeholder="{{ __('adminlte::adminlte.tva') }}" required autofocus>
-                <label for="inputtva">Numéro de TVA:</label>
+                <label for="inputtva">Numéro de TVA</label>
                 @if ($errors->has('tva'))
                     <div class="invalid-feedback">
                         {{ $errors->first('tva') }}
@@ -871,7 +863,7 @@ background: linear-gradient(to right, #3CD3AD, #4CB8C4);
               </div>
               <div class="form-label-group">
                 <input type="text" id="inputpTel" name="pTel" class="form-control {{ $errors->has('pTel') ? 'is-invalid' : '' }}" value="{{ old('pTel') }}" placeholder="{{ __('adminlte::adminlte.pTel') }}" required autofocus>
-                <label for="inputpTel">Numéro de contact:</label>
+                <label for="inputpTel">Numéro de contact</label>
                 @if ($errors->has('pTel'))
                     <div class="invalid-feedback">
                         {{ $errors->first('pTel') }}

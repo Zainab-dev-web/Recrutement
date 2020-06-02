@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class EntrepriseController extends Controller
 {
     public function __construct(){
-        $this->middleware('GestionUser')->except('index', 'show');
+        $this->middleware('GestionUser')->except('index', 'show', 'search');
     }
     /**
      * Display a listing of the resource.
@@ -90,8 +90,6 @@ class EntrepriseController extends Controller
     public function search(Request $request){
         $searchDomaine = $request->input('search');
         $entreprises = User::where('domaine','LIKE', '%'.$searchDomaine.'%')->where('role_id', 5)->paginate(3);
-       
-    
         return view('PageEntreprises.pageEntreprises',compact('searchDomaine', 'entreprises'));
     }
 }

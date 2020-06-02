@@ -18,9 +18,8 @@
 </div>
 <!-- Hero Area End -->
 @foreach ($events as $event)
-
 @if ($event->offre->user->id == Auth::user()->id && $event->user->id != Auth::user()->id)
-
+    
 <article class="blog_item container">
   <div class="blog_item_img">
       <img class="card-img rounded-0" src="assets/img/blog/single_blog_1.png" alt="">
@@ -39,14 +38,13 @@
   </div>
 </article>
 
-    
 @else
     
 @endif
     
 @endforeach
 
-@if (count($events) == 0)
+@if (count($myevents) == 0)
 <div class="text-center my-5">
   <h3><b>Vous n'avez pas d'entretiens en cours...</b></h3>
 </div>
@@ -55,7 +53,7 @@
     
 @endif
 <div class='text-center my-3'>
-  <a href="{{route('profil.index')}}" class='btnagenda btn'><i class="fas fa-long-arrow-alt-left">  Retour au profil</i></a>
+  <a href="{{route('profil.index')}}" class='btnagenda btn'><i class="fas fa-long-arrow-alt-left">Retour au profil</i></a>
   </div>
 
 @include('components.footer')

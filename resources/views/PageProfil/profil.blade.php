@@ -95,7 +95,7 @@
         <img class="my-5" width="200" alt="logo entreprise" src="{{asset('storage/'.$user->photo)}}">
         <h2>{{$user->nom}} {{$user->prénom}} - {{$user->domaine}}</h2>
         @if ($user->resultat == null)
-        <p>{{$user->statut->statut}} <a class="btn p-3 text-white" data-toggle="modal" data-target="#exampleModalLong">Modifier</a></p> 
+        <p>{{$user->statut->statut}}</p>  <a class="btn p-3 text-white" data-toggle="modal" data-target="#exampleModalLong">Modifier</a>
         @else
            <p>À trouvé un job ! <h2>☻</h2><a class="btn p-3 text-white" data-toggle="modal" data-target="#ModalActualiser">Actualiser</a></p>
         @endif
