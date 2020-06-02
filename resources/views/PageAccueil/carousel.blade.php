@@ -30,7 +30,7 @@
                 <div class="single-slider">
                     <div class="slider-cap-wrapper">
                           <div class="hero__img">
-                            <img src="{{asset('img/hero/img-01.jpg')}}" alt=""  data-animation="fadeInRight" data-transition-duration="5s">
+                            <img src="{{asset('img/hero/sebastian-herrmann-NbtIDoFKGO8-unsplash.jpg')}}" alt=""  data-animation="fadeInRight" data-transition-duration="5s">
                           </div>
                           <div class="hero__caption">
                               <h1 data-animation="fadeInLeft" data-delay=".4s">Business Synergy via <br>Robust Strategies</h1>
@@ -53,7 +53,7 @@
                 <div class="single-slider">
                     <div class="slider-cap-wrapper">
                           <div class="hero__img">
-                            <img src="{{asset('img/hero/sebastian-herrmann-NbtIDoFKGO8-unsplash.jpg')}}" alt=""  data-animation="fadeInRight" data-transition-duration="5s">
+                            <img src="{{asset('img/hero/img-01.jpg')}}" alt=""  data-animation="fadeInRight" data-transition-duration="5s">
                           </div>
                           <div class="hero__caption">
                               <h1 data-animation="fadeInLeft" data-delay=".4s">Business Synergy via <br>Robust Strategies</h1>
