@@ -1,6 +1,18 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 
-@section('content')
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    
+
 
 
 {{-- @if ($choix->valid == 1)
@@ -440,9 +452,15 @@ body {
   /* background: #007bff;
   background: linear-gradient(to right, #0062E6, #33AEFF); */
   /* background-image: linear-gradient( 109.6deg,  rgba(5,85,84,1) 11.2%, rgba(64,224,208,1) 91.1% ); */
-  background-image: linear-gradient( 109.6deg,  rgba(0,0,0,1) 11.2%, rgba(11,132,145,1) 91.1% );
+  /* background-image: linear-gradient( 109.6deg,  rgba(0,0,0,1) 11.2%, rgba(11,132,145,1) 91.1% ); */
   /* background: rgb(3,33,91);
 background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(141,144,144,1) 100%); */
+background: #4CB8C4; 
+background: -webkit-linear-gradient(to right, #3CD3AD, #4CB8C4); 
+background: linear-gradient(to right, #3CD3AD, #4CB8C4); 
+
+
+
 }
 
 .card-signin {
@@ -461,7 +479,7 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
 .card-signin .card-img-left {
   width: 45%;
   /* Link to your background image using in the property below! */
-  background: scroll center url('/img/register/register3.jpg');
+  background: scroll center url('/img/register/register10.jpg');
   background-size: cover;
 }
 
@@ -555,7 +573,7 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
 }
     </style>
     @if ($choix->valid == 1)
-  <div class="container">
+  <div class="container w-100">
     <div class="row">
       <div class="col-lg-10 col-xl-9 mx-auto">
         <div class="card card-signin flex-row my-5">
@@ -563,7 +581,7 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
              <!-- Background image for card set in CSS! -->
           </div>
           <div class="card-body">
-            <h5 class="card-title text-center">Register</h5>
+            <h5 class="card-title text-center">Inscription</h5>
             <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                 @csrf
              
@@ -654,13 +672,14 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
                     </div>
                 @endif
               </div>
-              {{-- <div class="form-label-group">
+              <div class="form-group row">
+                <label for="statut_id" class='col-md-3 col-form-label text-md-right'>Statut:</label>
                 @php
                 $statut = App\Statut::all();
              @endphp
-            
+            <div class="col-md-8">
                 <select name="statut_id" id="statut_id" class="form-control @error('statut_id') is-invalid @enderror" >
-                    
+                    <option>-- Quel statut avez-vous ? --</option> 
                     @foreach ($statut as $item)
                         <option value="{{$item->id}}">{{$item->statut}}</option>   
                     @endforeach
@@ -671,34 +690,32 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
                         {{ $errors->first('statut_id') }}
                     </div>
                 @endif
-             
-              </div> --}}
+            </div>
+              </div>
 
 
 
 
-              <div class="form-label-group">
-                
-                @php
+              {{-- <div class="form-group row">
+                  @php
                     $statut = App\Statut::all();
-                @endphp
-            
-                    <select name="statut_id" id="statut_id" class="form-control mb-4 @error('statut_id') is-invalid @enderror" >
-                        <option value="">-- Statut --</option>
+                    @endphp
+               <div class="col-md-6">
+                    <select name="statut_id" id="inputstatut" class="form-control @error('statut_id') is-invalid @enderror" >
                         @foreach ($statut as $item)
-                            <option value="{{$item->id}}">{{$item->statut}}</option>   
+                        <option value="{{$item->id}}">{{$item->statut}}</option>   
                         @endforeach
                     </select>
-                    
+               </div>
+                    <label for=inputstatut>Statut</label>
                     @error('statut_id')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
                
-            </div>
-              <div class="form-label-group my-5">
-                <p>Disponibilité</p>
+            </div> --}}
+              <div class="form-label-group">
                 <input type="date" id="inputdispo" name="dispo" class="form-control {{ $errors->has('dispo') ? 'is-invalid' : '' }}" value="{{ old('dispo') }}" placeholder="{{ __('adminlte::adminlte.dispo') }}" required autofocus>
                 <label for="inputdispo">Disponibilité</label>
                 @if ($errors->has('dispo'))
@@ -718,7 +735,7 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
               </div>
               <div class="form-label-group">
                 <input type="password" id="inputpassword" name="password" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}" value="{{ old('password') }}" placeholder="{{ __('adminlte::adminlte.password') }}" required autofocus>
-                <label for="inputpassword">Mot de pass</label>
+                <label for="inputpassword">Mot de passe</label>
                 @if ($errors->has('password'))
                     <div class="invalid-feedback">
                         {{ $errors->first('password') }}
@@ -727,11 +744,11 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
               </div>
               <div class="form-label-group">
                 <input type="password" id="password-confirm" name="password_confirmation" class="form-control "placeholder="{{ __('adminlte::adminlte.email') }}" required autofocus autocomplete="new-password">
-                <label for="password-confirm">Confirmation du mot de pass</label>
+                <label for="password-confirm">Confirmation du mot de passe</label>
                
               </div>
 <div class='text-center'>
-     <button type="submit" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-primary">
+     <button type="submit" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-info">
                 {{ __("S'enregistrer") }}
             </button>
         </div>
@@ -863,7 +880,7 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
               </div>
               <div class="form-label-group">
                 <input type="password" id="inputpassword" name="password" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}" value="{{ old('password') }}" placeholder="{{ __('adminlte::adminlte.password') }}" required autofocus>
-                <label for="inputpassword">Mot de pass</label>
+                <label for="inputpassword">Mot de passe</label>
                 @if ($errors->has('password'))
                     <div class="invalid-feedback">
                         {{ $errors->first('password') }}
@@ -872,7 +889,7 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
               </div>
               <div class="form-label-group">
                 <input type="password" id="password-confirm" name="password_confirmation" class="form-control "placeholder="{{ __('adminlte::adminlte.email') }}" required autofocus autocomplete="new-password">
-                <label for="password-confirm">Confirmation du mot de pass</label>
+                <label for="password-confirm">Confirmation du mot de passe</label>
                 {{-- @if ($errors->has('email'))
                     <div class="invalid-feedback">
                         {{ $errors->first('email') }}
@@ -881,7 +898,7 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
               </div>
 <div class='text-center'>
 
-    <button type="submit" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-primary">
+    <button type="submit" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-info">
       {{ __("S'enregistrer") }}
   </button>
 </div>
@@ -915,4 +932,5 @@ background: linear-gradient(90deg, rgba(3,33,91,1) 0%, rgba(1,31,31,1) 0%, rgba(
         </div>
     </div>
     </div>
-@endsection
+</body>
+</html>
