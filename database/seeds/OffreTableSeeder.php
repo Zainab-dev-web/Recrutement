@@ -33,7 +33,7 @@ class OffreTableSeeder extends Seeder
         ]);
 
         DB::table('offres')->insert([   
-            'user_id' => 8,
+            'user_id' => 10,
             'statut_id' => 2,
             'poste' => 'Web designer',
             'lieu' => 'Bruxelles',
@@ -51,7 +51,7 @@ class OffreTableSeeder extends Seeder
             'created_at' => Carbon::now()->format('Y-m-d'),
         ]);
         DB::table('offres')->insert([   
-            'user_id' => 8,
+            'user_id' => 10,
             'statut_id' => 2,
             'poste' => 'Conseiller/ère (h/f)',
             'lieu' => 'Mons',
