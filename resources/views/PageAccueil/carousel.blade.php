@@ -10,7 +10,7 @@
                             <img src="{{asset('img/hero/kobu-agency-7okkFhxrxNw-unsplash.jpg')}}" alt=""  data-animation="fadeInRight" data-transition-duration="5s">
                           </div>
                           <div class="hero__caption">
-                              <h1 data-animation="fadeInLeft" data-delay=".4s">Trouve un job avec <br>MolenRecruts</h1>
+                              <h1 data-animation="fadeInLeft" data-delay=".4s">Trouve un job avec <br>MolenRecrut</h1>
                               <p data-animation="fadeInLeft" data-delay=".6s">Aasrem dfgum dolor sivst amet, consectetur adipisicing elitvde, sed dvo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad micnim veniam, quis nostrud exercita.</p>
                               <!-- Hero Btn -->
                               <a href="{{route('offres.index')}}" class="hero-btn"  data-animation="fadeInLeft" data-delay=".9s" >
@@ -33,7 +33,7 @@
                             <img src="{{asset('img/hero/sebastian-herrmann-NbtIDoFKGO8-unsplash.jpg')}}" alt=""  data-animation="fadeInRight" data-transition-duration="5s">
                           </div>
                           <div class="hero__caption">
-                              <h1 data-animation="fadeInLeft" data-delay=".4s">Trouve un job avec <br>MolenRecrut</h1>
+                              <h1 data-animation="fadeInLeft" data-delay=".4s">Sans expérience? Nous <br>vous conseillons!</h1>
                               <p data-animation="fadeInLeft" data-delay=".6s">Aasrem dfgum dolor sivst amet, consectetur adipisicing elitvde, sed dvo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad micnim veniam, quis nostrud exercita.</p>
                               <!-- Hero Btn -->
                               <a href="{{route('offres.index')}}" class="hero-btn"  data-animation="fadeInLeft" data-delay=".9s" >
@@ -56,7 +56,7 @@
                             <img src="{{asset('img/hero/img-01.jpg')}}" alt=""  data-animation="fadeInRight" data-transition-duration="5s">
                           </div>
                           <div class="hero__caption">
-                              <h1 data-animation="fadeInLeft" data-delay=".4s">Trouve un job avec <br>MolenRecrut</h1>
+                              <h1 data-animation="fadeInLeft" data-delay=".4s">Des offres d’emploi dans votre <br>domaine d’expertise</h1>
                               <p data-animation="fadeInLeft" data-delay=".6s">Aasrem dfgum dolor sivst amet, consectetur adipisicing elitvde, sed dvo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad micnim veniam, quis nostrud exercita.</p>
                               <!-- Hero Btn -->
                               <a href="{{route('offres.index')}}" class="hero-btn"  data-animation="fadeInLeft" data-delay=".9s" >
@@ -79,7 +79,7 @@
                             <img src="{{asset('img/hero/molengeek.jpg')}}" alt=""  data-animation="fadeInRight" data-transition-duration="5s">
                           </div>
                           <div class="hero__caption">
-                              <h1 data-animation="fadeInLeft" data-delay=".4s">Trouve un job avec <br>MolenRecrut</h1>
+                              <h1 data-animation="fadeInLeft" data-delay=".4s">Avec nos super <br>partenaires</h1>
                               <p data-animation="fadeInLeft" data-delay=".6s">Aasrem dfgum dolor sivst amet, consectetur adipisicing elitvde, sed dvo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad micnim veniam, quis nostrud exercita.</p>
                               <!-- Hero Btn -->
                               <a href="{{route('offres.index')}}" class="hero-btn"  data-animation="fadeInLeft" data-delay=".9s" >
