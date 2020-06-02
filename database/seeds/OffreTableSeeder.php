@@ -31,5 +31,33 @@ class OffreTableSeeder extends Seeder
             'qualite' => 'consectetuer hendrerit lacus. Phasellus dolor. Phasellus ullamcorper ipsum rutrum nunc. Curabitur turpis. Phasellus blandit leo ut odio',
             'created_at' => Carbon::now()->format('Y-m-d'),
         ]);
+
+        DB::table('offres')->insert([   
+            'user_id' => 8,
+            'statut_id' => 2,
+            'poste' => 'Web designer',
+            'lieu' => 'Bruxelles',
+            'description' => 'Phasellus dolor. Phasellus ullamcorper ipsum rutrum nunc. Curabitur turpis. Phasellus blandit leo ut odio. Vivamus consectetuer hendrerit lacus. Phasellus dolor. Phasellus ullamcorper ipsum rutrum nunc. Curabitur turpis. Phasellus blandit leo ut odio. Vivamus consectetuer hendrerit lacus.',
+            'qualite' => 'consectetuer hendrerit lacus. Phasellus dolor. Phasellus ullamcorper ipsum rutrum nunc. Curabitur turpis. Phasellus blandit leo ut odio',
+            'created_at' => Carbon::now()->format('Y-m-d'),
+        ]);
+        DB::table('offres')->insert([   
+            'user_id' => 9,
+            'statut_id' => 2,
+            'poste' => 'Magasinier',
+            'lieu' => 'Liège',
+            'description' => 'Phasellus dolor. Phasellus ullamcorper ipsum rutrum nunc. Curabitur turpis. Phasellus blandit leo ut odio. Vivamus consectetuer hendrerit lacus. Phasellus dolor. Phasellus ullamcorper ipsum rutrum nunc. Curabitur turpis. Phasellus blandit leo ut odio. Vivamus consectetuer hendrerit lacus.',
+            'qualite' => 'consectetuer hendrerit lacus. Phasellus dolor. Phasellus ullamcorper ipsum rutrum nunc. Curabitur turpis. Phasellus blandit leo ut odio',
+            'created_at' => Carbon::now()->format('Y-m-d'),
+        ]);
+        DB::table('offres')->insert([   
+            'user_id' => 8,
+            'statut_id' => 2,
+            'poste' => 'Conseiller/ère (h/f)',
+            'lieu' => 'Mons',
+            'description' => 'Phasellus dolor. Phasellus ullamcorper ipsum rutrum nunc. Curabitur turpis. Phasellus blandit leo ut odio. Vivamus consectetuer hendrerit lacus. Phasellus dolor. Phasellus ullamcorper ipsum rutrum nunc. Curabitur turpis. Phasellus blandit leo ut odio. Vivamus consectetuer hendrerit lacus.',
+            'qualite' => 'consectetuer hendrerit lacus. Phasellus dolor. Phasellus ullamcorper ipsum rutrum nunc. Curabitur turpis. Phasellus blandit leo ut odio',
+            'created_at' => Carbon::now()->format('Y-m-d'),
+        ]);
     }
 }
