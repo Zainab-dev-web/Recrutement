@@ -58,6 +58,7 @@ Route::get('/searchOffre', 'OffreController@search')->name('searchOffre');
 //searchDomaine
 Route::get('/searchDomaine/entreprise', 'EntrepriseController@search')->name('searchEntreprise');
 Route::get('/searchDomaine/talent', 'TalentController@search')->name('searchDomaine');
+Route::get('/searchDomaine/user', 'UserController@searchDomaine')->name('searchDomaine');
 
 
 //Resource Global

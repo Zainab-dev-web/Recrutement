@@ -68,4 +68,12 @@ class UserController extends Controller
 
         return view('user.index',compact('users','searchUser'));
     }
+    public function searchDomaine(Request $request){
+        $searchDomaine = $request->input('search');
+        $users = User::where('domaine','LIKE', '%'.$searchDomaine.'%')->get();
+        $offres=Offre::all();
+       
+    
+        return view('user.index',compact('searchDomaine', 'users', 'offres'));
+    }
 }

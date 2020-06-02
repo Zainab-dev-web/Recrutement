@@ -26,15 +26,27 @@
 </style>
 <h2 class='text-center my-5 py-3'>Tout les utilisateurs</h2>
 <hr>
+<div class="row">
+  <div class="col">
+    <p>Rechercher un utilisateur:</p>
+    <div class="md-form active-cyan active-cyan-2 mb-3 w-50">
+      <form action="{{route('searchUser')}}" class="search-form">
+      <input class="form-control" name="search" type="text" placeholder="Chercher" aria-label="Search">
+      <button type="submit" class="btn btn-white"><i class="fas fa-search"></i></button>
+      </form>
+    </div>
+  </div>
+  <div class="col">
 
-<p>Rechercher un utilisateur:</p>
-<div class="md-form active-cyan active-cyan-2 mb-3 w-50">
-  <form action="{{route('searchUser')}}" class="search-form">
-  <input class="form-control" name="search" type="text" placeholder="Chercher" aria-label="Search">
-  <button type="submit" class="btn btn-white"><i class="fas fa-search"></i></button>
-  </form>
+    <p>Rechercher un domaine:</p>
+    <div class="md-form active-cyan active-cyan-2 mb-3 w-50">
+      <form action="{{route('searchDomaine')}}" class="search-form">
+      <input class="form-control" name="search" type="text" placeholder="Chercher" aria-label="Search">
+      <button type="submit" class="btn btn-white"><i class="fas fa-search"></i></button>
+      </form>
+    </div>
+  </div>
 </div>
-
 <div class="row d-flex justify-content-center">
     @foreach ($users as $item)
     @can('hrt_valid') 
