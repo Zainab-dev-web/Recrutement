@@ -9,8 +9,31 @@
 @stop
 
 @section('content')
+<style>
+  .active-cyan-2 input.form-control[type=text]:focus:not([readonly]) {
+  border-bottom: 1px solid #4dd0e1;
+  box-shadow: 0 1px 0 0 #4dd0e1;
+}
+.active-cyan-2 input[type=text]:focus:not([readonly]) {
+  border-bottom: 1px solid #4dd0e1;
+  box-shadow: 0 1px 0 0 #4dd0e1;
+}
+.active-cyan input[type=text] {
+
+  border-bottom: 1px solid #4dd0e1;
+  box-shadow: 0 1px 0 0 #4dd0e1;
+}
+</style>
 <h2 class='text-center my-5 py-3'>Tout les utilisateurs</h2>
 <hr>
+
+<p>Rechercher un utilisateur:</p>
+<div class="md-form active-cyan active-cyan-2 mb-3 w-50 row">
+  <form action="{{route('searchUser')}}" class="search-form">
+  <input class="form-control" name="search" type="text" placeholder="Chercher" aria-label="Search">
+  <button type="submit" class="btn btn-white"><i class="fas fa-search"></i></button>
+  </form>
+</div>
 
 <div class="row d-flex justify-content-center">
     @foreach ($users as $item)

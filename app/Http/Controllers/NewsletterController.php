@@ -23,7 +23,8 @@ class NewsletterController extends Controller
      */
     public function index()
     {
-        //
+        $newsletter=Newsletter::all();
+        return view('newsletter.index', compact('newsletter'));
     }
 
     /**
@@ -103,8 +104,11 @@ class NewsletterController extends Controller
      * @param  \App\Newsletter  $newsletter
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Newsletter $newsletter)
+    public function destroy($id)
     {
-        //
+        $newsletter=Newsletter::find($id);
+        $newsletter->delete();
+        return redirect()->route('newsletter.index');
+
     }
 }

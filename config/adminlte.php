@@ -246,6 +246,12 @@ return [
             'url'  => 'formcontact',
             'can'  => 'hrStop',
         ],
+        [
+            'text'    => 'Newsletter',
+            'icon'    => 'fas fa-inbox',
+            'url'  => 'newsletter',
+            'can'  => 'hrStop',
+        ],
      
         [
             'text'    => 'Vos services',
@@ -253,6 +259,7 @@ return [
             'url'  => 'service',
             'can'  => 'hrStop',
         ],
+        
         [
             'text'    => 'Work',
             'icon'    => 'fas fa-briefcase',
