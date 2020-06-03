@@ -83,7 +83,6 @@ class EvaluationController extends Controller
     public function update(Request $request, $id)
      {
 
-
         $request->validate([
     
             'presence_id'=> 'required|',

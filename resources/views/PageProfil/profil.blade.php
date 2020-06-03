@@ -23,7 +23,9 @@
         <img class="my-5" width="200" alt="logo entreprise" src="{{asset('storage/'.$user->photo)}}">
         <h2>{{$user->nom}} - {{$user->domaine}}</h2>
         </div>
-        <a href="{{route('agenda')}}" class='btn mt-5'>Voir votre agenda</a>
+    <div class="text-center">
+        <button href="{{route('agenda')}}" class='btn mt-5'>Voir votre agenda</button>
+    </div>
     </div>
     <div class="col-5 mt-100 soitcentre">
         <div class="single_sidebar_widget post_category_widget">
@@ -95,14 +97,14 @@
         <img class="my-5" width="200" alt="logo entreprise" src="{{asset('storage/'.$user->photo)}}">
         <h2>{{$user->nom}} {{$user->prénom}} - {{$user->domaine}}</h2>
         @if ($user->resultat == null)
-        <p>{{$user->statut->statut}}</p>  <a class="btn p-3 text-white" data-toggle="modal" data-target="#exampleModalLong">Modifier</a>
+        <p>{{$user->statut->statut}}</p>  <button class="btn p-3" data-toggle="modal" data-target="#exampleModalLong">Modifier</button>
         @else
-           <p>À trouvé un job ! <h2>☻</h2><a class="btn p-3 text-white" data-toggle="modal" data-target="#ModalActualiser">Actualiser</a></p>
+           <p>À trouvé un job ! <h2>☻</h2><button class="btn p-3" data-toggle="modal" data-target="#ModalActualiser">Actualiser</button></p>
         @endif
         
         </div>
-        <div class="col-4 mt-5">
-        <a href="{{route('agenda')}}" class='btn'>Voir votre agenda</a>
+        <div class="col-3 mt-4">
+        <button href="{{route('agenda')}}" class="btn btn-white">Voir votre agenda</button>
         </div>
     </div>
     <div class="col-5 mt-100 no-gutters">
