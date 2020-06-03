@@ -23,7 +23,7 @@
         <h3 class="pb-50"><strong>Vous êtes ...</strong></h3>
     </div>
     <div class="row d-flex">
-        <div class="col-lg-5 col-md-6 col-sm-6">
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
             <form action="{{route('formtalent')}}" method="get">
                 @csrf
                 <div class="single-services text-center mb-30">
@@ -39,10 +39,10 @@
             </div>
             </form>
         </div>
-        <div class="ou col-lg-2 text-center">
+        <div class="ou col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center">
             <h3><strong>ou</strong></h3>
         </div>
-        <div class="col-lg-5 col-md-6 col-sm-6">
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
             <form action="{{route('formentreprise')}}" method="get">
                 @csrf
                 <div class="single-services text-center mb-30">
