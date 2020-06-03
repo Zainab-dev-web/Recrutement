@@ -18,38 +18,6 @@
 
 <div class="container blog_area section-padding">
 <div class="row no-gutters d-flex justify-content-center">
-    <div class="col-3 no-gutters pb-5 px-5">
-        <div class="text-center">
-        <img class="my-5 rounded-circle border" width="200" alt="logo entreprise" src="{{asset('storage/'.$user->photo)}}">
-        <h2>{{$user->nom}}<br>{{$user->domaine}}</h2>
-        </div>
-    <div class="text-center">
-        <button href="{{route('agenda')}}" class='btn mt-5'>Voir votre agenda</button>
-    </div>
-    </div>
-    <div class="col-5 mt-100 soitcentre">
-        <div class="single_sidebar_widget post_category_widget">
-            <h4 class="widget_title mb-3">Aperçu de vos offres</h4>
-            <ul class="list cat-list">
-                @foreach ($offres as $offre)
-                    @if ($offre->user_id == Auth::user()->id)
-                    <li>
-                        <a href="{{route('offres.show', $offre->id)}}">
-                        <p>{{$offre->poste}} chez <b>{{$offre->user->nom}}</b> <br> pour {{$offre->statut->statut}}</p>
-                        </a>
-                    </li>
-                    @else
-                    @endif
-                @endforeach
-                @if(count($match)==0)
-                <div class="alert alert-info" role="alert">
-                    Vous n'avez pas encore d'offres !
-                </div>
-                @endif 
-                <a class="btn2 p-3" href="{{route('offres.create')}}" type="submit">Créer une offre</a>
-            </ul>
-        </div>
-    </div>
     <div class="col-4" id='bg-offre' >
         <div class="blog_right_sidebar">
             <aside class="single_sidebar_widget post_category_widget bg-transparent">
@@ -74,9 +42,45 @@
                     </li>        
                 </ul>
                 </div>
+                <div class="text-center my-3">
+                    <button href="{{route('agenda')}}" class='btn mt-5'>Voir votre agenda</button>
+                </div>
             </aside>
         </div>
     </div>
+    <div class="col-4 no-gutters pb-5 px-5">
+        <div class="text-center">
+        <img class="my-5 rounded-circle border" width="200" alt="logo entreprise" src="{{asset('storage/'.$user->photo)}}">
+        <h2>{{$user->nom}}<br>{{$user->domaine}}</h2>
+        </div>
+   
+    </div>
+    <div class="col-4 mt-100 soitcentre">
+        <div class="single_sidebar_widget post_category_widget">
+            <h4 class="widget_title mb-3">Aperçu de vos offres</h4>
+            <ul class="list cat-list">
+                @foreach ($offres as $offre)
+                    @if ($offre->user_id == Auth::user()->id)
+                    <li>
+                        <a href="{{route('offres.show', $offre->id)}}">
+                        <p>{{$offre->poste}} chez <b>{{$offre->user->nom}}</b> <br> pour {{$offre->statut->statut}}</p>
+                        </a>
+                    </li>
+                    @else
+                    @endif
+                @endforeach
+                @if(count($match)==0)
+                <div class="alert alert-info" role="alert">
+                    Vous n'avez pas encore d'offres !
+                </div>
+                @endif 
+                <a class="btn2 p-3" href="{{route('offres.create')}}" type="submit">Créer une offre</a>
+            </ul>
+        </div>
+    </div>
+   
+
+
 </div>
 </div>
 </div>
