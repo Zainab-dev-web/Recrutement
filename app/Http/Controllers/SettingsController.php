@@ -98,7 +98,7 @@ class SettingsController extends Controller
                 'dispo' =>'required',
                 'cv' =>'required',
                 'statut_id' =>'required',
-                'photo'=>'required'
+                'photo' =>'required'
                 
                 
             ]);
@@ -116,7 +116,7 @@ class SettingsController extends Controller
                     'tva' =>'required',
                     'pNom' =>'required',
                     'pTel' =>'required',
-                    'photo'=>'required'
+                    'photo'=>'required',
                     
                 ]);
                 }

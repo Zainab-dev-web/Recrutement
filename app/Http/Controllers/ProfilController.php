@@ -109,7 +109,7 @@ class ProfilController extends Controller
 
     public function updateUser(Request $request, $id){
         if(Auth::check() && Auth::user()->role_id ==4){
-            $validator = Validator::make($request->all(), [
+            $request->validate([
     
             'nom' =>'required|string|max:15',
             'prénom' =>'required',
@@ -128,7 +128,7 @@ class ProfilController extends Controller
         ]);
         }
         elseif(Auth::check() && Auth::user()->role_id ==5){
-            $validator = Validator::make($request->all(), [
+             $request->validate([
         
                 'nom' =>'required|string|max:15',
                 'email' => 'required|string|email|max:255|unique:users',

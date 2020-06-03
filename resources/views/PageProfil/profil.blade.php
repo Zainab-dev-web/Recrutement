@@ -20,7 +20,7 @@
 <div class="row no-gutters d-flex justify-content-center">
     <div class="col-3 no-gutters pb-5 px-5">
         <div class="text-center">
-        <img class="my-5 rounded-circle border" width="200" alt="logo entreprise" src="{{asset('storage/'.$user->photo)}}">
+        <img class="my-5" width="200" alt="logo entreprise" src="{{asset('storage/'.$user->photo)}}">
         <h2>{{$user->nom}} - {{$user->domaine}}</h2>
         </div>
     <div class="text-center">
@@ -92,9 +92,38 @@
     
 <div class="container blog_area section-padding">
 <div class="row no-gutters d-flex justify-content-center">
-    <div class="col-3 no-gutters pb-5 pr-1">
+    <div class="col-lg-4" id='bg-offre' >
+        <div class="blog_right_sidebar">
+            <aside class="single_sidebar_widget post_category_widget bg-transparent">
+                <div class="bg-white p-3">
+                <h4 class="widget_title text-center">MENU</h4>
+                <ul class="list">
+                    <li>
+                    <a class="menu-box-tab text-dark" href="{{route('note.index')}}"><span class="icon scnd-font-color"><i class="fas fa-star pr-3"></i></span>Vos notes</a>                            
+                    </li>
+                    <li>
+                    <a class="menu-box-tab text-dark" href="{{route('candidat.create')}}"><span class="icon entypo-paper-plane scnd-font-color pr-3"></span>Vos candidatures</span></a>              
+                    </li>
+                    <li>
+                    <a class="menu-box-tab text-dark" href="{{route('match.create')}}"><span class="icon entypo-heart scnd-font-color pr-3"></span>Vos matches</span></a>              
+                    </li>
+                    <li>
+                    <a class="menu-box-tab text-dark" href="{{route('date.index')}}"><span class="icon scnd-font-color"><i class="far fa-clock pr-3"></i></span>Proposition de date</span></a>              
+                    </li>  
+                    <li>
+                    <a class="menu-box-tab text-dark" href="{{route('settings.show', $user)}}"><span class="icon scnd-font-color"><i class="fas fa-lock pr-3"></i></span>Données personnelles</a>
+                    </li>
+                </ul>
+            </div>
+                    <div class="text-center my-3">
+                        <button href="{{route('agenda')}}" class="btn btn-white">Voir votre agenda</button>
+                        </div>
+            </aside>
+        </div>
+    </div>
+    <div class="col-4 no-gutters pb-5 pr-1">
         <div class="text-center">
-        <img class="my-5 rounded-circle border" width="200" alt="logo entreprise" src="{{asset('storage/'.$user->photo)}}">
+        <img class="my-5" width="200" alt="logo entreprise" src="{{asset('storage/'.$user->photo)}}">
         <h2>{{$user->nom}} {{$user->prénom}} - {{$user->domaine}}</h2>
         @if ($user->resultat == null)
         <p>{{$user->statut->statut}}</p>  <button class="btn p-3" data-toggle="modal" data-target="#exampleModalLong">Modifier</button>
@@ -103,11 +132,9 @@
         @endif
         
         </div>
-        <div class="col-3 mt-4">
-        <button href="{{route('agenda')}}" class="btn btn-white">Voir votre agenda</button>
-        </div>
+       
     </div>
-    <div class="col-5 mt-100 no-gutters">
+    <div class="col-4 mt-100 no-gutters">
         <div class="single_sidebar_widget post_category_widget">
             <h4 class="widget_title mb-3">Candidatures en attente...</h4>
             <ul class="list cat-list">
@@ -130,32 +157,9 @@
             @endif
         </div>
     </div>
-    <div class="col-lg-4" id='bg-offre' >
-        <div class="blog_right_sidebar">
-            <aside class="single_sidebar_widget post_category_widget bg-transparent">
-                <div class="bg-white p-3">
-                <h4 class="widget_title">MENU</h4>
-                <ul class="list">
-                    <li>
-                    <a class="menu-box-tab text-dark" href="{{route('note.index')}}"><span class="icon scnd-font-color"><i class="fas fa-star pr-3"></i></span>Vos notes</a>                            
-                    </li>
-                    <li>
-                    <a class="menu-box-tab text-dark" href="{{route('candidat.create')}}"><span class="icon entypo-paper-plane scnd-font-color pr-3"></span>Vos candidatures</span></a>              
-                    </li>
-                    <li>
-                    <a class="menu-box-tab text-dark" href="{{route('match.create')}}"><span class="icon entypo-heart scnd-font-color pr-3"></span>Vos matches</span></a>              
-                    </li>
-                    <li>
-                    <a class="menu-box-tab text-dark" href="{{route('date.index')}}"><span class="icon scnd-font-color"><i class="far fa-clock pr-3"></i></span>Proposition de date</span></a>              
-                    </li>  
-                    <li>
-                    <a class="menu-box-tab text-dark" href="{{route('settings.show', $user)}}"><span class="icon scnd-font-color"><i class="fas fa-lock pr-3"></i></span>Données personnelles</a>
-                    </li>
-                </ul>
-                </div>
-            </aside>
-        </div>
-    </div>
+    
+
+
 </div>
 </div>
 @else
