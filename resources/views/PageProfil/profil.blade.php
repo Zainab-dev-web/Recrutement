@@ -20,8 +20,8 @@
 <div class="row no-gutters d-flex justify-content-center">
     <div class="col-3 no-gutters pb-5 px-5">
         <div class="text-center">
-        <img class="my-5" width="200" alt="logo entreprise" src="{{asset('storage/'.$user->photo)}}">
-        <h2>{{$user->nom}} - {{$user->domaine}}</h2>
+        <img class="my-5 rounded-circle border" width="200" alt="logo entreprise" src="{{asset('storage/'.$user->photo)}}">
+        <h2>{{$user->nom}}<br>{{$user->domaine}}</h2>
         </div>
     <div class="text-center">
         <button href="{{route('agenda')}}" class='btn mt-5'>Voir votre agenda</button>
@@ -123,8 +123,8 @@
     </div>
     <div class="col-4 no-gutters pb-5 pr-1">
         <div class="text-center">
-        <img class="my-5" width="200" alt="logo entreprise" src="{{asset('storage/'.$user->photo)}}">
-        <h2>{{$user->nom}} {{$user->prénom}} - {{$user->domaine}}</h2>
+        <img class="my-5 rounded-circle border" width="200" alt="logo entreprise" src="{{asset('storage/'.$user->photo)}}">
+        <h2>{{$user->nom}} {{$user->prénom}}<br>{{$user->domaine}}</h2>
         @if ($user->resultat == null)
         <p>{{$user->statut->statut}}</p>  <button class="btn p-3" data-toggle="modal" data-target="#exampleModalLong">Modifier</button>
         @else
