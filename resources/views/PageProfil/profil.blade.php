@@ -22,7 +22,7 @@
         <div class="blog_right_sidebar">
             <aside class="single_sidebar_widget post_category_widget bg-transparent">
                 <div class="bg-white p-3">
-                <h4 class="widget_title">MENU</h4>
+                <h4 class="widget_title text-center">MENU</h4>
                 <ul class="list">
                     <li>
                     <a class="menu-box-tab text-dark" href="{{route('note.index')}}"><span class="icon scnd-font-color"><i class="fas fa-star pr-3"></i></span>Vos notes</a>                            
