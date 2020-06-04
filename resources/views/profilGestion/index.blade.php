@@ -30,11 +30,9 @@
                            <b>Email</b> <a class="pull-right">{{$user->email}}</a>
                            </li>
                            <li class="list-group-item">
-                           <b>Expérience</b> <a class="pull-right">{{$user->experience}} années</a>
+                           <b>Domaine</b> <a class="pull-right">{{$user->domaine}}</a>
                            </li>
-                           <li class="list-group-item">
-                           <b>Entreprise</b> <a class="pull-right">Laravel Officiel</a>
-                           </li>
+                           
                          </ul>
                      
                          <div class='text-center'>
