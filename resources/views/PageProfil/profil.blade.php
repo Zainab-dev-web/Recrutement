@@ -146,6 +146,7 @@
                         @endif              
                     </li>
                     <li>
+                    
                     <a class="menu-box-tab text-dark" href="{{route('date.index')}}"><span class="icon scnd-font-color"><i class="far fa-clock pr-3"></i></span>Proposition de date</span></a>              
                     </li>  
                     <li>
