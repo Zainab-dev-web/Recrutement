@@ -60,7 +60,7 @@
                 </ul>
                 </div>
                 <div class="text-center my-3">
-                    <button href="{{route('agenda')}}" class='btn mt-5'>Voir votre agenda</button>
+                    <a href="{{route('agenda')}}" class='btn mt-5'>Voir votre agenda</a>
                 </div>
             </aside>
         </div>
@@ -154,7 +154,7 @@
                 </ul>
             </div>
                     <div class="text-center my-3">
-                        <button href="{{route('agenda')}}" class="btn btn-white">Voir votre agenda</button>
+                        <a href="{{route('agenda')}}" class="btn btn-white">Voir votre agenda</a>
                         </div>
             </aside>
         </div>

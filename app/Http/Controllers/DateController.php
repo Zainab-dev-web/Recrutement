@@ -9,6 +9,9 @@ use App\Candidat;
 
 class DateController extends Controller
 {
+    public function __construct(){
+        $this->middleware('isConnect');
+    }
     /**
      * Display a listing of the resource.
      *
