@@ -25,20 +25,37 @@
                 <h4 class="widget_title text-center">MENU</h4>
                 <ul class="list">
                     <li>
-                    <a class="menu-box-tab text-dark" href="{{route('note.index')}}"><span class="icon scnd-font-color"><i class="fas fa-star pr-3"></i></span>Vos notes</a>                            
+                        @if(count($evals)>0)
+
+                        <a class="menu-box-tab text-dark" href="{{route('note.index')}}"><span class="icon scnd-font-color"><i class="fas fa-star pr-3"></i></span>Vos notes <b class='text-success'>( {{count($evals)}} )</b></a>  
+    
+                        @elseif(count($evals)==0)
+                        <a class="menu-box-tab text-dark" href="{{route('note.index')}}"><span class="icon scnd-font-color"><i class="fas fa-star pr-3"></i></span>Vos notes</b></a>           
+                        @endif                              
                     </li>
                     <li>
-                    <a class="menu-box-tab text-dark" href="{{route('candidat.index')}}"><span class="icon entypo-paper-plane scnd-font-color pr-3"></span>Candidatures</span></a>              
+                        @if(count($candidats)>0)
+                        <a class="menu-box-tab text-dark" href="{{route('candidat.index')}}"> 
+                        <span class="icon entypo-paper-plane scnd-font-color pr-3"></span>Candidatures  <b class='text-success'>( {{count($candidats)}} )</b></span></a>  
+                        @elseif(count($candidats)==0)
+                        <a class="menu-box-tab text-dark" href="{{route('candidat.index')}}"> 
+                            <span class="icon entypo-paper-plane scnd-font-color pr-3"></span>Candidatures</span></a>            
+                        @endif
+                   
                     </li>
                     <li>
                     <a class="menu-box-tab text-dark" href="{{route('evaluation.index')}}"><span class="icon scnd-font-color"><i class="far fa-handshake pr-3"></i></span>Vos entretiens</a>                            
                     </li>
                 
                     <li>
+                        @if(count($matchs)>0)
+                    <a class="menu-box-tab text-dark" href="{{route('vosOffres.index', $user)}}"><span class="icon scnd-font-color"><i class="far fa-newspaper pr-3"></i></span>Vos offres <b class="text-success">({{count($matchs)}})</b></a>
+                    @elseif(count($matchs)==0)
                     <a class="menu-box-tab text-dark" href="{{route('vosOffres.index', $user)}}"><span class="icon scnd-font-color"><i class="far fa-newspaper pr-3"></i></span>Vos offres</a>
                     </li> 
                     <li>
                     <a class="menu-box-tab text-dark" href="{{route('settings.show', $user)}}"><span class="icon scnd-font-color"><i class="fas fa-lock pr-3"></i></span>Données personnelles</a>
+                    @endif
                     </li>        
                 </ul>
                 </div>
@@ -103,13 +120,30 @@
                 <h4 class="widget_title text-center">MENU</h4>
                 <ul class="list">
                     <li>
-                    <a class="menu-box-tab text-dark" href="{{route('note.index')}}"><span class="icon scnd-font-color"><i class="fas fa-star pr-3"></i></span>Vos notes</a>                            
+                    @if(count($evals)>0)
+
+                    <a class="menu-box-tab text-dark" href="{{route('note.index')}}"><span class="icon scnd-font-color"><i class="fas fa-star pr-3"></i></span>Vos notes <b class='text-success'>( {{count($evals)}} )</b></a>  
+
+                    @elseif(count($evals)==0)
+                    <a class="menu-box-tab text-dark" href="{{route('note.index')}}"><span class="icon scnd-font-color"><i class="fas fa-star pr-3"></i></span>Vos notes</b></a>           
+                    @endif                          
                     </li>
                     <li>
-                    <a class="menu-box-tab text-dark" href="{{route('candidat.create')}}"><span class="icon entypo-paper-plane scnd-font-color pr-3"></span>Vos candidatures</span></a>              
+                        @if(count($candidats)>0)
+                        <a class="menu-box-tab text-dark" href="{{route('candidat.create')}}"> 
+                        <span class="icon entypo-paper-plane scnd-font-color pr-3"></span>Vos candidatures <b class='text-success'>( {{count($candidats)}} )</b></span></a>  
+                        @elseif(count($candidats)==0)
+                        <a class="menu-box-tab text-dark" href="{{route('candidat.create')}}"> 
+                            <span class="icon entypo-paper-plane scnd-font-color pr-3"></span>Vos candidatures</span></a>            
+                        @endif
+                                    
                     </li>
                     <li>
-                    <a class="menu-box-tab text-dark" href="{{route('match.create')}}"><span class="icon entypo-heart scnd-font-color pr-3"></span>Vos matchs</span></a>              
+                    @if(count($candidats)>0)
+                    <a class="menu-box-tab text-dark" href="{{route('match.create')}}"><span class="icon entypo-heart scnd-font-color pr-3"></span>Vos matches  ( {{count($matchs)}} )</span></a>
+                    @elseif(count($candidats)==0)
+                    <a class="menu-box-tab text-dark" href="{{route('match.create')}}"><span class="icon entypo-heart scnd-font-color pr-3"></span>Vos matches</span></a>          
+                        @endif              
                     </li>
                     <li>
                     <a class="menu-box-tab text-dark" href="{{route('date.index')}}"><span class="icon scnd-font-color"><i class="far fa-clock pr-3"></i></span>Proposition de date</span></a>              

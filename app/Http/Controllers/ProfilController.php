@@ -8,6 +8,7 @@ use App\Offre;
 use App\Role;
 use App\Statut;
 use App\Candidat;
+use App\Evaluation;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -29,9 +30,15 @@ class ProfilController extends Controller
         $users = User::all();
         $offres = Offre::all();
         $candidats = Candidat::where('accept', 0)->get();
+        // $candidat=Candidat::where('user_id', Auth::user()->id)->get();
         $match=Offre::all();
+        $evals = Evaluation::where('user_id', Auth::user()->id)->get();
+        $matchs =Offre::where('user_id', Auth::user()->id)->get();
+       
+        // $date=Candidat::where('date_id', Auth::id());
         // $match = Offre::where('user_id', Auth::user()->id)->get();
-        return view('PageProfil.pageProfil', compact('users', 'offres', 'candidats' , 'match'));
+       
+        return view('PageProfil.pageProfil', compact('users', 'offres', 'candidats' , 'match', 'evals', 'matchs', 'propo', 'candidat'));
     }
 
     /**
@@ -83,6 +90,7 @@ class ProfilController extends Controller
         $users=User::find($id);
         $roles=Role::all();
         $statuts=Statut::all();
+      
 
         return view('PageProfil.edit', compact('users' , 'roles', 'statuts'));
     }

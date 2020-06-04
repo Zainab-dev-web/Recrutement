@@ -223,7 +223,7 @@ return [
         ],
         ['header' => 'Configuration du compte'],
         [
-            'text' => 'Profile',
+            'text' => 'Profil',
             'url'  => 'profilGestion',
             'icon' => 'fas fa-fw fa-user',
         ],

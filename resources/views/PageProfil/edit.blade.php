@@ -109,7 +109,7 @@
     @enderror
   </div>
       <div class="col-sm-6">
-          <div class="">
+         
             <label for="">Statut recherché :</label>
               <select class="form-control @error('statut_id') is-invalid @enderror" name="statut_id" id="statut_id" type="text" placeholder="Statut recherché" value="{{$users->statut_id}}">
                 <option value="">-- Statut recherché --</option>
@@ -118,7 +118,7 @@
                 @endforeach
               </select>
             
-          </div>
+          
       </div>
      
     <div class="col-sm-6">
