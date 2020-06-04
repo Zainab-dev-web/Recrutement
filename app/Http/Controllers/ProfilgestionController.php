@@ -6,6 +6,7 @@ use App\Profilgestion;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
 class ProfilgestionController extends Controller
