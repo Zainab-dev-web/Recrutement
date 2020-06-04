@@ -122,7 +122,7 @@
                     <li>
                     @if(count($evals)>0)
 
-                    <a class="menu-box-tab text-dark" href="{{route('note.index')}}"><span class="icon scnd-font-color"><i class="fas fa-star pr-3"></i></span>Vos notes <b class='text-success'>( {{count($evals)}} )</b></a>  
+                    <a class="menu-box-tab text-dark" href="{{route('note.index')}}"><span class="icon scnd-font-color"><i class="fas fa-star pr-3"></i></span>Vos notes  <b class='text-success'>( {{count($evals)}} )</b></a>  
 
                     @elseif(count($evals)==0)
                     <a class="menu-box-tab text-dark" href="{{route('note.index')}}"><span class="icon scnd-font-color"><i class="fas fa-star pr-3"></i></span>Vos notes</b></a>           
@@ -181,7 +181,7 @@
                 @foreach ($candidats as $candidat)
                 @if ($candidat->user_id == Auth::user()->id)
                 <li>
-                    <a href="{{route('candidat.create')}}" class="d-flex">
+                    <a href="{{route('offres.show', $candidat->offre->id)}}" class="d-flex">
                         <p>{{$candidat->offre->poste}} chez&nbsp;</p>
                         <p><b>{{$candidat->offre->user->nom}}</b></p>
                     </a>
