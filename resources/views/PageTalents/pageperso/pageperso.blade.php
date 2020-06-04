@@ -52,10 +52,11 @@
         <a data-toggle="modal" data-target="#exampleModalLong">
         <img class="mb-3" width="250" src="{{asset('storage/' . $talent->cv)}}" alt="cv">
         </a>
+        @can('post-entreprise')
         <div class='row mx-auto'>
           <a href="{{route('download_user' ,$talent->id)}}"><button class='btn btn-info'>Télécharger</button></a>
-
         </div>
+        @endcan
       </div>
   </div>
 </div>
