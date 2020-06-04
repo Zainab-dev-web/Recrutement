@@ -34,7 +34,6 @@ class ProfilController extends Controller
         $match=Offre::all();
         $evals = Evaluation::where('user_id', Auth::user()->id)->get();
         $matchs =Offre::where('user_id', Auth::user()->id)->get();
-       
         // $date=Candidat::where('date_id', Auth::id());
         // $match = Offre::where('user_id', Auth::user()->id)->get();
        
