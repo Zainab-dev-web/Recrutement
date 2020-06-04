@@ -60,7 +60,7 @@
                 </ul>
                 </div>
                 <div class="text-center my-3">
-                    <button href="{{route('agenda')}}" class='btn mt-5'>Voir votre agenda</button>
+                    <a href="{{route('agenda')}}" class="btn btn-dark mt-5">Voir votre agenda</a>
                 </div>
             </aside>
         </div>
@@ -122,7 +122,7 @@
                     <li>
                     @if(count($evals)>0)
 
-                    <a class="menu-box-tab text-dark" href="{{route('note.index')}}"><span class="icon scnd-font-color"><i class="fas fa-star pr-3"></i></span>Vos notes <b class='text-success'>( {{count($evals)}} )</b></a>  
+                    <a class="menu-box-tab text-dark" href="{{route('note.index')}}"><span class="icon scnd-font-color"><i class="fas fa-star pr-3"></i></span>Vos notes  <b class='text-success'>( {{count($evals)}} )</b></a>  
 
                     @elseif(count($evals)==0)
                     <a class="menu-box-tab text-dark" href="{{route('note.index')}}"><span class="icon scnd-font-color"><i class="fas fa-star pr-3"></i></span>Vos notes</b></a>           
@@ -154,7 +154,7 @@
                 </ul>
             </div>
                     <div class="text-center my-3">
-                        <button href="{{route('agenda')}}" class="btn btn-white">Voir votre agenda</button>
+                        <a href="{{route('agenda')}}" class="btn btn-dark">Voir votre agenda</a>
                         </div>
             </aside>
         </div>
@@ -163,9 +163,11 @@
         <div class="text-center">
         <img class="my-5 rounded-circle border" width="200" alt="logo entreprise" src="{{asset('storage/'.$user->photo)}}">
         <h2>{{$user->nom}} {{$user->prénom}}<br>{{$user->domaine}}</h2>
-        @if ($user->resultat == null)
+
+        @if ($user->resultat == null || $user->resultat->id == 2)
+
         <p>{{$user->statut->statut}}</p>  <button class="btn p-3" data-toggle="modal" data-target="#exampleModalLong">Modifier</button>
-        @else
+        @elseif ($user->resultat->id == 1)
            <p>À trouvé un job ! <h2>☻</h2><button class="btn p-3" data-toggle="modal" data-target="#ModalActualiser">Actualiser</button></p>
         @endif
         
@@ -179,7 +181,7 @@
                 @foreach ($candidats as $candidat)
                 @if ($candidat->user_id == Auth::user()->id)
                 <li>
-                    <a href="{{route('candidat.create')}}" class="d-flex">
+                    <a href="{{route('offres.show', $candidat->offre->id)}}" class="d-flex">
                         <p>{{$candidat->offre->poste}} chez&nbsp;</p>
                         <p><b>{{$candidat->offre->user->nom}}</b></p>
                     </a>

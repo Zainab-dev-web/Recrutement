@@ -66,7 +66,7 @@
                                 </div>
                             </div>
                             <button class="button rounded-0 w-100 btn_1 boxed-btn"
-                                type="submit">Cherche</button>
+                                type="submit">Rechercher</button>
                         </form>
                     </aside>
 

@@ -115,72 +115,7 @@ class ProfilController extends Controller
     }
 
 
-    public function updateUser(Request $request, $id){
-        if(Auth::check() && Auth::user()->role_id ==4){
-            $request->validate([
-    
-            'nom' =>'required|string|max:15',
-            'prénom' =>'required',
-            'email' => 'required|string|email|max:255|unique:users',
-            'numero' => 'required',
-            'adresse' => 'required|string',
-            'domaine' => 'required',
-            'password' => 'required|string|min:8|confirmed',
-            'véhicule' =>'required',
-            'dispo' =>'required',
-            'cv' =>'required',
-            'statut_id' =>'required',
-            'photo'=>'required',
-            
-            
-        ]);
-        }
-        elseif(Auth::check() && Auth::user()->role_id ==5){
-             $request->validate([
-        
-                'nom' =>'required|string|max:15',
-                'email' => 'required|string|email|max:255|unique:users',
-                'prénom' =>'required',
-                'numero' => 'required',
-                'adresse' => 'required|string',
-                'domaine' => 'required',
-                'password' => 'required|string|min:8|confirmed',
-                'date' =>'required',
-                'tva' =>'required',
-                'pNom' =>'required',
-                'pTel' =>'required',
-                'photo'=>'required',
-                
-            ]);
-            }
-        
-        
-        
-        $image = Storage::disk('public')->put('', $request->file('photo'));
-        $users=User::find($id);
-        $users->photo=$image;$users->nom=$request->nom;
-        $users->email = $request->email;
-        $users->domaine=$request->domaine;
-        $users->numero=$request->numero;
-        $users->adresse=$request->adresse;
-        if(Auth::check() && Auth::user()->role_id ==4){
-           
-            $cv = Storage::disk('public')->put('', $request->file('cv'));
-            $users->dipso=$request->dipso;
-            $users->prénom=$request->prénom;
-            $users->cv=$cv;
-            $users->statut_id=$request->statut_id;
-            $users->véhicule=$request->véhicule;
-        }elseif(Auth::check() && Auth::user()->role_id ==5){
-            
-            $users->date=$request->date;
-            $users->tva=$request->tva;
-            $users->pNom=$request->pNom;
-            $users->pTel=$request->pTel;
-        }
-        $users->save();
-        return redirect()->route('user.index');
-    }
+
 
     /**
      * Remove the specified resource from storage.

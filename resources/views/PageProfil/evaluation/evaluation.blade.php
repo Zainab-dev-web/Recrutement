@@ -34,7 +34,8 @@
   <h5>
     L'entretien a eu lieu avec {{$event->user->nom}} {{$event->user->prénom}}
   </h5>
-        <a class="btn btn-white" href="{{route('evaluation.edit', $event)}}">Évaluer</a></b></a>   
+        <a class="btn btn-white" href="{{route('evaluation.edit', $event)}}">Évaluer</a></b></a>
+      
   </div>
 </article>
 

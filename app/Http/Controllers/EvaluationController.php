@@ -10,6 +10,7 @@ use App\Resultat;
 use App\Note;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class EvaluationController extends Controller
 {
@@ -23,7 +24,8 @@ class EvaluationController extends Controller
         $events = Event::all();
         $evals = Evaluation::all();
         $myevents = Event::where('user_id', Auth::user()->id)->get();
-        return view ('PageProfil.evaluation.evaluation', compact('events', 'evals', 'myevents'));
+        $actu = Carbon::now()->format('Y-m-d');
+        return view ('PageProfil.evaluation.evaluation', compact('events', 'evals', 'myevents', 'actu'));
     }
 
     /**

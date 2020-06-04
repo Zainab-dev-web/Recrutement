@@ -20,7 +20,7 @@
   @csrf
   @method('PUT')
   <div class="form-group">
-    <label for="exampleInputEmail1">Première date d'entretien</label>
+    <label for="exampleInputEmail1">Première date d'entretien </label><span>*<span>
     <input type="date" class="form-control @error('date1') is-invalid @enderror"  id="exampleInputEmail1" aria-describedby="emailHelp"name="date1">
     @error('date1')  
       <div class="text-danger">{{ $message }}</div>  

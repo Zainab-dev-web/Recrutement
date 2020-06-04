@@ -333,7 +333,7 @@ background: linear-gradient(to right, #3CD3AD, #4CB8C4);
              
               <div class="form-label-group">
                 <input type="text" id="inputnom" name="nom" class="form-control {{ $errors->has('nom') ? 'is-invalid' : '' }}" value="{{ old('nom') }}" placeholder="{{ __('adminlte::adminlte.nom') }}" required autofocus>
-                <label for="inputnom">Nom</label>
+                <label for="inputnom">Nom de l'entreprise</label>
                 @if ($errors->has('nom'))
                     <div class="invalid-feedback">
                         {{ $errors->first('nom') }}
@@ -483,6 +483,17 @@ background: linear-gradient(to right, #3CD3AD, #4CB8C4);
             
         </div>
     </div>
+<<<<<<< HEAD
+    </div>
+
+
+
+
+    
+</body>
+</html>
+=======
 </div>
 </div>
 
+>>>>>>> a610f88d81fc8cc15247f102e14d676b6e1db08f

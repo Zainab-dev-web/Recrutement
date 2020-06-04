@@ -17,11 +17,9 @@
 </div>
 <!-- Hero Area End -->
 <div class="container my-5">
-<form class="form-contact contact_form" action="{{route('updateUser', $users->id)}}" method="post"  enctype="multipart/form-data">
+<form action="{{route('edituser.update', $users->id)}}" method="post" enctype="multipart/form-data">
   @csrf
-  
-  
-  
+
   @if($users->role_id == 4)
       <div class="row">
     <div class="col-sm-6">
