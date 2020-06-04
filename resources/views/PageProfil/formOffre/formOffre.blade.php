@@ -39,7 +39,7 @@
         </div>
     </div> --}}
     <div class="form-group col-sm-6">
-      <label for="">Dans quel région ? :</label>
+      <label for="">Dans quel région ? </label>
       <input type='text' class="form-control @error('lieu') is-invalid @enderror" name="lieu" placeholder="Mettez le nom de la région"/>
       <div class="validation"></div>
       @error('lieu')  
@@ -47,7 +47,7 @@
       @enderror
   </div>
   <div class="form-group col-sm-6">
-    <label for="">Quel statut doit avoir le candidat ? :</label>
+    <label for="">Quel statut doit avoir le candidat ? </label>
     <select class="form-control @error('statut_id') is-invalid @enderror"  placeholder="Statut recherché" name="statut_id" id="">
       <option value="">Statut recherché</option>
                 @foreach ($statuts as $statut)
@@ -59,25 +59,8 @@
     <div class="text-danger">{{ $message }}</div>  
     @enderror
 </div>
-      {{-- <div class="col-sm-6">
-          <div class="">
-              <select class="form-control" name="statut_id" id="statut_id" type="text" placeholder="Statut recherché">
-                <option value="">Statut recherché</option>
-                @foreach ($statuts as $statut)
-                  <option value="{{$statut->id}}">{{$statut->statut}}</option>  
-                @endforeach
-              </select>
-            
-          </div>
-      </div> --}}
-     
-      {{-- <div class="col-sm-6">
-          <div class="form-group">
-              <input class="form-control" name="description" id="description" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Description'" placeholder="Description">
-          </div>
-      </div> --}}
       <div class="form-group col-sm-6">
-        <label for="">Comment décrivez-vous ce poste ? :</label>
+        <label for="">Comment décrivez-vous ce poste ? </label>
         <textarea type='text' class="form-control @error('description') is-invalid @enderror" name="description" placeholder="Décrivez le poste" value="@if($errors->first('description')) 
           @else">{{old('description')}}</textarea>@endif
         <div class="validation"></div>
@@ -86,8 +69,8 @@
         @enderror
     </div>
     <div class="form-group col-sm-6">
-      <label for="">Quel(s) qualitée(s) recherchez-vous chez un candidat? :</label>
-      <input type='text' class="form-control @error('qualite') is-invalid @enderror" name="qualite" placeholder="Mettez les qualite dont vous cherchez"/>
+      <label for="">Quelle(s) qualité(s) recherchez-vous chez un candidat? </label>
+      <input type='text' class="form-control @error('qualite') is-invalid @enderror" name="qualite" placeholder="Ajoutez les qualités que vous recherchez"/>
       <div class="validation"></div>
       @error('qualite')  
       <div class="text-danger">{{ $message }}</div>  

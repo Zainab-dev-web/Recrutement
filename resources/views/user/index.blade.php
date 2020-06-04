@@ -60,7 +60,7 @@
    <div class="box-body box-profile text-center w-25 m-3 border border-info rounded p-3">
    <img class="profile-user-img img-responsive img-circle" src="{{asset('storage/'.$item->photo)}}" alt="User profile picture">
 
-   <h3 class="profile-username text-center">{{$item->nom}}</h3>
+   <h3 class="profile-username text-center">{{$item->nom}} {{$item->prénom}}</h3>
 
    <p class="text-muted text-center">{{$item->role->role}}</p>
 
@@ -74,10 +74,6 @@
       
     </ul>
 <div class='text-center mt-3'>
-    {{-- @can('admin_edit')  --}}
-    {{-- @if($item->role_id !=1) --}}
-    {{-- <a href='{{route('user.edit', $item)}}' class='btn btn-white'><i class="far fa-edit fa-2x text-warning"></i></a> --}}
-    {{-- @endcan --}}
     @if($item->valid ==0)
     <a href='{{route('user.show', $item)}}' class='btn btn-white'>
         <i class="far fa-check-circle fa-2x text-danger"></i></a>
@@ -86,7 +82,6 @@
         
         <button class='btn btn-white'><i class="far fa-check-circle fa-2x text-success"></i></button>
     
-        <a href='{{route('profil.index')}}'class='btn btn-white'><i class="far fa-address-card fa-2x text-secondary"></i></a>
         <a href='{{route('note.show', $item)}}'class='btn btn-white'><i class="fas fa-file-alt text-dark fa-2x"></i></i></a>
          
     @endif
@@ -126,7 +121,6 @@
          <button class='btn btn-white'><i class="far fa-check-circle fa-2x text-success"></i></button>
          
         
-         <a href='{{route('profil.index')}}'class='btn btn-white'><i class="far fa-address-card fa-2x text-secondary"></i></a>
          <a href='{{route('note.show', $item->id)}}'class='btn btn-white'><i class="fas fa-file-alt text-dark fa-2x"></i></i></a>
          
      @endif
@@ -142,7 +136,7 @@
    <div class="box-body box-profile text-center w-25 m-3 border border-info rounded p-3">
     <img class="profile-user-img img-responsive img-circle" height="100" src="{{asset('storage/'.$item->photo)}}" alt="User profile picture">
  
-    <h3 class="profile-username text-center">{{$item->nom}}</h3>
+    <h3 class="profile-username text-center">{{$item->nom}} {{$item->prénom}}</h3>
  
     <p class="text-muted text-center">{{$item->role->role}}</p>
  

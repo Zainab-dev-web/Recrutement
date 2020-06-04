@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'Inscription',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -229,13 +229,13 @@ return [
         ],
         ['header' => 'Gestion'],
         [
-            'text'    => 'Utilisateur',
+            'text'    => 'Utilisateurs',
             'icon'    => 'fas fa-users',
             'url'  => 'user',
             'can'  => 'WebStop',
         ],
         [
-            'text'    => 'Match',
+            'text'    => 'Matches',
             'icon'    => 'far fa-heart',
             'url'  => 'match',
             'can'  => 'hrStop',
