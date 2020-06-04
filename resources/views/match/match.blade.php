@@ -27,7 +27,7 @@
                 @foreach ($offre->matchs as $item)
                 @if ($item->pivot->user_id == Auth::user()->id)
                 @if ($item->pivot->offre_id == $offre->id)
-                <div class="col-4 border border-secondary rounded p-3 m-3">
+                <div class="col-lg-4 col-md-6 col-sm-6 border border-secondary rounded p-3 m-3">
 
                     <ul class="list cat-list">
                     <li> <p><b>Poste : </b>{{$offre->poste}}.</p></li>
