@@ -18,7 +18,7 @@
 
 <div class="container blog_area section-padding">
 <div class="row no-gutters d-flex justify-content-center">
-    <div class="col-4" id='bg-offre' >
+    <div class="col-lg-4 col-md-6 col-sm-6" id='bg-offre' >
         <div class="blog_right_sidebar">
             <aside class="single_sidebar_widget post_category_widget bg-transparent">
                 <div class="bg-white p-3">
@@ -60,19 +60,19 @@
                 </ul>
                 </div>
                 <div class="text-center my-3">
-                    <a href="{{route('agenda')}}" class="btn btn-dark mt-5">Voir votre agenda</a>
+                    <button href="{{route('agenda')}}" class='btn mt-5'>Voir votre agenda</button>
                 </div>
             </aside>
         </div>
     </div>
-    <div class="col-4 no-gutters pb-5 px-5">
+    <div class="col-lg-4 col-md-6 col-sm-6 no-gutters ">
         <div class="text-center">
         <img class="my-5 rounded-circle border" width="200" alt="logo entreprise" src="{{asset('storage/'.$user->photo)}}">
         <h2>{{$user->nom}}<br>{{$user->domaine}}</h2>
         </div>
    
     </div>
-    <div class="col-4 mt-100 soitcentre">
+    <div class="col-lg-4 col-md-6 col-sm-6 no-gutters  soitcentre">
         <div class="single_sidebar_widget post_category_widget">
             <h4 class="widget_title mb-3">Aperçu de vos offres</h4>
             <ul class="list cat-list">
@@ -113,7 +113,7 @@
     
 <div class="container blog_area section-padding">
 <div class="row no-gutters d-flex justify-content-center">
-    <div class="col-lg-4" id='bg-offre' >
+    <div class="col-lg-4 col-md-6 col-sm-6" id='bg-offre' >
         <div class="blog_right_sidebar">
             <aside class="single_sidebar_widget post_category_widget bg-transparent">
                 <div class="bg-white p-3">
@@ -122,7 +122,7 @@
                     <li>
                     @if(count($evals)>0)
 
-                    <a class="menu-box-tab text-dark" href="{{route('note.index')}}"><span class="icon scnd-font-color"><i class="fas fa-star pr-3"></i></span>Vos notes  <b class='text-success'>( {{count($evals)}} )</b></a>  
+                    <a class="menu-box-tab text-dark" href="{{route('note.index')}}"><span class="icon scnd-font-color"><i class="fas fa-star pr-3"></i></span>Vos notes <b class='text-success'>( {{count($evals)}} )</b></a>  
 
                     @elseif(count($evals)==0)
                     <a class="menu-box-tab text-dark" href="{{route('note.index')}}"><span class="icon scnd-font-color"><i class="fas fa-star pr-3"></i></span>Vos notes</b></a>           
@@ -154,34 +154,32 @@
                 </ul>
             </div>
                     <div class="text-center my-3">
-                        <a href="{{route('agenda')}}" class="btn btn-dark">Voir votre agenda</a>
+                        <button href="{{route('agenda')}}" class="btn btn-white">Voir votre agenda</button>
                         </div>
             </aside>
         </div>
     </div>
-    <div class="col-4 no-gutters pb-5 pr-1">
+    <div class="col-lg-4 col-md-6 col-sm-6 no-gutters pb-5 pr-1">
         <div class="text-center">
         <img class="my-5 rounded-circle border" width="200" alt="logo entreprise" src="{{asset('storage/'.$user->photo)}}">
         <h2>{{$user->nom}} {{$user->prénom}}<br>{{$user->domaine}}</h2>
-
-        @if ($user->resultat == null || $user->resultat->id == 2)
-
+        @if ($user->resultat == null)
         <p>{{$user->statut->statut}}</p>  <button class="btn p-3" data-toggle="modal" data-target="#exampleModalLong">Modifier</button>
-        @elseif ($user->resultat->id == 1)
+        @else
            <p>À trouvé un job ! <h2>☻</h2><button class="btn p-3" data-toggle="modal" data-target="#ModalActualiser">Actualiser</button></p>
         @endif
         
         </div>
        
     </div>
-    <div class="col-4 mt-100 no-gutters">
+    <div class="col-lg-4 col-md-6 col-sm-6 mt-100 no-gutters">
         <div class="single_sidebar_widget post_category_widget">
             <h4 class="widget_title mb-3">Candidatures en attente...</h4>
             <ul class="list cat-list">
                 @foreach ($candidats as $candidat)
                 @if ($candidat->user_id == Auth::user()->id)
                 <li>
-                    <a href="{{route('offres.show', $candidat->offre->id)}}" class="d-flex">
+                    <a href="{{route('candidat.create')}}" class="d-flex">
                         <p>{{$candidat->offre->poste}} chez&nbsp;</p>
                         <p><b>{{$candidat->offre->user->nom}}</b></p>
                     </a>
