@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/' , 'AccueilController@index')->name('accueil');
-Route::post('updateUser/{id}' , 'ProfilController@updateUser')->name('updateUser');
+Route::resource('edituser', 'EdituserController');
 Route::resource('contact', 'ConctatController');
 Route::resource('profil', 'ProfilController');
 Route::resource('candidat', 'CandidatController');

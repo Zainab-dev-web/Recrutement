@@ -32,11 +32,7 @@
         <div class="text-danger">{{ $message }}</div>  
         @enderror
     </div>
-      {{-- <select class="form-control w-50" name="presence_id" id="">
-        @foreach ($presences as $presence)
-          <option value={{$presence->id}}>{{$presence->presence}}</option>   
-        @endforeach
-      </select> --}}
+
       <div class="form-group col-md-6">
         <label for="">Première impression :</label>
         <input type='text' class="form-control @error('impression') is-invalid @enderror" name="impression" placeholder="Décrivez votre première impression"/>
@@ -45,7 +41,7 @@
         <div class="text-danger">{{ $message }}</div>  
         @enderror
     </div>
-      {{-- <input type="text" name="impression" placeholder="impression" class="form-control w-50 @error('impression') is-invalid @enderror" id=""> --}}
+     
       <div class="form-group col-md-6">
         <label for="">Savoir-être de l'employeur :</label>
         <input type='text' class="form-control @error('savoir') is-invalid @enderror" name="savoir" placeholder="Décrivez son savoir-être"/>
@@ -55,7 +51,7 @@
         @enderror
     </div>
     
-      {{-- <input type="text" name="savoir" placeholder="savoir" class="form-control w-50" id=""> --}}
+     
       <div class="form-group col-md-6">
         <label for="">Quels sont ses compétences ? :</label>
         <input type='text' class="form-control @error('capacite') is-invalid @enderror" name="capacite" placeholder="Ses compétences"/>
@@ -64,7 +60,7 @@
         <div class="text-danger">{{ $message }}</div>  
         @enderror
     </div>
-      {{-- <input type="text" name="capacite" placeholder="capacite" class="form-control w-50" id=""> --}}
+     
       <div class="form-group col-md-6">
         <label for="">A-t-il été sérieux durant cette entretien ? :</label>
         <input type='text' class="form-control @error('serieux') is-invalid @enderror" name="serieux" placeholder="Décrivez son sérieux"/>

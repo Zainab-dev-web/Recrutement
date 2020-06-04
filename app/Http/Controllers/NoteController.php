@@ -19,7 +19,7 @@ class NoteController extends Controller
      */
     public function index()
     {
-        $evals = Evaluation::where('user_id', Auth::user()->id)->get();
+        $evals = Evaluation::where('user_id', Auth::user()->id)->orderby('id', 'desc')->get();
         return view ('PageProfil.note.note', compact('evals'));
     }
 
@@ -110,9 +110,16 @@ class NoteController extends Controller
         $event->save();
 
         $resultat = Auth::user();
-        $resultat->resultat_id = $request->input('resultat_id');
+        if ($resultat->resultat_id == 1 && $request->input('resultat_id') == 2) {
+            $resultat->resultat_id = 1;
+        } elseif ($resultat->resultat_id == null) {
+            $resultat->resultat_id = $request->input('resultat_id');  
+        }elseif ($resultat->resultat_id == 1 && $request->input('resultat_id') == 1){
+            $resultat->resultat_id = $request->input('resultat_id'); 
+        }elseif ($resultat->resultat_id == null && $request->input('resultat_id') == 2){
+            $resultat->resultat_id = null;
+        }
         $resultat->save();
-
         return redirect()->route('note.index');
     }
 
