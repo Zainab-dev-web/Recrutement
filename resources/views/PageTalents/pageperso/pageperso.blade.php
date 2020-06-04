@@ -46,12 +46,16 @@
       @endcan
   </div>
   
-  <div class="col-4 mt-5">
+  <div class="col-4 mt-5 ">
       <div class="single_sidebar_widget post_category_widget">
         <h2 class="mt-3">CV :</h2>
         <a data-toggle="modal" data-target="#exampleModalLong">
         <img class="mb-3" width="250" src="{{asset('storage/' . $talent->cv)}}" alt="cv">
         </a>
+        <div class='row mx-auto'>
+          <a href="{{route('download_user' ,$talent->id)}}"><button class='btn btn-info'>Télécharger</button></a>
+
+        </div>
       </div>
   </div>
 </div>

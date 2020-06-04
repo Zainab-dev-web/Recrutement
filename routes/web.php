@@ -81,4 +81,6 @@ Route::resource('info', 'InfoController')->middleware('isAdmin');
 Route::resource('profilGestion', 'ProfilgestionController')->middleware('GestionUser');
 Route::resource('settings', 'SettingsController')->middleware('isConnect');
 
+//download
 
+Route::get('/download_user/{id}', 'TalentController@download')->name('download_user');

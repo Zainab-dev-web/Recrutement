@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class TalentController extends Controller
@@ -51,6 +52,7 @@ class TalentController extends Controller
     public function show($id)
     {
         $talent = User::find($id);
+        
         return view ('PageTalents.pageperso.pageperso', compact('talent'));
     }
 
@@ -93,5 +95,10 @@ class TalentController extends Controller
        
     
         return view('PageTalents.pageTalents',compact('searchDomaine', 'talents'));
+    }
+    public function download($id)
+    {
+        $cv = User::find($id);
+        return Storage::disk('public')->download($cv->cv, $cv->nom);
     }
 }
